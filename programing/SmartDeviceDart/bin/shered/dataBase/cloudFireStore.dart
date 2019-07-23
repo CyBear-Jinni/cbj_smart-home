@@ -52,7 +52,7 @@ class CloudFireStore{
     print(user);
 
     // Instantiate a reference to a document - this happens offline
-    DocumentReference ref = fireStore.collection("test").document("nono");
+    DocumentReference ref = fireStore.document(dataPath);
 
     // Subscribe to changes to that document
     yield ref.subscribe();
