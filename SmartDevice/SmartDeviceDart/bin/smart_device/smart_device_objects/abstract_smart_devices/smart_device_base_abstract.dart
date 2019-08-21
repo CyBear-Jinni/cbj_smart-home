@@ -3,7 +3,7 @@ import 'dart:io';
 import '../../../shered/device_information.dart';
 import '../../../shered/enums.dart';
 import '../../../shered/permissions/permissions_manager.dart';
-import '../../../shered/server_proto_as_dart/smart_server.dart';
+import '../../../shered/server/smart_server.dart';
 import '../../../shered/wish_classes/off_wish.dart';
 import '../../../shered/wish_classes/on_wish.dart';
 
