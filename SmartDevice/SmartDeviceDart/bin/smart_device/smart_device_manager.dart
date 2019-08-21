@@ -1,7 +1,7 @@
 import '../shered/data_base/cloud_manager.dart';
 import '../shered/device_information.dart';
 import '../shered/manage_physical_components/button_object.dart';
-import '../shered/server_proto_as_dart/smart_server.dart';
+import '../shered/server/smart_server.dart';
 import 'smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart';
 import 'smart_device_objects/dinamic_devices/dynamic_light_object.dart';
 import 'smart_device_objects/simple_devices/light_object.dart';

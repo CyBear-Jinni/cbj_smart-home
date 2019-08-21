@@ -5,8 +5,8 @@ import 'package:grpc/grpc.dart';
 
 import '../../smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart';
 import '../enums.dart';
-import 'smart_connection.pb.dart';
-import 'smart_connection.pbgrpc.dart';
+import 'protoc_as_dart/smart_connection.pb.dart';
+import 'protoc_as_dart/smart_connection.pbgrpc.dart';
 
 class SmartServer extends SmartServerServiceBase{
   List<SmartDeviceBaseAbstract> smartDevicesList;
