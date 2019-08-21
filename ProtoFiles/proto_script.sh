@@ -1,17 +1,17 @@
 #!/bin/sh
 
 # You mast have pub and protoc inside the path 
-# PATH=$PATH:~/opt/bin...
+# Exaple PATH=$PATH:~/Programmes/flutter/bin/cache/dart-sdk/bin
 
 pub global activate protoc_plugin
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
-protoc --dart_out=grpc:protocAsDart/ -Iprotos protos/smart_connection.proto
+protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/smart_connection.proto
 
 
-# bin/shered/server_proto_as_dart/  # copy to smart device protoc folder
+cp -r protoc_as_dart/ ../SmartDevice/SmartDeviceDart/bin/shered/server/	#   # copy to smart device protoc folder
 
 
-# copy to flutter protoc folder
+cp -r protoc_as_dart/ ../FlutterApp/smart_home_flutter/lib/objects/smart_device/client/	# Copy to Flutter protoc folder 
 
