@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/objects/smart_device/client_proto_as_dart/smart_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/objects/smart_device/client/smart_client.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/objects/smart_device/send_to_smart_device.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/objects/smart_device/send_to_smart_device.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProtoFiles/proto_script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProtoFiles/proto_script.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProtoFiles/protocAsDart/smart_connection.pb.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProtoFiles/protocAsDart/smart_connection.pbenum.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProtoFiles/protocAsDart/smart_connection.pbgrpc.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProtoFiles/protocAsDart/smart_connection.pbjson.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/shered/pythons.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/shered/server/server_proto_as_dart/smart_connection.pb.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/shered/server/server_proto_as_dart/smart_connection.pbenum.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/shered/server/server_proto_as_dart/smart_connection.pbgrpc.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/shered/server/server_proto_as_dart/smart_connection.pbjson.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/shered/server_proto_as_dart/smart_connection.pb.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/shered/server_proto_as_dart/smart_connection.pbenum.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/shered/server_proto_as_dart/smart_connection.pbgrpc.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/shered/server_proto_as_dart/smart_connection.pbjson.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/shered/server_proto_as_dart/smart_server.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/shered/server/smart_server.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,12 +32,42 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/main.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/shered/wish_classes/on_wish.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/shered/server/smart_server.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16">
+              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -81,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bin/smartDevice/smarDeviceObjects/staticDevices/blindsObject.dart" />
         <option value="$PROJECT_DIR$/.dart_tool/pub/bin/rpi_gpio/build_lib.dart.snapshot.dart2" />
         <option value="$PROJECT_DIR$/bin/smartDevice/smarDeviceObjects/dinamicDevices/dynamicLightObject.dart" />
         <option value="$PROJECT_DIR$/bin/shered/wishManager/offWish.dart" />
@@ -127,11 +172,12 @@
         <option value="$PROJECT_DIR$/bin/shered/wish_classes/on_wish.dart" />
         <option value="$PROJECT_DIR$/bin/shered/wish_classes/off_wish.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart" />
         <option value="$PROJECT_DIR$/bin/shered/data_base/cloud_manager.dart" />
         <option value="$PROJECT_DIR$/bin/shered/server_proto_as_dart/smart_server.dart" />
         <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/controlloling_pins.dart" />
         <option value="$PROJECT_DIR$/bin/main.dart" />
+        <option value="$PROJECT_DIR$/bin/shered/server/smart_server.dart" />
+        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart" />
       </list>
     </option>
   </component>
@@ -169,7 +215,15 @@
               <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
               <item name="bin" type="462c0819:PsiDirectoryNode" />
               <item name="shered" type="462c0819:PsiDirectoryNode" />
-              <item name="manage_physical_components" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="shered" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="protoc_as_dart" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
@@ -196,20 +250,20 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../firedart/firedart" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/bin" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bin/shered/server" />
       <recent name="$PROJECT_DIR$/bin/shered/managePhysicalComponents" />
       <recent name="$PROJECT_DIR$/bin/shered/dataBase" />
       <recent name="$PROJECT_DIR$/bin/smartDevice/smarDeviceObjects" />
       <recent name="$PROJECT_DIR$/bin/smartDevice/smarDeviceObjects/abstractSmartDevices" />
-      <recent name="$PROJECT_DIR$/bin/smartDevice/smarDeviceObjects/SimpleDevices/dinamicDevices" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -257,7 +311,7 @@
     <frame x="1724" y="0" width="1876" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14612868" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14940022" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -267,7 +321,7 @@
       <window_info id="Resources Explorer" order="7" weight="0.12199125" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26854753" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26854753" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39602926" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -276,7 +330,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32706374" />
       <window_info anchor="bottom" id="Dart Analysis" order="10" weight="0.19644724" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.31452456" />
+      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.31452456" />
       <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -332,8 +386,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/google/firestore/v1/firestore.pbenum.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/google/firestore/v1/firestore.pbgrpc.dart" />
     <entry file="file://$PROJECT_DIR$/bin/google/firestore/v1/firestore.pb.dart" />
     <entry file="file://$PROJECT_DIR$/bin/shered/dataBase/realtimeDatabase.dart" />
     <entry file="file://$USER_HOME$/Programmes/flutter/.pub-cache/hosted/pub.dartlang.org/firedart-0.5.0+1/lib/firestore/models.dart">
@@ -473,9 +525,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protos/SmartConnection.proto" />
-    <entry file="file://$PROJECT_DIR$/protos/smart_connection.proto">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/protos/smart_connection.proto" />
     <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -486,13 +536,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1184">
-          <caret line="255" column="21" selection-start-line="255" selection-start-column="21" selection-end-line="255" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.lock" />
     <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -520,26 +564,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/shered/pythons.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/shered/server_proto_as_dart/smart_server.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/shered/device_information.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -564,16 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/shered/wish_classes/on_wish.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/shered/enums.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -588,12 +602,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.aaaaaaaaaaaaaaaaaaaaaa.swp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.aaaaaaaaaaaaaaaaaaaaaa.txt.swp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.aaaaaaaaaaaaaaaaaaaaaa.swp" />
+    <entry file="file://$PROJECT_DIR$/.aaaaaaaaaaaaaaaaaaaaaa.txt.swp" />
     <entry file="file://$USER_HOME$/Programmes/flutter/bin/cache/dart-sdk/lib/async/zone.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -611,10 +621,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/shered/server/server_proto_as_dart/smart_connection.pb.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#4476#0" expanded="true" />
+            <element signature="e#232#332#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/main.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/shered/wish_classes/on_wish.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/shered/server/server_proto_as_dart/smart_connection.pbjson.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/shered/server/smart_server.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
         </state>
       </provider>
     </entry>
