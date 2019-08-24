@@ -2,11 +2,9 @@ import '../../../shered/enums.dart';
 import 'smart_device_base_abstract.dart';
 
 // Abstract class for devices with property of how much to move and without how much time the device is doing action without stopping
-abstract class SmartDeviceStatic extends SmartDeviceBaseAbstract {
+abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
 
-  double _movement;
-
-  SmartDeviceStatic(String macAddress, String deviceName) : super(macAddress, deviceName);
+  SmartDeviceStaticAbstract(String macAddress, String deviceName) : super(macAddress, deviceName);
 
 
   // TODO: set how much to move
