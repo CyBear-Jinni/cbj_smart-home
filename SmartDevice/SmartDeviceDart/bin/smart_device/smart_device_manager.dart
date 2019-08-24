@@ -7,10 +7,10 @@ import 'smart_device_objects/dinamic_devices/dynamic_light_object.dart';
 import 'smart_device_objects/simple_devices/light_object.dart';
 import 'smart_device_objects/static_devices/blinds_object.dart';
 
-class SmartDeviceMain {
+class SmartDeviceManager {
   List<SmartDeviceBaseAbstract> smartDevicesList;
 
-   SmartDeviceMain() {
+   SmartDeviceManager() {
     print("Smart device is activaited");
     smartDevicesList = List<SmartDeviceBaseAbstract>();
 
@@ -31,14 +31,14 @@ class SmartDeviceMain {
   // TODO: Pull the saved devices into the app variables
   // Setting all the devices from saved data
   void setAllDevices() async {
-
+     // TODO: insert the pin number with class DevicePinListManager to check if pin is free to use and of the write type
     await smartDevicesList
         .add(LightObject("30:23:a2:G3:34", "Guy silling light"));
     smartDevicesList[0].deviceInformation =
         LocalDevice('mac Adress', 'Guy lamp');
-    await smartDevicesList.add(Blinds("30:23:a2:G3:34", "Guy bed light"));
+    await smartDevicesList.add(BlindsObject("30:23:a2:G3:34", "Guy bed light"));
     await smartDevicesList
-        .add(DynamicLight("30:23:a2:G3:34", "Guy electronic table light"));
+        .add(DynamicLightObject("30:23:a2:G3:34", "Guy electronic table light"));
   }
 
 
