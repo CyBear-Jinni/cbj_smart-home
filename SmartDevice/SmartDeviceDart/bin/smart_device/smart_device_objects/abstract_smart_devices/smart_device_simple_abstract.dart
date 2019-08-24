@@ -2,10 +2,10 @@ import '../../../shered/enums.dart';
 import 'smart_device_base_abstract.dart';
 
 // Abstract class for smart devices with on time property
-abstract class SmartDeviceSimple extends SmartDeviceBaseAbstract {
+abstract class SmartDeviceSimpleAbstract extends SmartDeviceBaseAbstract {
   double howMuchTimeTheDeviceDoingAction;  // How much time the smart device was active (Doing action) continuously
 
-  SmartDeviceSimple(String macAddress, String deviceName) : super(macAddress, deviceName);
+  SmartDeviceSimpleAbstract(String macAddress, String deviceName) : super(macAddress, deviceName);
 
 
   @override

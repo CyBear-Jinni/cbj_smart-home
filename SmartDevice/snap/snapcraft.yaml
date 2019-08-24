@@ -44,9 +44,10 @@ parts:
     plugin: dump
     source: .
     override-build: |
-      wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.0/sdk/dartsdk-linux-arm64-release.zip  # For arm64
+      wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.1/sdk/dartsdk-linux-arm64-release.zip  # For arm64
       
-      #wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.0/sdk/dartsdk-linux-x64-release.zip    # For linux intel 64
+      # wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.1/sdk/dartsdk-linux-arm-release.zip  # For arm
+      # wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.1/sdk/dartsdk-linux-x64-release.zip    # For linux intel 64
       # sdk url: https://dart.dev/tools/sdk/archive
       unzip dartsdk-*.zip
       rm dartsdk-*.zip
@@ -55,7 +56,7 @@ parts:
       cd ..
       dart-sdk/bin/dart2aot SmartDeviceDart/bin/main.dart main.aot
       
-      #rm -r SmartDeviceDart
+      # rm -r SmartDeviceDart
       snapcraftctl build
   
     build-packages:
@@ -64,7 +65,9 @@ parts:
 
 apps:
   smart-home :
-    #command: dart-sdk/bin/dart $SNAP/SmartDeviceDart/bin/main.dart $SNAP
-    command: dart-sdk/bin/dartaotruntime $SNAP/main.aot $SNAP
+    # command: dart-sdk/bin/dart $SNAP/SmartDeviceDart/bin/main.dart NanoPi_Duo2 # For dart file, $SNAP is the variable of location of the snap
+    # command: dart-sdk/bin/dartaotruntime $SNAP/main.aot NanoPi_Duo2 # For .aot file
+    command: dart-sdk/bin/dartaotruntime $SNAP/main.aot NanoPi_Duo2     # For nanoPiDuo2 file, Can also be nanoPiNeo, nanoPiNeo2
+    
     daemon: simple
     plugs: [network, network-bind, gpio, hardware-observe]
