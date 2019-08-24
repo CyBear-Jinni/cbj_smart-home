@@ -17,17 +17,7 @@ enum DeviceType {
   Irrigation, // Give water to plants
   SmartBed,
   AnimalTracker,
-  SmartCar,
-}
-
-class EnumHelper {
-  static String dTToString(DeviceType deviceType) {
-    return deviceType.toString().replaceAll('DeviceType.', '');
-  }
-
-  static String pWishToString(WishEnum deviceType) {
-    return deviceType.toString().replaceAll('WishEnum.', '');
-  }
+  SmartCar
 }
 
 // List of all the wishes that can be made
@@ -37,5 +27,31 @@ enum WishEnum {
   SDynamic, // Set Dynamic Value
   ODynamic, // Open connection to change dynamic value
   SMovement, // Open connection to change dynamic value
-  GState, // Get device state on/off
+  GState // Get device state on/off
 }
+
+// List of all physical devices types
+enum PhysicalDeviceType {
+  NanoPi_Duo2,
+  NanoPi_Neo,
+  NanoPi_Neo2
+}
+
+class EnumHelper {
+  // Convert deviceType to string
+  static String DeviceTypeToString(DeviceType deviceType) {
+    return deviceType.toString().replaceAll('DeviceType.', '');
+  }
+
+  // Convert wishEnum to string
+  static String wishEnumToString(WishEnum deviceType) {
+    return deviceType.toString().replaceAll('WishEnum.', '');
+  }
+
+  // Convert physicalDeviceType to string
+  static String physicalDeviceTypeToString(PhysicalDeviceType deviceType) {
+    return deviceType.toString().replaceAll('PhysicalDeviceType.', '');
+  }
+
+}
+

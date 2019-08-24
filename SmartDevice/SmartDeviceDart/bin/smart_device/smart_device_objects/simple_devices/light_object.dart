@@ -1,7 +1,7 @@
 import '../../../shered/enums.dart';
 import '../abstract_smart_devices/smart_device_simple_abstract.dart';
 
-class LightObject extends SmartDeviceSimple{
+class LightObject extends SmartDeviceSimpleAbstract{
   LightObject(String macAddress, String deviceName,) : super(macAddress, deviceName) {
     print("New light object");
   }
