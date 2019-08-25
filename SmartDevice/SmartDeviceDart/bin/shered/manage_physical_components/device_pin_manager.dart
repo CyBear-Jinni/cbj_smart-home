@@ -4,35 +4,61 @@ import 'devices_pin_configuration/nano_pi_duo2_configuration.dart';
 import 'devices_pin_configuration/nano_pi_neo2_configuration.dart';
 import 'devices_pin_configuration/nano_pi_neo_configuration.dart';
 
-// This class save all the configuration of the pins per device, every device have different pin number for each task and this class will give the correct pin for the task.
-// Also this class will manage unused pins for new connections and will return free pins number for the required task.
+//  This class save all the configuration of the pins per device, every device have different pin number for each task and this class will give the correct pin for the task.
+//  Also this class will manage unused pins for new connections and will return free pins number for the required task.
 
 
-// also this class manage the pins, and check if this pin is in the type that the user needs (gpio and more),
-// if pin is not in use and in the correct type that user expect it return the number of the pin, else return -1
-class DevicePinListManager{
+//  Also this class manage the pins, and check if this pin is in the type that the user needs (gpio and more),
+//  If pin is not in use and in the correct type that user expect it return the number of the pin, else return -1
+class DevicePinListManager {
 
-  static PhysicalDeviceType physicalDeviceType;
+  static PhysicalDeviceType physicalDeviceType; //  Will save the type of the current physical device
+  static DeviceConfigurationBaseClass physicalDevice; //  Will save the current physical device pin configuration
 
-  DeviceConfigurationBaseClass nanoPiDuo2 = NanoPiDuo2Configuration();
-  DeviceConfigurationBaseClass nanoPiNeo = NanoPiNeoConfiguration();
-  DeviceConfigurationBaseClass nanoPiNeo2 = NanoPiNeo2Configuration();
+  DevicePinListManager(String insertDeviceType) {
+    physicalDeviceType =
+        ConvertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
+            insertDeviceType);
+    print('This device is of type: ' +
+        EnumHelper.physicalDeviceTypeToString(physicalDeviceType));
 
-  DevicePinListManager(String insertDeviceType){
-    physicalDeviceType = ConvertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(insertDeviceType);
-    print('This device is of type: ' + EnumHelper.physicalDeviceTypeToString(physicalDeviceType));
-  }
-}
-
-
-
-
-// Return PossibleWishes object if string wish exist (in general) else return null
-PhysicalDeviceType ConvertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(String physicalDeviceType) {
-  for (PhysicalDeviceType possibleWish in PhysicalDeviceType.values) {  // Loop through all the options
-    if (EnumHelper.physicalDeviceTypeToString(possibleWish) == physicalDeviceType) {
-      return possibleWish; // If physicalDeviceType string exist return the physicalDeviceType enum object
+    //  Save the current physical device configuration to the physicalDevice variable
+    switch (physicalDeviceType) {
+      case PhysicalDeviceType.NanoPi_Duo2:
+        {
+          physicalDevice = NanoPiDuo2Configuration();
+          break;
+        }
+      case PhysicalDeviceType.NanoPi_Neo:
+        {
+          physicalDevice = NanoPiNeoConfiguration();
+          break;
+        }
+      case PhysicalDeviceType.NanoPi_Neo2:
+        {
+          physicalDevice = NanoPiNeo2Configuration();
+          break;
+        }
     }
   }
-  return null;
+
+  //  Ask for gpio pin, if free return the pin number, else return error number (negative numbers)
+  static int GetGpioPin(int pinNumber) => physicalDevice.GetGpioPin(pinNumber);
+
+
+
+  //  Return physicalDeviceType object if string physicalDeviceType exist (in general) else return null
+  static PhysicalDeviceType ConvertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
+      String physicalDeviceType) {
+    //  Loop through all the physical devices types
+    for (PhysicalDeviceType physicalDeviceTypeTemp in PhysicalDeviceType
+        .values) {
+      if (EnumHelper.physicalDeviceTypeToString(physicalDeviceTypeTemp) ==
+          physicalDeviceType) {
+        return physicalDeviceTypeTemp; //  If physicalDeviceType string exist return the physicalDeviceType enum object
+      }
+    }
+    return null;
+  }
 }
+

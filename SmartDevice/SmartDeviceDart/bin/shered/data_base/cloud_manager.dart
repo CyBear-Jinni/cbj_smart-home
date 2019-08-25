@@ -11,7 +11,7 @@ class CloudManager{
   CloudManager(this.smartDevice);
 
 
-  // Listen to changes in the database for this device
+  //  Listen to changes in the database for this device
   void listenToDataBase(){
     DataBaseController dataBaseController = DataBaseController();
     dataBaseController.listenToChangeOfDataInPath(dataPath).listen((onData) =>

@@ -4,7 +4,7 @@ import 'smart_device_base_abstract.dart';
 // Abstract class for devices with property of how much to move and without how much time the device is doing action without stopping
 abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
 
-  SmartDeviceStaticAbstract(String macAddress, String deviceName) : super(macAddress, deviceName);
+  SmartDeviceStaticAbstract(macAddress, deviceName, onOffPinNumber, {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber, onOffButtonPinNumber: onOffButtonPinNumber);
 
 
   // TODO: set how much to move
@@ -20,7 +20,7 @@ abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
   // All the wishes that are legit to execute from the static class
 
   @override
-  String ExecuteWish(String wishString) {
+  String ExecuteWish(String wishString){
     WishEnum wish = ConvertWishStringToWishesObject(wishString);
     print(wishString);
     print(wish.toString());

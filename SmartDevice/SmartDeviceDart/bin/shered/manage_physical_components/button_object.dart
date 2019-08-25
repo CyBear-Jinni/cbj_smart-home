@@ -8,7 +8,7 @@ class ButtonObject{
   ButtonObject(this.smartDevice);
 
   void buttonPressed() async {
-    int buttonPinNumber = 12;
+    int buttonPinNumber = smartDevice.onOffButtonPin;
     List<String> pythonCommends = List();
     pythonCommends.add('-c');
     pythonCommends.add('''

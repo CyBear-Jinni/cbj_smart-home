@@ -2,9 +2,9 @@ import 'shered/manage_physical_components/device_pin_manager.dart';
 import 'smart_device/smart_device_manager.dart';
 
 main(List<String> arguments) async {
-  print('Starting the program');
+  print("Smart device is activaited");
 
-// Getting physical device type from out side, and checking if this device configuration exist
+//  Getting physical device type from out side, and checking if this device configuration exist
   try {
     DevicePinListManager(arguments[0]);
     if(DevicePinListManager.physicalDeviceType == null){
