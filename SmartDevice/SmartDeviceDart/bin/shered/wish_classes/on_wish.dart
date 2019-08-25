@@ -1,32 +1,32 @@
 import '../manage_physical_components/controlloling_pins.dart';
 import '../device_information.dart';
 
-// Class to change wish on status to device
+//  Class to change wish on status to device
 class OnWish {
-  static String SetOn(DeviceInformation deviceInformation) {
+  static String SetOn(DeviceInformation deviceInformation, int pinNumber) {
     switch (deviceInformation.runtimeType) {
-      case RemoteDevice:
-        return SetOnRemote(deviceInformation);
       case LocalDevice:
-        return SetOnLocal(deviceInformation);
+        return SetOnLocal(deviceInformation, pinNumber);
+      case RemoteDevice:
+        return SetOnRemote(deviceInformation, pinNumber);
     }
     return 'DeviceBase type not supported';
   }
 
-  // Turn this device on
-  static String SetOnLocal(LocalDevice deviceInformation) {
-    PinOn(7);
+  //  Turn this device on
+  static String SetOnLocal(LocalDevice deviceInformation, int pinNumber) {
+    PinOn(pinNumber);
     return 'Response from this device on sucsessful';
   }
 
-  // Turn remote device on
-  static String SetOnRemote(RemoteDevice remoteDevice) {
+  //  Turn remote device on
+  static String SetOnRemote(RemoteDevice remoteDevice, int pinNumber) {
 //    try {
 //      HttpClient()
 //          .getUrl(Uri.parse('http://' +
 //              remoteDevice.getIp() +
-//              '/LED=ON')) // produces a request object
-//          .then((request) => request.close()) // sends the request
+//              '/LED=ON')) //  Produces a request object
+//          .then((request) => request.close()) //  Sends the request
 //          .then((HttpClientResponse response) {
 //        print(response.transform(Utf8Decoder()).listen(print));
 //      });

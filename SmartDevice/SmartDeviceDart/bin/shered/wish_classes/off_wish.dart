@@ -2,24 +2,25 @@ import '../manage_physical_components/controlloling_pins.dart';
 import '../device_information.dart';
 
 class OffWish {
-  static String SetOff(DeviceInformation deviceInformation) {
+  static String SetOff(DeviceInformation deviceInformation, int pinNumber) {
     switch (deviceInformation.runtimeType) {
-      case RemoteDevice:
-        return SetOffRemote(deviceInformation);
       case LocalDevice:
-        return SetOffLocal(deviceInformation);
+        return SetOffLocal(deviceInformation, pinNumber);
+      case RemoteDevice:
+        return SetOffRemote(deviceInformation, pinNumber);
     }
     return 'DeviceBase type not supported';
   }
 
-  // Turn this device off
-  static String SetOffLocal(LocalDevice deviceInformation) {
-    pinOff(7);
+  //  Turn this device off
+  static String SetOffLocal(LocalDevice deviceInformation, int pinNumber) {
+//    pinOff(7);
+    pinOff(pinNumber);
     return 'Response from this device off sucsessful';
   }
 
-  // Change remote device off
-  static String SetOffRemote(RemoteDevice remoteDevice) {
+  //  Change remote device off
+  static String SetOffRemote(RemoteDevice remoteDevice, int pinNumber) {
 //    try {
 //      HttpClient()
 //          .getUrl(Uri.parse('http://' +
