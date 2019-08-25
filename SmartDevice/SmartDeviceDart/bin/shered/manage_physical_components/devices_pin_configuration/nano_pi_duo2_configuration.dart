@@ -7,9 +7,4 @@ class NanoPiDuo2Configuration extends DeviceConfigurationBaseClass{
   NanoPiDuo2Configuration(){
     gpioList = _gpioListDuo;
   }
-
-
-  String GetFreePin(){
-    return "9";
-  }
 }
