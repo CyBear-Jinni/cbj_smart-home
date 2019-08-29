@@ -1,6 +1,6 @@
 import '../abstract_smart_devices/smart_device_simple_abstract.dart';
 
-class Thermostat extends SmartDeviceSimple{
-  Thermostat(String macAddress, String deviceName) : super(macAddress, deviceName);
+class ThermostatObject extends SmartDeviceSimpleAbstract{
+  ThermostatObject(String macAddress, String deviceName, int onOffPinNumber, {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber, onOffButtonPinNumber: onOffButtonPinNumber);
 
 }

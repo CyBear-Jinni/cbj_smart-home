@@ -1,5 +1,6 @@
-// function to start python script inside the path (snap location)
 import 'dart:io';
+
+//  Function to start python script to interact with pins
 
 void PinOn(int pinNumber) async {
   List<String> pythonCommends = List();
