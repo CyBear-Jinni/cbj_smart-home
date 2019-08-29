@@ -8,7 +8,7 @@ void PinOn(int pinNumber) async {
   pythonCommends.add('import RPi.GPIO as GPIO; pin = ' +
       pinNumber.toString() +
       '; GPIO.setmode(GPIO.BOARD); GPIO.setup(pin, GPIO.OUT); GPIO.output(pin, GPIO.HIGH); exit();');
-  await Process.start('python3', pythonCommends).then((process) async {});
+  await Process.start('python', pythonCommends).then((process) async {});
 }
 
 void pinOff(int pinNumber) async {
@@ -17,5 +17,5 @@ void pinOff(int pinNumber) async {
   pythonCommends.add('import RPi.GPIO as GPIO; pin = ' +
       pinNumber.toString() +
       '; GPIO.setmode(GPIO.BOARD); GPIO.setup(pin, GPIO.OUT); GPIO.output(pin, GPIO.LOW); exit();');
-  await Process.start('python3', pythonCommends).then((process) async {});
+  await Process.start('python', pythonCommends).then((process) async {});
 }
