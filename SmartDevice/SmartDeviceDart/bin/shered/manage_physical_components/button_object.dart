@@ -33,7 +33,7 @@ except:
     GPIO.cleanup()
 ''');
     while (true) {
-      await Process.start('python3', pythonCommends).then((process) async {
+      await Process.start('python', pythonCommends).then((process) async {
         await process.exitCode.then((exitCode) {
           print('exit code: $exitCode');
           if (smartDevice.onOff) {

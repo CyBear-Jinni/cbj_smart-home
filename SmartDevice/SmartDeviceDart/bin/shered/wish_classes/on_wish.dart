@@ -10,6 +10,7 @@ class OnWish {
       case RemoteDevice:
         return SetOnRemote(deviceInformation, pinNumber);
     }
+    print('Device type ' + deviceInformation.GetName() + ' is not specefied ');
     return 'DeviceBase type not supported';
   }
 
