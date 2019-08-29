@@ -3,11 +3,11 @@ import '../../../shered/wish_classes/dynamic_wish.dart';
 import 'smart_device_simple_abstract.dart';
 
 // Abstract class for smart devices class with dynamic property
-abstract class SmartDeviceDynamic extends SmartDeviceSimple {
+abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
   double dynamicValue; // Save how much power to do for action
 
-  SmartDeviceDynamic(String macAddress, String deviceName)
-      : super(macAddress, deviceName);
+  SmartDeviceDynamicAbstract(macAddress, deviceName, onOffPinNumber, {onOffButtonPinNumber})
+      : super(macAddress, deviceName, onOffPinNumber, onOffButtonPinNumber: onOffButtonPinNumber);
 
   @override
   String ExecuteWish(String wishString) {
