@@ -11,7 +11,7 @@ import '../../../shered/wish_classes/on_wish.dart';
 //  The super base class of all the smart device class and smart device abstract classes
 abstract class SmartDeviceBaseAbstract {
   DeviceInformation
-      deviceInformation;  //  Save data about the device, remote or local IP or pin number
+      deviceInformation = LocalDevice('This is the mac Address', 'This is the name of the device');  //  Save data about the device, remote or local IP or pin number
   String deviceName;  //  Default name of the device to show in the app
   final String macAddress;  //  Mac address of the physical device
   Map<String, PermissionsManager>
