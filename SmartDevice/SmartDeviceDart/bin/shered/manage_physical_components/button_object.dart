@@ -35,15 +35,17 @@ except:
     while (true) {
       await Process.start('python', pythonCommends).then((process) async {
         await process.exitCode.then((exitCode) {
-          print('exit code: $exitCode');
+          if (exitCode == 1) {
+            print('Error in python probebbly importing RPi.GPIO, exit code: $exitCode');
+            return;
+          }
           if (smartDevice.onOff) {
             smartDevice.WishInBaseClass(WishEnum.SOff);
-          } else {
+          }
+          else {
             smartDevice.WishInBaseClass(WishEnum.SOn);
           }
         });
-      }).catchError((handleError) {
-        print(handleError.toString());
       });
       print('Done');
     }
