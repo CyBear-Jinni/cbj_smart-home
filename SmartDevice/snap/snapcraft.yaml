@@ -52,7 +52,7 @@ parts:
       unzip dartsdk-*.zip
       rm dartsdk-*.zip
       cd SmartDeviceDart
-      #../dart-sdk/bin/pub get
+      ../dart-sdk/bin/pub get --no-precompile
       cd ..
       dart-sdk/bin/dart2aot SmartDeviceDart/bin/main.dart main.aot
       
