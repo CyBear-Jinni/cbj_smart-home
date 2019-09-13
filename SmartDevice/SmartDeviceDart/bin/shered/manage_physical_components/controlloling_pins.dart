@@ -5,29 +5,41 @@ import 'dart:io';
 void PinOn(int pinNumber) async {
   List<String> pythonCommends = List();
   pythonCommends.add('-c');
-  pythonCommends.add('import RPi.GPIO as GPIO; pin = ' +
-      pinNumber.toString() +
-      '; GPIO.setmode(GPIO.BOARD); GPIO.setup(pin, GPIO.OUT); GPIO.output(pin, GPIO.HIGH); exit();');
-  await Process.start('python', pythonCommends).then((process) async {
-    await process.exitCode.then((exitCode) {
-      if (exitCode == 1) {
-        print('Error in python probebbly importing RPi.GPIO, exit code: $exitCode');
-      }
-    });
+  pythonCommends.add(
+'''
+try:
+   import RPi.GPIO as GPIO;
+   pin = int(''' + pinNumber.toString() + ''');
+   GPIO.setmode(GPIO.BOARD);
+   GPIO.setup(pin, GPIO.OUT);
+   GPIO.output(pin, GPIO.HIGH);
+   exit();
+   
+except Exception as e:
+   print("This is python exeption: " + str(e));
+''');
+  await Process.run('python', pythonCommends).then((ProcessResult results) {
+    print(results.stdout);
   });
 }
 
 void pinOff(int pinNumber) async {
   List<String> pythonCommends = List();
   pythonCommends.add('-c');
-  pythonCommends.add('import RPi.GPIO as GPIO; pin = ' +
-      pinNumber.toString() +
-      '; GPIO.setmode(GPIO.BOARD); GPIO.setup(pin, GPIO.OUT); GPIO.output(pin, GPIO.LOW); exit();');
-  await Process.start('python', pythonCommends).then((process) async {
-    await process.exitCode.then((exitCode) {
-      if (exitCode == 1) {
-        print('Error in python probebbly importing RPi.GPIO, exit code: $exitCode');
-      }
-    });
+  pythonCommends.add(
+'''
+try:
+   import RPi.GPIO as GPIO;
+   pin = int(''' + pinNumber.toString() + ''');
+   GPIO.setmode(GPIO.BOARD);
+   GPIO.setup(pin, GPIO.OUT);
+   GPIO.output(pin, GPIO.LOW);
+   exit();
+   
+except Exception as e:
+   print("This is python exeption: " + str(e));
+''');
+  await Process.run('python', pythonCommends).then((ProcessResult results) {
+    print(results.stdout);
   });
 }
