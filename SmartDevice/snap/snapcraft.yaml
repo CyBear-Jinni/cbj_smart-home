@@ -21,53 +21,51 @@ architectures: [all]
 #  - build-on: armhf
 #    run-on: armhf
 parts:
-  setup:
-    plugin: python
-    python-version: python3
-    override-build: |
-      git clone https://github.com/chainsx/RPi.GPIO.NP.git
-      cd RPi.GPIO.NP
-      sudo python3 setup.py install
-      python3 setup.py install
-      cd
-      snapcraftctl build
-
-    source: .
-    #python-packages: [NPi.GPIO]
-    build-packages:
-      - git
-      - python3
-    stage-packages:
-      - python3
-
   smart-home :
     plugin: dump
     source: .
     override-build: |
-      wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.1/sdk/dartsdk-linux-arm64-release.zip  # For arm64
+      #wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.1/sdk/dartsdk-linux-arm64-release.zip  # For arm64
       
-      # wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.1/sdk/dartsdk-linux-arm-release.zip  # For arm
+      wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.1/sdk/dartsdk-linux-arm-release.zip  # For arm
       # wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.1/sdk/dartsdk-linux-x64-release.zip    # For linux intel 64
       # sdk url: https://dart.dev/tools/sdk/archive
       unzip dartsdk-*.zip
       rm dartsdk-*.zip
       cd SmartDeviceDart
-      #../dart-sdk/bin/pub get
+      ../dart-sdk/bin/pub get --no-precompile
       cd ..
       dart-sdk/bin/dart2aot SmartDeviceDart/bin/main.dart main.aot
       
       # rm -r SmartDeviceDart
+
+      git clone https://github.com/friendlyarm/WiringNP
+      cd WiringNP/
+      chmod 755 build
+      ./build
+      cd ..
+
+      cd cScripts/
+      gcc -Wall -o turnOff turnOff.c -lwiringPi -lpthread
+      gcc -Wall -o turnOn turnOn.c -lwiringPi -lpthread
+      chmod 777 turnOff
+      chmod 777 turnOn
+      cd ..
+
       snapcraftctl build
   
     build-packages:
       - wget
       - unzip
+      - git
+      - gcc
+      - make
 
 apps:
   smart-home :
     # command: dart-sdk/bin/dart $SNAP/SmartDeviceDart/bin/main.dart NanoPi_Duo2 # For dart file, $SNAP is the variable of location of the snap
     # command: dart-sdk/bin/dartaotruntime $SNAP/main.aot NanoPi_Duo2 # For .aot file
-    command: dart-sdk/bin/dartaotruntime $SNAP/main.aot NanoPi_Duo2     # For nanoPiDuo2 file, Can also be nanoPiNeo, nanoPiNeo2
+    command: dart-sdk/bin/dartaotruntime $SNAP/main.aot NanoPi_Duo2 $SNAP    # For nanoPiDuo2 file, Can also be nanoPiNeo, nanoPiNeo2
     
     daemon: simple
     plugs: [network, network-bind, gpio, hardware-observe]
