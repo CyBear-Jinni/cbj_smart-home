@@ -48,6 +48,8 @@ parts:
       cd cScripts/
       gcc -Wall -o turnOff turnOff.c -lwiringPi -lpthread
       gcc -Wall -o turnOn turnOn.c -lwiringPi -lpthread
+      gcc -Wall -o buttonPress buttonPress.c -lwiringPi -lpthread
+
       chmod 777 turnOff
       chmod 777 turnOn
       cd ..
