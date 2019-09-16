@@ -6,7 +6,7 @@ import '../shared_variables.dart';
 
 void PinOn(int pinNumber) async {
   try {
-    await Process.run(SharedVariables.getSnapPath() + '/cScripts/turnOn', [])
+    await Process.run(SharedVariables.getSnapPath() + '/cScripts/turnOn', [pinNumber.toString()])
         .then((ProcessResult results) {
       print(results.stdout);
     });
@@ -19,7 +19,7 @@ void PinOn(int pinNumber) async {
 
 void pinOff(int pinNumber) async {
   try {
-    await Process.run(SharedVariables.getSnapPath() + '/cScripts/turnOff', [])
+    await Process.run(SharedVariables.getSnapPath() + '/cScripts/turnOff', [pinNumber.toString()])
         .then((ProcessResult results) {
       print(results.stdout);
     });

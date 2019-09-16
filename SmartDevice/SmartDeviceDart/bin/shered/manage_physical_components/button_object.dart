@@ -1,44 +1,22 @@
 import 'dart:io';
 import '../../smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart';
 import '../enums.dart';
+import '../shared_variables.dart';
 
-class ButtonObject{
+class ButtonObject {
   SmartDeviceBaseAbstract smartDevice;
 
   ButtonObject(this.smartDevice);
 
   void buttonPressed() async {
     int buttonPinNumber = smartDevice.onOffButtonPin;
-    List<String> pythonCommends = List();
-    pythonCommends.add('-c');
-    pythonCommends.add('''
-import RPi.GPIO as GPIO
-import time
-buttonPinNumber = int(''' +
-        buttonPinNumber.toString() +
-        ''')
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(buttonPinNumber, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-try:
-    while True:
-         button_state = GPIO.input(buttonPinNumber)
-         if button_state:
-             print('Button Pressed...')
-             time.sleep(0.2)
-             exit()
-         else:
-             time.sleep(0.13)
-except:
-    GPIO.cleanup()
-''');
     while (true) {
-      await Process.start('python', pythonCommends).then((process) async {
-        await process.exitCode.then((exitCode) {
-          if (exitCode == 1) {
-            print('Error in python probebbly importing RPi.GPIO, exit code: $exitCode');
-            return;
-          }
+      try {
+        await Process.run(
+            SharedVariables.getSnapPath() + '/cScripts/buttonPress', [buttonPinNumber.toString()])
+            .then((ProcessResult results) {
+          print(results.stdout);
           if (smartDevice.onOff) {
             smartDevice.WishInBaseClass(WishEnum.SOff);
           }
@@ -46,9 +24,13 @@ except:
             smartDevice.WishInBaseClass(WishEnum.SOn);
           }
         });
-      });
-      print('Done');
+        await Future.delayed(const Duration(seconds: 1));
+      }
+
+      catch (error) {
+        print('Path/argument 1 is not specified');
+        print('error: ' + error.toString());
+      }
     }
   }
-
 }
