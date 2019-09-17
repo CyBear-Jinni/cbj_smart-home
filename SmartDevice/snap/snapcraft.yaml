@@ -25,10 +25,10 @@ parts:
     plugin: dump
     source: .
     override-build: |
-      #wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.1/sdk/dartsdk-linux-arm64-release.zip  # For arm64
+      #wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.5.0/sdk/dartsdk-linux-arm64-release.zip  # For arm64
       
-      wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.1/sdk/dartsdk-linux-arm-release.zip  # For arm
-      # wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.4.1/sdk/dartsdk-linux-x64-release.zip    # For linux intel 64
+      wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.5.0/sdk/dartsdk-linux-arm-release.zip  # For arm
+      # wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.5.0/sdk/dartsdk-linux-x64-release.zip    # For linux intel 64
       # sdk url: https://dart.dev/tools/sdk/archive
       unzip dartsdk-*.zip
       rm dartsdk-*.zip
@@ -43,15 +43,14 @@ parts:
       cd WiringNP/
       chmod 755 build
       ./build
+      
       cd ..
-
       cd cScripts/
+
       gcc -Wall -o turnOff turnOff.c -lwiringPi -lpthread
       gcc -Wall -o turnOn turnOn.c -lwiringPi -lpthread
       gcc -Wall -o buttonPress buttonPress.c -lwiringPi -lpthread
 
-      chmod 777 turnOff
-      chmod 777 turnOn
       cd ..
 
       snapcraftctl build
