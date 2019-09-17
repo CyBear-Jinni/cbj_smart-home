@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/shered/manage_physical_components/button_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/shered/manage_physical_components/button_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/shered/manage_physical_components/controlloling_pins.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/shered/manage_physical_components/controlloling_pins.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cScripts/turnOff.c" beforeDir="false" afterPath="$PROJECT_DIR$/../cScripts/turnOff.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cScripts/turnOn.c" beforeDir="false" afterPath="$PROJECT_DIR$/../cScripts/turnOn.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snap/snapcraft.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../snap/snapcraft.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,11 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/button_object.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="17" selection-start-column="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -37,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="39" column="7" lean-forward="true" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+            <state relative-caret-position="465">
+              <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -49,7 +42,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/controlloling_pins.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="285">
               <caret line="21" column="96" selection-start-line="21" selection-start-column="96" selection-end-line="21" selection-end-column="96" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
@@ -67,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
@@ -75,6 +68,24 @@
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/shered/device_information.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -148,7 +159,6 @@
         <option value="$PROJECT_DIR$/bin/shered/dataBase/cloudManager.dart" />
         <option value="$PROJECT_DIR$/protos/SmartConnection.proto" />
         <option value="$PROJECT_DIR$/bin/shered/serverProtoAsDart/smartServer.dart" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/bin/shered/server_proto_as_dart/smart_server.dart" />
         <option value="$PROJECT_DIR$/test/smart_device_dart_test.dart" />
         <option value="$PROJECT_DIR$/bin/shered/device_pins_list.dart" />
@@ -194,13 +204,14 @@
         <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/button_object.dart" />
         <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/controlloling_pins.dart" />
         <option value="$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1586" />
-    <option name="width" value="1876" />
-    <option name="height" value="1076" />
+    <option name="x" value="-4" />
+    <option name="width" value="1688" />
+    <option name="height" value="1054" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -313,10 +324,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1720" y="0" width="1884" height="1084" extended-state="6" />
+    <frame x="-4" y="0" width="1688" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17230098" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17399268" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -335,7 +346,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32706374" />
       <window_info anchor="bottom" id="Dart Analysis" order="10" weight="0.19644724" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.31452456" />
+      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.32470334" />
       <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -444,13 +455,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/shered/pythons.dart" />
     <entry file="file://$PROJECT_DIR$/.aaaaaaaaaaaaaaaaaaaaaa.swp" />
@@ -710,8 +714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="39" column="7" lean-forward="true" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+        <state relative-caret-position="465">
+          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
@@ -727,17 +731,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/button_object.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/controlloling_pins.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="285">
           <caret line="21" column="96" selection-start-line="21" selection-start-column="96" selection-end-line="21" selection-end-column="96" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
@@ -752,6 +753,13 @@
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
