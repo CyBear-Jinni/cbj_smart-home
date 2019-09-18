@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../bashScripts/dartSdkDownload.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../bashScripts/dartSdkDownload.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/SmartHome.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="435">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -31,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_static_abstract.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+            <state relative-caret-position="45">
+              <caret line="3" column="134" lean-forward="true" selection-start-line="3" selection-start-column="134" selection-end-line="3" selection-end-column="134" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -143,16 +148,17 @@
         <option value="$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart" />
         <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart" />
         <option value="$PROJECT_DIR$/bin/shered/device_information.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_static_abstract.dart" />
         <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_dynamic_abstract.dart" />
         <option value="$PROJECT_DIR$/bin/shered/wish_classes/dynamic_wish.dart" />
+        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_static_abstract.dart" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1724" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-214" />
+    <option name="y" value="73" />
     <option name="width" value="1876" />
-    <option name="height" value="1080" />
+    <option name="height" value="1076" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -160,8 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,6 +201,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -267,10 +273,17 @@
       <option name="project" value="LOCAL" />
       <updated>1568838715570</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Moved to tabs">
+      <created>1568838914691</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568838914691</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -280,10 +293,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1724" y="0" width="1876" height="1080" extended-state="6" />
+    <frame x="-214" y="73" width="1876" height="1076" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15976009" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14457831" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -297,7 +310,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39602926" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.1724138" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.1724138" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.22884013" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32706374" />
@@ -709,8 +722,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="435">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
@@ -719,8 +732,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_static_abstract.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        <state relative-caret-position="45">
+          <caret line="3" column="134" lean-forward="true" selection-start-line="3" selection-start-column="134" selection-end-line="3" selection-end-column="134" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
