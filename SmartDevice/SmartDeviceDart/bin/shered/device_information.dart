@@ -1,8 +1,8 @@
 //  Save data about the device, is it remote or local, what pin/ip does it have
 
 class DeviceInformation {
-  final String _macAddress; // MacAddress of the device
-  final String _name; // Name of the device
+  final String _macAddress; //  MacAddress of the device
+  final String _name; //  Name of the device
   DeviceInformation(this._macAddress, this._name);
 
   //  Getters
