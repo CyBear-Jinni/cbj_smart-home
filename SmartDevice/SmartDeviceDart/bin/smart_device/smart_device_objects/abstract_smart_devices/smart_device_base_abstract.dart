@@ -105,7 +105,7 @@ abstract class SmartDeviceBaseAbstract {
     for (WishEnum possibleWish in WishEnum.values) {
       print('Wish value ' + EnumHelper.wishEnumToString(possibleWish));
       if (EnumHelper.wishEnumToString(possibleWish) == wish) {
-        return possibleWish; // If wish exist return the PossibleWish object
+        return possibleWish;  //  If wish exist return the PossibleWish object
       }
     }
     return null;
