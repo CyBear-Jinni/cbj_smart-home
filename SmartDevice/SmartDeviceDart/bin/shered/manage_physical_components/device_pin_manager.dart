@@ -71,7 +71,7 @@ class DevicePinListManager {
         .values) {
       if (EnumHelper.physicalDeviceTypeToString(physicalDeviceTypeTemp) ==
           physicalDeviceType) {
-        return physicalDeviceTypeTemp; //  If physicalDeviceType string exist return the physicalDeviceType enum object
+        return physicalDeviceTypeTemp;  //  If physicalDeviceType string exist return the physicalDeviceType enum object
       }
     }
     return null;
