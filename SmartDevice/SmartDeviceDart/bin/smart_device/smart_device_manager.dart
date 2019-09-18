@@ -27,8 +27,8 @@ class SmartDeviceManager {
   void setAllDevices() async {
     //  TODO: insert the pin number with class DevicePinListManager to check if pin is free to use and of the right type
     await smartDevicesList
-        .add(LightObject("30:23:a2:G3:34", "Guy silling light", 16));
-//        .add(LightObject("30:23:a2:G3:34", "Guy silling light", 16, onOffButtonPinNumber: 2));
+//        .add(LightObject("30:23:a2:G3:34", "Guy silling light", 16));
+        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 16, onOffButtonPinNumber: 2));
   }
 
 
