@@ -39,7 +39,7 @@ class CloudFireStore{
   Stream<Stream<Document>> listenToChangeOfDataInPath(String dataPath) async* {
     FirebaseAuth auth = FirebaseAuth(apiKey, VolatileStore());
     Firestore fireStore =
-    Firestore(projectId, auth: auth); // FireStore reuses the auth client
+    Firestore(projectId, auth: auth); //  FireStore reuses the auth client
 
     //  Monitor sign-in state
     auth.signInState.listen((state) { return print("Signed ${state ? "in" : "out"}");});

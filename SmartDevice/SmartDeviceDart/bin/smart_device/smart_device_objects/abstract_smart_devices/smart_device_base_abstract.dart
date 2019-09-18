@@ -59,7 +59,7 @@ abstract class SmartDeviceBaseAbstract {
   String getMacAddress() {
     Process.run('ls', ['-la']).then((ProcessResult result) {
       print(result.stdout);
-      return result.stdout; // This is mock mac address
+      return result.stdout; //  This is mock mac address
     });
     return null;
   }

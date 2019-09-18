@@ -25,8 +25,8 @@ class DynamicWish {
     return "Response open dynamic not supported yet";
   }
 
-// TODO: Open connection for fluid local dynamic value change
+//  TODO: Open connection for fluid local dynamic value change
 
-// TODO: Open connection for fluid remote dynamic value change
+//  TODO: Open connection for fluid remote dynamic value change
 
 }

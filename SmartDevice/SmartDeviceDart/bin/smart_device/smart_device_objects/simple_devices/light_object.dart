@@ -7,7 +7,7 @@ class LightObject extends SmartDeviceSimpleAbstract{
     print("New light object");
   }
 
-  // return smart device type
+  //  return smart device type
   @override
   DeviceType getDeviceType() => DeviceType.Light;
 
