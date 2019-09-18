@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <wiringPi.h>
 
-// LED Pin - wiringPi pin 0 is BCM_GPIO 17.
+//  LED Pin - wiringPi pin 0 is BCM_GPIO 17.
 
 int main (int argc, char const *argv[])
 {
 	printf("I am in\n");
 	int ledPin =  atoi(argv[1]);
-	wiringPiSetup () ;
-	pinMode (ledPin, OUTPUT) ;
-	digitalWrite (ledPin, LOW) ;  // On
+	wiringPiSetup ();
+	pinMode (ledPin, OUTPUT);
+	digitalWrite (ledPin, LOW); //  On
 	return 0 ;
 }
 
