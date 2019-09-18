@@ -1,6 +1,6 @@
 name: smart-home # you probably want to 'snapcraft register <name>'
 base: core18 # the base snap is the execution environment for this snap
-version: '0.1' # just for humans, typically '1.2+git' or '1.3.2'
+version: '0.2' # just for humans, typically '1.2+git' or '1.3.2'
 summary: Single-line elevator pitch for your amazing snap # 79 char long summary
 description: |
   This is my-snap's description. You have a paragraph or two to tell the
@@ -11,25 +11,17 @@ description: |
   #grade: stable # must be 'stable' to release into candidate/stable channels
   #confinement: strict # use 'strict' once you have the right plugs and slots
 
-
 grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode
-#confinement: classic
-architectures: [all]
-#architectures: [arm]
-#architectures:
-#  - build-on: armhf
-#    run-on: armhf
+#architectures: [all]
+
 parts:
   smart-home :
     plugin: dump
     source: .
     override-build: |
-      #wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.5.0/sdk/dartsdk-linux-arm64-release.zip  # For arm64
+      bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct architecture 
       
-      wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.5.0/sdk/dartsdk-linux-arm-release.zip  # For arm
-      # wget https://storage.googleapis.com/dart-archive/channels/stable/release/2.5.0/sdk/dartsdk-linux-x64-release.zip    # For linux intel 64
-      # sdk url: https://dart.dev/tools/sdk/archive
       unzip dartsdk-*.zip
       rm dartsdk-*.zip
       cd SmartDeviceDart
@@ -37,7 +29,7 @@ parts:
       cd ..
       dart-sdk/bin/dart2aot SmartDeviceDart/bin/main.dart main.aot
       
-      # rm -r SmartDeviceDart
+      rm -r SmartDeviceDart
 
       git clone https://github.com/friendlyarm/WiringNP
       cd WiringNP/
@@ -64,9 +56,6 @@ parts:
 
 apps:
   smart-home :
-    # command: dart-sdk/bin/dart $SNAP/SmartDeviceDart/bin/main.dart NanoPi_Duo2 # For dart file, $SNAP is the variable of location of the snap
-    # command: dart-sdk/bin/dartaotruntime $SNAP/main.aot NanoPi_Duo2 # For .aot file
-    command: dart-sdk/bin/dartaotruntime $SNAP/main.aot NanoPi_Duo2 $SNAP    # For nanoPiDuo2 file, Can also be nanoPiNeo, nanoPiNeo2
-    
+    command: dart-sdk/bin/dartaotruntime $SNAP/main.aot $SNAP    
     daemon: simple
     plugs: [network, network-bind, gpio, hardware-observe]
