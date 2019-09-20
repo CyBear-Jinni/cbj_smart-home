@@ -22,7 +22,7 @@ abstract class SmartDeviceBaseAbstract {
   DateTime
       activeTimeTotal;  //  How much time the smart device was active (Doing action) total
   Map<DateTime, Function>
-      activitiesLog;  //  log of all the actions the device was and will do
+      activitiesLog;  //  Log of all the actions the device was and will do
   bool onOff = false; //  Save the device state  on = true, off = false of onOffPin
   int onOffPin; //  Number of on or off pin
   int onOffButtonPin; //  Pin for the button that control the onOffPin
@@ -59,7 +59,7 @@ abstract class SmartDeviceBaseAbstract {
   String getMacAddress() {
     Process.run('ls', ['-la']).then((ProcessResult result) {
       print(result.stdout);
-      return result.stdout; // This is mock mac address
+      return result.stdout; //  This is mock mac address
     });
     return null;
   }
@@ -105,7 +105,7 @@ abstract class SmartDeviceBaseAbstract {
     for (WishEnum possibleWish in WishEnum.values) {
       print('Wish value ' + EnumHelper.wishEnumToString(possibleWish));
       if (EnumHelper.wishEnumToString(possibleWish) == wish) {
-        return possibleWish; // If wish exist return the PossibleWish object
+        return possibleWish;  //  If wish exist return the PossibleWish object
       }
     }
     return null;

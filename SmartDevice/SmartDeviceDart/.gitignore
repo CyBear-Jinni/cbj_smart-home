@@ -1,11 +1,22 @@
-# Files and directories created by pub
-.dart_tool/
+
+# Cache and build files
 .packages
-# Remove the following pattern if you wish to check in your lock file
-pubspec.lock
-
-# Conventional directory for build outputs
+.pub/
 build/
+ios/.generated/
+packages
+pubspec.lock
+.flutter-plugins
+.gradle
+.dart_tool
 
-# Directory created by dartdoc
-doc/api/
+# IDE local settings
+.atom/
+.idea
+.vscode/
+
+# Test token
+token.json
+
+# MacOS garbage
+.DS_Store
