@@ -22,7 +22,7 @@ abstract class SmartDeviceBaseAbstract {
   DateTime
       activeTimeTotal;  //  How much time the smart device was active (Doing action) total
   Map<DateTime, Function>
-      activitiesLog;  //  log of all the actions the device was and will do
+      activitiesLog;  //  Log of all the actions the device was and will do
   bool onOff = false; //  Save the device state  on = true, off = false of onOffPin
   int onOffPin; //  Number of on or off pin
   int onOffButtonPin; //  Pin for the button that control the onOffPin
