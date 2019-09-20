@@ -20,7 +20,7 @@ parts:
     plugin: dump
     source: .
     override-build: |
-      bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct architecture 
+      scripts/bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct architecture
       
       unzip dartsdk-*.zip
       rm dartsdk-*.zip
@@ -35,9 +35,9 @@ parts:
       cd WiringNP/
       chmod 755 build
       ./build
-      
       cd ..
-      cd cScripts/
+
+      cd scripts/cScripts/
 
       gcc -Wall -o turnOff turnOff.c -lwiringPi -lpthread
       rm turnOff.c
@@ -48,7 +48,7 @@ parts:
       gcc -Wall -o buttonPress buttonPress.c -lwiringPi -lpthread
       rm buttonPress.c
 
-      cd ..
+      cd ../..
 
       snapcraftctl build
   
