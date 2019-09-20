@@ -32,9 +32,9 @@ enum WishEnum {
 
 //  List of all physical devices types
 enum PhysicalDeviceType {
-  NanoPi_Duo2,
-  NanoPi_Neo,
-  NanoPi_Neo2
+  NanoPiDuo2,
+  NanoPiNeo,
+  NanoPiNeo2
 }
 
 class EnumHelper {
