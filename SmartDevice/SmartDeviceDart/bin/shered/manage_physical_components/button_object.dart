@@ -14,7 +14,7 @@ class ButtonObject {
     while (true) {
       try {
         await Process.run(
-            SharedVariables.getSnapPath() + '/cScripts/buttonPress', [buttonPinNumber.toString()])
+            SharedVariables.getSnapPath() + '/scripts/cScripts/buttonPress', [buttonPinNumber.toString()])
             .then((ProcessResult results) {
           print(results.stdout);
           if (smartDevice.onOff) {
