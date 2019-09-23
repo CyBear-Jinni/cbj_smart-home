@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import '../../smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart';
 import '../enums.dart';
 import '../shared_variables.dart';
@@ -15,20 +16,17 @@ class ButtonObject {
       while (true) {
         await Process.run(
             SharedVariables.getSnapPath() + '/scripts/cScripts/buttonPress',
-            [buttonPinNumber.toString()])
-            .then((ProcessResult results) {
+            [buttonPinNumber.toString()]).then((ProcessResult results) {
           print(results.stdout);
           if (smartDevice.onOff) {
             smartDevice.WishInBaseClass(WishEnum.SOff);
-          }
-          else {
+          } else {
             smartDevice.WishInBaseClass(WishEnum.SOn);
           }
         });
         await Future.delayed(const Duration(seconds: 1));
       }
-    }
-    catch (error) {
+    } catch (error) {
       print('Path/argument 1 is not specified');
       print('error: ' + error.toString());
     }

@@ -1,8 +1,8 @@
+class SharedVariables {
+  static String
+  _snapPath; //  Save the location of all the files that were created during the snapcraft
 
-class SharedVariables{
-  static String _snapPath;  //  Save the location of all the files that were created during the snapcraft
-
-  SharedVariables(String snapPath){
+  SharedVariables(String snapPath) {
     _snapPath = snapPath;
   }
 

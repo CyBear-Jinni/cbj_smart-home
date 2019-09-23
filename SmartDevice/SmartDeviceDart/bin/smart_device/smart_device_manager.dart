@@ -6,7 +6,7 @@ import 'smart_device_objects/simple_devices/light_object.dart';
 class SmartDeviceManager {
   List<SmartDeviceBaseAbstract> smartDevicesList;
 
-   SmartDeviceManager() {
+  SmartDeviceManager() {
     smartDevicesList = List<SmartDeviceBaseAbstract>();
 
     SmartDeviceMainAsync();
@@ -14,12 +14,11 @@ class SmartDeviceManager {
 
   Future SmartDeviceMainAsync() async {
     print(await getIps());
-    await setAllDevices();  //  Setting up all the device from the memory
+    await setAllDevices(); //  Setting up all the device from the memory
 
     listenToDataBase(); //  Listen to changes in the database for this device
 
-    waitForConnection();  //  Start listen for in incoming connections from the local internet (LAN/Wifi)
-
+    waitForConnection(); //  Start listen for in incoming connections from the local internet (LAN/Wifi)
   }
 
   //  TODO: Pull the saved devices into the app variables
@@ -28,21 +27,19 @@ class SmartDeviceManager {
     //  TODO: insert the pin number with class DevicePinListManager to check if pin is free to use and of the right type
     await smartDevicesList
 //        .add(LightObject("30:23:a2:G3:34", "Guy silling light", 16));
-        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 16, onOffButtonPinNumber: 2));
+        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 16,
+        onOffButtonPinNumber: 2));
   }
 
-
   //  Listen to changes in the database for this device
-  void listenToDataBase(){
+  void listenToDataBase() {
     CloudManager cloudManager = CloudManager(smartDevicesList[0]);
     cloudManager.listenToDataBase();
   }
 
   //  Listening to port and deciding what to do with the response
-  void waitForConnection()  {
+  void waitForConnection() {
     SmartServer smartServer = SmartServer(smartDevicesList);
     smartServer.startListen();
   }
-
-
 }

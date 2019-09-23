@@ -4,23 +4,26 @@ package SmartConnection;
 
 // The greeting service definition.
 service SmartServer {
-  // Sends a greeting
-  rpc GetStatus (SmartDevice) returns (SmartDeviceStatus) {}
-  rpc SetOnDevice (SmartDevice) returns (CommendStatus) {}
-  rpc SetOffDevice (SmartDevice) returns (CommendStatus) {}
+    // Sends a greeting
+    rpc GetStatus (SmartDevice) returns (SmartDeviceStatus) {
+    }
+    rpc SetOnDevice (SmartDevice) returns (CommendStatus) {
+    }
+    rpc SetOffDevice (SmartDevice) returns (CommendStatus) {
+    }
 }
 
 // The request message containing the user's name.
 message SmartDevice {
-  string name = 1;
+    string name = 1;
 }
 
 // The response message containing the greetings
 message SmartDeviceStatus {
-  bool onOffState = 2;
+    bool onOffState = 2;
 }
 
 // Did the commend succeeded (true) or not (false)
 message CommendStatus {
-  bool success = 3;
+    bool success = 3;
 }
