@@ -1,5 +1,5 @@
-import '../manage_physical_components/controlloling_pins.dart';
 import '../device_information.dart';
+import '../manage_physical_components/controlloling_pins.dart';
 
 //  Class to change wish on status to device
 class OnWish {
