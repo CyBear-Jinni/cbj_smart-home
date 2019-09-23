@@ -16,42 +16,36 @@ confinement: devmode
 #architectures: [all]
 
 parts:
-  smart-home :
+  smart-home:
     plugin: dump
     source: .
     override-build: |
-      scripts/bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct architecture
-      
-      unzip dartsdk-*.zip
-      rm dartsdk-*.zip
-      cd SmartDeviceDart
-      ../dart-sdk/bin/pub get --no-precompile
-      cd ..
-      dart-sdk/bin/dart2aot SmartDeviceDart/bin/main.dart main.aot
-      
-      rm -r SmartDeviceDart
-
       git clone https://github.com/friendlyarm/WiringNP
       cd WiringNP/
       chmod 755 build
       ./build
       cd ..
 
-      cd scripts/cScripts/
+      scripts/bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct architecture
 
-      gcc -Wall -o turnOff turnOff.c -lwiringPi -lpthread
-      rm turnOff.c
 
-      gcc -Wall -o turnOn turnOn.c -lwiringPi -lpthread
-      rm turnOn.c
-
-      gcc -Wall -o buttonPress buttonPress.c -lwiringPi -lpthread
-      rm buttonPress.c
-
+      cd scripts/bashScripts/
+      ./compileAllCFiles.sh   # Have to be executed when working directory is this file location
       cd ../..
 
+
+      unzip dartsdk-*.zip
+      rm dartsdk-*.zip
+      cd SmartDeviceDart
+      ../dart-sdk/bin/pub get --no-precompile
+      cd ..
+      dart-sdk/bin/dart2aot SmartDeviceDart/bin/main.dart main.aot
+
+      rm -r SmartDeviceDart
+
+
       snapcraftctl build
-  
+
     build-packages:
       - wget
       - unzip
@@ -60,7 +54,7 @@ parts:
       - make
 
 apps:
-  smart-home :
-    command: dart-sdk/bin/dartaotruntime $SNAP/main.aot $SNAP    
+  smart-home:
+    command: dart-sdk/bin/dartaotruntime $SNAP/main.aot $SNAP
     daemon: simple
     plugs: [network, network-bind, gpio, hardware-observe]

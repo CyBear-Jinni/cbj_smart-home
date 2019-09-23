@@ -1,13 +1,12 @@
 import 'dart:core';
 
-
 //  This class is abstract, it manage all the pins list types both what exist and what in use, getting pin number should be through here
 abstract class DeviceConfigurationBaseClass {
   //  Pins can be in multiple lists of types of pins at the same times but cannot be in multiple used pins list at the same time
 
   //  Pins types lists
-  List<int> gpioList; //  GPIO pins number to interact with the pin, GPIO pin can receive or output only 1 (electricity) or 0 (no electricity), those pins cannot detect in between.
-
+  List<int>
+  gpioList; //  GPIO pins number to interact with the pin, GPIO pin can receive or output only 1 (electricity) or 0 (no electricity), those pins cannot detect in between.
 
   //  Pins used types lists
   List<int> _gpioUsedPinsList = List<int>(); //  Save all the used pin numbers
@@ -43,18 +42,17 @@ abstract class DeviceConfigurationBaseClass {
     return pinNumber;
   }
 
-
   //  This device get pin number and return true if its exist on one of the lists of pins (can be different type of pin)
   bool isPinExistOnDevice(int pinNumber) {
-    if (gpioList.contains(pinNumber)){
+    if (gpioList.contains(pinNumber)) {
       return true;
     }
     return false;
   }
 
   //  Check if pin in use in another list type
-  bool isPinInUseByAnotherListType(int pinNumber){
-    if(_gpioUsedPinsList.contains(pinNumber)){
+  bool isPinInUseByAnotherListType(int pinNumber) {
+    if (_gpioUsedPinsList.contains(pinNumber)) {
       return true;
     }
     return false;
