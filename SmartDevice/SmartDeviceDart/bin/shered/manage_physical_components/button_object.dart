@@ -11,10 +11,11 @@ class ButtonObject {
   void buttonPressed() async {
     int buttonPinNumber = smartDevice.onOffButtonPin;
 
-    while (true) {
-      try {
+    try {
+      while (true) {
         await Process.run(
-            SharedVariables.getSnapPath() + '/scripts/cScripts/buttonPress', [buttonPinNumber.toString()])
+            SharedVariables.getSnapPath() + '/scripts/cScripts/buttonPress',
+            [buttonPinNumber.toString()])
             .then((ProcessResult results) {
           print(results.stdout);
           if (smartDevice.onOff) {
@@ -26,11 +27,10 @@ class ButtonObject {
         });
         await Future.delayed(const Duration(seconds: 1));
       }
-
-      catch (error) {
-        print('Path/argument 1 is not specified');
-        print('error: ' + error.toString());
-      }
+    }
+    catch (error) {
+      print('Path/argument 1 is not specified');
+      print('error: ' + error.toString());
     }
   }
 }

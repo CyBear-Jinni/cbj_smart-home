@@ -35,6 +35,10 @@ abstract class SmartDeviceBaseAbstract {
     //  If pin number was inserted and it exist than listen to button press
     if (onOffButtonPinNumber != null) {
       this.onOffButtonPin = AddPinToGpioPinList(onOffButtonPinNumber);
+
+      if (this.onOffButtonPin == null) {
+        throw ("Device physical pins layout are not suported");
+      }
       if(this.onOffButtonPin >= 0) {
         listenToButtonPressed();
       }
