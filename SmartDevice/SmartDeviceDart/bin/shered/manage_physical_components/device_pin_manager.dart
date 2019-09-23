@@ -60,7 +60,12 @@ class DevicePinListManager {
   }
 
   //  Ask for gpio pin, if free return the pin number, else return error number (negative numbers)
-  static int GetGpioPin(int pinNumber) => physicalDevice.GetGpioPin(pinNumber);
+  static int GetGpioPin(int pinNumber) {
+    if (physicalDevice == null) {
+      return null;
+    }
+    return physicalDevice.GetGpioPin(pinNumber);
+  }
 
   //  Return physicalDeviceType object if string physicalDeviceType exist (in general) else return null
   static PhysicalDeviceType ConvertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
