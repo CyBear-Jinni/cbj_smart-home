@@ -8,8 +8,9 @@ import '../enums.dart';
 import 'protoc_as_dart/smart_connection.pb.dart';
 import 'protoc_as_dart/smart_connection.pbgrpc.dart';
 
-class SmartServer extends SmartServerServiceBase{
+class SmartServer extends SmartServerServiceBase {
   List<SmartDeviceBaseAbstract> smartDevicesList;
+
   SmartServer(this.smartDevicesList);
 
   //  Listening in the background to incoming connections
@@ -21,32 +22,41 @@ class SmartServer extends SmartServerServiceBase{
 
   //  Return the status of the specified device
   @override
-  Future<SmartDeviceStatus> getStatus(ServiceCall call, SmartDevice request) async {
-    String deviceStatus = smartDevicesList[int.parse(request.name)].WishInBaseClass(WishEnum.GState);
-    print('Getting status of device ' + request.toString() + ' and device status in bool ' + deviceStatus);
-    return SmartDeviceStatus()..onOffState = deviceStatus == 'true' ? true: false;
+  Future<SmartDeviceStatus> getStatus(ServiceCall call,
+      SmartDevice request) async {
+    String deviceStatus = smartDevicesList[int.parse(request.name)]
+        .WishInBaseClass(WishEnum.GState);
+    print('Getting status of device ' +
+        request.toString() +
+        ' and device status in bool ' +
+        deviceStatus);
+    return SmartDeviceStatus()
+      ..onOffState = deviceStatus == 'true' ? true : false;
   }
 
   @override
-  Future<CommendStatus> setOffDevice(ServiceCall call, SmartDevice request) async {
+  Future<CommendStatus> setOffDevice(ServiceCall call,
+      SmartDevice request) async {
     print('Turn device ' + request.name + ' off');
-    SmartDeviceBaseAbstract smartDevice = smartDevicesList[int.parse(request.name)];
+    SmartDeviceBaseAbstract smartDevice =
+    smartDevicesList[int.parse(request.name)];
     smartDevice.WishInBaseClass(WishEnum.SOff);
     print('Device state is ' + smartDevice.onOff.toString());
     return CommendStatus()..success = smartDevice.onOff;
   }
 
   @override
-  Future<CommendStatus> setOnDevice(ServiceCall call, SmartDevice request) async {
+  Future<CommendStatus> setOnDevice(ServiceCall call,
+      SmartDevice request) async {
     print('Turn device ' + request.name + ' on');
-    SmartDeviceBaseAbstract smartDevice = smartDevicesList[int.parse(request.name)];
+    SmartDeviceBaseAbstract smartDevice =
+    smartDevicesList[int.parse(request.name)];
     smartDevice.WishInBaseClass(WishEnum.SOn);
     print('Device state is ' + smartDevice.onOff.toString());
 
     return CommendStatus()..success = smartDevice.onOff;
   }
 }
-
 
 //  Get Ip info
 Future<String> getIps() async {

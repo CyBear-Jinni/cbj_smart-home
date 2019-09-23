@@ -6,12 +6,12 @@ import '../shared_variables.dart';
 
 void PinOn(int pinNumber) async {
   try {
-    await Process.run(SharedVariables.getSnapPath() + '/scripts/cScripts/turnOn', [pinNumber.toString()])
-        .then((ProcessResult results) {
+    await Process.run(
+        SharedVariables.getSnapPath() + '/scripts/cScripts/turnOn',
+        [pinNumber.toString()]).then((ProcessResult results) {
       print(results.stdout);
     });
-  }
-  catch (error) {
+  } catch (error) {
     print('Path/argument 1 is not specified');
     print('error: ' + error.toString());
   }
@@ -19,12 +19,12 @@ void PinOn(int pinNumber) async {
 
 void pinOff(int pinNumber) async {
   try {
-    await Process.run(SharedVariables.getSnapPath() + '/scripts/cScripts/turnOff', [pinNumber.toString()])
-        .then((ProcessResult results) {
+    await Process.run(
+        SharedVariables.getSnapPath() + '/scripts/cScripts/turnOff',
+        [pinNumber.toString()]).then((ProcessResult results) {
       print(results.stdout);
     });
-  }
-  catch(error){
+  } catch (error) {
     print('Path/argument 1 is not specified');
     print('error: ' + error.toString());
   }
