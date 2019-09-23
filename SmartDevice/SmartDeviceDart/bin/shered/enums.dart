@@ -1,5 +1,5 @@
 enum DeviceType {
-  Light,  //  Light ON/OFF
+  Light, //  Light ON/OFF
   DynamicLight, //  Light with brightness 0% to 100%
   Blinds,
   Thermostat,
@@ -22,20 +22,16 @@ enum DeviceType {
 
 //  List of all the wishes that can be made
 enum WishEnum {
-  SOn,  //  Turn the device on
+  SOn, //  Turn the device on
   SOff, //  Turn the device off
   SDynamic, //  Set Dynamic Value
   ODynamic, //  Open connection to change dynamic value
-  SMovement,  //  Open connection to change dynamic value
-  GState  //  Get device state on/off
+  SMovement, //  Open connection to change dynamic value
+  GState //  Get device state on/off
 }
 
 //  List of all physical devices types
-enum PhysicalDeviceType {
-  NanoPiDuo2,
-  NanoPiNeo,
-  NanoPiNeo2
-}
+enum PhysicalDeviceType { NanoPiDuo2, NanoPiNeo, NanoPiNeo2 }
 
 class EnumHelper {
   //  Convert deviceType to string
@@ -52,6 +48,4 @@ class EnumHelper {
   static String physicalDeviceTypeToString(PhysicalDeviceType deviceType) {
     return deviceType.toString().replaceAll('PhysicalDeviceType.', '');
   }
-
 }
-
