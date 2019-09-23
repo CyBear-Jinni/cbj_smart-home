@@ -20,8 +20,20 @@ parts:
     plugin: dump
     source: .
     override-build: |
+      git clone https://github.com/friendlyarm/WiringNP
+      cd WiringNP/
+      chmod 755 build
+      ./build
+      cd ..
+      
       scripts/bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct architecture
       
+
+      cd scripts/bashScripts/
+      ./compileAllCFiles.sh   # Have to be executed when working directory is this file location
+      cd ../..
+
+
       unzip dartsdk-*.zip
       rm dartsdk-*.zip
       cd SmartDeviceDart
@@ -31,24 +43,6 @@ parts:
       
       rm -r SmartDeviceDart
 
-      git clone https://github.com/friendlyarm/WiringNP
-      cd WiringNP/
-      chmod 755 build
-      ./build
-      cd ..
-
-      cd scripts/cScripts/
-
-      gcc -Wall -o turnOff turnOff.c -lwiringPi -lpthread
-      rm turnOff.c
-
-      gcc -Wall -o turnOn turnOn.c -lwiringPi -lpthread
-      rm turnOn.c
-
-      gcc -Wall -o buttonPress buttonPress.c -lwiringPi -lpthread
-      rm buttonPress.c
-
-      cd ../..
 
       snapcraftctl build
   
