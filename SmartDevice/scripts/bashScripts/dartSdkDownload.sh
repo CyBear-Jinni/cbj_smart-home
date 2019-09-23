@@ -4,7 +4,7 @@ architecture="$(uname -p)"
 
 dartSdkPath="https://storage.googleapis.com/dart-archive/channels/stable/release/2.5.0/sdk/dartsdk-linux-"	#	Sdk url: https://dart.dev/tools/sdk/archive
 
-case $architecture in
+case ${architecture} in
 	( "arm" | "armv7l" )
 		wget "${dartSdkPath}arm-release.zip"	#	For arm
    	;; 

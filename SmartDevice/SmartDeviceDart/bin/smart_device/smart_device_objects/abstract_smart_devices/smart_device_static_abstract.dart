@@ -3,9 +3,10 @@ import 'smart_device_base_abstract.dart';
 
 //  Abstract class for devices with property of how much to move and without how much time the device is doing action without stopping
 abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
-
-  SmartDeviceStaticAbstract(macAddress, deviceName, onOffPinNumber, {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber, onOffButtonPinNumber: onOffButtonPinNumber);
-
+  SmartDeviceStaticAbstract(macAddress, deviceName, onOffPinNumber,
+      {onOffButtonPinNumber})
+      : super(macAddress, deviceName, onOffPinNumber,
+      onOffButtonPinNumber: onOffButtonPinNumber);
 
   //  TODO: set how much to move
   String _HowMuchToMove() {
@@ -17,20 +18,20 @@ abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
 //    onOff = false;
 //    return 'Turn on sucsessfuly';
   }
+
   //  All the wishes that are legit to execute from the static class
 
   @override
-  String ExecuteWish(String wishString){
+  String ExecuteWish(String wishString) {
     WishEnum wish = ConvertWishStringToWishesObject(wishString);
     print(wishString);
     print(wish.toString());
-    if(wish == null) return "Your wish does not exist on static class";
+    if (wish == null) return "Your wish does not exist on static class";
     return WishInStaticClass(wish);
   }
 
-
-  String WishInStaticClass(WishEnum wish){
-    switch (wish){
+  String WishInStaticClass(WishEnum wish) {
+    switch (wish) {
       case WishEnum.SMovement:
         return _HowMuchToMove();
       default:
