@@ -9,14 +9,13 @@ import 'devices_pin_configuration/nano_pi_neo_configuration.dart';
 //  This class save all the configuration of the pins per device, every device have different pin number for each task and this class will give the correct pin for the task.
 //  Also this class will manage unused pins for new connections and will return free pins number for the required task.
 
-
 //  Also this class manage the pins, and check if this pin is in the type that the user needs (gpio and more),
 //  If pin is not in use and in the correct type that user expect it return the number of the pin, else return -1
 class DevicePinListManager {
-
-  static PhysicalDeviceType physicalDeviceType; //  Will save the type of the current physical device
-  static DeviceConfigurationBaseClass physicalDevice; //  Will save the current physical device pin configuration
-
+  static PhysicalDeviceType
+  physicalDeviceType; //  Will save the type of the current physical device
+  static DeviceConfigurationBaseClass
+  physicalDevice; //  Will save the current physical device pin configuration
 
   Future SetPhysicalDeviceTypeByHostName() async {
     String deviceHostName = await GetDeviceHostName();
@@ -44,8 +43,7 @@ class DevicePinListManager {
           break;
         }
     }
-    if (physicalDeviceType == null) {
-    }
+    if (physicalDeviceType == null) {}
     print('This device is of type: ' +
         EnumHelper.physicalDeviceTypeToString(physicalDeviceType));
   }
@@ -53,7 +51,8 @@ class DevicePinListManager {
   static Future<String> GetDeviceHostName() async {
     return await Process.run('hostname', ["-s"]).then((ProcessResult result) {
       String hostName = result.stdout;
-      hostName = hostName.substring(0, hostName.length -1 );  //  Removes the invisible new line at the end
+      hostName = hostName.substring(
+          0, hostName.length - 1); //  Removes the invisible new line at the end
       print(hostName);
       return hostName;
     });
@@ -68,18 +67,17 @@ class DevicePinListManager {
   }
 
   //  Return physicalDeviceType object if string physicalDeviceType exist (in general) else return null
-  static PhysicalDeviceType ConvertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
+  static PhysicalDeviceType
+  ConvertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
       String physicalDeviceType) {
-
     //  Loop through all the physical devices types
-    for (PhysicalDeviceType physicalDeviceTypeTemp in PhysicalDeviceType
-        .values) {
+    for (PhysicalDeviceType physicalDeviceTypeTemp
+    in PhysicalDeviceType.values) {
       if (EnumHelper.physicalDeviceTypeToString(physicalDeviceTypeTemp) ==
           physicalDeviceType) {
-        return physicalDeviceTypeTemp;  //  If physicalDeviceType string exist return the physicalDeviceType enum object
+        return physicalDeviceTypeTemp; //  If physicalDeviceType string exist return the physicalDeviceType enum object
       }
     }
     return null;
   }
 }
-

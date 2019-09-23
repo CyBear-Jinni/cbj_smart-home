@@ -16,7 +16,7 @@ confinement: devmode
 #architectures: [all]
 
 parts:
-  smart-home :
+  smart-home:
     plugin: dump
     source: .
     override-build: |
@@ -25,9 +25,9 @@ parts:
       chmod 755 build
       ./build
       cd ..
-      
+
       scripts/bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct architecture
-      
+
 
       cd scripts/bashScripts/
       ./compileAllCFiles.sh   # Have to be executed when working directory is this file location
@@ -40,12 +40,12 @@ parts:
       ../dart-sdk/bin/pub get --no-precompile
       cd ..
       dart-sdk/bin/dart2aot SmartDeviceDart/bin/main.dart main.aot
-      
+
       rm -r SmartDeviceDart
 
 
       snapcraftctl build
-  
+
     build-packages:
       - wget
       - unzip
@@ -54,7 +54,7 @@ parts:
       - make
 
 apps:
-  smart-home :
-    command: dart-sdk/bin/dartaotruntime $SNAP/main.aot $SNAP    
+  smart-home:
+    command: dart-sdk/bin/dartaotruntime $SNAP/main.aot $SNAP
     daemon: simple
     plugs: [network, network-bind, gpio, hardware-observe]

@@ -6,6 +6,7 @@ import 'cloud_fire_store.dart';
 
 class DataBaseController {
   CloudFireStore _cloudFireStore;
+
   DataBaseController() {
     _cloudFireStore = CloudFireStore();
   }
@@ -21,7 +22,8 @@ class DataBaseController {
   }
 
   //  This method will return data each time that data will be changing in the database
-  Stream<Stream<Stream<Document>>> listenToChangeOfDataInPath(String dataPath) async* {
+  Stream<Stream<Stream<Document>>> listenToChangeOfDataInPath(
+      String dataPath) async* {
     yield _cloudFireStore.listenToChangeOfDataInPath(dataPath);
   }
 
@@ -32,8 +34,9 @@ class DataBaseController {
 
   Future<String> getValueOfLamp(Document document, String keyName) async {
 //    print("updated: $document");
-    String tempDocumentAsString =  document.toString();
-    String tempFields = tempDocumentAsString.substring(tempDocumentAsString.indexOf('{') +1, tempDocumentAsString.length -1);
+    String tempDocumentAsString = document.toString();
+    String tempFields = tempDocumentAsString.substring(
+        tempDocumentAsString.indexOf('{') + 1, tempDocumentAsString.length - 1);
     List<String> valuesAsList = tempFields.split(',');
     return await valuesAsList[0].split(': ')[1];
   }
