@@ -1,14 +1,11 @@
-
-
 //  This class save the state of each permission
 
-class Permission{
+class Permission {
   bool _read = false;
   bool _write = false;
   bool _execute = false;
 
   Permission(this._read, this._write, this._execute);
-
 
   //  Getters
   bool getRead() => this._read;
@@ -16,7 +13,6 @@ class Permission{
   bool getWrite() => this._write;
 
   bool getExecute() => this._execute;
-
 
   //  TODO: check if user have permissions to change permissions
   //  Setters

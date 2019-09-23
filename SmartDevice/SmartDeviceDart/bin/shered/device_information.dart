@@ -7,11 +7,12 @@ class DeviceInformation {
 
   //  Getters
   String GetMacAddress() => _macAddress;
+
   String GetName() => _name;
 }
 
 class RemoteDevice extends DeviceInformation {
-  String ip;  //  Ip of the device
+  String ip; //  Ip of the device
 
   RemoteDevice(String macAddress, String name, this.ip)
       : super(macAddress, name);
