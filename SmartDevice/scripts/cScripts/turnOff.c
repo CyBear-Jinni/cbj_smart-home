@@ -5,7 +5,6 @@
 
 int main (int argc, char const *argv[])
 {
-	printf("I am in\n");
 	int ledPin =  atoi(argv[1]);
 	wiringPiSetup ();
 	pinMode (ledPin, OUTPUT);

@@ -1,14 +1,15 @@
 import 'dart:io';
 
 import '../shared_variables.dart';
+import 'devices_pin_configuration/pin_information.dart';
 
 //  Function to start c script to interact with pins
 
-void PinOn(int pinNumber) async {
+void PinOn(PinInformation pinNumber) async {
   try {
     await Process.run(
         SharedVariables.getSnapPath() + '/scripts/cScripts/turnOn',
-        [pinNumber.toString()]).then((ProcessResult results) {
+        [pinNumber.wPi.toString()]).then((ProcessResult results) {
       print(results.stdout);
     });
   } catch (error) {
@@ -17,11 +18,11 @@ void PinOn(int pinNumber) async {
   }
 }
 
-void pinOff(int pinNumber) async {
+void pinOff(PinInformation pinNumber) async {
   try {
     await Process.run(
         SharedVariables.getSnapPath() + '/scripts/cScripts/turnOff',
-        [pinNumber.toString()]).then((ProcessResult results) {
+        [pinNumber.wPi.toString()]).then((ProcessResult results) {
       print(results.stdout);
     });
   } catch (error) {

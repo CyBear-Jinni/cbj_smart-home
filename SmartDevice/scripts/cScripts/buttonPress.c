@@ -3,7 +3,7 @@
 
 int main(int argc, char const *argv[])
 {
-	int buttonPin = atoi(argv[1]);;
+	int buttonPin = atoi(argv[1]);
 
 	if (wiringPiSetupPhys()  == -1)
 		exit (1) ;

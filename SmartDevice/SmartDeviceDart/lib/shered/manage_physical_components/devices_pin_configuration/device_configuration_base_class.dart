@@ -1,60 +1,79 @@
 import 'dart:core';
 
+import 'pin_information.dart';
+
 //  This class is abstract, it manage all the pins list types both what exist and what in use, getting pin number should be through here
 abstract class DeviceConfigurationBaseClass {
-  //  Pins can be in multiple lists of types of pins at the same times but cannot be in multiple used pins list at the same time
 
   //  Pins types lists
-  List<int>
-  gpioList; //  GPIO pins number to interact with the pin, GPIO pin can receive or output only 1 (electricity) or 0 (no electricity), those pins cannot detect in between.
-
-  //  Pins used types lists
-  List<int> _gpioUsedPinsList = List<int>(); //  Save all the used pin numbers
+  List<PinInformation> pinList; //  List of all the pins on the device
 
   //  Getters
 
-  List<int> GetGPIOList() => gpioList;
+  List<PinInformation> GetGPIOList() => pinList;
 
-  //  Get gpio pin number, if pin is gpio and free return the pin number, if pin does not exist return -1, if pin is not gpio pin return -2, if pin is in use as gpio return -3, if pin is not in use as gpio return -4
+  //  Get the gpio pin if not in used and set it to used, else return null
+  PinInformation GetGpioPin(int pinNumber) {
+    PinInformation pinInformation = getPinInformationByPinNumber(pinNumber);
 
-  int GetGpioPin(int pinNumber) {
-    //  If pin does not exist in all pin list return -1
-    if (!isPinExistOnDevice(pinNumber)) {
+    int isTheGpioPinFree = isGpioPinFree(pinNumber);
+
+    if (isTheGpioPinFree != 0) {
+      throw ("Cant use this pin " + pinNumber.toString() + " error code " +
+          isTheGpioPinFree.toString());
+    }
+
+    pinInformation.isInUse = true;
+
+    return pinInformation;
+  }
+
+  // Get PinInformation object that have pin number, if does not exist return null
+  PinInformation getPinInformationByPinNumber(int pinNumber) {
+    for (PinInformation pinInformation in pinList) {
+      if (pinInformation.pinAndPhysicalPinConfiguration == pinNumber) {
+        return pinInformation;
+      }
+    }
+    return null;
+  }
+
+
+  bool isPinGpio(PinInformation pinInformation) =>
+      isPinSpecificCategory(
+          pinInformation, "gpio") && isPinSpecificType(pinInformation, "gpio");
+
+  bool isPinSpecificCategory(PinInformation pinInformation,
+      String pinCategory) {
+    String pinCategoryLowerCase = pinCategory.toLowerCase();
+    return pinInformation.category.toLowerCase().contains(pinCategoryLowerCase);
+  }
+
+  bool isPinSpecificType(PinInformation pinInformation, String pinType) =>
+      pinInformation.name.toLowerCase().contains(pinType.toLowerCase());
+
+  //  Get gpio pin number, if pin is gpio and free return the pin number, if pin does not exist return -1, if pin is not gpio pin return -2, if pin is in use as gpio return -3
+  int isGpioPinFree(int pinNumber) {
+    PinInformation pinInformation = getPinInformationByPinNumber(pinNumber);
+
+    //  If pin does not exist return -1
+    if (pinInformation == null) {
       return -1;
     }
 
     //  If pin is not gpio pin return -2
-    if (!gpioList.contains(pinNumber)) {
+    if (!isPinGpio(pinInformation)) {
       return -2;
     }
 
+    print(pinList.toString());
+    print(pinInformation);
+    print(pinInformation.pinAndPhysicalPinConfiguration);
     //  If pin is already in use return -3
-    if (_gpioUsedPinsList.contains(pinNumber)) {
+    if (pinInformation.isInUse) {
       return -3;
     }
-    //  If pin is already in use by another pin type list return -4
-    if (isPinInUseByAnotherListType(pinNumber)) {
-      return -4;
-    }
 
-    _gpioUsedPinsList.add(pinNumber);
-
-    return pinNumber;
-  }
-
-  //  This device get pin number and return true if its exist on one of the lists of pins (can be different type of pin)
-  bool isPinExistOnDevice(int pinNumber) {
-    if (gpioList.contains(pinNumber)) {
-      return true;
-    }
-    return false;
-  }
-
-  //  Check if pin in use in another list type
-  bool isPinInUseByAnotherListType(int pinNumber) {
-    if (_gpioUsedPinsList.contains(pinNumber)) {
-      return true;
-    }
-    return false;
+    return 0;
   }
 }
