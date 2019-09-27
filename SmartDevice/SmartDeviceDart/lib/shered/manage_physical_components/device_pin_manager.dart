@@ -5,6 +5,7 @@ import 'devices_pin_configuration/device_configuration_base_class.dart';
 import 'devices_pin_configuration/nano_pi_duo2_configuration.dart';
 import 'devices_pin_configuration/nano_pi_neo2_configuration.dart';
 import 'devices_pin_configuration/nano_pi_neo_configuration.dart';
+import 'devices_pin_configuration/pin_information.dart';
 
 //  This class save all the configuration of the pins per device, every device have different pin number for each task and this class will give the correct pin for the task.
 //  Also this class will manage unused pins for new connections and will return free pins number for the required task.
@@ -59,11 +60,21 @@ class DevicePinListManager {
   }
 
   //  Ask for gpio pin, if free return the pin number, else return error number (negative numbers)
-  static int GetGpioPin(int pinNumber) {
+  static PinInformation GetGpioPin(int pinNumber) {
     if (physicalDevice == null) {
+      throw ("Error physical device is null");
+    }
+    try {
+      int isGpioFree = physicalDevice.isGpioPinFree(pinNumber);
+      if (isGpioFree != 0) {
+        return null;
+      }
+      return physicalDevice.GetGpioPin(pinNumber);
+    }
+    catch (e) {
+      print("This is the exeption: " + e.toString());
       return null;
     }
-    return physicalDevice.GetGpioPin(pinNumber);
   }
 
   //  Return physicalDeviceType object if string physicalDeviceType exist (in general) else return null
@@ -73,8 +84,9 @@ class DevicePinListManager {
     //  Loop through all the physical devices types
     for (PhysicalDeviceType physicalDeviceTypeTemp
     in PhysicalDeviceType.values) {
-      if (EnumHelper.physicalDeviceTypeToString(physicalDeviceTypeTemp) ==
-          physicalDeviceType) {
+      if (EnumHelper.physicalDeviceTypeToString(physicalDeviceTypeTemp)
+          .toLowerCase() ==
+          physicalDeviceType.toLowerCase()) {
         return physicalDeviceTypeTemp; //  If physicalDeviceType string exist return the physicalDeviceType enum object
       }
     }
