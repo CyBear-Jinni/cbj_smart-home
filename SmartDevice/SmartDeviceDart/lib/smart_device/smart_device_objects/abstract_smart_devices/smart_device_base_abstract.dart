@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:SmartDeviceDart/shered/manage_physical_components/devices_pin_configuration/pin_information.dart';
+
 import '../../../shered/device_information.dart';
 import '../../../shered/enums.dart';
 import '../../../shered/manage_physical_components/button_object.dart';
@@ -26,23 +28,21 @@ abstract class SmartDeviceBaseAbstract {
   activitiesLog; //  Log of all the actions the device was and will do
   bool onOff =
   false; //  Save the device state  on = true, off = false of onOffPin
-  int onOffPin; //  Number of on or off pin
-  int onOffButtonPin; //  Pin for the button that control the onOffPin
-  List<int> _gpioPinList =
-  List<int>(); //  Save all the gpio pins that this instance is using
+  PinInformation onOffPin; //  Number of on or off pin
+  PinInformation onOffButtonPin; //  Pin for the button that control the onOffPin
+  List<PinInformation> _gpioPinList = List<
+      PinInformation>(); //  Save all the gpio pins that this instance is using
 
   SmartDeviceBaseAbstract(this.macAddress, this.deviceName, int onOffPinNumber,
       {int onOffButtonPinNumber}) {
+
     this.onOffPin = AddPinToGpioPinList(onOffPinNumber);
 
     //  If pin number was inserted and it exist than listen to button press
     if (onOffButtonPinNumber != null) {
       this.onOffButtonPin = AddPinToGpioPinList(onOffButtonPinNumber);
 
-      if (this.onOffButtonPin == null) {
-        throw ("Device physical pins layout are not suported");
-      }
-      if (this.onOffButtonPin >= 0) {
+      if (this.onOffButtonPin != null) {
         listenToButtonPressed();
       }
     }
@@ -58,7 +58,7 @@ abstract class SmartDeviceBaseAbstract {
   }
 
   //  Get the list of gpio pin of the device
-  List<int> getGpioPinList() {
+  List<PinInformation> getGpioPinList() {
     return _gpioPinList;
   }
 
@@ -76,7 +76,7 @@ abstract class SmartDeviceBaseAbstract {
   //  Setters
 
   //  Turn on the device basic action
-  String _SetOn(int pinNumber) {
+  String _SetOn(PinInformation pinNumber) {
 //    if (deviceInformation == null) {
 //      return 'Device information is missing, cant trun on';
 //    }
@@ -86,7 +86,7 @@ abstract class SmartDeviceBaseAbstract {
   }
 
   //  Turn off the device basic action
-  String _SetOff(int pinNumber) {
+  String _SetOff(PinInformation pinNumber) {
 //    if (deviceInformation == null) {
 //      return 'Device information is missing, cant trun off';
 //    }
@@ -98,11 +98,14 @@ abstract class SmartDeviceBaseAbstract {
   //  More functions
 
   //  Add gpio pin for this device
-  int AddPinToGpioPinList(int pinNumber) {
-    //  Check if pin is free to be taken and reserve it not to be used again, return negative number with number of the error
-    int pinStatus = DevicePinListManager.GetGpioPin(pinNumber);
-    _gpioPinList.add(pinStatus);
-    return pinStatus;
+  PinInformation AddPinToGpioPinList(int pinNumber) {
+    //  Check if pin is free to be taken, if not return negative number with error number
+    PinInformation gpioPin = DevicePinListManager.GetGpioPin(pinNumber);
+    if (gpioPin == null) {
+      return null;
+    }
+    _gpioPinList.add(gpioPin);
+    return gpioPin;
   }
 
   //  Return PossibleWishes object if string wish exist (in general) else return null
@@ -128,12 +131,12 @@ abstract class SmartDeviceBaseAbstract {
 
     switch (wish) {
       case WishEnum.SOff:
-        if (onOffPin < 0 || onOffPin == null) {
+        if (onOffPin == null) {
           return 'Cant turn off this pin: ' + onOffPin.toString() + ' Number';
         }
         return _SetOff(onOffPin);
       case WishEnum.SOn:
-        if (onOffPin < 0 || onOffPin == null) {
+        if (onOffPin == null) {
           return 'Cant turn off this pin: ' + onOffPin.toString() + ' Number';
         }
         return _SetOn(onOffPin);
