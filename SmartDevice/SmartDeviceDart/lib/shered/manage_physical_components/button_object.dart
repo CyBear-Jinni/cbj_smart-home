@@ -16,13 +16,10 @@ class ButtonObject {
 
     try {
       while (true) {
-        print("This is buttonPinNumber.wPi.toString()]: " +
-            buttonPinNumber.wPi.toString());
         int returnValue = await Process.run(
             SharedVariables.getSnapPath() + '/scripts/cScripts/buttonPress',
-            ["2", buttonPinNumber.wPi.toString()]).then((
+            [buttonPinNumber.pinAndPhysicalPinConfiguration.toString()]).then((
             ProcessResult results) {
-          print("Before the error " + buttonPinNumber.wPi.toString());
           if (results.stdout
               .toString()
               .length == 96) {

@@ -66,9 +66,6 @@ abstract class DeviceConfigurationBaseClass {
       return -2;
     }
 
-    print(pinList.toString());
-    print(pinInformation);
-    print(pinInformation.pinAndPhysicalPinConfiguration);
     //  If pin is already in use return -3
     if (pinInformation.isInUse) {
       return -3;

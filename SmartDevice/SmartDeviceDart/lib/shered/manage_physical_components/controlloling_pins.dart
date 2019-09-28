@@ -7,9 +7,12 @@ import 'devices_pin_configuration/pin_information.dart';
 
 void PinOn(PinInformation pinNumber) async {
   try {
+    print("This is the pin number on " +
+        pinNumber.pinAndPhysicalPinConfiguration.toString());
     await Process.run(
         SharedVariables.getSnapPath() + '/scripts/cScripts/turnOn',
-        [pinNumber.wPi.toString()]).then((ProcessResult results) {
+        [pinNumber.pinAndPhysicalPinConfiguration.toString()]).then((
+        ProcessResult results) {
       print(results.stdout);
     });
   } catch (error) {
@@ -20,9 +23,12 @@ void PinOn(PinInformation pinNumber) async {
 
 void pinOff(PinInformation pinNumber) async {
   try {
+    print("This is the pin number off:  " +
+        pinNumber.pinAndPhysicalPinConfiguration.toString());
     await Process.run(
         SharedVariables.getSnapPath() + '/scripts/cScripts/turnOff',
-        [pinNumber.wPi.toString()]).then((ProcessResult results) {
+        [pinNumber.pinAndPhysicalPinConfiguration.toString()]).then((
+        ProcessResult results) {
       print(results.stdout);
     });
   } catch (error) {
