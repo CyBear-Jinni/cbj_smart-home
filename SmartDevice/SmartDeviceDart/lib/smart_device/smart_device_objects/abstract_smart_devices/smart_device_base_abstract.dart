@@ -78,7 +78,7 @@ abstract class SmartDeviceBaseAbstract {
   //  Turn on the device basic action
   String _SetOn(PinInformation pinNumber) {
 //    if (deviceInformation == null) {
-//      return 'Device information is missing, cant trun on';
+//      return 'Device information is missing, cant turn on';
 //    }
     OnWish.SetOn(deviceInformation, pinNumber);
     onOff = true;
@@ -149,6 +149,6 @@ abstract class SmartDeviceBaseAbstract {
 
   //  Listen to button press
   void listenToButtonPressed() async {
-    ButtonObject(this).buttonPressed();
+    ButtonObject(this).buttonPressed(onOffButtonPin, onOffPin);
   }
 }

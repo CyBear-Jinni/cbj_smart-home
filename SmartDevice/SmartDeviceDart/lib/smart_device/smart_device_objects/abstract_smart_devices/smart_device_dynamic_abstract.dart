@@ -7,8 +7,7 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
   double dynamicValue; //  Save how much power to do for action
 
   SmartDeviceDynamicAbstract(macAddress, deviceName, onOffPinNumber,
-      {onOffButtonPinNumber})
-      : super(macAddress, deviceName, onOffPinNumber,
+      {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber);
 
   @override

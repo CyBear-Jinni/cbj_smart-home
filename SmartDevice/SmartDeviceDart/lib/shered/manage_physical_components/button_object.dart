@@ -1,18 +1,20 @@
 import 'dart:io';
 
+import 'package:SmartDeviceDart/shered/wish_classes/off_wish.dart';
+import 'package:SmartDeviceDart/shered/wish_classes/on_wish.dart';
+
 import '../../smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart';
-import '../enums.dart';
 import '../shared_variables.dart';
 import 'devices_pin_configuration/pin_information.dart';
 
 class ButtonObject {
   SmartDeviceBaseAbstract smartDevice;
+  int errorCounter = 0;
 
   ButtonObject(this.smartDevice);
 
-  int errorCounter = 0;
-  void buttonPressed() async {
-    PinInformation buttonPinNumber = smartDevice.onOffButtonPin;
+  void buttonPressed(PinInformation buttonPinNumber,
+      PinInformation lightPin) async {
 
     try {
       while (true) {
@@ -25,10 +27,12 @@ class ButtonObject {
               .length == 96) {
             return -1;
           }
-          if (smartDevice.onOff) {
-            smartDevice.WishInBaseClass(WishEnum.SOff);
+          if (lightPin.v == 1) {
+            OffWish.SetOff(smartDevice.deviceInformation, lightPin);
+            lightPin.v = 0;
           } else {
-            smartDevice.WishInBaseClass(WishEnum.SOn);
+            OnWish.SetOn(smartDevice.deviceInformation, lightPin);
+            lightPin.v = 1;
           }
           return 0;
         });

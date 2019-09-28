@@ -4,8 +4,7 @@ import 'smart_device_base_abstract.dart';
 //  Abstract class for devices with property of how much to move and without how much time the device is doing action without stopping
 abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
   SmartDeviceStaticAbstract(macAddress, deviceName, onOffPinNumber,
-      {onOffButtonPinNumber})
-      : super(macAddress, deviceName, onOffPinNumber,
+      {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber);
 
   //  TODO: set how much to move

@@ -28,7 +28,7 @@ class SmartDeviceManager {
     await smartDevicesList
 //        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 11));
         .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 11,
-        onOffButtonPinNumber: 2)); // NanoPi Duo2
+        onOffButtonPinNumber: 16)); // NanoPi Duo2
 //        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 7));  // NanoPi Deo2
   }
 
