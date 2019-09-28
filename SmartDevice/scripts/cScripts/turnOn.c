@@ -5,12 +5,15 @@
 
 int main (int argc, char const *argv[])
 {
-  int ledPin = atoi(argv[1]);
-  wiringPiSetup ();
-  pinMode (ledPin, OUTPUT);
-  digitalWrite (ledPin, HIGH);  //  On
+    int ledPin = atoi(argv[1]);
 
-  return 0 ;
+    if (wiringPiSetupPhys()  == -1)
+        exit (1) ;
+
+    pinMode (ledPin, OUTPUT);
+    digitalWrite (ledPin, HIGH);  //  Turn pin on
+
+    return 0 ;
 }
 
 
