@@ -6,11 +6,9 @@ abstract class SmartDeviceSimpleAbstract extends SmartDeviceBaseAbstract {
   double
   howMuchTimeTheDeviceDoingAction; //  How much time the smart device was active (Doing action) continuously
 
-  SmartDeviceSimpleAbstract(String macAddress, String deviceName,
-      int onOffPinNumber,
-      {onOffButtonPinNumber})
-      : super(macAddress, deviceName, onOffPinNumber,
-      onOffButtonPinNumber: onOffButtonPinNumber);
+  SmartDeviceSimpleAbstract(macAddress, deviceName,
+      onOffPinNumber, {onOffButtonPinNumber}) : super(macAddress, deviceName,
+      onOffPinNumber, onOffButtonPinNumber: onOffButtonPinNumber);
 
   @override
   String ExecuteWish(String wishString) {
