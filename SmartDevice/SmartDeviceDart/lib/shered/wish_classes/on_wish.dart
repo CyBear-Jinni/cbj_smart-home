@@ -7,6 +7,7 @@ import '../manage_physical_components/controlloling_pins.dart';
 class OnWish {
   static String SetOn(DeviceInformation deviceInformation,
       PinInformation pinNumber) {
+    pinNumber.v = 1;
     switch (deviceInformation.runtimeType) {
       case LocalDevice:
         return SetOnLocal(deviceInformation, pinNumber);

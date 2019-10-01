@@ -88,7 +88,7 @@ abstract class SmartDeviceBaseAbstract {
   //  Turn off the device basic action
   String _SetOff(PinInformation pinNumber) {
 //    if (deviceInformation == null) {
-//      return 'Device information is missing, cant trun off';
+//      return 'Device information is missing, cant turn off';
 //    }
     OffWish.SetOff(deviceInformation, pinNumber);
     onOff = false;
@@ -100,7 +100,7 @@ abstract class SmartDeviceBaseAbstract {
   //  Add gpio pin for this device
   PinInformation AddPinToGpioPinList(int pinNumber) {
     //  Check if pin is free to be taken, if not return negative number with error number
-    PinInformation gpioPin = DevicePinListManager.GetGpioPin(pinNumber);
+    PinInformation gpioPin = DevicePinListManager.GetGpioPin(this, pinNumber);
     if (gpioPin == null) {
       return null;
     }
@@ -149,6 +149,6 @@ abstract class SmartDeviceBaseAbstract {
 
   //  Listen to button press
   void listenToButtonPressed() async {
-    ButtonObject(this).buttonPressed(onOffButtonPin, onOffPin);
+    ButtonObject().buttonPressed(this, onOffButtonPin, onOffPin);
   }
 }

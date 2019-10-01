@@ -6,6 +6,7 @@ import '../manage_physical_components/controlloling_pins.dart';
 class OffWish {
   static String SetOff(DeviceInformation deviceInformation,
       PinInformation pinNumber) {
+    pinNumber.v = 0;
     switch (deviceInformation.runtimeType) {
       case LocalDevice:
         return SetOffLocal(deviceInformation, pinNumber);
