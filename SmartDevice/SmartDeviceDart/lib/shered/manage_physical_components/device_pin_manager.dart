@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import 'package:SmartDeviceDart/shered/wish_classes/off_wish.dart';
+import 'package:SmartDeviceDart/smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart';
+
 import '../enums.dart';
 import 'devices_pin_configuration/device_configuration_base_class.dart';
 import 'devices_pin_configuration/nano_pi_duo2_configuration.dart';
@@ -60,16 +63,21 @@ class DevicePinListManager {
   }
 
   //  Ask for gpio pin, if free return the pin number, else return error number (negative numbers)
-  static PinInformation GetGpioPin(int pinNumber) {
+  static PinInformation GetGpioPin(SmartDeviceBaseAbstract smartDevice,
+      int pinNumber) {
     if (physicalDevice == null) {
-      throw ("Error physical device is null");
+      print("Error physical device is null");
+      return null;
     }
     try {
       int isGpioFree = physicalDevice.isGpioPinFree(pinNumber);
       if (isGpioFree != 0) {
         return null;
       }
-      return physicalDevice.GetGpioPin(pinNumber);
+
+      PinInformation pinInformation = physicalDevice.GetGpioPin(pinNumber);
+      OffWish.SetOff(smartDevice.deviceInformation, pinInformation);
+      return pinInformation;
     }
     catch (e) {
       print("This is the exeption: " + e.toString());
