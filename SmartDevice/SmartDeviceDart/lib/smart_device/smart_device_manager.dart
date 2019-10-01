@@ -1,7 +1,8 @@
+import 'package:SmartDeviceDart/smart_device/smart_device_objects/static_devices/blinds_object.dart';
+
 import '../shered/data_base/cloud_manager.dart';
 import '../shered/server/smart_server.dart';
 import 'smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart';
-import 'smart_device_objects/simple_devices/light_object.dart';
 
 class SmartDeviceManager {
   List<SmartDeviceBaseAbstract> smartDevicesList;
@@ -14,6 +15,7 @@ class SmartDeviceManager {
 
   Future SmartDeviceMainAsync() async {
     print(await getIps());
+
     await setAllDevices(); //  Setting up all the device from the memory
 
     listenToDataBase(); //  Listen to changes in the database for this device
@@ -27,9 +29,18 @@ class SmartDeviceManager {
     //  TODO: insert the pin number with class DevicePinListManager to check if pin is free to use and of the right type
     await smartDevicesList
 //        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 11));
-        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 11,
-        onOffButtonPinNumber: 16)); // NanoPi Duo2
+//        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 11,
+//        onOffButtonPinNumber: 16)); // NanoPi Duo2
 //        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 7));  // NanoPi Deo2
+        .add(BlindsObject(
+        "30:23:a2:G3:34",
+        "Guy ceiling light",
+        null,
+        null,
+        16,
+        11,
+        24,
+        7)); // NanoPi Duo2
   }
 
   //  Listen to changes in the database for this device
@@ -40,6 +51,7 @@ class SmartDeviceManager {
 
   //  Listening to port and deciding what to do with the response
   void waitForConnection() {
+    print("Wait for connection");
     SmartServer smartServer = SmartServer(smartDevicesList);
     smartServer.startListen();
   }
