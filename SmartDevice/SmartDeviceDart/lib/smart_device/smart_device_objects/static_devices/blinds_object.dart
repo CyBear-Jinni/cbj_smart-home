@@ -1,6 +1,8 @@
+import 'package:SmartDeviceDart/shered/enums.dart';
 import 'package:SmartDeviceDart/shered/manage_physical_components/button_object.dart';
 import 'package:SmartDeviceDart/shered/manage_physical_components/device_pin_manager.dart';
 import 'package:SmartDeviceDart/shered/manage_physical_components/devices_pin_configuration/pin_information.dart';
+import 'package:SmartDeviceDart/shered/wish_classes/blinds_wish.dart';
 
 import '../abstract_smart_devices/smart_device_static_abstract.dart';
 
@@ -21,6 +23,21 @@ class BlindsObject extends SmartDeviceStaticAbstract {
     listenToTwoButtonsPress();
   }
 
+  @override
+  String ExecuteWish(String wishString) {
+    WishEnum wish = ConvertWishStringToWishesObject(wishString);
+    return WishInBlindsClass(wish);
+  }
+
+  //  All the wishes that are legit to execute from the blinds class
+  String WishInBlindsClass(WishEnum wish) {
+    if (wish == null) return "Your wish does not exist in blinds class";
+    if (wish == WishEnum.blindsUp) return BlindsWish.BlindsUp(this);
+    if (wish == WishEnum.blindsDown) return BlindsWish.BlindsDown(this);
+    if (wish == WishEnum.blindsStop) return BlindsWish.BlindsStop(this);
+
+    return WishInStaticClass(wish);
+  }
 
   void listenToTwoButtonsPress() {
     if (buttonPinUp != null && buttonPinDown != null &&

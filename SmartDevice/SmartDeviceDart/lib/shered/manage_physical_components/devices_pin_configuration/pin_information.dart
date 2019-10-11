@@ -15,6 +15,7 @@ class PinInformation {
   int bcmOrLinuxGpio; //  Examples: 12, 11, 203
   int wPi; //  Pin configuration in the library WiringNP, Examples: 8, 9, 7
   int pinAndPhysicalPinConfiguration; //  Examples: 3, 5, 7
+  double onDuration; //  Value of -1 is on forever
 
   PinInformation({
     this.isInUse,
@@ -32,5 +33,6 @@ class PinInformation {
       this.wPi,
       this.pinAndPhysicalPinConfiguration}) {
     this.isInUse = this.isInUse == null ? false : this.isInUse;
+    onDuration = 0;
   }
 }
