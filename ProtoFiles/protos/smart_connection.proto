@@ -11,6 +11,12 @@ service SmartServer {
     }
     rpc SetOffDevice (SmartDevice) returns (CommendStatus) {
     }
+    rpc setBlindsUp (SmartDevice) returns (CommendStatus) {
+    }
+    rpc setBlindsDown (SmartDevice) returns (CommendStatus) {
+    }
+    rpc setBlindsStop (SmartDevice) returns (CommendStatus) {
+    }
 }
 
 // The request message containing the user's name.
