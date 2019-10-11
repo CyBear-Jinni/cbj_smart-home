@@ -46,33 +46,23 @@ class ButtonObject {
       PinInformation firstButtonPinNumber, PinInformation firstLightPin,
       PinInformation secondButtonPinNumber, PinInformation secondLightPin) async
   {
-    ButtonPressedStateClass buttonPressedState = ButtonPressedStateClass();
 
     listenToButtonPressAndDoAction(smartDevice, firstButtonPinNumber,
-        firstLightPin, secondLightPin, buttonPressedState, 1);
+        firstLightPin, secondLightPin, 1);
 
     listenToButtonPressAndDoAction(smartDevice, secondButtonPinNumber,
-        firstLightPin, secondLightPin, buttonPressedState, 2);
+        firstLightPin, secondLightPin, 2);
   }
 
   void listenToButtonPressAndDoAction(SmartDeviceBaseAbstract smartDevice,
-      PinInformation firstButtonPinNumber, PinInformation firstLightPin,
-      PinInformation secondLightPin,
-      ButtonPressedStateClass buttonPressedStateClass, int buttonNumber) async {
+      PinInformation buttonPinNumber, PinInformation firstLightPin,
+      PinInformation secondLightPin, int buttonNumber) async {
     while (true) {
-      await listenToButtonPress(firstButtonPinNumber).then((
+      await listenToButtonPress(buttonPinNumber).then((
           int exitCode) async {
-        if (buttonNumber == 1) {
-          buttonPressedStateClass.firstButtonPressedState =
-          !buttonPressedStateClass.firstButtonPressedState;
-        }
-        else if (buttonNumber == 2) {
-          buttonPressedStateClass.secondButtonPressedState =
-          !buttonPressedStateClass.secondButtonPressedState;
-        }
         await changePinsOutput(
             smartDevice, firstLightPin, secondLightPin,
-            buttonPressedStateClass);
+            buttonNumber);
       });
     }
   }
@@ -96,37 +86,31 @@ class ButtonObject {
   Future changePinsOutput(SmartDeviceBaseAbstract smartDevice,
       PinInformation firstLightPin,
       PinInformation secondLightPin,
-      ButtonPressedStateClass buttonPressedStateClass) async {
-    bool firstButtonPressedState = buttonPressedStateClass
-        .firstButtonPressedState;
-    bool secondButtonPressedState = buttonPressedStateClass
-        .secondButtonPressedState;
-
-    if (firstButtonPressedState && secondButtonPressedState ||
-        !firstButtonPressedState && !secondButtonPressedState) {
-      buttonPressedStateClass.firstButtonPressedState = false;
-      buttonPressedStateClass.secondButtonPressedState = false;
-
+      int buttonPressNumber) async {
+    if (firstLightPin.v == 1 || secondLightPin.v == 1) {
+      firstLightPin.onDuration = 0;
       OffWish.SetOff(smartDevice.deviceInformation, firstLightPin);
 
+      secondLightPin.onDuration = 0;
       OffWish.SetOff(smartDevice.deviceInformation, secondLightPin);
     }
-    else if (firstButtonPressedState) {
-      if (firstLightPin.v == 0) {
-        OnWish.SetOn(smartDevice.deviceInformation, firstLightPin);
-      }
+
+    else if (buttonPressNumber == 1) {
+      secondLightPin.onDuration = 0;
+      OffWish.SetOff(smartDevice.deviceInformation, secondLightPin);
+
+      firstLightPin.onDuration = -1;
+      OnWish.SetOn(smartDevice.deviceInformation, firstLightPin);
     }
-    else if (secondButtonPressedState) {
-      if (secondLightPin.v == 0) {
-        OnWish.SetOn(smartDevice.deviceInformation, secondLightPin);
-      }
+
+    else if (buttonPressNumber == 2) {
+      firstLightPin.onDuration = 0;
+      OffWish.SetOff(smartDevice.deviceInformation, firstLightPin);
+
+      secondLightPin.onDuration = -1;
+      OnWish.SetOn(smartDevice.deviceInformation, secondLightPin);
     }
 
     await Future.delayed(const Duration(seconds: 1));
   }
-}
-
-class ButtonPressedStateClass {
-  bool firstButtonPressedState = false;
-  bool secondButtonPressedState = false;
 }

@@ -37,7 +37,7 @@ class OffWish {
 //        print(response.transform(Utf8Decoder()).listen(print));
 //      });
 //    } catch (e) {
-//      print('Exeption: ' + e);
+//      print('Exception: ' + e);
 //    }
     return 'Response from remote device off sucsessful';
   }
