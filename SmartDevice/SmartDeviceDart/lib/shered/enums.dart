@@ -27,7 +27,10 @@ enum WishEnum {
   SDynamic, //  Set Dynamic Value
   ODynamic, //  Open connection to change dynamic value
   SMovement, //  Open connection to change dynamic value
-  GState //  Get device state on/off
+  GState, //  Get device state on/off
+  blindsUp, //  Turn the blinds up
+  blindsDown, //  Turn the blinds Down
+  blindsStop //  Stop the blinds
 }
 
 //  List of all physical devices types

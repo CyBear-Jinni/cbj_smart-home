@@ -35,12 +35,12 @@ class SmartDeviceManager {
         .add(BlindsObject(
         "30:23:a2:G3:34",
         "Guy ceiling light",
-        null,
-        null,
-        16,
+        9,
         11,
-        24,
-        7)); // NanoPi Duo2
+        14,
+        8,
+        12,
+        10)); // NanoPi Duo2
   }
 
   //  Listen to changes in the database for this device

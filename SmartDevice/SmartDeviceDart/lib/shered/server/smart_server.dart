@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:SmartDeviceDart/smart_device/smart_device_objects/static_devices/blinds_object.dart';
 import 'package:grpc/grpc.dart';
 
 import '../../smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart';
@@ -24,8 +25,10 @@ class SmartServer extends SmartServerServiceBase {
   @override
   Future<SmartDeviceStatus> getStatus(ServiceCall call,
       SmartDevice request) async {
-    String deviceStatus = smartDevicesList[int.parse(request.name)]
-        .WishInBaseClass(WishEnum.GState);
+    SmartDeviceBaseAbstract smartDevice = smartDevicesList[int.parse(
+        request.name)];
+    String deviceStatus = smartDevice.WishInBaseClass(WishEnum.GState);
+
     print('Getting status of device ' +
         request.toString() +
         ' and device status in bool ' +
@@ -39,8 +42,8 @@ class SmartServer extends SmartServerServiceBase {
       SmartDevice request) async {
     print('Turn device ' + request.name + ' off');
     SmartDeviceBaseAbstract smartDevice =
-    smartDevicesList[int.parse(request.name)];
-    smartDevice.WishInBaseClass(WishEnum.SOff);
+    getSmartDeviceBaseAbstract(request);
+    String deviceStatus = smartDevice.WishInBaseClass(WishEnum.SOff);
     print('Device state is ' + smartDevice.onOff.toString());
     return CommendStatus()..success = smartDevice.onOff;
   }
@@ -49,14 +52,54 @@ class SmartServer extends SmartServerServiceBase {
   Future<CommendStatus> setOnDevice(ServiceCall call,
       SmartDevice request) async {
     print('Turn device ' + request.name + ' on');
-    SmartDeviceBaseAbstract smartDevice =
-    smartDevicesList[int.parse(request.name)];
-    smartDevice.WishInBaseClass(WishEnum.SOn);
+    SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
+    String deviceStatus = smartDevice.WishInBaseClass(WishEnum.SOn);
     print('Device state is ' + smartDevice.onOff.toString());
 
     return CommendStatus()..success = smartDevice.onOff;
   }
+
+  @override
+  Future<CommendStatus> setBlindsUp(ServiceCall call,
+      SmartDevice request) async {
+    print('Turn blinds ' + request.name + ' up');
+    SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
+    BlindsObject blindsObject = smartDevice as BlindsObject;
+    String deviceStatus = blindsObject.WishInBlindsClass(WishEnum.blindsUp);
+
+    return await CommendStatus()
+      ..success;
+  }
+
+  @override
+  Future<CommendStatus> setBlindsDown(ServiceCall call,
+      SmartDevice request) async {
+    print('Turn blinds ' + request.name + ' down');
+    SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
+    BlindsObject blindsObject = smartDevice as BlindsObject;
+    String deviceStatus = blindsObject.WishInBlindsClass(WishEnum.blindsDown);
+
+    return await CommendStatus()
+      ..success;
+  }
+
+  @override
+  Future<CommendStatus> setBlindsStop(ServiceCall call,
+      SmartDevice request) async {
+    print('Turn blinds ' + request.name + ' stop');
+    SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
+    BlindsObject blindsObject = smartDevice as BlindsObject;
+    String deviceStatus = blindsObject.WishInBlindsClass(WishEnum.blindsStop);
+
+    return await CommendStatus()
+      ..success;
+  }
+
+  SmartDeviceBaseAbstract getSmartDeviceBaseAbstract(SmartDevice request) =>
+      smartDevicesList[int.parse(request.name)];
 }
+
+  
 
 //  Get Ip info
 Future<String> getIps() async {
