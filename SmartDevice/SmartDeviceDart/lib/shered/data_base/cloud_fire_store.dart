@@ -43,29 +43,35 @@ class CloudFireStore {
     });
 
     //  Sign in with user credentials
-    await auth.signIn(email, password);
+    try {
+      await auth.signIn(email, password);
 
-    //  Get user object
-    User user = await auth.getUser();
-    print(user);
+      //  Get user object
+      User user = await auth.getUser();
+      print(user);
 
-    //  Instantiate a reference to a document - this happens offline
-    DocumentReference ref = fireStore.document(dataPath);
+      //  Instantiate a reference to a document - this happens offline
+      DocumentReference ref = fireStore.document(dataPath);
 
-    //  Subscribe to changes to that document
-    yield ref.subscribe();
+      //  Subscribe to changes to that document
+      yield ref.subscribe();
 
 //
 //    //  Update the document
 //    await ref.update({"value": "test"});
 //
 //    //  Get a snapshot of the document
-    Document document = await ref.get();
+      Document document = await ref.get();
 
 //    print("snapshot: ${document["value"]}");
 
-    auth.signOut();
+      auth.signOut();
+    }
+    catch (error) {
+      print("Can't reach server, error: " + error.toString());
+    }
   }
+
 
 //  Helper methods
 //  DocumentReference transferStringToPath(String pathString){
