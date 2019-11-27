@@ -1,6 +1,6 @@
 // This class is where all the program start after the main file
 
-import 'dart:io';
+import 'package:NetworkManagerDart/network_actions.dart';
 
 class Director {
   Director() {
@@ -8,22 +8,24 @@ class Director {
   }
 
   Future NetworkActionsMainAsync() async {
-    try {
-      await HttpServer.bind(InternetAddress, 4044).then((var a) {
-        print('sad');
-      });
-    } catch (e, s) {
-      print(s);
-    }
+
     print('next');
-    ManegeNetworkConnection();
 
     createServer();
     connectToDatabase();
+
+    await ManegeNetworkConnection();
+
+
   }
 
-  //  This function start the object to manege the state of the device network connection
-  void ManegeNetworkConnection() {}
+  //  This function starts the object to manege the state of the device network connection
+  void ManegeNetworkConnection() {
+    NetworkActions networkActions = NetworkActions();
+    networkActions.getAvailableNetworksList();
+//    networkActions.isConnectedToTheInternet();
+    print("Go to sleep");
+  }
 
   // This function connect to the data base
   void connectToDatabase() {}
