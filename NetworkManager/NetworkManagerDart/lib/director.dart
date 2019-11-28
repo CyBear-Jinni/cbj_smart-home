@@ -1,7 +1,6 @@
+import 'network_actions.dart';
+
 // This class is where all the program start after the main file
-
-import 'package:NetworkManagerDart/network_actions.dart';
-
 class Director {
   Director() {
     NetworkActionsMainAsync();

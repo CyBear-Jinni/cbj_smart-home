@@ -2,8 +2,8 @@
 
 import 'dart:async';
 import 'dart:io';
-
 import 'package:data_connection_checker/data_connection_checker.dart';
+import 'package:unicode/unicode.dart' as unicode;
 
 class NetworkActions {
 
@@ -63,9 +63,44 @@ class NetworkActions {
     return false;
   }
 
+  //  Return list of available networks to the device
   Future<List<String>> getAvailableNetworksList() async {
     return await Process.run('nmcli',
-        ['dev' + 'wifi']).then((ProcessResult results) {
+        ['-t', '-f', 'ssid', 'dev', 'wifi']).then((ProcessResult results) {
+      print('By by here');
+      String r = results.stdout.toString()[14];
+      print(unicode.toRune(r));
+//      print(unicode.isOtherSymbol(r).toString());
+      if(r == " "){
+        print('good');
+      }
+      else{
+        print("not good");
+      }
+      List<String> wifi_results =
+      results.stdout.toString().split(r);
+      wifi_results.forEach((f){print("This is f:" + f);});
+//      print(wifi_results.toString());
+      return wifi_results;
+    });
+  }
+
+  //  Return list of available networks to the device
+  Future<List<String>> getAvailableNetworksList2() async {
+    return await Process.run('nmcli',
+        ['dev', 'wifi']).then((ProcessResult results) {
+      print(results.stdout.toString());
+      print('By by here');
+      List<String> wifi_results = List();
+      wifi_results.add('asd');
+      return wifi_results;
+    });
+  }
+
+  //  Check if connected to network, if true than return network name
+  Future<List<String>> getConnectedNetworkName() async {
+    return await Process.run('iwgetid',
+        ['-r']).then((ProcessResult results) {
       print(results.stdout.toString());
       print('By by here');
       List<String> wifi_results = List();
