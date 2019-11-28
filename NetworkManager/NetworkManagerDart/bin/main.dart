@@ -1,4 +1,4 @@
-import 'package:NetworkManagerDart/director.dart';
+import '../lib/director.dart';
 
 main(List<String> arguments) async {
   print("helllow");
