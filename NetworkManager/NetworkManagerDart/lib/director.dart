@@ -19,9 +19,11 @@ class Director {
   }
 
   //  This function starts the object to manege the state of the device network connection
-  void ManegeNetworkConnection() {
+  Future ManegeNetworkConnection() async {
     NetworkActions networkActions = NetworkActions();
-    networkActions.getAvailableNetworksList();
+    await networkActions.connectToAdminWhenExist('AndroidAP_6194', '7f1ee6787744');
+//    await networkActions.connectToAdminWiFi(ssid : 'AndroidAP_6194', pass: '7f1ee6787744');
+//    await networkActions.connectToAdminWiFi(ssid : '***REMOVED***', pass: '***REMOVED***');
 //    networkActions.isConnectedToTheInternet();
     print("Go to sleep");
   }
