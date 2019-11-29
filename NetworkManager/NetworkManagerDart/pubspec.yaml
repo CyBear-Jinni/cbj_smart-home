@@ -10,7 +10,6 @@ environment:
 dependencies:
   firedart: ^0.6.1
   data_connection_checker: ^0.3.4
-  unicode: ^0.2.2
 
 
 dev_dependencies:
