@@ -2,6 +2,7 @@
 
 import 'dart:async';
 import 'dart:io';
+
 import 'package:data_connection_checker/data_connection_checker.dart';
 
 class NetworkActions {
@@ -56,14 +57,15 @@ class NetworkActions {
       }
       await Future.delayed(
           const Duration(seconds: 15)); // Wait to check if internet is back
+      connectedWifiName = await getConnectedNetworkName();
     }
   }
 
   //  This function check if there is wifi with the name that it got, if true it will try to connect to it with the password that it got
   Future connectToAdminWiFi({String ssid="ho", String pass = "123"}) async {
-    String conectingResult = await connectToWiFi(ssid, pass);
+    String connectingResult = await connectToWiFi(ssid, pass);
     print('This is connection result');
-    print(conectingResult);
+    print(connectingResult);
 
   }
 
@@ -119,12 +121,11 @@ class NetworkActions {
     });
   }
 
-  //  Check if connected to network, if true than return network name
+  //  Check if connected to network, if there is a connection than return network name
   Future<String> getConnectedNetworkName() async {
     return await Process.run('iwgetid',
         ['-r']).then((ProcessResult results) {
       print(results.stdout.toString());
-
       return results.stdout.toString().replaceAll('\n', '');
     });
   }
