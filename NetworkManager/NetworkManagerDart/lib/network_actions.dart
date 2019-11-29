@@ -3,7 +3,6 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:data_connection_checker/data_connection_checker.dart';
-import 'package:unicode/unicode.dart' as unicode;
 
 class NetworkActions {
 
@@ -42,6 +41,50 @@ class NetworkActions {
     });
   }
 
+  //  Check to see if admin wifi exist and try to connect to it
+  Future<void> connectToAdminWhenExist(String ssid, String pass) async {
+    var connectedWifiName = await getConnectedNetworkName();
+    while(true) {
+      while (connectedWifiName != ssid &&
+          !(await getAvailableNetworksList()).contains(ssid)) {
+        await Future.delayed(
+            const Duration(seconds: 15)); // Wait to check if internet is back
+        connectedWifiName = await getConnectedNetworkName();
+      }
+      if (connectedWifiName != ssid) {
+        await connectToAdminWiFi(ssid: ssid, pass: pass);
+      }
+      await Future.delayed(
+          const Duration(seconds: 15)); // Wait to check if internet is back
+    }
+  }
+
+  //  This function check if there is wifi with the name that it got, if true it will try to connect to it with the password that it got
+  Future connectToAdminWiFi({String ssid="ho", String pass = "123"}) async {
+    String conectingResult = await connectToWiFi(ssid, pass);
+    print('This is connection result');
+    print(conectingResult);
+
+  }
+
+  //  Connect to the wi-fi
+  Future<String> connectToWiFi(String ssid, String pass) async{
+       return await Process.run('nmcli',
+          ['dev', 'wifi', 'connect', ssid, 'password', pass]).then((ProcessResult results) {
+        print(results.stdout.toString());
+        return results.stdout.toString();
+      });
+
+//      or
+      //  Require root
+      return await Process.run('iwconfig',
+          ['wlp3s0', 'essid', ssid, 'key', pass]).then((ProcessResult results) {
+        print(results.stdout.toString());
+        return results.stdout.toString();
+      });
+
+  }
+
   //  This function return the new value of the internet connection status only if it changed from last time
   Stream<DataConnectionStatus> returnStatusIfChanged() {
     return DataConnectionChecker().onStatusChange;
@@ -67,45 +110,22 @@ class NetworkActions {
   Future<List<String>> getAvailableNetworksList() async {
     return await Process.run('nmcli',
         ['-t', '-f', 'ssid', 'dev', 'wifi']).then((ProcessResult results) {
-      print('By by here');
-      String r = results.stdout.toString()[14];
-      print(unicode.toRune(r));
-//      print(unicode.isOtherSymbol(r).toString());
-      if(r == " "){
-        print('good');
-      }
-      else{
-        print("not good");
-      }
       List<String> wifi_results =
-      results.stdout.toString().split(r);
+      results.stdout.toString().split("\n");
       wifi_results.forEach((f){print("This is f:" + f);});
+      wifi_results = wifi_results.sublist(0, wifi_results.length -1);
 //      print(wifi_results.toString());
       return wifi_results;
     });
   }
 
-  //  Return list of available networks to the device
-  Future<List<String>> getAvailableNetworksList2() async {
-    return await Process.run('nmcli',
-        ['dev', 'wifi']).then((ProcessResult results) {
-      print(results.stdout.toString());
-      print('By by here');
-      List<String> wifi_results = List();
-      wifi_results.add('asd');
-      return wifi_results;
-    });
-  }
-
   //  Check if connected to network, if true than return network name
-  Future<List<String>> getConnectedNetworkName() async {
+  Future<String> getConnectedNetworkName() async {
     return await Process.run('iwgetid',
         ['-r']).then((ProcessResult results) {
       print(results.stdout.toString());
-      print('By by here');
-      List<String> wifi_results = List();
-      wifi_results.add('asd');
-      return wifi_results;
+
+      return results.stdout.toString().replaceAll('\n', '');
     });
   }
 }
