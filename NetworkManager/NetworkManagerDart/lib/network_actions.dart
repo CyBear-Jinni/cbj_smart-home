@@ -52,6 +52,7 @@ class NetworkActions {
         connectedWifiName = await getConnectedNetworkName();
       }
       if (connectedWifiName != ssid) {
+        print('Connecting to admin wi-fi');
         await connectToAdminWiFi(ssid: ssid, pass: pass);
       }
       await Future.delayed(
@@ -112,8 +113,8 @@ class NetworkActions {
         ['-t', '-f', 'ssid', 'dev', 'wifi']).then((ProcessResult results) {
       List<String> wifi_results =
       results.stdout.toString().split("\n");
+      wifi_results = wifi_results.sublist(0, wifi_results.length - 1);
       wifi_results.forEach((f){print("This is f:" + f);});
-      wifi_results = wifi_results.sublist(0, wifi_results.length -1);
 //      print(wifi_results.toString());
       return wifi_results;
     });
@@ -127,5 +128,12 @@ class NetworkActions {
 
       return results.stdout.toString().replaceAll('\n', '');
     });
+//    return await Process.run('nmcli',
+//        ['-t', '-f', 'ssid,In-USE', 'dev', 'wifi'
+//        ]).then((ProcessResult results) {
+//      print(results.stdout.toString());
+//
+//      return results.stdout.toString().replaceAll('\n', '');
+//    });
   }
 }
