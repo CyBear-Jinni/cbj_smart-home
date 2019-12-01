@@ -32,7 +32,7 @@ class NetworkActions {
         }
 
         //  TODO: Get the available networks
-        await getAvailableNetworksList();
+        await getAvailableNetworksList("s");
         //  TODO: Keep until the admin wi-fi founded
         //  TODO: Check in between if connection returned with processLocation var
         //  TODO: Connect to admin wi-fi
@@ -45,9 +45,9 @@ class NetworkActions {
   //  Check to see if admin wifi exist and try to connect to it
   Future<void> connectToAdminWhenExist(String ssid, String pass) async {
     var connectedWifiName = await getConnectedNetworkName();
-    while(true) {
+    while (true) {
       while (connectedWifiName != ssid &&
-          !(await getAvailableNetworksList()).contains(ssid)) {
+          !(await getAvailableNetworksList("s")).contains(ssid)) {
         await Future.delayed(
             const Duration(seconds: 15)); // Wait to check if internet is back
         connectedWifiName = await getConnectedNetworkName();
@@ -63,29 +63,28 @@ class NetworkActions {
   }
 
   //  This function check if there is wifi with the name that it got, if true it will try to connect to it with the password that it got
-  Future connectToAdminWiFi({String ssid="ho", String pass = "123"}) async {
+  Future connectToAdminWiFi({String ssid = "ho", String pass = "123"}) async {
     String connectingResult = await connectToWiFi(ssid, pass);
     print('This is connection result');
     print(connectingResult);
-
   }
 
   //  Connect to the wi-fi
-  Future<String> connectToWiFi(String ssid, String pass) async{
-       return await Process.run('nmcli',
-          ['dev', 'wifi', 'connect', ssid, 'password', pass]).then((ProcessResult results) {
-        print(results.stdout.toString());
-        return results.stdout.toString();
-      });
+  Future<String> connectToWiFi(String ssid, String pass) async {
+    return await Process.run('nmcli',
+        ['dev', 'wifi', 'connect', ssid, 'password', pass]).then((
+        ProcessResult results) {
+      print(results.stdout.toString());
+      return results.stdout.toString();
+    });
 
 //      or
-      //  Require root
-      return await Process.run('iwconfig',
-          ['wlp3s0', 'essid', ssid, 'key', pass]).then((ProcessResult results) {
-        print(results.stdout.toString());
-        return results.stdout.toString();
-      });
-
+    //  Require root
+    return await Process.run('iwconfig',
+        ['wlp3s0', 'essid', ssid, 'key', pass]).then((ProcessResult results) {
+      print(results.stdout.toString());
+      return results.stdout.toString();
+    });
   }
 
   //  This function return the new value of the internet connection status only if it changed from last time
@@ -110,15 +109,26 @@ class NetworkActions {
   }
 
   //  Return list of available networks to the device
-  Future<List<String>> getAvailableNetworksList() async {
-    return await Process.run('nmcli',
-        ['-t', '-f', 'ssid', 'dev', 'wifi']).then((ProcessResult results) {
-      List<String> wifi_results =
-      results.stdout.toString().split("\n");
-      wifi_results = wifi_results.sublist(0, wifi_results.length - 1);
-      wifi_results.forEach((f){print("This is f:" + f);});
-//      print(wifi_results.toString());
-      return wifi_results;
+  Future<List<String>> getAvailableNetworksList(String getSnapPath) async {
+//    return await Process.run('nmcli',
+//        ['-t', '-f', 'ssid', 'dev', 'wifi']).then((ProcessResult results) {
+//      List<String> wifi_results =
+//      results.stdout.toString().split("\n");
+//      wifi_results = wifi_results.sublist(0, wifi_results.length - 1);
+//      wifi_results.forEach((f) {
+//        print("This is f:" + f);
+//      });
+////      print(wifi_results.toString());
+//      return wifi_results;
+//    });
+
+    return await Process.run(
+        getSnapPath + '/scripts/bashScripts/nmcliScript.sh',
+        []).then((ProcessResult results) {
+      print(results.stdout);
+      List<String> stringList = List<String>();
+      stringList.add(results.stdout.toString());
+      return stringList;
     });
   }
 
@@ -137,4 +147,13 @@ class NetworkActions {
 //      return results.stdout.toString().replaceAll('\n', '');
 //    });
   }
+
+  Future<String> startNetworkManager() async {
+    return await Process.run('NetworkManager',
+        ['start']).then((ProcessResult results) {
+      print(results.stdout.toString());
+      return results.stdout.toString();
+    });
+  }
+
 }
