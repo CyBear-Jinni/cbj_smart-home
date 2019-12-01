@@ -2,7 +2,9 @@ import 'network_actions.dart';
 
 // This class is where all the program start after the main file
 class Director {
-  Director() {
+  String snapPath;
+
+  Director(this.snapPath) {
     NetworkActionsMainAsync();
   }
 
@@ -21,7 +23,9 @@ class Director {
   //  This function starts the object to manege the state of the device network connection
   Future ManegeNetworkConnection() async {
     NetworkActions networkActions = NetworkActions();
-    await networkActions.connectToAdminWhenExist('AndroidAP_6194', '7f1ee6787744');
+    await networkActions.startNetworkManager();
+    await networkActions.getAvailableNetworksList(snapPath);
+//    await networkActions.connectToAdminWhenExist('AndroidAP_6194', '7f1ee6787744');
 //    await networkActions.connectToAdminWiFi(ssid : 'AndroidAP_6194', pass: '7f1ee6787744');
 //    await networkActions.connectToAdminWiFi(ssid : '***REMOVED***', pass: '***REMOVED***');
 //    networkActions.isConnectedToTheInternet();
