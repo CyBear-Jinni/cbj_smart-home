@@ -2,5 +2,6 @@ import '../lib/director.dart';
 
 main(List<String> arguments) async {
   print("helllow");
-  Director director = Director();
+  String snapPath = arguments[0];
+  Director director = Director(snapPath);
 }
