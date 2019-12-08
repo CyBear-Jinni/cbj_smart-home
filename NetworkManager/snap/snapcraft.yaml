@@ -22,13 +22,7 @@ parts:
     override-build: |
       scripts/bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct architecture
 
-      cd scripts/bashScripts/
-      ./compileAllCFiles.sh   # Have to be executed when working directory is this file location
-      cd ../..
-
-
       unzip dartsdk-*.zip
-
 
       cd NetworkManagerDart
       ../dart-sdk/bin/pub get --no-precompile
