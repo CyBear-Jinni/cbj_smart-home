@@ -31,7 +31,7 @@ class NetworkActions {
         }
 
         //  TODO: Get the available networks
-        await getAvailableNetworksList("s");
+        await getAvailableNetworksList();
         //  TODO: Keep until the admin wi-fi founded
         //  TODO: Check in between if connection returned with processLocation var
         //  TODO: Connect to admin wi-fi
@@ -46,7 +46,7 @@ class NetworkActions {
     var connectedWifiName = await getConnectedNetworkName();
     while (true) {
       while (connectedWifiName != ssid &&
-          !(await getAvailableNetworksList("s")).contains(ssid)) {
+          !(await getAvailableNetworksList()).contains(ssid)) {
         await Future.delayed(
             const Duration(seconds: 15)); // Wait to check if internet is back
         connectedWifiName = await getConnectedNetworkName();
@@ -109,19 +109,19 @@ class NetworkActions {
   }
 
   //  Return list of available networks to the device
-  Future<List<String>> getAvailableNetworksList(String getSnapPath) async {
+  Future<List<String>> getAvailableNetworksList() async {
 //    Not Working with snap from apt
-//    return await Process.run('nmcli',
-//        ['-t', '-f', 'ssid', 'dev', 'wifi']).then((ProcessResult results) {
-//      List<String> wifi_results =
-//      results.stdout.toString().split("\n");
-//      wifi_results = wifi_results.sublist(0, wifi_results.length - 1);
-//      wifi_results.forEach((f) {
-//        print("This is f:" + f);
-//      });
-////      print(wifi_results.toString());
-//      return wifi_results;
-//    });
+    return await Process.run('nmcli',
+        ['-t', '-f', 'ssid', 'dev', 'wifi']).then((ProcessResult results) {
+      List<String> wifi_results =
+      results.stdout.toString().split("\n");
+      wifi_results = wifi_results.sublist(0, wifi_results.length - 1);
+      wifi_results.forEach((f) {
+        print("This is f:" + f);
+      });
+      print(wifi_results.toString());
+      return wifi_results;
+    });
   }
 
   //  Check if connected to network, if there is a connection than return network name
