@@ -1,10 +1,9 @@
-//  Network action class used for controlling the program in the different network status
-
 import 'dart:async';
 import 'dart:io';
 
 import 'package:data_connection_checker/data_connection_checker.dart';
 
+//  Network action class used for controlling the program in the different network status
 class NetworkActions {
 
   //  This function starts the connection to the requested wi-fi if the internet connection is down
@@ -71,6 +70,7 @@ class NetworkActions {
 
   //  Connect to the wi-fi
   Future<String> connectToWiFi(String ssid, String pass) async {
+//    Not Working with snap from apt
     return await Process.run('nmcli',
         ['dev', 'wifi', 'connect', ssid, 'password', pass]).then((
         ProcessResult results) {
@@ -110,6 +110,7 @@ class NetworkActions {
 
   //  Return list of available networks to the device
   Future<List<String>> getAvailableNetworksList(String getSnapPath) async {
+//    Not Working with snap from apt
 //    return await Process.run('nmcli',
 //        ['-t', '-f', 'ssid', 'dev', 'wifi']).then((ProcessResult results) {
 //      List<String> wifi_results =
@@ -121,15 +122,6 @@ class NetworkActions {
 ////      print(wifi_results.toString());
 //      return wifi_results;
 //    });
-
-    return await Process.run(
-        getSnapPath + '/scripts/bashScripts/nmcliScript.sh',
-        []).then((ProcessResult results) {
-      print(results.stdout);
-      List<String> stringList = List<String>();
-      stringList.add(results.stdout.toString());
-      return stringList;
-    });
   }
 
   //  Check if connected to network, if there is a connection than return network name
@@ -139,6 +131,8 @@ class NetworkActions {
       print(results.stdout.toString());
       return results.stdout.toString().replaceAll('\n', '');
     });
+
+//    Not Working with snap from apt
 //    return await Process.run('nmcli',
 //        ['-t', '-f', 'ssid,In-USE', 'dev', 'wifi'
 //        ]).then((ProcessResult results) {
@@ -147,13 +141,4 @@ class NetworkActions {
 //      return results.stdout.toString().replaceAll('\n', '');
 //    });
   }
-
-  Future<String> startNetworkManager() async {
-    return await Process.run('NetworkManager',
-        ['start']).then((ProcessResult results) {
-      print(results.stdout.toString());
-      return results.stdout.toString();
-    });
-  }
-
 }
