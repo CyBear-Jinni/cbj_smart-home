@@ -2,9 +2,11 @@ import '../../smart_device/smart_device_objects/abstract_smart_devices/smart_dev
 import '../enums.dart';
 import 'data_base_controller.dart';
 
+
 class CloudManager {
   String dataPath = "smartDevices/guyRoom";
   SmartDeviceBaseAbstract smartDevice;
+
 
   CloudManager(this.smartDevice);
 

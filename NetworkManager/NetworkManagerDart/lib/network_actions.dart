@@ -61,7 +61,7 @@ class NetworkActions {
     }
   }
 
-  //  This function check if there is wifi with the name that it got, if true it will try to connect to it with the password that it got
+  //  This function check if there is Wi-Fi with the name that it got, if true it will try to connect to it with the password that it got
   Future connectToAdminWiFi({String ssid = "ho", String pass = "123"}) async {
     String connectingResult = await connectToWiFi(ssid, pass);
     print('This is connection result');
@@ -72,7 +72,7 @@ class NetworkActions {
   Future<String> connectToWiFi(String ssid, String pass) async {
 //    Not Working with snap from apt
     return await Process.run('nmcli',
-        ['dev', 'wifi', 'connect', ssid, 'password', pass]).then((
+        ['dev', 'wifi', 'connect', ssid, 'password', pass]).then((  //  sudo nmcli dev wifi connect ssid password pass
         ProcessResult results) {
       print(results.stdout.toString());
       return results.stdout.toString();
@@ -91,6 +91,7 @@ class NetworkActions {
   Stream<DataConnectionStatus> returnStatusIfChanged() {
     return DataConnectionChecker().onStatusChange;
   }
+
 
   Future<bool> isConnectedToInternet() async {
     return connectionStatusToBool(
@@ -112,7 +113,7 @@ class NetworkActions {
   Future<List<String>> getAvailableNetworksList() async {
 //    Not Working with snap from apt
     return await Process.run('nmcli',
-        ['-t', '-f', 'ssid', 'dev', 'wifi']).then((ProcessResult results) {
+        ['-t', '-f', 'ssid', 'dev', 'wifi']).then((ProcessResult results) { //  nmcli -t -f ssid dev wifi
       List<String> wifi_results =
       results.stdout.toString().split("\n");
       wifi_results = wifi_results.sublist(0, wifi_results.length - 1);
