@@ -7,11 +7,14 @@ import 'package:SmartDeviceDart/shered/wish_classes/blinds_wish.dart';
 import '../abstract_smart_devices/smart_device_static_abstract.dart';
 
 class BlindsObject extends SmartDeviceStaticAbstract {
+
+
   PinInformation buttonPinUp, blindsUpPin, buttonPinDown, blindsDownPin;
 
+
   BlindsObject(macAddress, deviceName, onOffPinNumber,
-      onOffButtonPinNumber, int upButtonPinNumber,
-      int blindsUpPin, int downButtonPinNumber, int blindsDownPin)
+      onOffButtonPinNumber,
+      int blindsUpPin, int upButtonPinNumber, int blindsDownPin, int downButtonPinNumber)
       : super(macAddress, deviceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber) {
     this.buttonPinUp = DevicePinListManager.GetGpioPin(this, upButtonPinNumber);
@@ -22,6 +25,7 @@ class BlindsObject extends SmartDeviceStaticAbstract {
     this.blindsDownPin = DevicePinListManager.GetGpioPin(this, blindsDownPin);
     listenToTwoButtonsPress();
   }
+
 
   @override
   String ExecuteWish(String wishString) {
@@ -38,6 +42,7 @@ class BlindsObject extends SmartDeviceStaticAbstract {
 
     return WishInStaticClass(wish);
   }
+
 
   void listenToTwoButtonsPress() {
     if (buttonPinUp != null && buttonPinDown != null &&

@@ -4,11 +4,12 @@ import 'pin_information.dart';
 
 //  This class is abstract, it manage all the pins list types both what exist and what in use, getting pin number should be through here
 abstract class DeviceConfigurationBaseClass {
-
   //  Pins types lists
   List<PinInformation> pinList; //  List of all the pins on the device
 
+
   //  Getters
+
 
   List<PinInformation> GetGPIOList() => pinList;
 
@@ -43,11 +44,13 @@ abstract class DeviceConfigurationBaseClass {
       isPinSpecificCategory(
           pinInformation, "gpio") && isPinSpecificType(pinInformation, "gpio");
 
+
   bool isPinSpecificCategory(PinInformation pinInformation,
       String pinCategory) {
     String pinCategoryLowerCase = pinCategory.toLowerCase();
     return pinInformation.category.toLowerCase().contains(pinCategoryLowerCase);
   }
+
 
   bool isPinSpecificType(PinInformation pinInformation, String pinType) =>
       pinInformation.name.toLowerCase().contains(pinType.toLowerCase());
