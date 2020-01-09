@@ -1,5 +1,6 @@
-//  This class will save all the information that we have about pin
 
+
+//  These class will save all the information that we have about pin
 class PinInformation {
   bool isInUse = false; //  Save the state of the pin, used or free to be taken
   String category; //  Category/spec of the pins, Examples: GPIO, USB/Audio/IR, Audio, Debug Port（UART0）
@@ -16,6 +17,7 @@ class PinInformation {
   int wPi; //  Pin configuration in the library WiringNP, Examples: 8, 9, 7
   int pinAndPhysicalPinConfiguration; //  Examples: 3, 5, 7
   double onDuration; //  Value of -1 is on forever
+
 
   PinInformation({
     this.isInUse,

@@ -1,6 +1,8 @@
 import '../device_information.dart';
 
+
 class DynamicWish {
+
   static String SetDynamic(DeviceInformation deviceInformation) {
     switch (deviceInformation.runtimeType) {
       case RemoteDevice:
@@ -21,11 +23,14 @@ class DynamicWish {
     return 'Response from remote device dynamic sucsessful';
   }
 
+
   static String OpenDynamic(DeviceInformation deviceInformation) {
     return "Response open dynamic not supported yet";
   }
 
+
 //  TODO: Open connection for fluid local dynamic value change
+
 
 //  TODO: Open connection for fluid remote dynamic value change
 

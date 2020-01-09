@@ -4,7 +4,6 @@ import '../shared_variables.dart';
 import 'devices_pin_configuration/pin_information.dart';
 
 //  Function to start c script to interact with pins
-
 void PinOn(PinInformation pinNumber) async {
   try {
     print("This is the pin number on " +
@@ -20,6 +19,7 @@ void PinOn(PinInformation pinNumber) async {
     print('error: ' + error.toString());
   }
 }
+
 
 void pinOff(PinInformation pinNumber) async {
   try {

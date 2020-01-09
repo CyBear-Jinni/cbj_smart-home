@@ -9,8 +9,11 @@ import '../enums.dart';
 import 'protoc_as_dart/smart_connection.pb.dart';
 import 'protoc_as_dart/smart_connection.pbgrpc.dart';
 
+
 class SmartServer extends SmartServerServiceBase {
+
   List<SmartDeviceBaseAbstract> smartDevicesList;
+
 
   SmartServer(this.smartDevicesList);
 
@@ -37,6 +40,7 @@ class SmartServer extends SmartServerServiceBase {
       ..onOffState = deviceStatus == 'true' ? true : false;
   }
 
+
   @override
   Future<CommendStatus> setOffDevice(ServiceCall call,
       SmartDevice request) async {
@@ -48,6 +52,7 @@ class SmartServer extends SmartServerServiceBase {
     return CommendStatus()..success = smartDevice.onOff;
   }
 
+
   @override
   Future<CommendStatus> setOnDevice(ServiceCall call,
       SmartDevice request) async {
@@ -58,6 +63,7 @@ class SmartServer extends SmartServerServiceBase {
 
     return CommendStatus()..success = smartDevice.onOff;
   }
+
 
   @override
   Future<CommendStatus> setBlindsUp(ServiceCall call,
@@ -71,6 +77,7 @@ class SmartServer extends SmartServerServiceBase {
       ..success;
   }
 
+
   @override
   Future<CommendStatus> setBlindsDown(ServiceCall call,
       SmartDevice request) async {
@@ -82,6 +89,7 @@ class SmartServer extends SmartServerServiceBase {
     return await CommendStatus()
       ..success;
   }
+
 
   @override
   Future<CommendStatus> setBlindsStop(ServiceCall call,
@@ -95,11 +103,10 @@ class SmartServer extends SmartServerServiceBase {
       ..success;
   }
 
+
   SmartDeviceBaseAbstract getSmartDeviceBaseAbstract(SmartDevice request) =>
       smartDevicesList[int.parse(request.name)];
 }
-
-  
 
 //  Get Ip info
 Future<String> getIps() async {

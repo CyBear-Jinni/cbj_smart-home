@@ -1,3 +1,4 @@
+import 'package:SmartDeviceDart/smart_device/smart_device_objects/simple_devices/light_object.dart';
 import 'package:SmartDeviceDart/smart_device/smart_device_objects/static_devices/blinds_object.dart';
 
 import '../shered/data_base/cloud_manager.dart';
@@ -7,11 +8,13 @@ import 'smart_device_objects/abstract_smart_devices/smart_device_base_abstract.d
 class SmartDeviceManager {
   List<SmartDeviceBaseAbstract> smartDevicesList;
 
+
   SmartDeviceManager() {
     smartDevicesList = List<SmartDeviceBaseAbstract>();
 
     SmartDeviceMainAsync();
   }
+
 
   Future SmartDeviceMainAsync() async {
     print(await getIps());
@@ -22,7 +25,6 @@ class SmartDeviceManager {
 
     waitForConnection(); //  Start listen for in incoming connections from the local internet (LAN/Wifi)
   }
-
   //  TODO: Pull the saved devices into the app variables
   //  Setting all the devices from saved data
   void setAllDevices() async {
@@ -35,12 +37,13 @@ class SmartDeviceManager {
         .add(BlindsObject(
         "30:23:a2:G3:34",
         "Guy ceiling light",
-        9,
-        11,
-        14,
-        8,
-        12,
-        10)); // NanoPi Duo2
+        null,  //  onOffPinNumber
+        null, //  onOffButtonPinNumber
+        8,  //  blindsUpPin
+        10, //  upButtonPinNumber
+        12, //  blindsDownPin
+        14  //  downButtonPinNumber
+    )); // NanoPi Duo2
   }
 
   //  Listen to changes in the database for this device
