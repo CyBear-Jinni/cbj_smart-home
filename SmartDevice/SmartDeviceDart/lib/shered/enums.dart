@@ -1,3 +1,6 @@
+
+
+
 enum DeviceType {
   Light, //  Light ON/OFF
   DynamicLight, //  Light with brightness 0% to 100%

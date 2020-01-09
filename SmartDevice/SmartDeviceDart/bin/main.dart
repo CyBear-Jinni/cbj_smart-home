@@ -2,6 +2,7 @@ import 'package:SmartDeviceDart/shered/manage_physical_components/device_pin_man
 import 'package:SmartDeviceDart/shered/shared_variables.dart';
 import 'package:SmartDeviceDart/smart_device/smart_device_manager.dart';
 
+
 main(List<String> arguments) async {
   print("Smart device is activaited");
 

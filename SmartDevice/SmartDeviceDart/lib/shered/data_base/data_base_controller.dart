@@ -4,8 +4,10 @@ import 'package:firedart/firestore/models.dart';
 
 import 'cloud_fire_store.dart';
 
+
 class DataBaseController {
   CloudFireStore _cloudFireStore;
+
 
   DataBaseController() {
     _cloudFireStore = CloudFireStore();
@@ -31,6 +33,7 @@ class DataBaseController {
   Future<String> setData(String dataPath, Object objectToInsert) async {
     return null;
   }
+
 
   Future<String> getValueOfLamp(Document document, String keyName) async {
 //    print("updated: $document");

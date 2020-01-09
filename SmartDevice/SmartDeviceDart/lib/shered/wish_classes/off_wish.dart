@@ -3,7 +3,9 @@ import 'package:SmartDeviceDart/shered/manage_physical_components/devices_pin_co
 import '../device_information.dart';
 import '../manage_physical_components/controlloling_pins.dart';
 
+
 class OffWish {
+
   static String SetOff(DeviceInformation deviceInformation,
       PinInformation pinNumber) {
     pinNumber.v = 0;

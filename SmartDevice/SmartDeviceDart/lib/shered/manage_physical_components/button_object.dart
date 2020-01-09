@@ -7,6 +7,7 @@ import '../../smart_device/smart_device_objects/abstract_smart_devices/smart_dev
 import '../shared_variables.dart';
 import 'devices_pin_configuration/pin_information.dart';
 
+
 class ButtonObject {
 
   void buttonPressed(SmartDeviceBaseAbstract smartDevice,
@@ -40,7 +41,6 @@ class ButtonObject {
     }
   }
 
-
   //  Listen to two buttons but work only if one is pressed.
   void listenToTwoButtonPressedButtNotBoth(SmartDeviceBaseAbstract smartDevice,
       PinInformation firstButtonPinNumber, PinInformation firstLightPin,
@@ -53,6 +53,7 @@ class ButtonObject {
     listenToButtonPressAndDoAction(smartDevice, secondButtonPinNumber,
         firstLightPin, secondLightPin, 2);
   }
+
 
   void listenToButtonPressAndDoAction(SmartDeviceBaseAbstract smartDevice,
       PinInformation buttonPinNumber, PinInformation firstLightPin,
