@@ -1,7 +1,9 @@
 import 'device_configuration_base_class.dart';
 import 'pin_information.dart';
 
+
 class NanoPiNeo2Configuration extends DeviceConfigurationBaseClass {
+
   static List<PinInformation> _pinListNanoPiNeo2 = [
     PinInformation(
         category: "GPIO", pinAndPhysicalPinConfiguration: 1, name: "SYS_3.3V"),
@@ -233,6 +235,7 @@ class NanoPiNeo2Configuration extends DeviceConfigurationBaseClass {
         v: 0,
         ph: 38),
   ];
+
 
   NanoPiNeo2Configuration() {
     pinList = _pinListNanoPiNeo2;
