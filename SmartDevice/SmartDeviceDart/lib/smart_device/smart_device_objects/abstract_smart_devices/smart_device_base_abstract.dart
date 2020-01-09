@@ -13,6 +13,8 @@ import '../../../shered/wish_classes/on_wish.dart';
 
 //  The super base class of all the smart device class and smart device abstract classes
 abstract class SmartDeviceBaseAbstract {
+
+
   DeviceInformation deviceInformation = LocalDevice('This is the mac Address',
       'This is the name of the device'); //  Save data about the device, remote or local IP or pin number
   String deviceName; //  Default name of the device to show in the app
@@ -33,10 +35,11 @@ abstract class SmartDeviceBaseAbstract {
   List<PinInformation> _gpioPinList = List<
       PinInformation>(); //  Save all the gpio pins that this instance is using
 
+
   SmartDeviceBaseAbstract(this.macAddress, this.deviceName, int onOffPinNumber,
       {int onOffButtonPinNumber}) {
 
-    this.onOffPin = AddPinToGpioPinList(onOffPinNumber);
+    this.onOffPin = onOffPinNumber == null ? null : AddPinToGpioPinList(onOffPinNumber);
 
     //  If pin number was inserted and it exist than listen to button press
     if (onOffButtonPinNumber != null) {
@@ -50,8 +53,10 @@ abstract class SmartDeviceBaseAbstract {
 
   //  Getters
 
+
   //  Get smart device type
   DeviceType getDeviceType() => null;
+
 
   Future<String> getIp() async {
     return await getIps();
@@ -71,9 +76,12 @@ abstract class SmartDeviceBaseAbstract {
     return null;
   }
 
+
   bool getDeviceState() => onOff;
 
+
   //  Setters
+
 
   //  Turn on the device basic action
   String _SetOn(PinInformation pinNumber) {
@@ -95,7 +103,9 @@ abstract class SmartDeviceBaseAbstract {
     return 'Turn off sucsessfuly';
   }
 
+
   //  More functions
+
 
   //  Add gpio pin for this device
   PinInformation AddPinToGpioPinList(int pinNumber) {
