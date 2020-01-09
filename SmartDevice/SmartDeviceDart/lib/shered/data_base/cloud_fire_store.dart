@@ -3,15 +3,19 @@ import 'dart:async';
 import 'package:firedart/auth/user_gateway.dart';
 import 'package:firedart/firedart.dart';
 
+
 class CloudFireStore {
   static const apiKey = "AIzaSyBIEgdRhns2gX7xTLIVlgfqcK87RTXdAIo";
   static const projectId = "smarthome-3765e";
   static const email = "guyhome@gmail.com";
   static const password = "123IsNotSecure";
 
+
   StreamController<Document> streamController = StreamController<Document>();
 
+
   //  Get
+
 
   //  Get data from path
   getData(String dataPath) {
@@ -23,7 +27,9 @@ class CloudFireStore {
     return "Data in path from server where equels to field";
   }
 
+
   //  Set
+
 
   //  Set the data in field
   String setDataInField(String dataPath, String dataToSave) {}
