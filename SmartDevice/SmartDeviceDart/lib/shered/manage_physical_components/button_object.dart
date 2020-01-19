@@ -42,7 +42,8 @@ class ButtonObject {
   }
 
   //  Listen to two buttons but work only if one is pressed.
-  void listenToTwoButtonPressedButtNotBoth(SmartDeviceBaseAbstract smartDevice,
+  void listenToTwoButtonPressedButtOnlyOneCanBePressedAtATime(
+      SmartDeviceBaseAbstract smartDevice,
       PinInformation firstButtonPinNumber, PinInformation firstLightPin,
       PinInformation secondButtonPinNumber, PinInformation secondLightPin) async
   {

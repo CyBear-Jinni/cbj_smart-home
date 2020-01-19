@@ -68,25 +68,6 @@ class NetworkActions {
     print(connectingResult);
   }
 
-  //  Connect to the wi-fi
-  Future<String> connectToWiFi(String ssid, String pass) async {
-//    Not Working with snap from apt
-    return await Process.run('nmcli',
-        ['dev', 'wifi', 'connect', ssid, 'password', pass]).then((  //  sudo nmcli dev wifi connect ssid password pass
-        ProcessResult results) {
-      print(results.stdout.toString());
-      return results.stdout.toString();
-    });
-
-//      or
-    //  Require root
-    return await Process.run('iwconfig',
-        ['wlp3s0', 'essid', ssid, 'key', pass]).then((ProcessResult results) {
-      print(results.stdout.toString());
-      return results.stdout.toString();
-    });
-  }
-
   //  This function return the new value of the internet connection status only if it changed from last time
   Stream<DataConnectionStatus> returnStatusIfChanged() {
     return DataConnectionChecker().onStatusChange;
@@ -123,6 +104,19 @@ class NetworkActions {
       print(wifi_results.toString());
       return wifi_results;
     });
+  }
+
+  //  Connect to the wi-fi
+  Future<String> connectToWiFi(String ssid, String pass) async {
+//    Not Working with snap from apt
+    return await Process.run('nmcli',
+        ['dev', 'wifi', 'connect', ssid, 'password', pass]).then((
+        //  sudo nmcli dev wifi connect ssid password pass
+        ProcessResult results) {
+      print(results.stdout.toString());
+      return results.stdout.toString();
+    });
+    //    Can iwconfig also be used but require root: iwconfig wlp3s0 essid ssid key pass
   }
 
   //  Check if connected to network, if there is a connection than return network name
