@@ -6,7 +6,7 @@ import 'on_wish.dart';
 //  This class take the request to turn up or down the blinds and act in a safe manner with the pins, act so that blinds up and down will not work simultaneously and stop other tasks on them
 class BlindsWish {
 
-  static String BlindsUp(BlindsObject blindsInformation) {
+  static Future<String> BlindsUp(BlindsObject blindsInformation) async {
     String status;
     print("Turning blind up");
 
@@ -15,8 +15,8 @@ class BlindsWish {
 
     status = OffWish.SetOff(
         blindsInformation.deviceInformation, blindsInformation.blindsDownPin);
-    Future.delayed(
-        const Duration(seconds: 2));
+    await Future.delayed(
+        const Duration(seconds: 1));
     status += " " +
         OnWish.SetOn(
             blindsInformation.deviceInformation, blindsInformation.blindsUpPin);
@@ -24,7 +24,7 @@ class BlindsWish {
     return status;
   }
 
-  static String BlindsDown(BlindsObject blindsInformation) {
+  static Future<String> BlindsDown(BlindsObject blindsInformation) async {
     String status;
 
     blindsInformation.blindsDownPin.onDuration = -1;
@@ -32,8 +32,8 @@ class BlindsWish {
 
     status = OffWish.SetOff(
         blindsInformation.deviceInformation, blindsInformation.blindsUpPin);
-    Future.delayed(
-        const Duration(seconds: 2));
+    await Future.delayed(
+        const Duration(seconds: 1));
     status += " " +
         OnWish.SetOn(blindsInformation.deviceInformation,
             blindsInformation.blindsDownPin);

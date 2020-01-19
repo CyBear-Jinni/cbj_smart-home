@@ -71,7 +71,8 @@ class SmartServer extends SmartServerServiceBase {
     print('Turn blinds ' + request.name + ' up');
     SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
     BlindsObject blindsObject = smartDevice as BlindsObject;
-    String deviceStatus = blindsObject.WishInBlindsClass(WishEnum.blindsUp);
+    String deviceStatus = await blindsObject.WishInBlindsClass(
+        WishEnum.blindsUp);
 
     return await CommendStatus()
       ..success;
@@ -84,7 +85,8 @@ class SmartServer extends SmartServerServiceBase {
     print('Turn blinds ' + request.name + ' down');
     SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
     BlindsObject blindsObject = smartDevice as BlindsObject;
-    String deviceStatus = blindsObject.WishInBlindsClass(WishEnum.blindsDown);
+    String deviceStatus = await blindsObject.WishInBlindsClass(
+        WishEnum.blindsDown);
 
     return await CommendStatus()
       ..success;
@@ -97,7 +99,8 @@ class SmartServer extends SmartServerServiceBase {
     print('Turn blinds ' + request.name + ' stop');
     SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
     BlindsObject blindsObject = smartDevice as BlindsObject;
-    String deviceStatus = blindsObject.WishInBlindsClass(WishEnum.blindsStop);
+    String deviceStatus = await blindsObject.WishInBlindsClass(
+        WishEnum.blindsStop);
 
     return await CommendStatus()
       ..success;

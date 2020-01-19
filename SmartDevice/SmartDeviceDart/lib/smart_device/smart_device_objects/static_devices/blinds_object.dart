@@ -28,17 +28,17 @@ class BlindsObject extends SmartDeviceStaticAbstract {
 
 
   @override
-  String ExecuteWish(String wishString) {
+  Future<String> ExecuteWish(String wishString) async {
     WishEnum wish = ConvertWishStringToWishesObject(wishString);
-    return WishInBlindsClass(wish);
+    return await WishInBlindsClass(wish);
   }
 
   //  All the wishes that are legit to execute from the blinds class
-  String WishInBlindsClass(WishEnum wish) {
+  Future<String> WishInBlindsClass(WishEnum wish) async {
     if (wish == null) return "Your wish does not exist in blinds class";
-    if (wish == WishEnum.blindsUp) return BlindsWish.BlindsUp(this);
-    if (wish == WishEnum.blindsDown) return BlindsWish.BlindsDown(this);
-    if (wish == WishEnum.blindsStop) return BlindsWish.BlindsStop(this);
+    if (wish == WishEnum.blindsUp) return await BlindsWish.BlindsUp(this);
+    if (wish == WishEnum.blindsDown) return await BlindsWish.BlindsDown(this);
+    if (wish == WishEnum.blindsStop) return await BlindsWish.BlindsStop(this);
 
     return WishInStaticClass(wish);
   }
@@ -47,7 +47,7 @@ class BlindsObject extends SmartDeviceStaticAbstract {
   void listenToTwoButtonsPress() {
     if (buttonPinUp != null && buttonPinDown != null &&
         blindsUpPin != null && blindsDownPin != null) {
-      ButtonObject().listenToTwoButtonPressedButtNotBoth(
+      ButtonObject().listenToTwoButtonPressedButtOnlyOneCanBePressedAtATime(
           this, buttonPinUp, blindsUpPin, buttonPinDown,
           blindsDownPin);
     }

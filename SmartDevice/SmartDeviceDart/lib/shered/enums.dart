@@ -27,6 +27,7 @@ enum DeviceType {
 enum WishEnum {
   SOn, //  Turn the device on
   SOff, //  Turn the device off
+  SChangeState, //  Change device state to the opposite one
   SDynamic, //  Set Dynamic Value
   ODynamic, //  Open connection to change dynamic value
   SMovement, //  Open connection to change dynamic value
