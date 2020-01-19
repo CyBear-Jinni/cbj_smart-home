@@ -13,7 +13,7 @@ abstract class SmartDeviceSimpleAbstract extends SmartDeviceBaseAbstract {
 
 
   @override
-  String ExecuteWish(String wishString) {
+  Future<String> ExecuteWish(String wishString) async {
     WishEnum wish = ConvertWishStringToWishesObject(wishString);
     return WishInSimpleClass(wish);
   }

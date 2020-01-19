@@ -16,7 +16,7 @@ class LightObject extends SmartDeviceSimpleAbstract {
 
 
   @override
-  String ExecuteWish(String wishString) {
+  Future<String> ExecuteWish(String wishString) async {
     WishEnum wish = ConvertWishStringToWishesObject(wishString);
     return WishInSimpleClass(wish);
   }
