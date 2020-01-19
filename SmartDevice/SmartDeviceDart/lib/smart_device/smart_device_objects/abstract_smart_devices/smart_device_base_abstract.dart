@@ -103,6 +103,12 @@ abstract class SmartDeviceBaseAbstract {
     return 'Turn off sucsessfuly';
   }
 
+  //  Turn device pin to the opposite state
+  String _SetChangeOppositeToState(PinInformation pinNumber) {
+    return onOff ? _SetOff(onOffPin) : _SetOn(onOffPin);
+  }
+
+
 
   //  More functions
 
@@ -130,7 +136,7 @@ abstract class SmartDeviceBaseAbstract {
   }
 
   //  Check if wish exist at all if true than check if base abstract have this wish and if true than execute it
-  String ExecuteWish(String wishString) {
+  Future<String> ExecuteWish(String wishString) async {
     WishEnum wish = ConvertWishStringToWishesObject(wishString);
     return WishInBaseClass(wish);
   }
@@ -150,6 +156,13 @@ abstract class SmartDeviceBaseAbstract {
           return 'Cant turn off this pin: ' + onOffPin.toString() + ' Number';
         }
         return _SetOn(onOffPin);
+      case WishEnum.SChangeState:
+        if (onOffPin == null) {
+          return 'Cant chane pin to the opposit state: ' + onOffPin.toString() +
+              ' Number';
+        }
+        return _SetChangeOppositeToState(onOffPin);
+
       case WishEnum.GState:
         return getDeviceState().toString();
       default:
