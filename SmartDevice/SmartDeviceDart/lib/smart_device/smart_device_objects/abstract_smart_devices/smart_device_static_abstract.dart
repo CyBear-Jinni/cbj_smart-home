@@ -22,7 +22,7 @@ abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
 
   //  All the wishes that are legit to execute from the static class
   @override
-  String ExecuteWish(String wishString) {
+  Future<String> ExecuteWish(String wishString) async {
     WishEnum wish = ConvertWishStringToWishesObject(wishString);
     print(wishString);
     print(wish.toString());
