@@ -13,7 +13,7 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
 
 
   @override
-  String ExecuteWish(String wishString) {
+  Future<String> ExecuteWish(String wishString) async {
     WishEnum wish = ConvertWishStringToWishesObject(wishString);
     if (wish == null) return "Your wish does not exist on ";
     return _wishInDynamicClass(wish);
