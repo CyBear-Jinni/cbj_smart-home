@@ -14,7 +14,7 @@ make -f Makefile
 
 mv demo ../../../
 
-mv resources ../../../
+mv ../../resources ../../../
 
 cd ../../../..
 
