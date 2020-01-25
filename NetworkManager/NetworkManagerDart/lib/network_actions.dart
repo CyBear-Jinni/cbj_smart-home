@@ -5,6 +5,13 @@ import 'package:data_connection_checker/data_connection_checker.dart';
 
 //  Network action class used for controlling the program in the different network status
 class NetworkActions {
+  String adminWifiName;
+  String adminWifiPass;
+  String wifiName;
+  String wifiPassword;
+
+  NetworkActions(this.adminWifiName, this.adminWifiPass, this.wifiName,
+      this.wifiPassword);
 
   //  This function starts the connection to the requested wi-fi if the internet connection is down
   Future isConnectedToTheInternet() async {
@@ -42,22 +49,21 @@ class NetworkActions {
   }
 
   //  Check to see if admin wifi exist and try to connect to it
-  Future<void> connectToAdminWhenExist(String ssid, String pass) async {
-    var connectedWifiName = await getConnectedNetworkName();
+  Future<void> connectToAdminWhenExist() async {
+    String connectedWifiName;
     while (true) {
-      while (connectedWifiName != ssid &&
-          !(await getAvailableNetworksList()).contains(ssid)) {
-        await Future.delayed(
-            const Duration(seconds: 15)); // Wait to check if internet is back
-        connectedWifiName = await getConnectedNetworkName();
-      }
-      if (connectedWifiName != ssid) {
+      connectedWifiName = await getConnectedNetworkName();
+      if (connectedWifiName != adminWifiName &&
+          !(await getAvailableNetworksList()).contains(adminWifiName)) {
         print('Connecting to admin wi-fi');
-        await connectToAdminWiFi(ssid: ssid, pass: pass);
+        await connectToAdminWiFi(ssid: adminWifiName, pass: adminWifiPass);
+      }
+      // If the device is not connected to any Wi-Fi try reconnecting to the last network
+      else if (connectedWifiName == null || connectedWifiName == "") {
+        await connectToAdminWiFi(ssid: wifiName, pass: adminWifiPass);
       }
       await Future.delayed(
           const Duration(seconds: 15)); // Wait to check if internet is back
-      connectedWifiName = await getConnectedNetworkName();
     }
   }
 
