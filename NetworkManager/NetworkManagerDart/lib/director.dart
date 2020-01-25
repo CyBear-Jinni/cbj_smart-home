@@ -23,11 +23,11 @@ class Director {
 
   //  This function starts the object to manege the state of the device network connection
   Future ManegeNetworkConnection() async {
-    NetworkActions networkActions = NetworkActions();
+    NetworkActions networkActions = NetworkActions(
+        'AndroidAP_6194', '7f1ee6787744', '***REMOVED***', '***REMOVED***');
 
 //    await networkActions.getAvailableNetworksList(snapPath);
-    await networkActions.connectToAdminWhenExist(
-        'AndroidAP_6194', '7f1ee6787744');
+    await networkActions.connectToAdminWhenExist();
 //    await networkActions.connectToAdminWiFi(ssid : 'AndroidAP_6194', pass: '7f1ee6787744');
 //    await networkActions.connectToAdminWiFi(ssid : '***REMOVED***', pass: '***REMOVED***');
 //    networkActions.isConnectedToTheInternet();
