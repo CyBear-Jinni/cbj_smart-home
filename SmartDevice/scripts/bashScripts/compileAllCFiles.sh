@@ -10,7 +10,7 @@ done
 
 cd snowboy/examples/C/
 
-make -f Makefile
+make
 
 mv demo ../../../
 

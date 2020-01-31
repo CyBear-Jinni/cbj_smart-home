@@ -168,7 +168,7 @@ int main(int argc, char* argv[]) {
       "  ./demo\n";
 
   // Checks the command.
-  if (argc > 1) {
+  if (argc == 3) {
     printf("%s", usage);
     exit(1);
   }
@@ -186,8 +186,21 @@ int main(int argc, char* argv[]) {
   //   model_filename =
   //     "resources/models/snowboy.umdl,resources/models/smart_mirror.umdl";
   //   sensitivity_str = "0.5,0.5";
-  const char resource_filename[] = "resources/common.res";
-  const char model_filename[] = "resources/models/snowboy.umdl";
+
+  const char* pathToResources = argv[1];
+  const char* commonRes = "/resources/common.res";
+  const char* jarvisModel = "/resources/models/jarvis.pmdl";
+
+
+  char* resource_filename[strlen(pathToResources) + strlen(commonRes) + 1];
+  strcpy( resource_filename, pathToResources);
+  strcat( resource_filename, commonRes);
+
+  char* model_filename[strlen(pathToResources) + strlen(jarvisModel) + 1];
+  strcpy( model_filename, pathToResources);
+  strcat( model_filename, jarvisModel);
+
+
   const char sensitivity_str[] = "0.5";
   float audio_gain = 1;
   bool apply_frontend = false;
