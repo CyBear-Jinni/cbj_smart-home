@@ -188,8 +188,8 @@ int main(int argc, char* argv[]) {
   //   sensitivity_str = "0.5,0.5";
 
   const char* pathToResources = argv[1];
-  const char* commonRes = "/resources/common.res";
-  const char* jarvisModel = "/resources/models/jarvis.pmdl";
+  const char* commonRes = "/scripts/cScripts/resources/common.res";
+  const char* jarvisModel = "/scripts/cScripts/resources/models/jarvis.pmdl";
 
 
   char* resource_filename[strlen(pathToResources) + strlen(commonRes) + 1];
