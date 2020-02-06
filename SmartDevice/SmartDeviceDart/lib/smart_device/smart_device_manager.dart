@@ -69,7 +69,7 @@ class SmartDeviceManager {
     smartServer.startListen();
   }
 
-  Future startListeningToVoiceCommandForever() async {
+  void startListeningToVoiceCommandForever() async {
     try {
       while (true) {
         await listenToVoiceCommand();
