@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+echo "Download dart sdk zip"
+
 architecture="$(uname -p)"
 
 dartSdkPath="https://storage.googleapis.com/dart-archive/channels/stable/release/2.5.0/sdk/dartsdk-linux-"	# Sdk url: https://dart.dev/tools/sdk/archive

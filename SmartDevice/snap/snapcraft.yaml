@@ -39,27 +39,28 @@ parts:
       cd SmartDeviceDart
       ../dart-sdk/bin/pub get --no-precompile
       cd ..
+      chmod -R +rx dart-sdk/
       dart-sdk/bin/dart2aot SmartDeviceDart/bin/main.dart main.aot
 
       rm -r SmartDeviceDart
 
-      pip3 install --upgrade pip
+      #pip3 install --upgrade pip
+      #
+      #pip3 install wheel
+      #pip3 install --upgrade pip
+      #
+      #pip3 install pyaudio
 
-      pip3 install wheel
-      pip3 install --upgrade pip
-
-      pip3 install pyaudio
-
-      wget http://downloads.sourceforge.net/swig/swig-3.0.10.tar.gz
-      tar -xvzf swig-3.0.10.tar.gz
-      sudo apt-get install libpcre3 libpcre3-dev
-      sudo ./configure --prefix=/usr                  \
-      --without-clisp                    \
-      --without-maximum-compile-warnings &&
-      sudo make
-      sudo make install &&
-      sudo install -v -m755 -d /usr/share/doc/swig-3.0.10 &&
-      sudo cp -v -R Doc/* /usr/share/doc/swig-3.0.10
+      #wget http://downloads.sourceforge.net/swig/swig-3.0.10.tar.gz
+      #tar -xvzf swig-3.0.10.tar.gz
+      #cd swig-3.0.10
+      #sudo ./configure --prefix=/usr                  \
+      #--without-clisp                    \
+      #--without-maximum-compile-warnings &&
+      #sudo make
+      #sudo make install &&
+      #sudo install -v -m755 -d /usr/share/doc/swig-3.0.10 &&
+      #sudo cp -v -R Doc/* /usr/share/doc/swig-3.0.10
 
       snapcraftctl build
 
@@ -69,23 +70,29 @@ parts:
       - git
       - gcc
       - make
+      - python3-pyaudio
       - python3-pip
-      - python-pip
       - libevent-dev
       - python-dev
       - libpcre3
       - libpcre3-dev
       - libperl-dev
+      - libasound2-dev
+      - libatlas-base-dev
     stage-packages:
-      - python-pyaudio
       - python3-pyaudio
       - sox
       - python-setuptools
       - libatlas-base-dev
-      #- libatlas-base-dev
+      - libevent-dev
+      - python-dev
+      - libpcre3
+      - libpcre3-dev
+      - libperl-dev
+      - libasound2-dev
 
 apps:
   smart-home:
     command: dart-sdk/bin/dartaotruntime $SNAP/main.aot $SNAP
     daemon: simple
-    plugs: [network, network-bind, gpio, hardware-observe]
+    plugs: [network, network-bind, gpio, hardware-observe, audio-playback, audio-record, pulseaudio, alsa]
