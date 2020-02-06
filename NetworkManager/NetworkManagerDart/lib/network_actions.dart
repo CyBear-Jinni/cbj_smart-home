@@ -54,13 +54,13 @@ class NetworkActions {
     while (true) {
       connectedWifiName = await getConnectedNetworkName();
       if (connectedWifiName != adminWifiName &&
-          !(await getAvailableNetworksList()).contains(adminWifiName)) {
+          (await getAvailableNetworksList()).contains(adminWifiName)) {
         print('Connecting to admin wi-fi');
         await connectToAdminWiFi(ssid: adminWifiName, pass: adminWifiPass);
       }
       // If the device is not connected to any Wi-Fi try reconnecting to the last network
       else if (connectedWifiName == null || connectedWifiName == "") {
-        await connectToAdminWiFi(ssid: wifiName, pass: adminWifiPass);
+        await connectToWiFi(wifiName, wifiPassword);
       }
       await Future.delayed(
           const Duration(seconds: 15)); // Wait to check if internet is back
