@@ -29,7 +29,7 @@ class RemoteDevice extends DeviceInformation {
   //  Get
 
 
-  String getIp() => ip;
+  String GetIp() => ip;
 }
 
 class LocalDevice extends DeviceInformation {
