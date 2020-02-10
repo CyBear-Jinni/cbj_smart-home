@@ -91,26 +91,26 @@ class ButtonObject {
       int buttonPressNumber) async {
     if (firstLightPin.v == 1 || secondLightPin.v == 1) {
       firstLightPin.onDuration = 0;
-      OffWish.SetOff(smartDevice.deviceInformation, firstLightPin);
+      await OffWish.SetOff(smartDevice.deviceInformation, firstLightPin);
 
       secondLightPin.onDuration = 0;
-      OffWish.SetOff(smartDevice.deviceInformation, secondLightPin);
+      await OffWish.SetOff(smartDevice.deviceInformation, secondLightPin);
     }
 
     else if (buttonPressNumber == 1) {
       secondLightPin.onDuration = 0;
-      OffWish.SetOff(smartDevice.deviceInformation, secondLightPin);
+      await OffWish.SetOff(smartDevice.deviceInformation, secondLightPin);
 
       firstLightPin.onDuration = -1;
-      OnWish.SetOn(smartDevice.deviceInformation, firstLightPin);
+      await OnWish.SetOn(smartDevice.deviceInformation, firstLightPin);
     }
 
     else if (buttonPressNumber == 2) {
       firstLightPin.onDuration = 0;
-      OffWish.SetOff(smartDevice.deviceInformation, firstLightPin);
+      await OffWish.SetOff(smartDevice.deviceInformation, firstLightPin);
 
       secondLightPin.onDuration = -1;
-      OnWish.SetOn(smartDevice.deviceInformation, secondLightPin);
+      await OnWish.SetOn(smartDevice.deviceInformation, secondLightPin);
     }
 
     await Future.delayed(const Duration(seconds: 1));

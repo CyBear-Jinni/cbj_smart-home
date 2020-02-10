@@ -77,8 +77,12 @@ parts:
       - libpcre3
       - libpcre3-dev
       - libperl-dev
+      - libasound2
       - libasound2-dev
       - libatlas-base-dev
+      - libasound2-plugins
+      - alsa-utils
+      - pulseaudio
     stage-packages:
       - python3-pyaudio
       - sox
@@ -89,7 +93,11 @@ parts:
       - libpcre3
       - libpcre3-dev
       - libperl-dev
+      - libasound2
       - libasound2-dev
+      - libasound2-plugins
+      - alsa-utils
+      - pulseaudio
 
 apps:
   smart-home:
