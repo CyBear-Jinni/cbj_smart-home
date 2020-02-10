@@ -115,10 +115,10 @@ class SmartServer extends SmartServerServiceBase {
 Future<String> getIps() async {
   for (NetworkInterface interface in await NetworkInterface.list()) {
 //      print('== Interface: ${interface.name} ==');
-    for (InternetAddress addr in interface.addresses) {
+    for (InternetAddress address in interface.addresses) {
 //        print(
 //            '${addr.address} ${addr.host} ${addr.isLoopback} ${addr.rawAddress} ${addr.type.name}');
-      return addr.address;
+      return address.address;
     }
   }
   return null;
