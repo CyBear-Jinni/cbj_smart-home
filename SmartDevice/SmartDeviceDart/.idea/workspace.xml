@@ -1,59 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/core/usecases/usecase.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/error/failures.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/usecases/usecase.dart" afterDir="false" />
+    <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="Moved to tabs">
+      <change afterPath="$PROJECT_DIR$/bin/injection.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/emptyConsoleApplicationDart.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/data_base/cloud_fire_store.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/data_base/cloud_fire_store.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/data_base/cloud_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/data_base/cloud_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/data_base/data_base_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/data_base/data_base_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/device_information.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/device_information.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/enums.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/enums.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/manage_physical_components/button_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/manage_physical_components/button_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/manage_physical_components/controlloling_pins.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/manage_physical_components/controlloling_pins.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/manage_physical_components/device_pin_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/manage_physical_components/device_pin_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/manage_physical_components/devices_pin_configuration/device_configuration_base_class.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/manage_physical_components/devices_pin_configuration/device_configuration_base_class.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/manage_physical_components/devices_pin_configuration/nano_pi_duo2_configuration.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/manage_physical_components/devices_pin_configuration/nano_pi_duo2_configuration.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/manage_physical_components/devices_pin_configuration/nano_pi_neo2_configuration.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/manage_physical_components/devices_pin_configuration/nano_pi_neo2_configuration.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/manage_physical_components/devices_pin_configuration/nano_pi_neo_configuration.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/manage_physical_components/devices_pin_configuration/nano_pi_neo_configuration.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/manage_physical_components/devices_pin_configuration/pin_information.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/manage_physical_components/devices_pin_configuration/pin_information.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/permissions/permissions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/permissions/permissions.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/permissions/permissions_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/permissions/permissions_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/server/protoc_as_dart/smart_connection.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/server/protoc_as_dart/smart_connection.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/server/protoc_as_dart/smart_connection.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/server/protoc_as_dart/smart_connection.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/server/protoc_as_dart/smart_connection.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/server/protoc_as_dart/smart_connection.pbgrpc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/server/protoc_as_dart/smart_connection.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/server/protoc_as_dart/smart_connection.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/server/smart_server.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/server/smart_server.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/shared_variables.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/shared_variables.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/wish_classes/blinds_wish.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/wish_classes/blinds_wish.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/wish_classes/dynamic_wish.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/wish_classes/dynamic_wish.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/wish_classes/off_wish.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/wish_classes/off_wish.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/shered/wish_classes/on_wish.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/wish_classes/on_wish.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/python_class.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/data/repositories/python_class.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/smart_device_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/usecases/smart_device_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/repositories/smart_device_base_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/smart_device_objects/abstract_smart_devices/smart_device_dynamic_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/repositories/smart_device_dynamic_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/smart_device_objects/abstract_smart_devices/smart_device_simple_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/repositories/smart_device_simple_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/smart_device_objects/abstract_smart_devices/smart_device_static_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/repositories/smart_device_static_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/smart_device_objects/dinamic_devices/dynamic_light_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/dinamic_devices/dynamic_light_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/smart_device_objects/dinamic_devices/fan_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/dinamic_devices/fan_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/smart_device_objects/dinamic_devices/speaker_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/dinamic_devices/speaker_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/smart_device_objects/simple_devices/light_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/simple_devices/light_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/smart_device_objects/simple_devices/thermostat_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/simple_devices/thermostat_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/smart_device/smart_device_objects/static_devices/blinds_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/static_devices/blinds_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controlloling_pins_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/controlloling_pins_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/device_information_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/device_information_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/on_wish_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/on_wish_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/smart_device_dart_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/smart_device_dart_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/smart_server_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/smart_server_test.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,11 +21,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="357">
+              <caret line="17" column="12" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/main.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/dinamic_devices/dynamic_light_object.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/injection.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -131,8 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bin/shered/wishClasses/onWish.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/wishClasses/offWish.dart" />
         <option value="$PROJECT_DIR$/bin/shered/dataBase/cloudManager.dart" />
         <option value="$PROJECT_DIR$/protos/SmartConnection.proto" />
         <option value="$PROJECT_DIR$/bin/shered/serverProtoAsDart/smartServer.dart" />
@@ -172,7 +151,6 @@
         <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/button_object.dart" />
         <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/controlloling_pins.dart" />
         <option value="$PROJECT_DIR$/bin/shered/enums.dart" />
-        <option value="$PROJECT_DIR$/bin/main.dart" />
         <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/device_pin_manager.dart" />
         <option value="$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart" />
         <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart" />
@@ -180,24 +158,28 @@
         <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_dynamic_abstract.dart" />
         <option value="$PROJECT_DIR$/bin/shered/wish_classes/dynamic_wish.dart" />
         <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_static_abstract.dart" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/bin/shered/server/protoc_as_dart/smart_connection.pb.dart" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/bin/main.dart" />
+        <option value="$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/dinamic_devices/dynamic_light_object.dart" />
+        <option value="$PROJECT_DIR$/bin/injection.dart" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1720" />
-    <option name="width" value="1884" />
-    <option name="height" value="1084" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2154" />
+    <option name="y" value="168" />
+    <option name="width" value="1242" />
+    <option name="height" value="716" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,12 +194,45 @@
             </path>
             <path>
               <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="smart_device" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="smart_device" type="462c0819:PsiDirectoryNode" />
+              <item name="smart_device_objects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="smart_device" type="462c0819:PsiDirectoryNode" />
+              <item name="smart_device_objects" type="462c0819:PsiDirectoryNode" />
+              <item name="dinamic_devices" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,10 +323,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1724" y="0" width="1876" height="1080" extended-state="6" />
+    <frame x="2154" y="168" width="1242" height="716" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1472192" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -321,16 +336,16 @@
       <window_info id="Resources Explorer" order="7" weight="0.10959651" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31138977" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31038135" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39602926" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.1724138" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.22884013" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.37241378" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32706374" />
       <window_info anchor="bottom" id="Dart Analysis" order="10" weight="0.19644724" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.32362458" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3230932" />
       <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -425,8 +440,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Moved to tabs" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protos/SmartConnection.proto" />
-    <entry file="file://$PROJECT_DIR$/protos/smart_connection.proto" />
     <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -496,16 +509,6 @@
     <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configuration/device_configuration_base_class.dart" />
     <entry file="file://$PROJECT_DIR$/bin/shered/shared_variables.dart" />
     <entry file="file://$PROJECT_DIR$/bin/shered/enums.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Programmes/flutter/bin/cache/dart-sdk/lib/core/string.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -522,8 +525,29 @@
     <entry file="file://$PROJECT_DIR$/bin/shered/server/protoc_as_dart/smart_connection.pb.dart" />
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="357">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/dinamic_devices/dynamic_light_object.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/injection.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
         </state>
       </provider>
     </entry>

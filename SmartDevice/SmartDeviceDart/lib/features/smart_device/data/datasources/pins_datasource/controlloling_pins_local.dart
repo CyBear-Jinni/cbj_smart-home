@@ -1,7 +1,8 @@
 import 'dart:io';
 
-import '../shared_variables.dart';
-import 'devices_pin_configuration/pin_information.dart';
+import 'package:SmartDeviceDart/core/manage_physical_components/devices_pin_configuration/pin_information.dart';
+import 'package:SmartDeviceDart/core/shared_variables.dart';
+
 
 //  Function to start c script to interact with pins
 Future<String> PinOn(PinInformation pinNumber) async {

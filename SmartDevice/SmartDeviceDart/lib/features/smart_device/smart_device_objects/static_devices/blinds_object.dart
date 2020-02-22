@@ -1,9 +1,10 @@
 import 'package:SmartDeviceDart/core/enums.dart';
-import 'package:SmartDeviceDart/core/manage_physical_components/button_object.dart';
 import 'package:SmartDeviceDart/core/manage_physical_components/device_pin_manager.dart';
 import 'package:SmartDeviceDart/core/manage_physical_components/devices_pin_configuration/pin_information.dart';
 import 'package:SmartDeviceDart/core/wish_classes/blinds_wish.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/pins_datasource/button_object_local_abstract.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_static_abstract.dart';
+import 'package:SmartDeviceDart/injection.dart';
 
 
 class BlindsObject extends SmartDeviceStaticAbstract {
@@ -47,7 +48,8 @@ class BlindsObject extends SmartDeviceStaticAbstract {
   void listenToTwoButtonsPress() {
     if (buttonPinUp != null && buttonPinDown != null &&
         blindsUpPin != null && blindsDownPin != null) {
-      ButtonObject().listenToTwoButtonPressedButtOnlyOneCanBePressedAtATime(
+      getIt<ButtonObjectLocalAbstract>()
+          .listenToTwoButtonPressedButtOnlyOneCanBePressedAtATime(
           this, buttonPinUp, blindsUpPin, buttonPinDown,
           blindsDownPin);
     }
