@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:SmartDeviceDart/shered/server/smart_server.dart';
+import 'package:SmartDeviceDart/core/server/smart_server.dart';
 import 'package:test/test.dart';
 
 void main() {

@@ -1,4 +1,4 @@
-import 'package:SmartDeviceDart/shered/device_information.dart';
+import 'package:SmartDeviceDart/core/device_information.dart';
 import 'package:test/test.dart';
 
 void main() {
