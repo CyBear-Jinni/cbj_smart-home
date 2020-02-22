@@ -1,10 +1,18 @@
 import 'package:SmartDeviceDart/core/manage_physical_components/device_pin_manager.dart';
 import 'package:SmartDeviceDart/core/shared_variables.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/usecases/smart_device_manager.dart';
+import 'package:SmartDeviceDart/injection.dart';
+
 
 
 main(List<String> arguments) async {
   print("Smart device is activaited");
+  await configureInjection(Env.dev);
+//
+//
+//  final mockCowAnimal = getIt<AnimalAbstract>();
+//  TryItNow tryItNow = TryItNow(mockCowAnimal);
+//  print(tryItNow.getLegs());
 
   try {
     SharedVariables(arguments[0]);
