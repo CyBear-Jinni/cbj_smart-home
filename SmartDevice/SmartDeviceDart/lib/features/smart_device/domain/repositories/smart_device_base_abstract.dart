@@ -2,13 +2,14 @@ import 'dart:io';
 
 import 'package:SmartDeviceDart/core/device_information.dart';
 import 'package:SmartDeviceDart/core/enums.dart';
-import 'package:SmartDeviceDart/core/manage_physical_components/button_object.dart';
 import 'package:SmartDeviceDart/core/manage_physical_components/device_pin_manager.dart';
 import 'package:SmartDeviceDart/core/manage_physical_components/devices_pin_configuration/pin_information.dart';
 import 'package:SmartDeviceDart/core/permissions/permissions_manager.dart';
 import 'package:SmartDeviceDart/core/server/smart_server.dart';
 import 'package:SmartDeviceDart/core/wish_classes/off_wish.dart';
 import 'package:SmartDeviceDart/core/wish_classes/on_wish.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/pins_datasource/button_object_local_abstract.dart';
+import 'package:SmartDeviceDart/injection.dart';
 
 
 //  The super base class of all the smart device class and smart device abstract classes
@@ -172,6 +173,7 @@ abstract class SmartDeviceBaseAbstract {
 
   //  Listen to button press
   void listenToButtonPressed() async {
-    ButtonObject().buttonPressed(this, onOffButtonPin, onOffPin);
+    getIt<ButtonObjectLocalAbstract>().buttonPressed(
+        this, onOffButtonPin, onOffPin);
   }
 }
