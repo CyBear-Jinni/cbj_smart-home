@@ -85,8 +85,9 @@ class SmartDeviceManager {
   //  Listen to voice commandfgtggg
   Future<int> listenToVoiceCommand() async {
     return await Process.run(
-        SharedVariables.getSnapPath() + '/scripts/cScripts/demo',
-        [SharedVariables.getSnapPath()]).then((
+        SharedVariables.GetProjectRootDirectoryPath() +
+            '/scripts/cScripts/demo',
+        [SharedVariables.GetProjectRootDirectoryPath()]).then((
 //          SharedVariables.getSnapPath() + '/scripts/cScripts/demo', [SharedVariables.getSnapPath() + "/scripts/cScripts"]).then((
         ProcessResult results) {
       print(results.stdout.toString());
