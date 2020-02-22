@@ -72,7 +72,8 @@ class ButtonObject {
   //  Listen to button press and return exist code
   Future<int> listenToButtonPress(PinInformation buttonPinNumber) async {
     return await Process.run(
-        SharedVariables.getSnapPath() + '/scripts/cScripts/buttonPress',
+        SharedVariables.GetProjectRootDirectoryPath() +
+            '/scripts/cScripts/buttonPress',
         [buttonPinNumber.pinAndPhysicalPinConfiguration.toString()]).then((
         ProcessResult results) {
       if (results.stdout
