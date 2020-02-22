@@ -1,5 +1,5 @@
-import 'package:SmartDeviceDart/shered/manage_physical_components/controlloling_pins.dart';
-import 'package:SmartDeviceDart/shered/manage_physical_components/devices_pin_configuration/pin_information.dart';
+import 'package:SmartDeviceDart/core/manage_physical_components/controlloling_pins.dart';
+import 'package:SmartDeviceDart/core/manage_physical_components/devices_pin_configuration/pin_information.dart';
 import 'package:test/test.dart';
 
 void main() {
