@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 
 import 'abstract_animle.dart';
 
-@RegisterAs(AnimalAbstract, env: Env.dev)
+@RegisterAs(AnimalAbstract, env: Env.dev_pc)
 @injectable
 class CowAnimal extends AnimalAbstract {
   CowAnimal() {
