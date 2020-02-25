@@ -1,9 +1,9 @@
-import 'package:SmartDeviceDart/core/manage_physical_components/devices_pin_configuration/pin_information.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/pins_datasource/controlloling_pins_local.dart';
-
-import '../device_information.dart';
 
 //  Class to change wish on status to device
+import 'package:SmartDeviceDart/core/device_information.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/controlloling_pins_local.dart';
+
 class OnWish {
 
   static String SetOn(DeviceInformation deviceInformation,

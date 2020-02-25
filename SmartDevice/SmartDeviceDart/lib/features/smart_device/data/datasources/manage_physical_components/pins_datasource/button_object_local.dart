@@ -1,16 +1,16 @@
 import 'dart:io';
 
-import 'package:SmartDeviceDart/core/manage_physical_components/devices_pin_configuration/pin_information.dart';
 import 'package:SmartDeviceDart/core/shared_variables.dart';
-import 'package:SmartDeviceDart/core/wish_classes/off_wish.dart';
-import 'package:SmartDeviceDart/core/wish_classes/on_wish.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/pins_datasource/button_object_local_abstract.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/button_object_local_abstract.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/wish_classes/off_wish.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/wish_classes/on_wish.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
 import 'package:SmartDeviceDart/injection.dart';
 import 'package:injectable/injectable.dart';
 
 
-@RegisterAs(ButtonObjectLocalAbstract, env: Env.dev)
+@RegisterAs(ButtonObjectLocalAbstract, env: Env.dev_pc)
 @RegisterAs(ButtonObjectLocalAbstract, env: Env.prod)
 @injectable
 class ButtonObjectLocal extends ButtonObjectLocalAbstract {

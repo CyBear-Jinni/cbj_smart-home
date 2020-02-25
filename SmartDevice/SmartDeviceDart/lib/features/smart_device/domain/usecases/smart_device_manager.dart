@@ -1,11 +1,10 @@
-import 'dart:io';
-
-import 'package:SmartDeviceDart/core/data_base/cloud_manager.dart';
-import 'package:SmartDeviceDart/core/enums.dart';
-import 'package:SmartDeviceDart/core/server/smart_server.dart';
-import 'package:SmartDeviceDart/core/shared_variables.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/fire_store/cloud_manager.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/server/smart_server.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/models/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/smart_device_objects/simple_devices/light_object.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
-import 'package:SmartDeviceDart/features/smart_device/smart_device_objects/simple_devices/light_object.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/repositories/voice_command_abstract.dart';
+import 'package:SmartDeviceDart/injection.dart';
 
 
 class SmartDeviceManager {
@@ -70,38 +69,16 @@ class SmartDeviceManager {
   }
 
   void startListeningToVoiceCommandForever() async {
-    try {
-      while (true) {
-        await listenToVoiceCommand();
-        print("Got Voice command");
-      }
-    }
-    catch (error) {
-      print('Path/argument 1 is not specified');
-      print('error: ' + error.toString());
-    }
-  }
-
-  //  Listen to voice commandfgtggg
-  Future<int> listenToVoiceCommand() async {
-    return await Process.run(
-        SharedVariables.GetProjectRootDirectoryPath() +
-            '/scripts/cScripts/demo',
-        [SharedVariables.GetProjectRootDirectoryPath()]).then((
-//          SharedVariables.getSnapPath() + '/scripts/cScripts/demo', [SharedVariables.getSnapPath() + "/scripts/cScripts"]).then((
-        ProcessResult results) {
-      print(results.stdout.toString());
-      if (results.stdout
-          .toString()
-          .length == 96) {
-        return -1;
-      }
+    VoiceCommandAbstract voiceCommandAbstract = getIt<VoiceCommandAbstract>();
+    while (true) {
+      bool voiceOutput = await voiceCommandAbstract.listenToActivateKeyWord();
       print("Recived voice command");
-      //RecognitionClass().listenToLightCommend();
-      //return;
-      (smartDevicesList[0] as LightObject).WishInBaseClass(
-          WishEnum.SChangeState);
-      return 0;
-    });
+      if (voiceOutput) {
+        (smartDevicesList[0] as LightObject).WishInBaseClass(
+            WishEnum.SChangeState);
+      }
+      print("Got Voice command");
+    }
+
   }
 }

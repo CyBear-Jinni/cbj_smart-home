@@ -1,5 +1,5 @@
-import 'package:SmartDeviceDart/core/manage_physical_components/devices_pin_configuration/pin_information.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/pins_datasource/controlloling_pins_local.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/controlloling_pins_local.dart';
 import 'package:test/test.dart';
 
 void main() {

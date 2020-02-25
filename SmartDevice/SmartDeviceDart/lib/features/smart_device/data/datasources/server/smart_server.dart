@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:SmartDeviceDart/features/smart_device/data/models/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/smart_device_objects/static_devices/blinds_object.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
-import 'package:SmartDeviceDart/features/smart_device/smart_device_objects/static_devices/blinds_object.dart';
 import 'package:grpc/grpc.dart';
 
-import '../enums.dart';
 import 'protoc_as_dart/smart_connection.pb.dart';
 import 'protoc_as_dart/smart_connection.pbgrpc.dart';
 

@@ -11,6 +11,7 @@ Future<void> configureInjection(String environment) async =>
 
 abstract class Env {
   static const test = 'test';
-  static const dev = 'dev';
+  static const dev_pc = 'dev_pc';
+  static const dev_pi = 'dev_pi';
   static const prod = 'prod';
 }
