@@ -16,6 +16,8 @@ dependencies:
   get_it: ^3.1.0
   # Convenient code generator for get_it
   injectable: ^0.2.2
+  # Allow returning more than one type of object
+  equatable: ^1.1.0
 
 dev_dependencies:
   pedantic: ^1.7.0

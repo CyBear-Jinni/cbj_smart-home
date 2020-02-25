@@ -1,4 +1,4 @@
-import 'package:SmartDeviceDart/core/manage_physical_components/devices_pin_configuration/pin_information.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
 
 abstract class ButtonObjectLocalAbstract {
