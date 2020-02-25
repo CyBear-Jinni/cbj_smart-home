@@ -1,4 +1,4 @@
-import 'package:SmartDeviceDart/features/smart_device/smart_device_objects/static_devices/blinds_object.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/smart_device_objects/static_devices/blinds_object.dart';
 
 import 'off_wish.dart';
 import 'on_wish.dart';
