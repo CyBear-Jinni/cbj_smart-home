@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:SmartDeviceDart/core/wish_classes/off_wish.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/models/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/wish_classes/off_wish.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
 
-import '../enums.dart';
 import 'devices_pin_configuration/device_configuration_base_class.dart';
 import 'devices_pin_configuration/nano_pi_duo2_configuration.dart';
 import 'devices_pin_configuration/nano_pi_neo2_configuration.dart';
