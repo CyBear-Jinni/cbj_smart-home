@@ -23,7 +23,6 @@ class MicrophoneVoiceCommand extends MicrophoneVoiceCommandAbstract {
               SharedVariables.GetProjectRootDirectoryPath() +
                   '/scripts/cScripts/demo',
               [SharedVariables.GetProjectRootDirectoryPath()]).then((
-//          SharedVariables.getSnapPath() + '/scripts/cScripts/demo', [SharedVariables.getSnapPath() + "/scripts/cScripts"]).then((
           ProcessResult results) {
         print(results.stdout.toString());
         if (results.stdout.toString().length == 96) {

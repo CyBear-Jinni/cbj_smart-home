@@ -16,7 +16,18 @@ confinement: devmode
 #architectures: [all]
 
 parts:
+  alsa-mixin:
+    plugin: dump
+    source: https://github.com/diddlesnaps/snapcraft-alsa.git
+    source-subdir: snapcraft-assets
+    build-packages:
+      - libasound2-dev
+    stage-packages:
+      - libasound2
+      - libasound2-plugins
+
   smart-home:
+    after: [alsa-mixin]
     plugin: dump
     source: .
     override-build: |
@@ -70,37 +81,23 @@ parts:
       - git
       - gcc
       - make
-      - python3-pyaudio
       - python3-pip
       - libevent-dev
-      - python-dev
-      - libpcre3
-      - libpcre3-dev
       - libperl-dev
-      - libasound2
-      - libasound2-dev
       - libatlas-base-dev
       - libasound2-plugins
-      - alsa-utils
-      - pulseaudio
+      - libasound-dev
     stage-packages:
-      - python3-pyaudio
-      - sox
-      - python-setuptools
       - libatlas-base-dev
       - libevent-dev
-      - python-dev
-      - libpcre3
-      - libpcre3-dev
-      - libperl-dev
-      - libasound2
-      - libasound2-dev
-      - libasound2-plugins
-      - alsa-utils
-      - pulseaudio
+
+layout:
+  /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib:
+    bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib
 
 apps:
   smart-home:
+    command-chain: ["snap/command-chain/alsa-launch"]
     command: dart-sdk/bin/dartaotruntime $SNAP/main.aot $SNAP
     daemon: simple
     plugs: [network, network-bind, gpio, hardware-observe, audio-playback, audio-record, pulseaudio, alsa]
