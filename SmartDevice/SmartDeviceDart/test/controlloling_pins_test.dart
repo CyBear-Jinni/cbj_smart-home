@@ -1,5 +1,6 @@
 import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/controlloling_pins_local.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/pin_on_off.dart';
+import 'package:SmartDeviceDart/injection.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -7,7 +8,8 @@ void main() {
       () async {
     PinInformation pinInformation = PinInformation();
 
-    String pinOnResponse = await PinOn(pinInformation);
+    String pinOnResponse = await getIt<TurnPinOnOffAbstract>().PinOn(
+        pinInformation);
 
     expect(pinOnResponse,
         'Error PinInformation.pinAndPhysicalPinConfiguration was not set');
@@ -17,7 +19,8 @@ void main() {
     PinInformation pinInformation =
         PinInformation(pinAndPhysicalPinConfiguration: 2);
 
-    String pinOnResponse = await PinOn(pinInformation);
+    String pinOnResponse = await getIt<TurnPinOnOffAbstract>().PinOn(
+        pinInformation);
 
     expect(pinOnResponse,
         'Error SharedVariables.GetProjectRootDirectoryPath was not set');
