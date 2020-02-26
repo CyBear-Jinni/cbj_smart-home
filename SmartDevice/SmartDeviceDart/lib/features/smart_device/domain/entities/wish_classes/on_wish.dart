@@ -2,7 +2,8 @@
 //  Class to change wish on status to device
 import 'package:SmartDeviceDart/core/device_information.dart';
 import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/controlloling_pins_local.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/pin_on_off.dart';
+import 'package:SmartDeviceDart/injection.dart';
 
 class OnWish {
 
@@ -23,7 +24,7 @@ class OnWish {
   //  Turn this device on
   static String SetOnLocal(LocalDevice deviceInformation,
       PinInformation pinNumber) {
-    PinOn(pinNumber);
+    getIt<TurnPinOnOffAbstract>().PinOn(pinNumber);
     return 'Response from this device on sucsessful';
   }
 
