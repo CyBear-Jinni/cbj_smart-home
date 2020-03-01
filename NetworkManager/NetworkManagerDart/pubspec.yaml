@@ -1,0 +1,16 @@
+name: NetworkManagerDart
+description: A sample command-line application.
+# version: 1.0.0
+# homepage: https://www.example.com
+# author: guyl <***REMOVED***>
+
+environment:
+  sdk: '>=2.5.0 <3.0.0'
+
+dependencies:
+  firedart: ^0.6.1
+  data_connection_checker: ^0.3.4
+
+dev_dependencies:
+  pedantic: ^1.8.0
+  test: ^1.6.0
