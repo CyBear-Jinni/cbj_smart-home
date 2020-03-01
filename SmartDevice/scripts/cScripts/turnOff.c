@@ -5,11 +5,14 @@
 
 int main (int argc, char const *argv[])
 {
-	printf("I am in\n");
 	int ledPin =  atoi(argv[1]);
-	wiringPiSetup ();
+
+	if (wiringPiSetupPhys()  == -1)
+        exit (1) ;
+
 	pinMode (ledPin, OUTPUT);
-	digitalWrite (ledPin, LOW); //  On
+	digitalWrite (ledPin, LOW); //  Turn pin off
+
 	return 0 ;
 }
 

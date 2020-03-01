@@ -3,7 +3,7 @@
 
 int main(int argc, char const *argv[])
 {
-	int buttonPin = atoi(argv[1]);;
+	int buttonPin = atoi(argv[1]);
 
 	if (wiringPiSetupPhys()  == -1)
 		exit (1) ;
@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
 
 	pullUpDnControl (buttonPin, PUD_UP) ;
 
-    while (digitalRead (buttonPin) == HIGH ){   // Wait for release
+    while (digitalRead (buttonPin) == HIGH ){   // Wait for button press
     	delay (10) ;
     }
 
