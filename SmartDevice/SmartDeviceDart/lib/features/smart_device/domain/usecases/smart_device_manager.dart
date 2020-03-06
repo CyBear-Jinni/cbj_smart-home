@@ -70,8 +70,9 @@ class SmartDeviceManager {
 
   void startListeningToVoiceCommandForever() async {
     VoiceCommandAbstract voiceCommandAbstract = getIt<VoiceCommandAbstract>();
+    bool voiceOutput;
     while (true) {
-      bool voiceOutput = await voiceCommandAbstract.listenToActivateKeyWord();
+      voiceOutput = await voiceCommandAbstract.listenToActivateKeyWord();
       print("Recived voice command");
       if (voiceOutput) {
         (smartDevicesList[0] as LightObject).WishInBaseClass(
@@ -79,6 +80,5 @@ class SmartDeviceManager {
       }
       print("Got Voice command");
     }
-
   }
 }
