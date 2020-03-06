@@ -8,21 +8,21 @@ environment:
   sdk: '>=2.4.0 <3.0.0'
 
 dependencies:
-  firedart: ^0.6.1
+  firedart: ^0.6.5
   # Functional programming thingies, let you use multiple return types
   dartz: ^0.8.9
   # For the injection, allow accessing an object from anywhere in an App
-  get_it: ^3.1.0
+  get_it: ^4.0.0
   # Convenient code generator for get_it
-  injectable: ^0.2.2
+  injectable: ^0.3.0
   # Allow returning more than one type of object
-  equatable: ^1.1.0
+  equatable: ^1.1.1
 
 dev_dependencies:
-  pedantic: ^1.7.0
-  test: ^1.6.4
+  pedantic: ^1.9.0
+  test: ^1.14.1
   # Library for mocks
   mockito: ^4.1.1
   build_runner:
   # A generator for injectable library
-  injectable_generator: ^0.2.2
+  injectable_generator: ^0.3.0
