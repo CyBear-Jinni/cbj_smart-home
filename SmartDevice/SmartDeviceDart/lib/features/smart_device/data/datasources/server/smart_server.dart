@@ -1,25 +1,23 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:SmartDeviceDart/features/smart_device/data/models/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/server/protoc_as_dart/smart_connection.pb.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/server/protoc_as_dart/smart_connection.pbgrpc.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/repositories/server_repository.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singleton.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/smart_device_objects/static_devices/blinds_object.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
 import 'package:grpc/grpc.dart';
 
-import 'protoc_as_dart/smart_connection.pb.dart';
-import 'protoc_as_dart/smart_connection.pbgrpc.dart';
-
 
 class SmartServer extends SmartServerServiceBase {
 
-  List<SmartDeviceBaseAbstract> smartDevicesList;
-
-
-  SmartServer(this.smartDevicesList);
+  SmartServer();
 
   //  Listening in the background to incoming connections
   Future startListen() async {
-    final server = Server([SmartServer(smartDevicesList)]);
+    final server = Server([SmartServer()]);
     await server.serve(port: 50051);
     print('Server listening on port ${server.port}...');
   }
@@ -28,7 +26,7 @@ class SmartServer extends SmartServerServiceBase {
   @override
   Future<SmartDeviceStatus> getStatus(ServiceCall call,
       SmartDevice request) async {
-    SmartDeviceBaseAbstract smartDevice = smartDevicesList[int.parse(
+    var smartDevice = MySingleton.getSmartDevicesList()[int.parse(
         request.name)];
     String deviceStatus = smartDevice.WishInBaseClass(WishEnum.GState);
 
@@ -45,11 +43,8 @@ class SmartServer extends SmartServerServiceBase {
   Future<CommendStatus> setOffDevice(ServiceCall call,
       SmartDevice request) async {
     print('Turn device ' + request.name + ' off');
-    SmartDeviceBaseAbstract smartDevice =
-    getSmartDeviceBaseAbstract(request);
-    String deviceStatus = smartDevice.WishInBaseClass(WishEnum.SOff);
-    print('Device state is ' + smartDevice.onOff.toString());
-    return CommendStatus()..success = smartDevice.onOff;
+    ServerRepository serverRepository = ServerRepository();
+    return serverRepository.executeWishEnum(request, WishEnum.SOff);
   }
 
 
@@ -108,7 +103,7 @@ class SmartServer extends SmartServerServiceBase {
 
 
   SmartDeviceBaseAbstract getSmartDeviceBaseAbstract(SmartDevice request) =>
-      smartDevicesList[int.parse(request.name)];
+      MySingleton.getSmartDevicesList()[int.parse(request.name)];
 }
 
 //  Get Ip info
