@@ -2,7 +2,7 @@ import 'dart:io';
 
 class RecognitionClass {
   void listenToLightCommend() async {
-    List<String> pythonCommends = List();
+    var pythonCommends = <String>[];
     pythonCommends.add('-c');
     pythonCommends.add('''
 #!/usr/bin/env python3
@@ -138,7 +138,7 @@ except Exception as e:
 
 ''');
     while (true) {
-      print("Try me");
+      print('Try me');
       await Process.run('python3', pythonCommends)
           .then((ProcessResult results) {
         print(results.stdout);

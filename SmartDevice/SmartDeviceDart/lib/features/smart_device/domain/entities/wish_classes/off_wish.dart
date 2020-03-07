@@ -21,7 +21,7 @@ class OffWish {
   static String SetOffLocal(LocalDevice deviceInformation,
       PinInformation pinNumber) {
 //    pinOff(7);
-    getIt<TurnPinOnOffAbstract>().pinOff(pinNumber);
+    getIt<TurnPinOnOffAbstract>().PinOff(pinNumber);
     return 'Response from this device off sucsessful';
   }
 

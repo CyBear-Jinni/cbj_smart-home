@@ -9,7 +9,7 @@ class MySingleton {
   }
 
   MySingleton._internal() {
-    smartDevicesList = List<SmartDeviceBaseAbstract>();
+    smartDevicesList = <SmartDeviceBaseAbstract>[];
   }
 
   static void setSmartDevicesList(
