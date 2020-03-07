@@ -75,7 +75,7 @@ class SmartDeviceManager {
       voiceOutput = await voiceCommandAbstract.listenToActivateKeyWord();
       print('Recived voice command');
       if (voiceOutput) {
-        (MySingleton.getSmartDevicesList()[0] as LightObject).WishInBaseClass(
+        (MySingleton.getSmartDevicesList()[0] as LightObject).wishInBaseClass(
             WishEnum.SChangeState);
       }
       print('Got Voice command');

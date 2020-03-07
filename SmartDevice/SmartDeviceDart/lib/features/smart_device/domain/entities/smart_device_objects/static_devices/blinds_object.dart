@@ -18,30 +18,30 @@ class BlindsObject extends SmartDeviceStaticAbstract {
       int blindsUpPin, int upButtonPinNumber, int blindsDownPin, int downButtonPinNumber)
       : super(macAddress, deviceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber) {
-    buttonPinUp = DevicePinListManager.GetGpioPin(this, upButtonPinNumber);
+    buttonPinUp = DevicePinListManager.getGpioPin(this, upButtonPinNumber);
     buttonPinDown =
-        DevicePinListManager.GetGpioPin(this, downButtonPinNumber);
+        DevicePinListManager.getGpioPin(this, downButtonPinNumber);
 
-    this.blindsUpPin = DevicePinListManager.GetGpioPin(this, blindsUpPin);
-    this.blindsDownPin = DevicePinListManager.GetGpioPin(this, blindsDownPin);
+    this.blindsUpPin = DevicePinListManager.getGpioPin(this, blindsUpPin);
+    this.blindsDownPin = DevicePinListManager.getGpioPin(this, blindsDownPin);
     listenToTwoButtonsPress();
   }
 
 
   @override
-  Future<String> ExecuteWish(String wishString) async {
-    var wish = ConvertWishStringToWishesObject(wishString);
-    return await WishInBlindsClass(wish);
+  Future<String> executeWish(String wishString) async {
+    var wish = convertWishStringToWishesObject(wishString);
+    return await wishInBlindsClass(wish);
   }
 
   //  All the wishes that are legit to execute from the blinds class
-  Future<String> WishInBlindsClass(WishEnum wish) async {
+  Future<String> wishInBlindsClass(WishEnum wish) async {
     if(wish == null) return 'Your wish does not exist in blinds class';
     if (wish == WishEnum.blindsUp) return await BlindsWish.BlindsUp(this);
-    if (wish == WishEnum.blindsDown) return await BlindsWish.BlindsDown(this);
-    if (wish == WishEnum.blindsStop) return await BlindsWish.BlindsStop(this);
+    if(wish == WishEnum.blindsDown) return await BlindsWish.blindsDown(this);
+    if(wish == WishEnum.blindsStop) return await BlindsWish.blindsStop(this);
 
-    return WishInStaticClass(wish);
+    return wishInStaticClass(wish);
   }
 
 
