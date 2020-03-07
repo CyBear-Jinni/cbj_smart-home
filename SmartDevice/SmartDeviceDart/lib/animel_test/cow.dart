@@ -16,8 +16,7 @@ class CowAnimal extends AnimalAbstract {
     return 4;
   }
 
-  @override
   String name() {
-    return "sds";
+    return 'sds';
   }
 }

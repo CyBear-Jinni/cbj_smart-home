@@ -41,7 +41,7 @@ parts:
 
 
       cd scripts/bashScripts/
-      ./compileAllCFiles.sh   # Have to be executed when working directory is this file location
+      ./compileAllCFiles.sh # Have to be executed when working directory is this file location
       cd ../..
 
 

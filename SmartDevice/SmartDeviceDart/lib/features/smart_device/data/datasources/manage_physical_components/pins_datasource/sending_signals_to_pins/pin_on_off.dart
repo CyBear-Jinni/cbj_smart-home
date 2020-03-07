@@ -3,5 +3,5 @@ import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_ph
 abstract class TurnPinOnOffAbstract {
   Future<String> PinOn(PinInformation pinNumber);
 
-  Future<String> pinOff(PinInformation pinNumber);
+  Future<String> PinOff(PinInformation pinNumber);
 }

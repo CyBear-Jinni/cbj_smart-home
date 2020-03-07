@@ -23,13 +23,13 @@ class DevicePinListManager {
 
 
   Future SetPhysicalDeviceTypeByHostName() async {
-    String deviceHostName = await GetDeviceHostName();
-    deviceHostName = deviceHostName.replaceAll("-", "").replaceAll(" ", "");
+    var deviceHostName = await GetDeviceHostName();
+    deviceHostName = deviceHostName.replaceAll('-', '').replaceAll(' ', '');
 
     physicalDeviceType =
         ConvertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
             deviceHostName);
-    print("phyc type is" + physicalDevice.toString());
+    print('phyc type is' + physicalDevice.toString());
     //  Save the current physical device configuration to the physicalDevice variable
     switch (physicalDeviceType) {
       case PhysicalDeviceType.NanoPiDuo2:
@@ -68,21 +68,21 @@ class DevicePinListManager {
   static PinInformation GetGpioPin(SmartDeviceBaseAbstract smartDevice,
       int pinNumber) {
     if (physicalDevice == null) {
-      print("Error physical device is null");
+      print('Error physical device is null');
       return null;
     }
     try {
-      int isGpioFree = physicalDevice.isGpioPinFree(pinNumber);
+      var isGpioFree = physicalDevice.isGpioPinFree(pinNumber);
       if (isGpioFree != 0) {
         return null;
       }
 
-      PinInformation pinInformation = physicalDevice.GetGpioPin(pinNumber);
+      var pinInformation = physicalDevice.GetGpioPin(pinNumber);
       OffWish.SetOff(smartDevice.deviceInformation, pinInformation);
       return pinInformation;
     }
     catch (e) {
-      print("This is the exeption: " + e.toString());
+      print('This is the exeption: ' + e.toString());
       return null;
     }
   }
@@ -92,7 +92,7 @@ class DevicePinListManager {
   ConvertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
       String physicalDeviceType) {
     //  Loop through all the physical devices types
-    for (PhysicalDeviceType physicalDeviceTypeTemp
+    for (var physicalDeviceTypeTemp
     in PhysicalDeviceType.values) {
       if (EnumHelper.physicalDeviceTypeToString(physicalDeviceTypeTemp)
           .toLowerCase() ==

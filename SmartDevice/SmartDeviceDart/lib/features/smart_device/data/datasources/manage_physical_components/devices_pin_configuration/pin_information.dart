@@ -7,7 +7,7 @@ class PinInformation {
   String name; //  Name from the site, Examples: VDD_5V, SYS_3.3V, GND, SCL, SDA, CS, GPIOL11/IR-RX, DEBUG_RX(UART_RXD0)/GPIOA5/PWM0
   String gpioValue; // The gpio value, Examples: 5V, 3V3, GND, IRRX, RXD, TXD
   String mode; //  Examples: IN, OUT, OFF, ALT5
-  String model; //  Examples:  RTL8188CUS/8188EU 802.11n WLAN Adapter, RT2070 Wireless Adapter, mi WiFi mt7601
+  String model; //  Examples: RTL8188CUS/8188EU 802.11n WLAN Adapter, RT2070 Wireless Adapter, mi Wi-Fi mt7601
   String description; //  Examples: 5V Power Out, USB1 DP Signal, GPIOL11 or IR Receive, I2S/PCM Serial Data Input
   int gpioColumn; //  Gpio column, Examples: 1, 2
   int index; //  Examples: 1, 2, 3, 4
@@ -21,20 +21,20 @@ class PinInformation {
 
   PinInformation({
     this.isInUse,
-      this.category,
-      this.name,
-      this.gpioValue,
-      this.mode,
-      this.model,
-      this.description,
-      this.gpioColumn,
-      this.index,
-      this.v,
-      this.ph,
-      this.bcmOrLinuxGpio,
-      this.wPi,
-      this.pinAndPhysicalPinConfiguration}) {
-    this.isInUse = this.isInUse == null ? false : this.isInUse;
+                   this.category,
+                   this.name,
+                   this.gpioValue,
+                   this.mode,
+                   this.model,
+                   this.description,
+                   this.gpioColumn,
+                   this.index,
+                   this.v,
+                   this.ph,
+                   this.bcmOrLinuxGpio,
+                   this.wPi,
+                   this.pinAndPhysicalPinConfiguration}) {
+    isInUse = isInUse ?? false;
     onDuration = 0;
   }
 }

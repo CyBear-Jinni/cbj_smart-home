@@ -16,23 +16,23 @@ void main() {
     mockCowAnimal = MockCowAnimal();
   });
 
-  test("Cow legs", () async {
+  test('Cow legs', () async {
     //  Arrange
 
     //  Act
     when(mockCowAnimal.numberOfLegs()).thenReturn(4);
-    print("Number of legs to cow" + mockCowAnimal.numberOfLegs().toString());
+    print('Number of legs to cow' + mockCowAnimal.numberOfLegs().toString());
     //  Assert
     verify(mockCowAnimal.numberOfLegs()).called(2);
 //    expect(mockCowAnimal.numberOfLegs(), 4);
   });
 
-  test("Cow legs fakeCowAnimal ", () async {
+  test('Cow legs fakeCowAnimal ', () async {
     //  Arrange
 
     //  Act
     when(mockCowAnimal.numberOfLegs()).thenReturn(4);
-    print("Number of legs to cow" + mockCowAnimal.numberOfLegs().toString());
+    print('Number of legs to cow' + mockCowAnimal.numberOfLegs().toString());
     //  Assert
     verify(mockCowAnimal.numberOfLegs()).called(2);
 //    expect(mockCowAnimal.numberOfLegs(), 4);
