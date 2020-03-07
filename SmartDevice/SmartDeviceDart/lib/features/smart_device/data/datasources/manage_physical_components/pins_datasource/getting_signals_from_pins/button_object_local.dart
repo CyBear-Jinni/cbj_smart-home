@@ -15,19 +15,20 @@ import 'package:injectable/injectable.dart';
 @injectable
 class ButtonObjectLocal extends ButtonObjectLocalAbstract {
 
+  @override
   void buttonPressed(SmartDeviceBaseAbstract smartDevice,
-      PinInformation buttonPinNumber, PinInformation lightPin) async {
-    int errorCounter = 0;
+                     PinInformation buttonPinNumber, PinInformation lightPin) async {
+    var errorCounter = 0;
 
     try {
       while (true) {
-        int returnValue = await listenToButtonPress(buttonPinNumber);
+        var returnValue = await listenToButtonPress(buttonPinNumber);
 
         if (returnValue < 0) {
           errorCounter++;
           if (errorCounter > 10) {
-            print("Stop the listening to the button, it failed more than " +
-                errorCounter.toString() + " times");
+            print('Stop the listening to the button, it failed more than ' +
+                  errorCounter.toString() + ' times');
           }
           return;
         }
@@ -47,26 +48,26 @@ class ButtonObjectLocal extends ButtonObjectLocalAbstract {
   }
 
   //  Listen to two buttons but work only if one is pressed.
+  @override
   void listenToTwoButtonPressedButtOnlyOneCanBePressedAtATime(
       SmartDeviceBaseAbstract smartDevice,
       PinInformation firstButtonPinNumber, PinInformation firstLightPin,
       PinInformation secondButtonPinNumber, PinInformation secondLightPin) async
   {
-
     listenToButtonPressAndDoAction(smartDevice, firstButtonPinNumber,
-        firstLightPin, secondLightPin, 1);
+                                       firstLightPin, secondLightPin, 1);
 
     listenToButtonPressAndDoAction(smartDevice, secondButtonPinNumber,
-        firstLightPin, secondLightPin, 2);
+                                       firstLightPin, secondLightPin, 2);
   }
 
 
+  @override
   void listenToButtonPressAndDoAction(SmartDeviceBaseAbstract smartDevice,
-      PinInformation buttonPinNumber, PinInformation firstLightPin,
-      PinInformation secondLightPin, int buttonNumber) async {
+                                      PinInformation buttonPinNumber, PinInformation firstLightPin,
+                                      PinInformation secondLightPin, int buttonNumber) async {
     while (true) {
-      await listenToButtonPress(buttonPinNumber).then((
-          int exitCode) async {
+      await listenToButtonPress(buttonPinNumber).then((int exitCode) async {
         await changePinsOutput(
             smartDevice, firstLightPin, secondLightPin,
             buttonNumber);
@@ -75,15 +76,16 @@ class ButtonObjectLocal extends ButtonObjectLocalAbstract {
   }
 
   //  Listen to button press and return exist code
+  @override
   Future<int> listenToButtonPress(PinInformation buttonPinNumber) async {
     return await Process.run(
         SharedVariables.GetProjectRootDirectoryPath() +
-            '/scripts/cScripts/buttonPress',
+        '/scripts/cScripts/buttonPress',
         [buttonPinNumber.pinAndPhysicalPinConfiguration.toString()]).then((
-        ProcessResult results) {
+                                                                              ProcessResult results) {
       if (results.stdout
-          .toString()
-          .length == 96) {
+              .toString()
+              .length == 96) {
         return -1;
       }
       return 0;
@@ -91,10 +93,11 @@ class ButtonObjectLocal extends ButtonObjectLocalAbstract {
   }
 
   //  Logic of two buttons
+  @override
   Future changePinsOutput(SmartDeviceBaseAbstract smartDevice,
-      PinInformation firstLightPin,
-      PinInformation secondLightPin,
-      int buttonPressNumber) async {
+                          PinInformation firstLightPin,
+                          PinInformation secondLightPin,
+                          int buttonPressNumber) async {
     if (firstLightPin.v == 1 || secondLightPin.v == 1) {
       firstLightPin.onDuration = 0;
       await OffWish.SetOff(smartDevice.deviceInformation, firstLightPin);

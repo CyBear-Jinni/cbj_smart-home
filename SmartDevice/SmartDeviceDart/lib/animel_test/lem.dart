@@ -13,6 +13,5 @@ class LemAnimal extends AnimalAbstract {
   @override
   int numberOfLegs() => 1;
 
-  @override
-  String name() => "lem";
+  String name() => 'lem';
 }

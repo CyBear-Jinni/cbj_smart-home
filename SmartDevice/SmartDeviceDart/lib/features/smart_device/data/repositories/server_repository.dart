@@ -8,14 +8,14 @@ import 'package:SmartDeviceDart/features/smart_device/domain/usecases/actions_to
 class ServerRepository implements SmartServerAbstract {
   @override
   CommendStatus executeWishEnum(SmartDevice request, WishEnum wishEnum) {
-    SmartDeviceBaseAbstract smartDevice =
+    var smartDevice =
         MySingleton.getSmartDevicesList()[int.parse(request.name)];
     ActionsToPreform.executeWishEnum(smartDevice, wishEnum);
     return CommendStatus()..success = smartDevice.onOff;
   }
 
   String executeWishEnumString(SmartDevice request, WishEnum wishEnum) {
-    SmartDeviceBaseAbstract smartDevice =
+    var smartDevice =
     MySingleton.getSmartDevicesList()[int.parse(request.name)];
 
     return ActionsToPreform.executeWishEnum(smartDevice, wishEnum);

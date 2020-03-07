@@ -15,15 +15,15 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
 
   @override
   Future<String> ExecuteWish(String wishString) async {
-    WishEnum wish = ConvertWishStringToWishesObject(wishString);
-    if (wish == null) return "Your wish does not exist on ";
+    var wish = ConvertWishStringToWishesObject(wishString);
+    if(wish == null) return 'Your wish does not exist on ';
     return _wishInDynamicClass(wish);
   }
 
   //  Set dynamic value
   String _SetDynamicValue() {
     if (deviceInformation == null) {
-      return "Device information is missing, cant set dynamic value";
+      return 'Device information is missing, cant set dynamic value';
     }
     return DynamicWish.SetDynamic(deviceInformation);
   }
@@ -31,7 +31,7 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
   //  Change dynamic value with open connection
   String _OpenDynamicValue() {
     if (deviceInformation == null) {
-      return "Device information is missing, cant create open connection with dynamic ";
+      return 'Device information is missing, cant create open connection with dynamic ';
     }
     DynamicWish.OpenDynamic(deviceInformation);
     onOff = false;
