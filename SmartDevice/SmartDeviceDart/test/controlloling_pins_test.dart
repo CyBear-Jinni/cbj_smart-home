@@ -8,7 +8,7 @@ void main() {
       () async {
              var pinInformation = PinInformation();
 
-             var pinOnResponse = await getIt<TurnPinOnOffAbstract>().PinOn(
+             var pinOnResponse = await getIt<TurnPinOnOffAbstract>().pinOn(
         pinInformation);
 
     expect(pinOnResponse,
@@ -19,7 +19,7 @@ void main() {
     var pinInformation =
         PinInformation(pinAndPhysicalPinConfiguration: 2);
 
-    var pinOnResponse = await getIt<TurnPinOnOffAbstract>().PinOn(
+    var pinOnResponse = await getIt<TurnPinOnOffAbstract>().pinOn(
         pinInformation);
 
     expect(pinOnResponse,

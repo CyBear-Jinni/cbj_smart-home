@@ -11,5 +11,5 @@ class SharedVariables {
   }
 
 
-  static String GetProjectRootDirectoryPath() => _projectRootDirectoryPath;
+  static String getProjectRootDirectoryPath() => _projectRootDirectoryPath;
 }
