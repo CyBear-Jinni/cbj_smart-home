@@ -22,7 +22,7 @@ main(List<String> arguments) async {
   }
 
   //  Getting physical device type from outside, and checking if this device configuration exist
-  await DevicePinListManager().SetPhysicalDeviceTypeByHostName();
+  await DevicePinListManager().setPhysicalDeviceTypeByHostName();
 
   SmartDeviceManager();
 }

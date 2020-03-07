@@ -42,7 +42,7 @@ enum PhysicalDeviceType { NanoPiDuo2, NanoPiNeo, NanoPiNeo2 }
 
 class EnumHelper {
   //  Convert deviceType to string
-  static String DeviceTypeToString(DeviceType deviceType) {
+  static String deviceTypeToString(DeviceType deviceType) {
     return deviceType.toString().replaceAll('DeviceType.', '');
   }
 
