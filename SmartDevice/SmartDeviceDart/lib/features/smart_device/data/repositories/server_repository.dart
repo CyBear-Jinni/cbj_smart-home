@@ -14,6 +14,13 @@ class ServerRepository implements SmartServerAbstract {
     return CommendStatus()..success = smartDevice.onOff;
   }
 
+  String executeWishEnumString(SmartDevice request, WishEnum wishEnum) {
+    SmartDeviceBaseAbstract smartDevice =
+    MySingleton.getSmartDevicesList()[int.parse(request.name)];
+
+    return ActionsToPreform.executeWishEnum(smartDevice, wishEnum);
+  }
+
   SmartDeviceBaseAbstract getSmartDeviceBaseAbstract(SmartDevice request) =>
       MySingleton.getSmartDevicesList()[int.parse(request.name)];
 }
