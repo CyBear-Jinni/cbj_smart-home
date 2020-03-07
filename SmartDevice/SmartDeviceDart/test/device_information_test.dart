@@ -9,8 +9,8 @@ void main() {
     var deviceInformation =
         DeviceInformation(deviceMacAddress, deviceName);
 
-    expect(deviceInformation.GetMacAddress(), deviceMacAddress);
-    expect(deviceInformation.GetName(), deviceName);
+    expect(deviceInformation.getMacAddress(), deviceMacAddress);
+    expect(deviceInformation.getName(), deviceName);
   });
 
   test('RemoteDevice', () {
@@ -21,9 +21,9 @@ void main() {
     var deviceInformation =
         RemoteDevice(deviceMacAddress, deviceName, deviceIp);
 
-    expect(deviceInformation.GetMacAddress(), deviceMacAddress);
-    expect(deviceInformation.GetName(), deviceName);
-    expect(deviceInformation.GetIp(), deviceIp);
+    expect(deviceInformation.getMacAddress(), deviceMacAddress);
+    expect(deviceInformation.getName(), deviceName);
+    expect(deviceInformation.getIp(), deviceIp);
   });
 
   test('LocalDevice', () {
@@ -32,7 +32,7 @@ void main() {
 
     var deviceInformation = LocalDevice(deviceMacAddress, deviceName);
 
-    expect(deviceInformation.GetMacAddress(), deviceMacAddress);
-    expect(deviceInformation.GetName(), deviceName);
+    expect(deviceInformation.getMacAddress(), deviceMacAddress);
+    expect(deviceInformation.getName(), deviceName);
   });
 }

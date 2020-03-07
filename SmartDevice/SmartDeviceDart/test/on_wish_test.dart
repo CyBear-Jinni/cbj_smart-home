@@ -15,7 +15,7 @@ void main() {
 
 //    String a = OnWish.SetOn(deviceInformation, pinInformation);
 //    print('This is a: ' + a);
-    getIt<TurnPinOnOffAbstract>().PinOn(pinInformation);
+    getIt<TurnPinOnOffAbstract>().pinOn(pinInformation);
     expect(2, 42);
   });
 }

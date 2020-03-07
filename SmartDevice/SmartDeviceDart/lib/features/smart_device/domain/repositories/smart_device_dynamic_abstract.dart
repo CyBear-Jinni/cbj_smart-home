@@ -14,10 +14,10 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
 
 
   @override
-  Future<String> ExecuteWish(String wishString) async {
-    var wish = ConvertWishStringToWishesObject(wishString);
+  Future<String> executeWish(String wishString) async {
+    var wish = convertWishStringToWishesObject(wishString);
     if(wish == null) return 'Your wish does not exist on ';
-    return _wishInDynamicClass(wish);
+    return _WishInDynamicClass(wish);
   }
 
   //  Set dynamic value
@@ -25,7 +25,7 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
     if (deviceInformation == null) {
       return 'Device information is missing, cant set dynamic value';
     }
-    return DynamicWish.SetDynamic(deviceInformation);
+    return DynamicWish.setDynamic(deviceInformation);
   }
 
   //  Change dynamic value with open connection
@@ -33,20 +33,20 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
     if (deviceInformation == null) {
       return 'Device information is missing, cant create open connection with dynamic ';
     }
-    DynamicWish.OpenDynamic(deviceInformation);
+    DynamicWish.openDynamic(deviceInformation);
     onOff = false;
     return 'Turn on sucsessfuly';
   }
 
   //  All the wishes that are legit to execute from the dynamic class
-  String _wishInDynamicClass(WishEnum wish) {
+  String _WishInDynamicClass(WishEnum wish) {
     switch (wish) {
       case WishEnum.SDynamic:
         return _SetDynamicValue();
       case WishEnum.ODynamic:
         return _OpenDynamicValue();
       default:
-        return WishInSimpleClass(wish);
+        return wishInSimpleClass(wish);
     }
   }
 }

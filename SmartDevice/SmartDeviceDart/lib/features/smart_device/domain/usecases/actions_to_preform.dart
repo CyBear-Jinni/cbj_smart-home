@@ -4,7 +4,7 @@ import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_
 class ActionsToPreform {
   static String executeWishEnum(
       SmartDeviceBaseAbstract smartDevice, WishEnum wishEnum) {
-    var deviceStatus = smartDevice.WishInBaseClass(wishEnum);
+    var deviceStatus = smartDevice.wishInBaseClass(wishEnum);
     print('Device state is ' + deviceStatus);
 
     return deviceStatus;
