@@ -12,7 +12,7 @@ abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
 
   //  TODO: set how much to move
   String _HowMuchToMove() {
-    return "How much to move not supported yet";
+    return 'How much to move not supported yet';
 //    if(deviceInformation == null) {
 //      return "Device information is missing, cant trun off";
 //    }
@@ -24,10 +24,10 @@ abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
   //  All the wishes that are legit to execute from the static class
   @override
   Future<String> ExecuteWish(String wishString) async {
-    WishEnum wish = ConvertWishStringToWishesObject(wishString);
+    var wish = ConvertWishStringToWishesObject(wishString);
     print(wishString);
     print(wish.toString());
-    if (wish == null) return "Your wish does not exist on static class";
+    if(wish == null) return 'Your wish does not exist on static class';
     return WishInStaticClass(wish);
   }
 

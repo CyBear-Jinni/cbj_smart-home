@@ -6,9 +6,9 @@ import 'package:test/test.dart';
 void main() {
   test('PinInformation PinInformation.pinAndPhysicalPinConfiguration is null',
       () async {
-    PinInformation pinInformation = PinInformation();
+             var pinInformation = PinInformation();
 
-    String pinOnResponse = await getIt<TurnPinOnOffAbstract>().PinOn(
+             var pinOnResponse = await getIt<TurnPinOnOffAbstract>().PinOn(
         pinInformation);
 
     expect(pinOnResponse,
@@ -16,10 +16,10 @@ void main() {
   });
 
   test('PinInformation', () async {
-    PinInformation pinInformation =
+    var pinInformation =
         PinInformation(pinAndPhysicalPinConfiguration: 2);
 
-    String pinOnResponse = await getIt<TurnPinOnOffAbstract>().PinOn(
+    var pinOnResponse = await getIt<TurnPinOnOffAbstract>().PinOn(
         pinInformation);
 
     expect(pinOnResponse,

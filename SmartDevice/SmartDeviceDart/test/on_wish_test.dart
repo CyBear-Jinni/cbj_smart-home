@@ -11,7 +11,7 @@ void main() {
 //    DeviceInformation deviceInformation = LocalDevice("30:23:a2:G3:34", "Guy ceiling light");
 //    SharedVariables('/home/guyl/Documents/programing/git/SmartHome');
 //    print(SharedVariables.GetProjectRootDirectoryPath());
-    PinInformation pinInformation = PinInformation();
+    var pinInformation = PinInformation();
 
 //    String a = OnWish.SetOn(deviceInformation, pinInformation);
 //    print('This is a: ' + a);

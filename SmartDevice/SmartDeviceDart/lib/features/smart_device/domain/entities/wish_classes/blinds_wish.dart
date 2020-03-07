@@ -3,12 +3,12 @@ import 'package:SmartDeviceDart/features/smart_device/domain/entities/smart_devi
 import 'off_wish.dart';
 import 'on_wish.dart';
 
-//  This class take the request to turn up or down the blinds and act in a safe manner with the pins, act so that blinds up and down will not work simultaneously and stop other tasks on them
+//  This class take the request to turn up or down the blinds and act in safe manner with the pins, act so that blinds up and down will not work simultaneously and stop other tasks on them
 class BlindsWish {
 
   static Future<String> BlindsUp(BlindsObject blindsInformation) async {
     String status;
-    print("Turning blind up");
+    print('Turning blind up');
 
     blindsInformation.blindsDownPin.onDuration = 0;
     status = await OffWish.SetOff(
@@ -18,8 +18,8 @@ class BlindsWish {
         const Duration(seconds: 1));
 
     blindsInformation.blindsUpPin.onDuration = -1;
-    status += " " +
-        OnWish.SetOn(
+    status += ' ' +
+              OnWish.SetOn(
             blindsInformation.deviceInformation, blindsInformation.blindsUpPin);
 
     return status;
@@ -36,8 +36,8 @@ class BlindsWish {
         const Duration(seconds: 1));
 
     blindsInformation.blindsDownPin.onDuration = -1;
-    status += " " +
-        OnWish.SetOn(blindsInformation.deviceInformation,
+    status += ' ' +
+              OnWish.SetOn(blindsInformation.deviceInformation,
             blindsInformation.blindsDownPin);
 
     return status;
@@ -52,8 +52,8 @@ class BlindsWish {
         blindsInformation.deviceInformation, blindsInformation.blindsUpPin);
 
     blindsInformation.blindsDownPin.onDuration = 0;
-    status += " " +
-        OffWish.SetOff(blindsInformation.deviceInformation,
+    status += ' ' +
+              OffWish.SetOff(blindsInformation.deviceInformation,
             blindsInformation.blindsDownPin);
 
     return status;

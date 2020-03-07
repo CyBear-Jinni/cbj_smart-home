@@ -15,13 +15,13 @@ abstract class SmartDeviceSimpleAbstract extends SmartDeviceBaseAbstract {
 
   @override
   Future<String> ExecuteWish(String wishString) async {
-    WishEnum wish = ConvertWishStringToWishesObject(wishString);
+    var wish = ConvertWishStringToWishesObject(wishString);
     return WishInSimpleClass(wish);
   }
 
   //  All the wishes that are legit to execute from the simple class
   String WishInSimpleClass(WishEnum wish) {
-    if (wish == null) return "Your wish does not exist on simple class";
+    if(wish == null) return 'Your wish does not exist on simple class';
     return WishInBaseClass(wish);
   }
 }
