@@ -1,24 +1,24 @@
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/fire_store/cloud_manager.dart';
 import 'package:SmartDeviceDart/features/smart_device/data/datasources/server/smart_server.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/models/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/repositories/cloud_manager.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singleton.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/smart_device_objects/simple_devices/light_object.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/voice_command_abstract.dart';
 import 'package:SmartDeviceDart/injection.dart';
 
 
 class SmartDeviceManager {
-  List<SmartDeviceBaseAbstract> smartDevicesList;
-
 
   SmartDeviceManager() {
-    smartDevicesList = List<SmartDeviceBaseAbstract>();
+
 
     SmartDeviceMainAsync();
   }
 
 
   Future SmartDeviceMainAsync() async {
+    await MySingleton();
+
     print(await getIps());
 
     await setAllDevices(); //  Setting up all the device from the memory
@@ -34,8 +34,8 @@ class SmartDeviceManager {
   //  Setting all the devices from saved data
   void setAllDevices() async {
     //  TODO: insert the number of the pin with class DevicePinListManager to check if pin is free to use and of the right type
-    await smartDevicesList
-        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 11));
+    MySingleton.addToSmartDevicesList(
+        LightObject("30:23:a2:G3:34", "Guy ceiling light", 11));
 //        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 11,
 //        onOffButtonPinNumber: 16)); // NanoPi Duo2
 //        .add(BlindsObject(
@@ -51,20 +51,21 @@ class SmartDeviceManager {
 //        //  upButtonPinNumber
 //        12,
 //        //  blindsDownPin
-//        14 //  downButtonPinNumber
+//        14 // downButtonPinNumber
 //    )); // NanoPi Duo2
   }
 
   //  Listen to changes in the database for this device
   void listenToDataBase() {
-    CloudManager cloudManager = CloudManager(smartDevicesList[0]);
+    CloudManager cloudManager = CloudManager(
+        MySingleton.getSmartDevicesList()[0]);
     cloudManager.listenToDataBase();
   }
 
   //  Listening to port and deciding what to do with the response
   void waitForConnection() {
     print("Wait for connection");
-    SmartServer smartServer = SmartServer(smartDevicesList);
+    SmartServer smartServer = SmartServer();
     smartServer.startListen();
   }
 
@@ -75,7 +76,7 @@ class SmartDeviceManager {
       voiceOutput = await voiceCommandAbstract.listenToActivateKeyWord();
       print("Recived voice command");
       if (voiceOutput) {
-        (smartDevicesList[0] as LightObject).WishInBaseClass(
+        (MySingleton.getSmartDevicesList()[0] as LightObject).WishInBaseClass(
             WishEnum.SChangeState);
       }
       print("Got Voice command");
