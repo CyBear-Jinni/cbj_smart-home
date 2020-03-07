@@ -13,13 +13,13 @@ class Permission {
   //  Getters
 
 
-  bool getRead() => this._read;
+  bool getRead() => _read;
 
 
-  bool getWrite() => this._write;
+  bool getWrite() => _write;
 
 
-  bool getExecute() => this._execute;
+  bool getExecute() => _execute;
 
 
   //  TODO: check if user have permissions to change permissions
@@ -28,11 +28,11 @@ class Permission {
   //  Setters
 
 
-  void setRead(bool read) => this._read = read;
+  void setRead(bool read) => _read = read;
 
 
-  void setWrite(bool write) => this._write = write;
+  void setWrite(bool write) => _write = write;
 
 
-  void setExecute(bool execute) => this._execute = execute;
+  void setExecute(bool execute) => _execute = execute;
 }
