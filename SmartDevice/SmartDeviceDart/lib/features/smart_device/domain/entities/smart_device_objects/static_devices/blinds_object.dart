@@ -18,8 +18,8 @@ class BlindsObject extends SmartDeviceStaticAbstract {
       int blindsUpPin, int upButtonPinNumber, int blindsDownPin, int downButtonPinNumber)
       : super(macAddress, deviceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber) {
-    this.buttonPinUp = DevicePinListManager.GetGpioPin(this, upButtonPinNumber);
-    this.buttonPinDown =
+    buttonPinUp = DevicePinListManager.GetGpioPin(this, upButtonPinNumber);
+    buttonPinDown =
         DevicePinListManager.GetGpioPin(this, downButtonPinNumber);
 
     this.blindsUpPin = DevicePinListManager.GetGpioPin(this, blindsUpPin);
@@ -30,13 +30,13 @@ class BlindsObject extends SmartDeviceStaticAbstract {
 
   @override
   Future<String> ExecuteWish(String wishString) async {
-    WishEnum wish = ConvertWishStringToWishesObject(wishString);
+    var wish = ConvertWishStringToWishesObject(wishString);
     return await WishInBlindsClass(wish);
   }
 
   //  All the wishes that are legit to execute from the blinds class
   Future<String> WishInBlindsClass(WishEnum wish) async {
-    if (wish == null) return "Your wish does not exist in blinds class";
+    if(wish == null) return 'Your wish does not exist in blinds class';
     if (wish == WishEnum.blindsUp) return await BlindsWish.BlindsUp(this);
     if (wish == WishEnum.blindsDown) return await BlindsWish.BlindsDown(this);
     if (wish == WishEnum.blindsStop) return await BlindsWish.BlindsStop(this);
@@ -54,7 +54,7 @@ class BlindsObject extends SmartDeviceStaticAbstract {
           blindsDownPin);
     }
     else {
-      print("Cannot listen to blinds, one of the variables is null");
+      print('Cannot listen to blinds, one of the variables is null');
     }
   }
 }

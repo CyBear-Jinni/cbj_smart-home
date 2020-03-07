@@ -8,7 +8,7 @@ class LightObject extends SmartDeviceSimpleAbstract {
   LightObject(macAddress, deviceName, onOffPinNumber,
       {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber) {
-    print("New light object");
+    print('New light object');
   }
 
   //  Return smart device type
@@ -18,7 +18,7 @@ class LightObject extends SmartDeviceSimpleAbstract {
 
   @override
   Future<String> ExecuteWish(String wishString) async {
-    WishEnum wish = ConvertWishStringToWishesObject(wishString);
+    var wish = ConvertWishStringToWishesObject(wishString);
     return WishInSimpleClass(wish);
   }
 }

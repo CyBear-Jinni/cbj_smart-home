@@ -10,6 +10,7 @@ import 'package:injectable/injectable.dart';
 @injectable
 class TurnPinOnOff extends TurnPinOnOffAbstract {
 //  Function to start c script to interact with pins
+  @override
   Future<String> PinOn(PinInformation pinNumber) async {
     if (pinNumber.pinAndPhysicalPinConfiguration == null) {
       print('Error PinInformation.pinAndPhysicalPinConfiguration was not set');
@@ -22,12 +23,12 @@ class TurnPinOnOff extends TurnPinOnOffAbstract {
 
     try {
       print('This is the pin number on ' +
-          pinNumber.pinAndPhysicalPinConfiguration.toString());
+            pinNumber.pinAndPhysicalPinConfiguration.toString());
       return await Process.run(
           SharedVariables.GetProjectRootDirectoryPath() +
-              '/scripts/cScripts/turnOn',
+          '/scripts/cScripts/turnOn',
           [pinNumber.pinAndPhysicalPinConfiguration.toString()]).then((
-          ProcessResult results) {
+                                                                          ProcessResult results) {
         print(results.stdout);
         return results.stdout;
       });
@@ -39,15 +40,16 @@ class TurnPinOnOff extends TurnPinOnOffAbstract {
   }
 
 
-  Future<String> pinOff(PinInformation pinNumber) async {
+  @override
+  Future<String> PinOff(PinInformation pinNumber) async {
     try {
-      print("This is the pin number off:  " +
-          pinNumber.pinAndPhysicalPinConfiguration.toString());
+      print('This is the pin number off:  ' +
+            pinNumber.pinAndPhysicalPinConfiguration.toString());
       return await Process.run(
           SharedVariables.GetProjectRootDirectoryPath() +
-              '/scripts/cScripts/turnOff',
+          '/scripts/cScripts/turnOff',
           [pinNumber.pinAndPhysicalPinConfiguration.toString()]).then((
-          ProcessResult results) {
+                                                                          ProcessResult results) {
         print(results.stdout);
         return results.stdout;
       });

@@ -24,7 +24,7 @@ class DynamicWish {
 
 
   static String OpenDynamic(DeviceInformation deviceInformation) {
-    return "Response open dynamic not supported yet";
+    return 'Response open dynamic not supported yet';
   }
 
 

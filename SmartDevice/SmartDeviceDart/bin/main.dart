@@ -6,7 +6,7 @@ import 'package:SmartDeviceDart/injection.dart';
 
 
 main(List<String> arguments) async {
-  print("Smart device is activaited");
+  print('Smart device is activaited');
   await configureInjection(Env.dev_pc);
 //
 //

@@ -7,10 +7,12 @@ import 'package:injectable/injectable.dart';
 @RegisterAs(ButtonObjectLocalAbstract, env: Env.test)
 @injectable
 class ButtonObjectLocalFake extends ButtonObjectLocalAbstract {
+  @override
   void buttonPressed(SmartDeviceBaseAbstract smartDevice,
-      PinInformation buttonPinNumber, PinInformation lightPin) {}
+                     PinInformation buttonPinNumber, PinInformation lightPin) {}
 
   //  Listen to two buttons but work only if one is pressed.
+  @override
   void listenToTwoButtonPressedButtOnlyOneCanBePressedAtATime(
       SmartDeviceBaseAbstract smartDevice,
       PinInformation firstButtonPinNumber,
@@ -18,22 +20,23 @@ class ButtonObjectLocalFake extends ButtonObjectLocalAbstract {
       PinInformation secondButtonPinNumber,
       PinInformation secondLightPin) async {}
 
-  void listenToButtonPressAndDoAction(
-      SmartDeviceBaseAbstract smartDevice,
-      PinInformation buttonPinNumber,
-      PinInformation firstLightPin,
-      PinInformation secondLightPin,
-      int buttonNumber) async {}
+  @override
+  void listenToButtonPressAndDoAction(SmartDeviceBaseAbstract smartDevice,
+                                      PinInformation buttonPinNumber,
+                                      PinInformation firstLightPin,
+                                      PinInformation secondLightPin,
+                                      int buttonNumber) async {}
 
   //  Listen to button press and return exist code
+  @override
   Future<int> listenToButtonPress(PinInformation buttonPinNumber) async {
     return 0;
   }
 
   //  Logic of two buttons
-  Future changePinsOutput(
-      SmartDeviceBaseAbstract smartDevice,
-      PinInformation firstLightPin,
-      PinInformation secondLightPin,
-      int buttonPressNumber) async {}
+  @override
+  Future changePinsOutput(SmartDeviceBaseAbstract smartDevice,
+                          PinInformation firstLightPin,
+                          PinInformation secondLightPin,
+                          int buttonPressNumber) async {}
 }

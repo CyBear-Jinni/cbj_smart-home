@@ -15,13 +15,13 @@ abstract class DeviceConfigurationBaseClass {
 
   //  Get the gpio pin if not in used and set it to used, else return null
   PinInformation GetGpioPin(int pinNumber) {
-    PinInformation pinInformation = getPinInformationByPinNumber(pinNumber);
+    var pinInformation = getPinInformationByPinNumber(pinNumber);
 
-    int isTheGpioPinFree = isGpioPinFree(pinNumber);
+    var isTheGpioPinFree = isGpioPinFree(pinNumber);
 
     if (isTheGpioPinFree != 0) {
-      throw ("Cant use this pin " + pinNumber.toString() + " error code " +
-          isTheGpioPinFree.toString());
+      throw ('Cant use this pin ' + pinNumber.toString() + ' error code ' +
+             isTheGpioPinFree.toString());
     }
 
     pinInformation.isInUse = true;
@@ -31,7 +31,7 @@ abstract class DeviceConfigurationBaseClass {
 
   // Get PinInformation object that have pin number, if does not exist return null
   PinInformation getPinInformationByPinNumber(int pinNumber) {
-    for (PinInformation pinInformation in pinList) {
+    for (var pinInformation in pinList) {
       if (pinInformation.pinAndPhysicalPinConfiguration == pinNumber) {
         return pinInformation;
       }
@@ -42,12 +42,12 @@ abstract class DeviceConfigurationBaseClass {
 
   bool isPinGpio(PinInformation pinInformation) =>
       isPinSpecificCategory(
-          pinInformation, "gpio") && isPinSpecificType(pinInformation, "gpio");
+          pinInformation, 'gpio') && isPinSpecificType(pinInformation, 'gpio');
 
 
   bool isPinSpecificCategory(PinInformation pinInformation,
       String pinCategory) {
-    String pinCategoryLowerCase = pinCategory.toLowerCase();
+    var pinCategoryLowerCase = pinCategory.toLowerCase();
     return pinInformation.category.toLowerCase().contains(pinCategoryLowerCase);
   }
 
@@ -57,7 +57,7 @@ abstract class DeviceConfigurationBaseClass {
 
   //  Get gpio pin number, if pin is gpio and free return the pin number, if pin does not exist return -1, if pin is not gpio pin return -2, if pin is in use as gpio return -3
   int isGpioPinFree(int pinNumber) {
-    PinInformation pinInformation = getPinInformationByPinNumber(pinNumber);
+    var pinInformation = getPinInformationByPinNumber(pinNumber);
 
     //  If pin does not exist return -1
     if (pinInformation == null) {
