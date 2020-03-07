@@ -1,4 +1,4 @@
-import 'package:SmartDeviceDart/features/smart_device/data/models/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 
 import 'smart_device_base_abstract.dart';
 
