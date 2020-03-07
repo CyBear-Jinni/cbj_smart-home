@@ -6,30 +6,30 @@ import 'package:SmartDeviceDart/injection.dart';
 //  Class to change wish on status to device
 class OnWish {
 
-  static String SetOn(DeviceInformation deviceInformation,
-      PinInformation pinNumber) {
+  static String setOn(DeviceInformation deviceInformation,
+                      PinInformation pinNumber) {
     pinNumber.v = 1;
 
     switch (deviceInformation.runtimeType) {
       case LocalDevice:
-        return SetOnLocal(deviceInformation, pinNumber);
+        return setOnLocal(deviceInformation, pinNumber);
       case RemoteDevice:
-        return SetOnRemote(deviceInformation, pinNumber);
+        return setOnRemote(deviceInformation, pinNumber);
     }
-    print('Device type ' + deviceInformation.GetName() + ' is not specefied ');
+    print('Device type ' + deviceInformation.getName() + ' is not specefied ');
     return 'DeviceBase type not supported';
   }
 
   //  Turn this device on
-  static String SetOnLocal(LocalDevice deviceInformation,
-      PinInformation pinNumber) {
-    getIt<TurnPinOnOffAbstract>().PinOn(pinNumber);
+  static String setOnLocal(LocalDevice deviceInformation,
+                           PinInformation pinNumber) {
+    getIt<TurnPinOnOffAbstract>().pinOn(pinNumber);
     return 'Response from this device on sucsessful';
   }
 
   //  Turn the remote device on
-  static String SetOnRemote(RemoteDevice remoteDevice,
-      PinInformation pinNumber) {
+  static String setOnRemote(RemoteDevice remoteDevice,
+                            PinInformation pinNumber) {
 //    try {
 //      HttpClient()
 //          .getUrl(Uri.parse('http://' +

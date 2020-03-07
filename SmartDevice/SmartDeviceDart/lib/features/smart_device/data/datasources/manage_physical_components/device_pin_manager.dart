@@ -22,12 +22,12 @@ class DevicePinListManager {
   physicalDevice; //  Will save the current physical device pin configuration
 
 
-  Future SetPhysicalDeviceTypeByHostName() async {
-    var deviceHostName = await GetDeviceHostName();
+  Future setPhysicalDeviceTypeByHostName() async {
+    var deviceHostName = await getDeviceHostName();
     deviceHostName = deviceHostName.replaceAll('-', '').replaceAll(' ', '');
 
     physicalDeviceType =
-        ConvertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
+        convertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
             deviceHostName);
     print('phyc type is' + physicalDevice.toString());
     //  Save the current physical device configuration to the physicalDevice variable
@@ -54,7 +54,7 @@ class DevicePinListManager {
   }
 
 
-  static Future<String> GetDeviceHostName() async {
+  static Future<String> getDeviceHostName() async {
     return await Process.run('hostname', ["-s"]).then((ProcessResult result) {
       String hostName = result.stdout;
       hostName = hostName.substring(
@@ -65,8 +65,8 @@ class DevicePinListManager {
   }
 
   //  Ask for gpio pin, if free return the pin number, else return error number (negative numbers)
-  static PinInformation GetGpioPin(SmartDeviceBaseAbstract smartDevice,
-      int pinNumber) {
+  static PinInformation getGpioPin(SmartDeviceBaseAbstract smartDevice,
+                                   int pinNumber) {
     if (physicalDevice == null) {
       print('Error physical device is null');
       return null;
@@ -77,8 +77,8 @@ class DevicePinListManager {
         return null;
       }
 
-      var pinInformation = physicalDevice.GetGpioPin(pinNumber);
-      OffWish.SetOff(smartDevice.deviceInformation, pinInformation);
+      var pinInformation = physicalDevice.getGpioPin(pinNumber);
+      OffWish.setOff(smartDevice.deviceInformation, pinInformation);
       return pinInformation;
     }
     catch (e) {
@@ -89,7 +89,7 @@ class DevicePinListManager {
 
   //  Return physicalDeviceType object if string physicalDeviceType exist (in general) else return null
   static PhysicalDeviceType
-  ConvertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
+  convertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
       String physicalDeviceType) {
     //  Loop through all the physical devices types
     for (var physicalDeviceTypeTemp

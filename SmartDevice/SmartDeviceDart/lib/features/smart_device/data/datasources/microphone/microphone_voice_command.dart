@@ -16,14 +16,15 @@ abstract class MicrophoneVoiceCommandAbstract {
 @injectable
 class MicrophoneVoiceCommand extends MicrophoneVoiceCommandAbstract {
   //  Listen to voice command
+  @override
   Future<bool> listenToVoiceCommand() async {
     try {
       return await Process
           .run(
-              SharedVariables.GetProjectRootDirectoryPath() +
-                  '/scripts/cScripts/demo',
-              [SharedVariables.GetProjectRootDirectoryPath()]).then((
-          ProcessResult results) {
+          SharedVariables.getProjectRootDirectoryPath() +
+          '/scripts/cScripts/demo',
+          [SharedVariables.getProjectRootDirectoryPath()]).then((
+                                                                    ProcessResult results) {
         print(results.stdout.toString());
         if (results.stdout.toString().length == 96) {
           return false;

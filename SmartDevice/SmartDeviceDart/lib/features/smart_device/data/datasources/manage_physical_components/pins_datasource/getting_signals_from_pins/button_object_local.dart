@@ -34,9 +34,9 @@ class ButtonObjectLocal extends ButtonObjectLocalAbstract {
         }
 
         if (lightPin.v == 1) {
-          OffWish.SetOff(smartDevice.deviceInformation, lightPin);
+          OffWish.setOff(smartDevice.deviceInformation, lightPin);
         } else {
-          OnWish.SetOn(smartDevice.deviceInformation, lightPin);
+          OnWish.setOn(smartDevice.deviceInformation, lightPin);
         }
 
         await Future.delayed(const Duration(seconds: 1));
@@ -79,7 +79,7 @@ class ButtonObjectLocal extends ButtonObjectLocalAbstract {
   @override
   Future<int> listenToButtonPress(PinInformation buttonPinNumber) async {
     return await Process.run(
-        SharedVariables.GetProjectRootDirectoryPath() +
+        SharedVariables.getProjectRootDirectoryPath() +
         '/scripts/cScripts/buttonPress',
         [buttonPinNumber.pinAndPhysicalPinConfiguration.toString()]).then((
                                                                               ProcessResult results) {
@@ -100,26 +100,26 @@ class ButtonObjectLocal extends ButtonObjectLocalAbstract {
                           int buttonPressNumber) async {
     if (firstLightPin.v == 1 || secondLightPin.v == 1) {
       firstLightPin.onDuration = 0;
-      await OffWish.SetOff(smartDevice.deviceInformation, firstLightPin);
+      await OffWish.setOff(smartDevice.deviceInformation, firstLightPin);
 
       secondLightPin.onDuration = 0;
-      await OffWish.SetOff(smartDevice.deviceInformation, secondLightPin);
+      await OffWish.setOff(smartDevice.deviceInformation, secondLightPin);
     }
 
     else if (buttonPressNumber == 1) {
       secondLightPin.onDuration = 0;
-      await OffWish.SetOff(smartDevice.deviceInformation, secondLightPin);
+      await OffWish.setOff(smartDevice.deviceInformation, secondLightPin);
 
       firstLightPin.onDuration = -1;
-      await OnWish.SetOn(smartDevice.deviceInformation, firstLightPin);
+      await OnWish.setOn(smartDevice.deviceInformation, firstLightPin);
     }
 
     else if (buttonPressNumber == 2) {
       firstLightPin.onDuration = 0;
-      await OffWish.SetOff(smartDevice.deviceInformation, firstLightPin);
+      await OffWish.setOff(smartDevice.deviceInformation, firstLightPin);
 
       secondLightPin.onDuration = -1;
-      await OnWish.SetOn(smartDevice.deviceInformation, secondLightPin);
+      await OnWish.setOn(smartDevice.deviceInformation, secondLightPin);
     }
 
     await Future.delayed(const Duration(seconds: 1));
