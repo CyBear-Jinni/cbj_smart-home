@@ -11,10 +11,10 @@ abstract class DeviceConfigurationBaseClass {
   //  Getters
 
 
-  List<PinInformation> GetGPIOList() => pinList;
+  List<PinInformation> getGPIOList() => pinList;
 
   //  Get the gpio pin if not in used and set it to used, else return null
-  PinInformation GetGpioPin(int pinNumber) {
+  PinInformation getGpioPin(int pinNumber) {
     var pinInformation = getPinInformationByPinNumber(pinNumber);
 
     var isTheGpioPinFree = isGpioPinFree(pinNumber);

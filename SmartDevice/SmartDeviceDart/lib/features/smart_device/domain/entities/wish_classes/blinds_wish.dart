@@ -11,7 +11,7 @@ class BlindsWish {
     print('Turning blind up');
 
     blindsInformation.blindsDownPin.onDuration = 0;
-    status = await OffWish.SetOff(
+    status = await OffWish.setOff(
         blindsInformation.deviceInformation, blindsInformation.blindsDownPin);
 
     await Future.delayed(
@@ -19,17 +19,17 @@ class BlindsWish {
 
     blindsInformation.blindsUpPin.onDuration = -1;
     status += ' ' +
-              OnWish.SetOn(
+              OnWish.setOn(
             blindsInformation.deviceInformation, blindsInformation.blindsUpPin);
 
     return status;
   }
 
-  static Future<String> BlindsDown(BlindsObject blindsInformation) async {
+  static Future<String> blindsDown(BlindsObject blindsInformation) async {
     String status;
 
     blindsInformation.blindsUpPin.onDuration = 0;
-    status = await OffWish.SetOff(
+    status = await OffWish.setOff(
         blindsInformation.deviceInformation, blindsInformation.blindsUpPin);
 
     await Future.delayed(
@@ -37,23 +37,23 @@ class BlindsWish {
 
     blindsInformation.blindsDownPin.onDuration = -1;
     status += ' ' +
-              OnWish.SetOn(blindsInformation.deviceInformation,
+              OnWish.setOn(blindsInformation.deviceInformation,
             blindsInformation.blindsDownPin);
 
     return status;
   }
 
-  static String BlindsStop(BlindsObject blindsInformation) {
+  static String blindsStop(BlindsObject blindsInformation) {
     String status;
 
 
     blindsInformation.blindsUpPin.onDuration = 0;
-    status = OffWish.SetOff(
+    status = OffWish.setOff(
         blindsInformation.deviceInformation, blindsInformation.blindsUpPin);
 
     blindsInformation.blindsDownPin.onDuration = 0;
     status += ' ' +
-              OffWish.SetOff(blindsInformation.deviceInformation,
+              OffWish.setOff(blindsInformation.deviceInformation,
             blindsInformation.blindsDownPin);
 
     return status;
