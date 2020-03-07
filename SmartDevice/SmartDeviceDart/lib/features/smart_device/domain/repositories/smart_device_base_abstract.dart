@@ -6,7 +6,7 @@ import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_ph
 import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
 import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/getting_signals_from_pins/button_object_local_abstract.dart';
 import 'package:SmartDeviceDart/features/smart_device/data/datasources/server/smart_server.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/models/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/wish_classes/off_wish.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/wish_classes/on_wish.dart';
 import 'package:SmartDeviceDart/injection.dart';
@@ -19,7 +19,7 @@ abstract class SmartDeviceBaseAbstract {
   DeviceInformation deviceInformation = LocalDevice('This is the mac Address',
       'This is the name of the device'); //  Save data about the device, remote or local IP or pin number
   String deviceName; //  Default name of the device to show in the app
-  final String macAddress; //  Mac address of the physical device
+  final String macAddress; //  Mac addresses of the physical device
   Map<String, PermissionsManager>
   devicePermissions; //  Permissions of all the users to this device
   double watts; //  Power consumption of the device
@@ -30,7 +30,7 @@ abstract class SmartDeviceBaseAbstract {
   Map<DateTime, Function>
   activitiesLog; //  Log of all the actions the device was and will do
   bool onOff =
-  false; //  Save the device state  on = true, off = false of onOffPin
+  false; //  Save the device state on = true, off = false of onOffPin
   PinInformation onOffPin; //  Number of on or off pin
   PinInformation onOffButtonPin; //  Pin for the button that control the onOffPin
   List<PinInformation> _gpioPinList = List<
@@ -42,7 +42,7 @@ abstract class SmartDeviceBaseAbstract {
 
     this.onOffPin = onOffPinNumber == null ? null : AddPinToGpioPinList(onOffPinNumber);
 
-    //  If pin number was inserted and it exist than listen to button press
+    //  If pin number was inserted and it exists than listen to button press
     if (onOffButtonPinNumber != null) {
       this.onOffButtonPin = AddPinToGpioPinList(onOffButtonPinNumber);
 
@@ -87,7 +87,7 @@ abstract class SmartDeviceBaseAbstract {
   //  Turn on the device basic action
   String _SetOn(PinInformation pinNumber) {
 //    if (deviceInformation == null) {
-//      return 'Device information is missing, cant turn on';
+//      return 'Device information is missing, can't turn on';
 //    }
     OnWish.SetOn(deviceInformation, pinNumber);
     onOff = true;
@@ -97,7 +97,7 @@ abstract class SmartDeviceBaseAbstract {
   //  Turn off the device basic action
   String _SetOff(PinInformation pinNumber) {
 //    if (deviceInformation == null) {
-//      return 'Device information is missing, cant turn off';
+//      return 'Device information is missing, can't turn off';
 //    }
     OffWish.SetOff(deviceInformation, pinNumber);
     onOff = false;
