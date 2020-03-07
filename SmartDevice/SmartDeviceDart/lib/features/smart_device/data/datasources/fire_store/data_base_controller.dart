@@ -36,10 +36,10 @@ class DataBaseController {
 
   Future<String> getValueOfLamp(Document document, String keyName) async {
 //    print("updated: $document");
-    String tempDocumentAsString = document.toString();
-    String tempFields = tempDocumentAsString.substring(
+    var tempDocumentAsString = document.toString();
+    var tempFields = tempDocumentAsString.substring(
         tempDocumentAsString.indexOf('{') + 1, tempDocumentAsString.length - 1);
-    List<String> valuesAsList = tempFields.split(',');
+    var valuesAsList = tempFields.split(',');
     return await valuesAsList[0].split(': ')[1];
   }
 }

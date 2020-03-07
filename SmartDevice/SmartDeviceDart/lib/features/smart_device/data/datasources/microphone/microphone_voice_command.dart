@@ -42,6 +42,7 @@ class MicrophoneVoiceCommand extends MicrophoneVoiceCommandAbstract {
 @injectable
 class MicrophoneVoiceCommandPc extends MicrophoneVoiceCommandAbstract {
   //  Listen to voice command
+  @override
   Future<bool> listenToVoiceCommand() async {
     try {
       return await Future.delayed(const Duration(seconds: 10000000));

@@ -33,20 +33,20 @@ abstract class SmartDeviceBaseAbstract {
   false; //  Save the device state on = true, off = false of onOffPin
   PinInformation onOffPin; //  Number of on or off pin
   PinInformation onOffButtonPin; //  Pin for the button that control the onOffPin
-  List<PinInformation> _gpioPinList = List<
-      PinInformation>(); //  Save all the gpio pins that this instance is using
+  final List<PinInformation> _gpioPinList = <PinInformation>[
+  ]; //  Save all the gpio pins that this instance is using
 
 
   SmartDeviceBaseAbstract(this.macAddress, this.deviceName, int onOffPinNumber,
       {int onOffButtonPinNumber}) {
-
-    this.onOffPin = onOffPinNumber == null ? null : AddPinToGpioPinList(onOffPinNumber);
+    onOffPin =
+    onOffPinNumber == null ? null : AddPinToGpioPinList(onOffPinNumber);
 
     //  If pin number was inserted and it exists than listen to button press
     if (onOffButtonPinNumber != null) {
-      this.onOffButtonPin = AddPinToGpioPinList(onOffButtonPinNumber);
+      onOffButtonPin = AddPinToGpioPinList(onOffButtonPinNumber);
 
-      if (this.onOffButtonPin != null) {
+      if(onOffButtonPin != null) {
         listenToButtonPressed();
       }
     }
@@ -117,7 +117,7 @@ abstract class SmartDeviceBaseAbstract {
   //  Add gpio pin for this device
   PinInformation AddPinToGpioPinList(int pinNumber) {
     //  Check if pin is free to be taken, if not return negative number with error number
-    PinInformation gpioPin = DevicePinListManager.GetGpioPin(this, pinNumber);
+    var gpioPin = DevicePinListManager.GetGpioPin(this, pinNumber);
     if (gpioPin == null) {
       return null;
     }
@@ -127,7 +127,7 @@ abstract class SmartDeviceBaseAbstract {
 
   //  Return PossibleWishes object if string wish exist (in general) else return null
   WishEnum ConvertWishStringToWishesObject(String wish) {
-    for (WishEnum possibleWish in WishEnum.values) {
+    for (var possibleWish in WishEnum.values) {
       print('Wish value ' + EnumHelper.wishEnumToString(possibleWish));
       if (EnumHelper.wishEnumToString(possibleWish) == wish) {
         return possibleWish; //  If wish exist return the PossibleWish object
@@ -138,7 +138,7 @@ abstract class SmartDeviceBaseAbstract {
 
   //  Check if wish exist at all if true than check if base abstract have this wish and if true than execute it
   Future<String> ExecuteWish(String wishString) async {
-    WishEnum wish = ConvertWishStringToWishesObject(wishString);
+    var wish = ConvertWishStringToWishesObject(wishString);
     return WishInBaseClass(wish);
   }
 

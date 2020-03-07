@@ -28,7 +28,7 @@ class SmartServer extends SmartServerServiceBase {
   @override
   Future<SmartDeviceStatus> getStatus(ServiceCall call,
       SmartDevice request) async {
-    String deviceStatus = serverRepository.executeWishEnumString(
+    var deviceStatus = serverRepository.executeWishEnumString(
         request, WishEnum.GState);
 
     print('Getting status of device ' + request.toString() +

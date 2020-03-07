@@ -56,29 +56,29 @@ class SmartDeviceManager {
 
   //  Listen to changes in the database for this device
   void listenToDataBase() {
-    CloudManager cloudManager = CloudManager(
+    var cloudManager = CloudManager(
         MySingleton.getSmartDevicesList()[0]);
     cloudManager.listenToDataBase();
   }
 
   //  Listening to port and deciding what to do with the response
   void waitForConnection() {
-    print("Wait for connection");
-    SmartServer smartServer = SmartServer();
+    print('Wait for connection');
+    var smartServer = SmartServer();
     smartServer.startListen();
   }
 
   void startListeningToVoiceCommandForever() async {
-    VoiceCommandAbstract voiceCommandAbstract = getIt<VoiceCommandAbstract>();
+    var voiceCommandAbstract = getIt<VoiceCommandAbstract>();
     bool voiceOutput;
     while (true) {
       voiceOutput = await voiceCommandAbstract.listenToActivateKeyWord();
-      print("Recived voice command");
+      print('Recived voice command');
       if (voiceOutput) {
         (MySingleton.getSmartDevicesList()[0] as LightObject).WishInBaseClass(
             WishEnum.SChangeState);
       }
-      print("Got Voice command");
+      print('Got Voice command');
     }
   }
 }

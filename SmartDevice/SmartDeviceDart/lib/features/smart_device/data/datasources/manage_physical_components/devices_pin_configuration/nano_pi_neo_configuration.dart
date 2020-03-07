@@ -4,8 +4,7 @@ import 'pin_information.dart';
 
 class NanoPiNeoConfiguration extends DeviceConfigurationBaseClass {
 
-  static List<PinInformation> _pinListNanoPiNeo = [
-  ];
+  static final List<PinInformation> _pinListNanoPiNeo = [];
 
 
   NanoPiNeoConfiguration() {
