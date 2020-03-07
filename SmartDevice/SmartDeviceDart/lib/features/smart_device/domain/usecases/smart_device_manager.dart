@@ -1,3 +1,4 @@
+import 'package:SmartDeviceDart/core/helper_methods.dart';
 import 'package:SmartDeviceDart/features/smart_device/data/datasources/server/smart_server.dart';
 import 'package:SmartDeviceDart/features/smart_device/data/repositories/cloud_manager.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
@@ -10,8 +11,6 @@ import 'package:SmartDeviceDart/injection.dart';
 class SmartDeviceManager {
 
   SmartDeviceManager() {
-
-
     SmartDeviceMainAsync();
   }
 
