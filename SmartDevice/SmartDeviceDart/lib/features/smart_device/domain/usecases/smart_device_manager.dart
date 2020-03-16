@@ -1,10 +1,9 @@
 import 'package:SmartDeviceDart/core/helper_methods.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/microphone/microphone_voice_command.dart';
 import 'package:SmartDeviceDart/features/smart_device/data/datasources/server/smart_server.dart';
 import 'package:SmartDeviceDart/features/smart_device/data/repositories/cloud_manager.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singleton.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/smart_device_objects/simple_devices/light_object.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/repositories/voice_command_abstract.dart';
 import 'package:SmartDeviceDart/injection.dart';
 
 
@@ -64,21 +63,13 @@ class SmartDeviceManager {
   //  Listening to port and deciding what to do with the response
   void waitForConnection() {
     print('Wait for connection');
-    var smartServer = SmartServer();
+    var smartServer = getIt<SmartServer>();
     smartServer.startListen();
   }
 
   void startListeningToVoiceCommandForever() async {
-    var voiceCommandAbstract = getIt<VoiceCommandAbstract>();
-    bool voiceOutput;
-    while (true) {
-      voiceOutput = await voiceCommandAbstract.listenToActivateKeyWord();
-      print('Recived voice command');
-      if (voiceOutput) {
-        (MySingleton.getSmartDevicesList()[0] as LightObject).wishInBaseClass(
-            WishEnum.SChangeState);
-      }
-      print('Got Voice command');
-    }
+    var microphoneVoiceCommandAbstract = getIt<
+        MicrophoneVoiceCommandAbstract>();
+    microphoneVoiceCommandAbstract.loopListenToActivateKeyWord();
   }
 }
