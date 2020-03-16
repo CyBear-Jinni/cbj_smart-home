@@ -3,11 +3,18 @@
 import 'dart:io';
 
 import 'package:SmartDeviceDart/core/shared_variables.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/repositories/VoiceCommand.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singleton.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/smart_device_objects/simple_devices/light_object.dart';
 import 'package:SmartDeviceDart/injection.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class MicrophoneVoiceCommandAbstract {
+  void loopListenToActivateKeyWord();
+
   Future<bool> listenToVoiceCommand();
+
 }
 
 @RegisterAs(MicrophoneVoiceCommandAbstract, env: Env.dev_pi)
@@ -15,6 +22,24 @@ abstract class MicrophoneVoiceCommandAbstract {
 @RegisterAs(MicrophoneVoiceCommandAbstract, env: Env.test)
 @injectable
 class MicrophoneVoiceCommand extends MicrophoneVoiceCommandAbstract {
+
+  @override
+  void loopListenToActivateKeyWord() async {
+    bool voiceOutput;
+    while (true) {
+      if(! await listenToVoiceCommand()) {
+        continue;
+      }
+      print('Recived voice command');
+      VoiceCommand().executeWishEnum(
+          MySingleton.getSmartDevicesList()[0] as LightObject,
+          WishEnum.SChangeState);
+
+      print('Got Voice command');
+    }
+  }
+
+
   //  Listen to voice command
   @override
   Future<bool> listenToVoiceCommand() async {
@@ -42,6 +67,22 @@ class MicrophoneVoiceCommand extends MicrophoneVoiceCommandAbstract {
 @RegisterAs(MicrophoneVoiceCommandAbstract, env: Env.dev_pc)
 @injectable
 class MicrophoneVoiceCommandPc extends MicrophoneVoiceCommandAbstract {
+  @override
+  void loopListenToActivateKeyWord() async {
+    bool voiceOutput;
+    while (true) {
+      if(! await listenToVoiceCommand()) {
+        continue;
+      }
+      print('Recived voice command');
+      VoiceCommand().executeWishEnum(
+          MySingleton.getSmartDevicesList()[0] as LightObject,
+          WishEnum.SChangeState);
+
+      print('Got Voice command');
+    }
+  }
+
   //  Listen to voice command
   @override
   Future<bool> listenToVoiceCommand() async {

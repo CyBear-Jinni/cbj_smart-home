@@ -1,5 +1,9 @@
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/microphone/microphone_voice_command.dart';
+import 'package:SmartDeviceDart/features/smart_device/data/datasources/server/protoc_as_dart/smart_connection.pb.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singleton.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/voice_command_abstract.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/usecases/actions_to_preform.dart';
 import 'package:SmartDeviceDart/injection.dart';
 import 'package:injectable/injectable.dart';
 
@@ -7,14 +11,21 @@ import 'package:injectable/injectable.dart';
 @RegisterAs(VoiceCommandAbstract, env: Env.prod)
 @injectable
 class VoiceCommand extends VoiceCommandAbstract {
-  MicrophoneVoiceCommandAbstract microphoneVoiceCommand;
-
-  VoiceCommand() {
-    microphoneVoiceCommand = getIt<MicrophoneVoiceCommandAbstract>();
-  }
-
   @override
-  Future<bool> listenToActivateKeyWord() async {
-    return await microphoneVoiceCommand.listenToVoiceCommand();
+  CommendStatus executeWishEnum(SmartDeviceBaseAbstract request,
+                                WishEnum wishEnum) {
+    ActionsToPreform.executeWishEnum(request, wishEnum);
+    return CommendStatus()
+      ..success = request.onOff;
   }
+
+  String executeWishEnumString(SmartDevice request, WishEnum wishEnum) {
+    var smartDevice =
+    MySingleton.getSmartDevicesList()[int.parse(request.name)];
+
+    return ActionsToPreform.executeWishEnum(smartDevice, wishEnum);
+  }
+
+  SmartDeviceBaseAbstract getSmartDeviceBaseAbstract(SmartDevice request) =>
+      MySingleton.getSmartDevicesList()[int.parse(request.name)];
 }
