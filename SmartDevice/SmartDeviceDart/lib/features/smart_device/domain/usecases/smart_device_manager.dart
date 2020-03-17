@@ -1,9 +1,9 @@
 import 'package:SmartDeviceDart/core/helper_methods.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/microphone/microphone_voice_command.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/server/smart_server.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/repositories/cloud_manager.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singleton.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/smart_device_objects/simple_devices/light_object.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/microphone/microphone_voice_command.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/server/smart_server.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositories/cloud_manager.dart';
 import 'package:SmartDeviceDart/injection.dart';
 
 

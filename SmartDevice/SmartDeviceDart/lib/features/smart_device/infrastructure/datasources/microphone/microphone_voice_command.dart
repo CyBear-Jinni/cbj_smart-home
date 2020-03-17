@@ -3,10 +3,10 @@
 import 'dart:io';
 
 import 'package:SmartDeviceDart/core/shared_variables.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/repositories/VoiceCommand.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singleton.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/smart_device_objects/simple_devices/light_object.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositories/VoiceCommand.dart';
 import 'package:SmartDeviceDart/injection.dart';
 import 'package:injectable/injectable.dart';
 

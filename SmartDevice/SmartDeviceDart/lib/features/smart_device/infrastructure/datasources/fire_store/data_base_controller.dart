@@ -1,7 +1,8 @@
 import 'dart:async';
 
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/fire_store/cloud_fire_store.dart';
 import 'package:firedart/firestore/models.dart';
+
+import 'cloud_fire_store.dart';
 
 
 class DataBaseController {
