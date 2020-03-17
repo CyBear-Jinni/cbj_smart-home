@@ -4,20 +4,20 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+import 'package:SmartDeviceDart/animel_test/abstract_animle.dart';
 import 'package:SmartDeviceDart/animel_test/american_cow.dart';
 import 'package:SmartDeviceDart/animel_test/cow.dart';
-import 'package:SmartDeviceDart/animel_test/abstract_animle.dart';
+import 'package:SmartDeviceDart/animel_test/fake_cow.dart';
 import 'package:SmartDeviceDart/animel_test/lem.dart';
 import 'package:SmartDeviceDart/animel_test/mock_cow_animal.dart';
-import 'package:SmartDeviceDart/animel_test/fake_cow.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/repositories/VoiceCommand.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/voice_command_abstract.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/microphone/microphone_voice_command.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/controlloling_pins_local.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/pin_on_off.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/getting_signals_from_pins/button_object_local_fake.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/getting_signals_from_pins/button_object_local_abstract.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/getting_signals_from_pins/button_object_local.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/getting_signals_from_pins/button_object_local.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/getting_signals_from_pins/button_object_local_abstract.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/getting_signals_from_pins/button_object_local_fake.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/controlloling_pins_local.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/pin_on_off.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/microphone/microphone_voice_command.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositories/VoiceCommand.dart';
 import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
