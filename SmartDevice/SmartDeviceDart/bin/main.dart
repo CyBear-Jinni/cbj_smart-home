@@ -1,6 +1,6 @@
 import 'package:SmartDeviceDart/core/shared_variables.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/device_pin_manager.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/usecases/smart_device_manager.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/device_pin_manager.dart';
 import 'package:SmartDeviceDart/injection.dart';
 
 
