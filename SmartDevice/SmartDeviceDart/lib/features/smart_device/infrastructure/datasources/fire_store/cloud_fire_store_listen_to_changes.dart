@@ -1,4 +1,4 @@
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/fire_store/data_base_controller.dart';
+import 'data_base_controller.dart';
 
 class CloudFireStoreListenToChanges {
   String dataPath = 'smartDevices/guyRoom';
