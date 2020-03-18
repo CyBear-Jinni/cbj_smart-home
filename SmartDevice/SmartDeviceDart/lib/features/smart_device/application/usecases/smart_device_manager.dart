@@ -65,7 +65,7 @@ class SmartDeviceManager {
   //  Listening to port and deciding what to do with the response
   void waitForConnection() {
     print('Wait for connection');
-    var smartServer = getIt<SmartServer>();
+    var smartServer = SmartServer();
     smartServer.startListen();
   }
 
