@@ -24,9 +24,9 @@ class DataBaseController {
   }
 
   //  This method will return data each time data will be changing in the database
-  Stream<Stream<Stream<Document>>> listenToChangeOfDataInPath(
+  Stream<Document> listenToChangeOfDataInPath(
       String dataPath) async* {
-    yield _cloudFireStore.listenToChangeOfDataInPath(dataPath);
+    yield* _cloudFireStore.listenToChangeOfDataInPath(dataPath);
   }
 
   //  TODO: Write the code
@@ -35,12 +35,7 @@ class DataBaseController {
   }
 
 
-  Future<String> getValueOfLamp(Document document, String keyName) async {
-//    print("updated: $document");
-    var tempDocumentAsString = document.toString();
-    var tempFields = tempDocumentAsString.substring(
-        tempDocumentAsString.indexOf('{') + 1, tempDocumentAsString.length - 1);
-    var valuesAsList = tempFields.split(',');
-    return await valuesAsList[0].split(': ')[1];
+  String getValueOfLamp(Document document, String keyName) {
+    return document[keyName].toString();
   }
 }
