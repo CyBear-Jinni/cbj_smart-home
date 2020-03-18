@@ -6,13 +6,13 @@ class CloudFireStoreListenToChanges {
   void listenAndExecute() {
     var dataBaseController = DataBaseController();
     dataBaseController.listenToChangeOfDataInPath(dataPath).listen(
-        (onData) => onData.listen((data2) => data2.listen((document) async {
+				    (onData) async {
               //  Find what action is nedded with the
 //                  EnumHelper.wishEnumToString("");
               //  Trunsfer to the action to do with the model
 
           var value = await dataBaseController.getValueOfLamp(
-              document, 'ceilingLamp');
+		          onData, 'ceilingLamp');
               if (value == 'true') {
                 print('cloud firestore is true');
 //                    String smartDeviceResponse =
@@ -24,6 +24,6 @@ class CloudFireStoreListenToChanges {
 //                    await smartDevice.WishInBaseClass(WishEnum.SOff);
 //                    print(smartDeviceResponse);
               }
-            })));
+		    });
   }
 }
