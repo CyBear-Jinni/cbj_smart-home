@@ -3,8 +3,6 @@
 import 'dart:io';
 
 import 'package:SmartDeviceDart/core/shared_variables.dart';
-import 'package:SmartDeviceDart/injection.dart';
-import 'package:injectable/injectable.dart';
 
 abstract class MicrophoneVoiceCommandAbstract {
 	Stream<bool> loopListenToActivateKeyWord();
@@ -13,10 +11,7 @@ abstract class MicrophoneVoiceCommandAbstract {
 
 }
 
-@RegisterAs(MicrophoneVoiceCommandAbstract, env: Env.dev_pi)
-@RegisterAs(MicrophoneVoiceCommandAbstract, env: Env.prod)
-@RegisterAs(MicrophoneVoiceCommandAbstract, env: Env.test)
-@injectable
+
 class MicrophoneVoiceCommand extends MicrophoneVoiceCommandAbstract {
 
   @override
@@ -53,8 +48,7 @@ class MicrophoneVoiceCommand extends MicrophoneVoiceCommandAbstract {
   }
 }
 
-@RegisterAs(MicrophoneVoiceCommandAbstract, env: Env.dev_pc)
-@injectable
+
 class MicrophoneVoiceCommandPc extends MicrophoneVoiceCommandAbstract {
   @override
   Stream<bool> loopListenToActivateKeyWord() async* {

@@ -8,7 +8,7 @@ void main() {
   AnimalAbstract mockCowAnimal;
 
   setUpAll(() {
-    configureInjection(Env.test);
+    Configuration(Env.test);
   });
 
   setUp(() {
