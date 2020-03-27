@@ -4,12 +4,7 @@ import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singlet
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/voice_command_abstract.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/server/protoc_as_dart/smart_connection.pb.dart';
-import 'package:SmartDeviceDart/injection.dart';
-import 'package:injectable/injectable.dart';
 
-@RegisterAs(VoiceCommandAbstract, env: Env.dev_pc)
-@RegisterAs(VoiceCommandAbstract, env: Env.prod)
-@injectable
 class VoiceCommand extends VoiceCommandAbstract {
   @override
   CommendStatus executeWishEnum(SmartDeviceBaseAbstract request,
