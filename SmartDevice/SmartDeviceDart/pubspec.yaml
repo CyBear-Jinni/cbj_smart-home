@@ -14,7 +14,7 @@ dependencies:
   # For the injection, allow accessing an object from anywhere in an App
   get_it: ^4.0.0
   # Convenient code generator for get_it
-  injectable: ^0.3.0
+  #  injectable: ^0.3.0 # Does not work on my armhf32, can be lack of ram https://github.com/dart-lang/pub/issues/2347
   # Allow returning more than one type of object
   equatable: ^1.1.1
 
@@ -23,6 +23,6 @@ dev_dependencies:
   test: ^1.14.1
   # Library for mocks
   mockito: ^4.1.1
-  build_runner:
+  #  build_runner:
   # A generator for injectable library
-  injectable_generator: ^0.3.0
+#  injectable_generator: ^0.3.0 # Does not work on my armhf32, can be lack of ram https://github.com/dart-lang/pub/issues/2347

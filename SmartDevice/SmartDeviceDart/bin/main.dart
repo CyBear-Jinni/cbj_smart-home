@@ -5,10 +5,9 @@ import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources
 import 'package:SmartDeviceDart/injection.dart';
 
 
-
-main(List<String> arguments) async {
+void main(List<String> arguments) async {
   print('Smart device is activaited');
-  await configureInjection(Env.dev_pc);
+  await Configuration(Env.dev_pc);
   await listenToVoiceCommand();
   return;
 //
