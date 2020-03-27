@@ -6,13 +6,7 @@ import 'package:SmartDeviceDart/features/smart_device/domain/entities/wish_class
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/getting_signals_from_pins/button_object_local_abstract.dart';
-import 'package:SmartDeviceDart/injection.dart';
-import 'package:injectable/injectable.dart';
 
-
-@RegisterAs(ButtonObjectLocalAbstract, env: Env.dev_pc)
-@RegisterAs(ButtonObjectLocalAbstract, env: Env.prod)
-@injectable
 class ButtonObjectLocal extends ButtonObjectLocalAbstract {
 
   @override
