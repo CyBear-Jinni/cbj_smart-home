@@ -107,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585324401537</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Removed test code">
+      <created>1585324460230</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585324460230</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -151,7 +158,8 @@
     <MESSAGE value="Snap now use the dart-sdk architecture files of the system automatically in the time of creation, the project will now pick automatically the correct pin configuration for the device that it is being running on." />
     <MESSAGE value="Moved to tabs" />
     <MESSAGE value="Removing the injection library because it did't worked on the armhf32" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing the injection library because it did't worked on the armhf32" />
+    <MESSAGE value="Removed test code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed test code" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
