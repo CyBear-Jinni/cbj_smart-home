@@ -4,7 +4,7 @@ import 'dart:io';
 Future<bool> listenToVoiceCommand() async {
   try {
     print('Start talking');
-    await Future.delayed(const Duration(seconds: 2)); //
+    await Future.delayed(const Duration(milliseconds: 3000)); //
     var projectPeth =
         '/home/guyl/Documents/programing/git/SmartHome/SmartDevice/scripts/pythonScripts/voiceAssistence/';
     var didItWork = await Process.run(
