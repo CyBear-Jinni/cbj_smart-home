@@ -7,9 +7,9 @@ class SharedVariables {
 
   SharedVariables(String projectRootDirectoryPath) {
     _projectRootDirectoryPath = projectRootDirectoryPath;
-    print("PATH: " + _projectRootDirectoryPath);
+    print('PATH: ' + _projectRootDirectoryPath);
   }
 
 
-  static String GetProjectRootDirectoryPath() => _projectRootDirectoryPath;
+  static String getProjectRootDirectoryPath() => _projectRootDirectoryPath;
 }

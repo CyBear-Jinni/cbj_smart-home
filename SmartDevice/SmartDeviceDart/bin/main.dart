@@ -1,18 +1,13 @@
 import 'package:SmartDeviceDart/core/shared_variables.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/device_pin_manager.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/usecases/smart_device_manager.dart';
+import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_manager.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/device_pin_manager.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/microphone/python_speech_to_text.dart';
 import 'package:SmartDeviceDart/injection.dart';
 
 
-
-main(List<String> arguments) async {
-  print("Smart device is activaited");
-  await configureInjection(Env.dev_pc);
-//
-//
-//  final mockCowAnimal = getIt<AnimalAbstract>();
-//  TryItNow tryItNow = TryItNow(mockCowAnimal);
-//  print(tryItNow.getLegs());
+void main(List<String> arguments) async {
+  print('Smart device is activaited');
+  await Configuration(Env.dev_pi);
 
   try {
     SharedVariables(arguments[0]);
@@ -22,7 +17,7 @@ main(List<String> arguments) async {
   }
 
   //  Getting physical device type from outside, and checking if this device configuration exist
-  await DevicePinListManager().SetPhysicalDeviceTypeByHostName();
+  await DevicePinListManager().setPhysicalDeviceTypeByHostName();
 
   SmartDeviceManager();
 }
