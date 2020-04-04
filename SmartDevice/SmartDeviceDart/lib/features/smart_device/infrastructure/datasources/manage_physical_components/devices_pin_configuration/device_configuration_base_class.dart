@@ -18,7 +18,7 @@ abstract class DeviceConfigurationBaseClass {
     var pinInformation = getPinInformationByPinNumber(pinNumber);
 
     var isTheGpioPinFree = isGpioPinFree(pinNumber);
-
+    print("Pin is " + pinInformation.pinAndPhysicalPinConfiguration.toString());
     if (isTheGpioPinFree != 0) {
       throw ('Cant use this pin ' + pinNumber.toString() + ' error code ' +
              isTheGpioPinFree.toString());
