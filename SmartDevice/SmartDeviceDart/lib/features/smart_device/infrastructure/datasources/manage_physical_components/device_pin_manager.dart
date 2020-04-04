@@ -29,7 +29,7 @@ class DevicePinListManager {
     physicalDeviceType =
         convertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
             deviceHostName);
-    print('phyc type is' + physicalDevice.toString());
+    print('phyc type is' + physicalDeviceType.toString());
     //  Save the current physical device configuration to the physicalDevice variable
     switch (physicalDeviceType) {
       case PhysicalDeviceType.NanoPiDuo2:
@@ -59,7 +59,7 @@ class DevicePinListManager {
       String hostName = result.stdout;
       hostName = hostName.substring(
           0, hostName.length - 1); //  Removes the invisible new line at the end
-      print(hostName);
+      print('Host name: ' + hostName);
       return hostName;
     });
   }
@@ -77,8 +77,13 @@ class DevicePinListManager {
         return null;
       }
 
+      print('one');
       var pinInformation = physicalDevice.getGpioPin(pinNumber);
+
+      print('Two ' + pinNumber.toString());
       OffWish.setOff(smartDevice.deviceInformation, pinInformation);
+
+      print('Tree');
       return pinInformation;
     }
     catch (e) {
