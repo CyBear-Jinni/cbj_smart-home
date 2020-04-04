@@ -1,4 +1,4 @@
-import 'package:SmartDeviceDart/features/smart_device/data/models/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/wish_classes/dynamic_wish.dart';
 
 import 'smart_device_simple_abstract.dart';
@@ -14,39 +14,39 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
 
 
   @override
-  Future<String> ExecuteWish(String wishString) async {
-    WishEnum wish = ConvertWishStringToWishesObject(wishString);
-    if (wish == null) return "Your wish does not exist on ";
-    return _wishInDynamicClass(wish);
+  Future<String> executeWish(String wishString) async {
+    var wish = convertWishStringToWishesObject(wishString);
+    if(wish == null) return 'Your wish does not exist on ';
+    return _WishInDynamicClass(wish);
   }
 
   //  Set dynamic value
   String _SetDynamicValue() {
     if (deviceInformation == null) {
-      return "Device information is missing, cant set dynamic value";
+      return 'Device information is missing, cant set dynamic value';
     }
-    return DynamicWish.SetDynamic(deviceInformation);
+    return DynamicWish.setDynamic(deviceInformation);
   }
 
   //  Change dynamic value with open connection
   String _OpenDynamicValue() {
     if (deviceInformation == null) {
-      return "Device information is missing, cant create open connection with dynamic ";
+      return 'Device information is missing, cant create open connection with dynamic ';
     }
-    DynamicWish.OpenDynamic(deviceInformation);
+    DynamicWish.openDynamic(deviceInformation);
     onOff = false;
     return 'Turn on sucsessfuly';
   }
 
   //  All the wishes that are legit to execute from the dynamic class
-  String _wishInDynamicClass(WishEnum wish) {
+  String _WishInDynamicClass(WishEnum wish) {
     switch (wish) {
       case WishEnum.SDynamic:
         return _SetDynamicValue();
       case WishEnum.ODynamic:
         return _OpenDynamicValue();
       default:
-        return WishInSimpleClass(wish);
+        return wishInSimpleClass(wish);
     }
   }
 }
