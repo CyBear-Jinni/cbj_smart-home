@@ -1,4 +1,4 @@
-import 'package:SmartDeviceDart/features/smart_device/data/models/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 
 import 'smart_device_base_abstract.dart';
 
@@ -14,14 +14,14 @@ abstract class SmartDeviceSimpleAbstract extends SmartDeviceBaseAbstract {
 
 
   @override
-  Future<String> ExecuteWish(String wishString) async {
-    WishEnum wish = ConvertWishStringToWishesObject(wishString);
-    return WishInSimpleClass(wish);
+  Future<String> executeWish(String wishString) async {
+    var wish = convertWishStringToWishesObject(wishString);
+    return wishInSimpleClass(wish);
   }
 
   //  All the wishes that are legit to execute from the simple class
-  String WishInSimpleClass(WishEnum wish) {
-    if (wish == null) return "Your wish does not exist on simple class";
-    return WishInBaseClass(wish);
+  String wishInSimpleClass(WishEnum wish) {
+    if(wish == null) return 'Your wish does not exist on simple class';
+    return wishInBaseClass(wish);
   }
 }

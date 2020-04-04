@@ -1,14 +1,13 @@
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/pin_on_off.dart';
-import 'package:SmartDeviceDart/injection.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/controlloling_pins_local.dart';
 import 'package:test/test.dart';
 
 void main() {
   test('PinInformation PinInformation.pinAndPhysicalPinConfiguration is null',
       () async {
-    PinInformation pinInformation = PinInformation();
+             var pinInformation = PinInformation();
 
-    String pinOnResponse = await getIt<TurnPinOnOffAbstract>().PinOn(
+             var pinOnResponse = await TurnPinOnOff().pinOn(
         pinInformation);
 
     expect(pinOnResponse,
@@ -16,10 +15,10 @@ void main() {
   });
 
   test('PinInformation', () async {
-    PinInformation pinInformation =
+    var pinInformation =
         PinInformation(pinAndPhysicalPinConfiguration: 2);
 
-    String pinOnResponse = await getIt<TurnPinOnOffAbstract>().PinOn(
+    var pinOnResponse = await TurnPinOnOff().pinOn(
         pinInformation);
 
     expect(pinOnResponse,

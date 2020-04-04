@@ -12,10 +12,10 @@ class DeviceInformation {
   //  Getters
 
 
-  String GetMacAddress() => _macAddress;
+  String getMacAddress() => _macAddress;
 
 
-  String GetName() => _name;
+  String getName() => _name;
 }
 
 class RemoteDevice extends DeviceInformation {
@@ -29,7 +29,7 @@ class RemoteDevice extends DeviceInformation {
   //  Get
 
 
-  String GetIp() => ip;
+  String getIp() => ip;
 }
 
 class LocalDevice extends DeviceInformation {

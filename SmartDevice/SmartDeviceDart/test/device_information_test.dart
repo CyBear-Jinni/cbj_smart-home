@@ -3,36 +3,36 @@ import 'package:test/test.dart';
 
 void main() {
   test('DeviceInformation', () {
-    String deviceMacAddress = '30:23:a2:G3:34';
-    String deviceName = 'Guy ceiling light';
+    var deviceMacAddress = '30:23:a2:G3:34';
+    var deviceName = 'Guy ceiling light';
 
-    DeviceInformation deviceInformation =
+    var deviceInformation =
         DeviceInformation(deviceMacAddress, deviceName);
 
-    expect(deviceInformation.GetMacAddress(), deviceMacAddress);
-    expect(deviceInformation.GetName(), deviceName);
+    expect(deviceInformation.getMacAddress(), deviceMacAddress);
+    expect(deviceInformation.getName(), deviceName);
   });
 
   test('RemoteDevice', () {
-    String deviceMacAddress = '30:23:a2:G3:34';
-    String deviceName = 'Guy ceiling light';
-    String deviceIp = '10.0.0.10';
+    var deviceMacAddress = '30:23:a2:G3:34';
+    var deviceName = 'Guy ceiling light';
+    var deviceIp = '10.0.0.10';
 
-    RemoteDevice deviceInformation =
+    var deviceInformation =
         RemoteDevice(deviceMacAddress, deviceName, deviceIp);
 
-    expect(deviceInformation.GetMacAddress(), deviceMacAddress);
-    expect(deviceInformation.GetName(), deviceName);
-    expect(deviceInformation.GetIp(), deviceIp);
+    expect(deviceInformation.getMacAddress(), deviceMacAddress);
+    expect(deviceInformation.getName(), deviceName);
+    expect(deviceInformation.getIp(), deviceIp);
   });
 
   test('LocalDevice', () {
-    String deviceMacAddress = "30:23:a2:G3:34";
-    String deviceName = "Guy ceiling light";
+    var deviceMacAddress = "30:23:a2:G3:34";
+    var deviceName = "Guy ceiling light";
 
-    LocalDevice deviceInformation = LocalDevice(deviceMacAddress, deviceName);
+    var deviceInformation = LocalDevice(deviceMacAddress, deviceName);
 
-    expect(deviceInformation.GetMacAddress(), deviceMacAddress);
-    expect(deviceInformation.GetName(), deviceName);
+    expect(deviceInformation.getMacAddress(), deviceMacAddress);
+    expect(deviceInformation.getName(), deviceName);
   });
 }
