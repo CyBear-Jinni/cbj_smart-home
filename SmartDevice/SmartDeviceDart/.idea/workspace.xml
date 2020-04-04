@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="Moved to tabs">
-      <change afterPath="$PROJECT_DIR$/bin/injection.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
-    <ignored path="$PROJECT_DIR$/out/" />
+    <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,46 +11,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="12" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/main.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/dinamic_devices/dynamic_light_object.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/injection.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -66,174 +18,12 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>//</find>
-      <find>// *</find>
-      <find>DeviceConfigurationBaseClass</find>
-      <find>onOffPinNumber</find>
-      <find>Device state is</find>
-      <find>ExecuteWish</find>
-      <find>SOn</find>
-      <find>print</find>
-      <find>listenToButtonPressed</find>
-      <find>gpio</find>
-      <find>pin con</find>
-      <find>Turn device</find>
-      <find>deviceInformation</find>
-      <find>python3</find>
-      <find>print('on in pin ' + pinNumber.toString());</find>
-      <find>print('Pin number ' + pinNumber.toString() + ' on' );</find>
-      <find>DeviceInformation</find>
-      <find>LocalDevice</find>
-      <find>Get</find>
-      <find>static cla</find>
-      <find>static</find>
-      <find>This is not</find>
-      <find>python</find>
-      <find>delayed</find>
-      <find>buttonPress</find>
-      <find>turnOn</find>
-      <find>.run</find>
-      <find>cScr</find>
-      <find>NanoPiDuo2</find>
-      <find>//</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>int</replace>
-      <replace>static_devices</replace>
-      <replace>abstract_smart_devices</replace>
-      <replace>smart_device_objects</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/bin/shered/dataBase/cloudManager.dart" />
-        <option value="$PROJECT_DIR$/protos/SmartConnection.proto" />
-        <option value="$PROJECT_DIR$/bin/shered/serverProtoAsDart/smartServer.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/server_proto_as_dart/smart_server.dart" />
-        <option value="$PROJECT_DIR$/test/smart_device_dart_test.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/device_pins_list.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/device_pins_list.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/device_pin_list.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/devicesPinConfigoration/nano_pi_duo.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configoration/nano_pi_neo.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configoration/device_base_class.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configoration/nano_pi_neo2.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configoration/nano_pi_duo2.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configoration/device_configoration_base_class.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configuration/nano_pi_neo_configuration.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configuration/nano_pi_neo2_configuration.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/permissions/permissions.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/server/protoc_as_dart/smart_connection.pbjson.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/server/smart_server.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/data_base/cloud_manager.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/data_base/data_base_controller.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/data_base/cloud_fire_store.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/wish_classes/off_wish.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_simple_abstract.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/dinamic_devices/dynamic_light_object.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/dinamic_devices/fan_object.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/dinamic_devices/speaker_object.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/simple_devices/light_object.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/simple_devices/thermostat_object.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/static_devices/blinds_object.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configuration/device_configuration_base_class.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configuration/nano_pi_duo2_configuration.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/wish_classes/on_wish.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/shered_information.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/shered_variables.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/shared_variables.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/button_object.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/controlloling_pins.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/enums.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/manage_physical_components/device_pin_manager.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/device_information.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_dynamic_abstract.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/wish_classes/dynamic_wish.dart" />
-        <option value="$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_static_abstract.dart" />
-        <option value="$PROJECT_DIR$/bin/shered/server/protoc_as_dart/smart_connection.pb.dart" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/bin/main.dart" />
-        <option value="$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/dinamic_devices/dynamic_light_object.dart" />
-        <option value="$PROJECT_DIR$/bin/injection.dart" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="2154" />
-    <option name="y" value="168" />
-    <option name="width" value="1242" />
-    <option name="height" value="716" />
-  </component>
+  <component name="ProjectId" id="1ZiYQ2qOKlgs1kKyVnJNoBW3Ajx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="smart_device" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="smart_device" type="462c0819:PsiDirectoryNode" />
-              <item name="smart_device_objects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartDeviceDart" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartDeviceDart" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="smart_device" type="462c0819:PsiDirectoryNode" />
-              <item name="smart_device_objects" type="462c0819:PsiDirectoryNode" />
-              <item name="dinamic_devices" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -310,7 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568838914691</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Removing the injection library because it did't worked on the armhf32">
+      <created>1585324401537</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585324401537</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Removed test code">
+      <created>1585324460230</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585324460230</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -322,98 +126,13 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="2154" y="168" width="1242" height="716" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2275" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Resources Explorer" order="7" weight="0.10959651" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31038135" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39602926" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.1724138" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.37241378" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32706374" />
-      <window_info anchor="bottom" id="Dart Analysis" order="10" weight="0.19644724" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3230932" />
-      <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Flutter Inspector" order="8" />
-      <window_info anchor="right" id="Flutter Outline" order="9" />
-      <window_info active="true" anchor="right" id="Assistant" order="10" visible="true" weight="0.30152673" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.40176323" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Resources Explorer" order="7" weight="0.10959651" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3613808" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39602926" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.1724138" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.22884013" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32706374" />
-      <window_info anchor="bottom" id="Dart Analysis" order="10" weight="0.19644724" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.31452456" />
-      <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Flutter Inspector" order="8" />
-      <window_info anchor="right" id="Flutter Outline" order="9" />
-      <window_info active="true" anchor="right" id="Assistant" order="10" visible="true" weight="0.30152673" />
-    </layout-to-restore>
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -435,122 +154,15 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Snap now use the dart-sdk architecture files of the system automatically in the time of creation, the project will now pick automatically the correct pin configuration for the device that it is being running on." />
     <MESSAGE value="Moved to tabs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved to tabs" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analysis_options.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/shered/pythons.dart" />
-    <entry file="file://$PROJECT_DIR$/.aaaaaaaaaaaaaaaaaaaaaa.swp" />
-    <entry file="file://$PROJECT_DIR$/.aaaaaaaaaaaaaaaaaaaaaa.txt.swp" />
-    <entry file="file://$USER_HOME$/Programmes/flutter/bin/cache/dart-sdk/lib/async/zone.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="1111" column="28" selection-start-line="1111" selection-start-column="28" selection-end-line="1111" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/shered/server/server_proto_as_dart/smart_connection.pb.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/server/server_proto_as_dart/smart_connection.pbjson.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/data_base/cloud_fire_store.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/data_base/data_base_controller.dart" />
-    <entry file="file://$PROJECT_DIR$/test/smart_device_dart_test.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/shered/data_base/cloud_manager.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configuration/nano_pi_neo2_configuration.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configuration/nano_pi_neo_configuration.dart" />
-    <entry file="file://$PROJECT_DIR$/pubspec.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Programmes/flutter/bin/cache/dart-sdk/lib/core/object.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
-          <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/static_devices/blinds_object.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/simple_devices/thermostat_object.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/simple_devices/light_object.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/dinamic_devices/speaker_object.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/dinamic_devices/fan_object.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/dinamic_devices/dynamic_light_object.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_simple_abstract.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_dynamic_abstract.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/wish_classes/on_wish.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/permissions/permissions_manager.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/permissions/permissions.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/shered_information.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/wish_classes/dynamic_wish.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/server/smart_server.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/wish_classes/off_wish.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/button_object.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_base_abstract.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configuration/nano_pi_duo2_configuration.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/device_information.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/devices_pin_configuration/device_configuration_base_class.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/shared_variables.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/enums.dart" />
-    <entry file="file://$USER_HOME$/Programmes/flutter/bin/cache/dart-sdk/lib/core/string.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="484" column="9" selection-start-line="484" selection-start-column="9" selection-end-line="484" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/device_pin_manager.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_manager.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/smart_device/smart_device_objects/abstract_smart_devices/smart_device_static_abstract.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/server/protoc_as_dart/smart_connection.pbgrpc.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/server/protoc_as_dart/smart_connection.pbenum.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/manage_physical_components/controlloling_pins.dart" />
-    <entry file="file://$PROJECT_DIR$/bin/shered/server/protoc_as_dart/smart_connection.pb.dart" />
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/features/smart_device/smart_device_objects/dinamic_devices/dynamic_light_object.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/injection.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <MESSAGE value="Removing the injection library because it did't worked on the armhf32" />
+    <MESSAGE value="Removed test code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed test code" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="masterDetails">
     <states>
