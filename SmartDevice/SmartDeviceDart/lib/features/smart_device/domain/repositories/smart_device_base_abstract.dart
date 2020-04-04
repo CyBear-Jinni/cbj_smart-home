@@ -1,15 +1,14 @@
 import 'dart:io';
 
 import 'package:SmartDeviceDart/core/device_information.dart';
+import 'package:SmartDeviceDart/core/helper_methods.dart';
 import 'package:SmartDeviceDart/core/permissions/permissions_manager.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/device_pin_manager.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/manage_physical_components/pins_datasource/getting_signals_from_pins/button_object_local_abstract.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/datasources/server/smart_server.dart';
-import 'package:SmartDeviceDart/features/smart_device/data/models/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/wish_classes/off_wish.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/wish_classes/on_wish.dart';
-import 'package:SmartDeviceDart/injection.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/device_pin_manager.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/getting_signals_from_pins/button_object_local.dart';
 
 
 //  The super base class of all the smart device class and smart device abstract classes
@@ -19,7 +18,7 @@ abstract class SmartDeviceBaseAbstract {
   DeviceInformation deviceInformation = LocalDevice('This is the mac Address',
       'This is the name of the device'); //  Save data about the device, remote or local IP or pin number
   String deviceName; //  Default name of the device to show in the app
-  final String macAddress; //  Mac address of the physical device
+  final String macAddress; //  Mac addresses of the physical device
   Map<String, PermissionsManager>
   devicePermissions; //  Permissions of all the users to this device
   double watts; //  Power consumption of the device
@@ -30,23 +29,23 @@ abstract class SmartDeviceBaseAbstract {
   Map<DateTime, Function>
   activitiesLog; //  Log of all the actions the device was and will do
   bool onOff =
-  false; //  Save the device state  on = true, off = false of onOffPin
+  false; //  Save the device state on = true, off = false of onOffPin
   PinInformation onOffPin; //  Number of on or off pin
   PinInformation onOffButtonPin; //  Pin for the button that control the onOffPin
-  List<PinInformation> _gpioPinList = List<
-      PinInformation>(); //  Save all the gpio pins that this instance is using
+  final List<PinInformation> _gpioPinList = <PinInformation>[
+  ]; //  Save all the gpio pins that this instance is using
 
 
   SmartDeviceBaseAbstract(this.macAddress, this.deviceName, int onOffPinNumber,
       {int onOffButtonPinNumber}) {
+    onOffPin =
+    onOffPinNumber == null ? null : addPinToGpioPinList(onOffPinNumber);
 
-    this.onOffPin = onOffPinNumber == null ? null : AddPinToGpioPinList(onOffPinNumber);
-
-    //  If pin number was inserted and it exist than listen to button press
+    //  If pin number was inserted and it exists than listen to button press
     if (onOffButtonPinNumber != null) {
-      this.onOffButtonPin = AddPinToGpioPinList(onOffButtonPinNumber);
+      onOffButtonPin = addPinToGpioPinList(onOffButtonPinNumber);
 
-      if (this.onOffButtonPin != null) {
+      if(onOffButtonPin != null) {
         listenToButtonPressed();
       }
     }
@@ -87,9 +86,9 @@ abstract class SmartDeviceBaseAbstract {
   //  Turn on the device basic action
   String _SetOn(PinInformation pinNumber) {
 //    if (deviceInformation == null) {
-//      return 'Device information is missing, cant turn on';
+//      return 'Device information is missing, can't turn on';
 //    }
-    OnWish.SetOn(deviceInformation, pinNumber);
+    OnWish.setOn(deviceInformation, pinNumber);
     onOff = true;
     return 'Turn on sucsessfuly';
   }
@@ -97,9 +96,9 @@ abstract class SmartDeviceBaseAbstract {
   //  Turn off the device basic action
   String _SetOff(PinInformation pinNumber) {
 //    if (deviceInformation == null) {
-//      return 'Device information is missing, cant turn off';
+//      return 'Device information is missing, can't turn off';
 //    }
-    OffWish.SetOff(deviceInformation, pinNumber);
+    OffWish.setOff(deviceInformation, pinNumber);
     onOff = false;
     return 'Turn off sucsessfuly';
   }
@@ -115,9 +114,9 @@ abstract class SmartDeviceBaseAbstract {
 
 
   //  Add gpio pin for this device
-  PinInformation AddPinToGpioPinList(int pinNumber) {
+  PinInformation addPinToGpioPinList(int pinNumber) {
     //  Check if pin is free to be taken, if not return negative number with error number
-    PinInformation gpioPin = DevicePinListManager.GetGpioPin(this, pinNumber);
+    var gpioPin = DevicePinListManager.getGpioPin(this, pinNumber);
     if (gpioPin == null) {
       return null;
     }
@@ -126,8 +125,8 @@ abstract class SmartDeviceBaseAbstract {
   }
 
   //  Return PossibleWishes object if string wish exist (in general) else return null
-  WishEnum ConvertWishStringToWishesObject(String wish) {
-    for (WishEnum possibleWish in WishEnum.values) {
+  WishEnum convertWishStringToWishesObject(String wish) {
+    for (var possibleWish in WishEnum.values) {
       print('Wish value ' + EnumHelper.wishEnumToString(possibleWish));
       if (EnumHelper.wishEnumToString(possibleWish) == wish) {
         return possibleWish; //  If wish exist return the PossibleWish object
@@ -137,13 +136,13 @@ abstract class SmartDeviceBaseAbstract {
   }
 
   //  Check if wish exist at all if true than check if base abstract have this wish and if true than execute it
-  Future<String> ExecuteWish(String wishString) async {
-    WishEnum wish = ConvertWishStringToWishesObject(wishString);
-    return WishInBaseClass(wish);
+  Future<String> executeWish(String wishString) async {
+    var wish = convertWishStringToWishesObject(wishString);
+    return wishInBaseClass(wish);
   }
 
   //  All the wishes that are legit to execute from the base class
-  String WishInBaseClass(WishEnum wish) {
+  String wishInBaseClass(WishEnum wish) {
     if (wish == null) return 'Your wish does not exist';
 
     switch (wish) {
@@ -154,7 +153,7 @@ abstract class SmartDeviceBaseAbstract {
         return _SetOff(onOffPin);
       case WishEnum.SOn:
         if (onOffPin == null) {
-          return 'Cant turn off this pin: ' + onOffPin.toString() + ' Number';
+	        return 'Cant turn on this pin: ' + onOffPin.toString() + ' Number';
         }
         return _SetOn(onOffPin);
       case WishEnum.SChangeState:
@@ -173,7 +172,7 @@ abstract class SmartDeviceBaseAbstract {
 
   //  Listen to button press
   void listenToButtonPressed() async {
-    getIt<ButtonObjectLocalAbstract>().buttonPressed(
+	  ButtonObjectLocal().buttonPressed(
         this, onOffButtonPin, onOffPin);
   }
 }
