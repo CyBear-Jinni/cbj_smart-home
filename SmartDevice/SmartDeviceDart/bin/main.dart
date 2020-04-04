@@ -7,14 +7,7 @@ import 'package:SmartDeviceDart/injection.dart';
 
 void main(List<String> arguments) async {
   print('Smart device is activaited');
-  await Configuration(Env.dev_pc);
-  await listenToVoiceCommand();
-  return;
-//
-//
-//  final mockCowAnimal = getIt<AnimalAbstract>();
-//  TryItNow tryItNow = TryItNow(mockCowAnimal);
-//  print(tryItNow.getLegs());
+  await Configuration(Env.dev_pi);
 
   try {
     SharedVariables(arguments[0]);
