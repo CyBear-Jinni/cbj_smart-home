@@ -23,9 +23,9 @@ class SmartDeviceManager {
 
     await setAllDevices(); //  Setting up all the device from the memory
 
-    listenToDataBase(); //  Listen to changes in the database for this device
+//    listenToDataBase(); //  Listen to changes in the database for this device
 
-    startListeningToVoiceCommandForever();
+//    startListeningToVoiceCommandForever(); // Listen to voice command does not work inside snap, alsa not working as root inside the snap
 
     waitForConnection(); //  Start listen for in incoming connections from the local internet (LAN/Wifi)
   }
@@ -35,9 +35,9 @@ class SmartDeviceManager {
   void setAllDevices() async {
     //  TODO: insert the number of the pin with class DevicePinListManager to check if pin is free to use and of the right type
     MySingleton.addToSmartDevicesList(
-        LightObject("30:23:a2:G3:34", "Guy ceiling light", 11));
-//        .add(LightObject("30:23:a2:G3:34", "Guy ceiling light", 11,
-//        onOffButtonPinNumber: 16)); // NanoPi Duo2
+//        LightObject("30:23:a2:G3:34", "Guy ceiling light", 11));
+LightObject("30:23:a2:G3:34", "Guy ceiling light", 11,
+		            onOffButtonPinNumber: 16)); // NanoPi Duo2
 //        .add(BlindsObject(
 //        "30:23:a2:G3:34",
 //        "Guy ceiling light",
@@ -71,8 +71,7 @@ class SmartDeviceManager {
 
 
   void startListeningToVoiceCommandForever() async {
-    var microphoneVoiceCommandAbstract = getIt<
-        MicrophoneVoiceCommandAbstract>();
+	  var microphoneVoiceCommandAbstract = MicrophoneVoiceCommand();
     microphoneVoiceCommandAbstract.loopListenToActivateKeyWord().listen((
 		                                                                        event) {
 	    if(! event) {
