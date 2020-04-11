@@ -6,7 +6,6 @@ import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/server/smart_server.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositories/VoiceCommand.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositories/cloud_manager.dart';
-import 'package:SmartDeviceDart/injection.dart';
 
 
 class SmartDeviceManager {
@@ -37,7 +36,7 @@ class SmartDeviceManager {
     MySingleton.addToSmartDevicesList(
 //        LightObject("30:23:a2:G3:34", "Guy ceiling light", 11));
 LightObject("30:23:a2:G3:34", "Guy ceiling light", 11,
-		            onOffButtonPinNumber: 16)); // NanoPi Duo2
+    onOffButtonPinNumber: 2)); // NanoPi Duo2 will be pin 16 for the button
 //        .add(BlindsObject(
 //        "30:23:a2:G3:34",
 //        "Guy ceiling light",

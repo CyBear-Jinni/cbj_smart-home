@@ -9,6 +9,7 @@ import 'package:SmartDeviceDart/features/smart_device/domain/entities/wish_class
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/device_pin_manager.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/getting_signals_from_pins/button_object_local.dart';
+import 'package:SmartDeviceDart/injection.dart';
 
 
 //  The super base class of all the smart device class and smart device abstract classes
@@ -116,7 +117,8 @@ abstract class SmartDeviceBaseAbstract {
   //  Add gpio pin for this device
   PinInformation addPinToGpioPinList(int pinNumber) {
     //  Check if pin is free to be taken, if not return negative number with error number
-    var gpioPin = DevicePinListManager.getGpioPin(this, pinNumber);
+    var gpioPin = getIt<DevicePinListManagerAbstract>().getGpioPin(
+        this, pinNumber);
     if (gpioPin == null) {
       return null;
     }

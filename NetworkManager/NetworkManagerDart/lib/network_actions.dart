@@ -116,7 +116,7 @@ class NetworkActions {
   Future<String> connectToWiFi(String ssid, String pass) async {
 //    Not Working with snap from apt
     return await Process.run('nmcli',
-        ['dev', 'wifi', 'connect', ssid, 'password', pass]).then((
+        ['dev', 'wifi', 'connect', ssid, 'password', pass]).then((  // nmcli dev wifi connect ssid password pass
         //  sudo nmcli dev wifi connect ssid password pass
         ProcessResult results) {
       print(results.stdout.toString());
