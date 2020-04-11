@@ -14,12 +14,13 @@ void $initGetIt(GetIt g, {String environment}) {
   if (environment == 'dev_pi') {
     g.registerFactory<DevicePinListManagerAbstract>(
         () => DevicePinListManager());
+    g.registerFactory<TurnPinOnOffAbstract>(() => TurnPinOnOff());
   }
 
   //Register dev_pc Dependencies --------
   if (environment == 'dev_pc') {
     g.registerFactory<DevicePinListManagerAbstract>(
         () => DevicePinListManagerPC());
-    g.registerFactory<TurnPinOnOffAbstract>(() => TurnPinOnOff());
+    g.registerFactory<TurnPinOnOffAbstract>(() => TurnPinOnOffPc());
   }
 }
