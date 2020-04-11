@@ -1,6 +1,7 @@
 import 'package:SmartDeviceDart/core/device_information.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
-import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/controlloling_pins_local.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/pin_on_off.dart';
+import 'package:SmartDeviceDart/injection.dart';
 
 class OffWish {
 
@@ -19,7 +20,7 @@ class OffWish {
   //  Turn this device off
   static String setOffLocal(LocalDevice deviceInformation,
                             PinInformation pinNumber) {
-	  TurnPinOnOff().pinOff(pinNumber);
+    getIt<TurnPinOnOffAbstract>().pinOff(pinNumber);
     return 'Response from this device off sucsessful';
   }
 
