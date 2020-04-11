@@ -13,6 +13,8 @@ for fileName in *.c; do
 	rm ${fileName}
 done
 
+echo "Done C scripts"
+
 echo "Compiling snowboy C file"
 
 cd snowboy/examples/C/
