@@ -16,7 +16,7 @@ void main(List<String> arguments) async {
   }
 
   //  Getting physical device type from outside, and checking if this device configuration exist
-  await DevicePinListManager().setPhysicalDeviceTypeByHostName();
+  await getIt<DevicePinListManagerAbstract>().setPhysicalDeviceTypeByHostName();
 
   SmartDeviceManager();
 }
