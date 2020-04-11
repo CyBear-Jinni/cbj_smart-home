@@ -54,7 +54,7 @@ class DevicePinListManager extends DevicePinListManagerAbstract {
     physicalDeviceType =
         convertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
             deviceHostName);
-    print('phyc type is' + physicalDeviceType.toString());
+    print('phyc type is ' + physicalDeviceType.toString());
     //  Save the current physical device configuration to the physicalDevice variable
     switch (physicalDeviceType) {
       case PhysicalDeviceType.NanoPiDuo2:
@@ -170,8 +170,7 @@ class DevicePinListManagerPC extends DevicePinListManagerAbstract {
   @override
   PinInformation getGpioPin(SmartDeviceBaseAbstract smartDevice,
       int pinNumber) {
-    // TODO: implement getGpioPin
-    throw UnimplementedError();
+    return PinInformation();
   }
 
   @override
