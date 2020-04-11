@@ -18,12 +18,16 @@ class BlindsObject extends SmartDeviceStaticAbstract {
       int blindsUpPin, int upButtonPinNumber, int blindsDownPin, int downButtonPinNumber)
       : super(macAddress, deviceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber) {
-    buttonPinUp = DevicePinListManager.getGpioPin(this, upButtonPinNumber);
+    buttonPinUp = getIt<DevicePinListManagerAbstract>().getGpioPin(
+        this, upButtonPinNumber);
     buttonPinDown =
-        DevicePinListManager.getGpioPin(this, downButtonPinNumber);
+        getIt<DevicePinListManagerAbstract>().getGpioPin(
+            this, downButtonPinNumber);
 
-    this.blindsUpPin = DevicePinListManager.getGpioPin(this, blindsUpPin);
-    this.blindsDownPin = DevicePinListManager.getGpioPin(this, blindsDownPin);
+    this.blindsUpPin =
+        getIt<DevicePinListManagerAbstract>().getGpioPin(this, blindsUpPin);
+    this.blindsDownPin =
+        getIt<DevicePinListManagerAbstract>().getGpioPin(this, blindsDownPin);
     listenToTwoButtonsPress();
   }
 
