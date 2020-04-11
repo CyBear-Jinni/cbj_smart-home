@@ -6,7 +6,7 @@ import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources
 import 'package:SmartDeviceDart/injection.dart';
 import 'package:injectable/injectable.dart';
 
-@RegisterAs(TurnPinOnOffAbstract, env: Env.dev_pc)
+@RegisterAs(TurnPinOnOffAbstract, env: Env.dev_pi)
 @RegisterAs(TurnPinOnOffAbstract, env: Env.prod)
 @injectable
 class TurnPinOnOff extends TurnPinOnOffAbstract {
@@ -59,5 +59,20 @@ class TurnPinOnOff extends TurnPinOnOffAbstract {
       print('error: ' + error.toString());
       return 'Path/argument 1 is not specified';
     }
+  }
+}
+
+
+@RegisterAs(TurnPinOnOffAbstract, env: Env.dev_pc)
+@injectable
+class TurnPinOnOffPc extends TurnPinOnOffAbstract {
+  @override
+  Future<String> pinOff(PinInformation pinNumber) {
+    return Future.value('Sucess');
+  }
+
+  @override
+  Future<String> pinOn(PinInformation pinNumber) {
+    return Future.value('Sucess');
   }
 }
