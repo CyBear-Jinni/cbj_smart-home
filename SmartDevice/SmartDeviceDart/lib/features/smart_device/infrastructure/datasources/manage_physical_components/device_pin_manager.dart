@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/wish_classes/off_wish.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
+import 'package:SmartDeviceDart/injection.dart';
+import 'package:injectable/injectable.dart';
 
 import 'devices_pin_configuration/device_configuration_base_class.dart';
 import 'devices_pin_configuration/nano_pi_duo2_configuration.dart';
@@ -15,13 +17,36 @@ import 'devices_pin_configuration/pin_information.dart';
 
 //  Also these class manage the pins, and check if this pin is in the type that the user needs (gpio and more),
 //  If pin is not in use and in the correct type that user expect it return the number of the pin, else return -1
-class DevicePinListManager {
+
+abstract class DevicePinListManagerAbstract {
+  static PhysicalDeviceType
+  physicalDeviceType; //  Will save the type of the current physical device
+  static DeviceConfigurationBaseClass
+  physicalDevice; //  Will save the current physical device pin configuration
+
+  Future setPhysicalDeviceTypeByHostName();
+
+  Future<String> getDeviceHostName();
+
+  PinInformation getGpioPin(SmartDeviceBaseAbstract smartDevice,
+      int pinNumber);
+
+  PhysicalDeviceType
+  convertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
+      String physicalDeviceType);
+}
+
+@RegisterAs(DevicePinListManagerAbstract, env: Env.dev_pi)
+@RegisterAs(DevicePinListManagerAbstract, env: Env.prod)
+@injectable
+class DevicePinListManager extends DevicePinListManagerAbstract {
   static PhysicalDeviceType
   physicalDeviceType; //  Will save the type of the current physical device
   static DeviceConfigurationBaseClass
   physicalDevice; //  Will save the current physical device pin configuration
 
 
+  @override
   Future setPhysicalDeviceTypeByHostName() async {
     var deviceHostName = await getDeviceHostName();
     deviceHostName = deviceHostName.replaceAll('-', '').replaceAll(' ', '');
@@ -53,8 +78,8 @@ class DevicePinListManager {
         EnumHelper.physicalDeviceTypeToString(physicalDeviceType));
   }
 
-
-  static Future<String> getDeviceHostName() async {
+  @override
+  Future<String> getDeviceHostName() async {
     return await Process.run('hostname', ["-s"]).then((ProcessResult result) {
       String hostName = result.stdout;
       hostName = hostName.substring(
@@ -65,7 +90,8 @@ class DevicePinListManager {
   }
 
   //  Ask for gpio pin, if free return the pin number, else return error number (negative numbers)
-  static PinInformation getGpioPin(SmartDeviceBaseAbstract smartDevice,
+  @override
+  PinInformation getGpioPin(SmartDeviceBaseAbstract smartDevice,
                                    int pinNumber) {
     if (physicalDevice == null) {
       print('Error physical device is null');
@@ -93,7 +119,8 @@ class DevicePinListManager {
   }
 
   //  Return physicalDeviceType object if string physicalDeviceType exist (in general) else return null
-  static PhysicalDeviceType
+  @override
+  PhysicalDeviceType
   convertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
       String physicalDeviceType) {
     //  Loop through all the physical devices types
@@ -107,4 +134,49 @@ class DevicePinListManager {
     }
     return null;
   }
+}
+
+
+@RegisterAs(DevicePinListManagerAbstract, env: Env.dev_pc)
+@injectable
+class DevicePinListManagerPC extends DevicePinListManagerAbstract {
+  static PhysicalDeviceType
+  physicalDeviceType; //  Will save the type of the current physical device
+  static DeviceConfigurationBaseClass
+  physicalDevice; //  Will save the current physical device pin configuration
+
+
+  @override
+  PhysicalDeviceType
+  convertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
+      String physicalDeviceType) {
+    //  Loop through all the physical devices types
+    for (var physicalDeviceTypeTemp
+    in PhysicalDeviceType.values) {
+      if (EnumHelper.physicalDeviceTypeToString(physicalDeviceTypeTemp)
+          .toLowerCase() ==
+          physicalDeviceType.toLowerCase()) {
+        return physicalDeviceTypeTemp; //  If physicalDeviceType string exist return the physicalDeviceType enum object
+      }
+    }
+    return null;
+  }
+
+  @override
+  Future<String> getDeviceHostName() {
+    return Future.value('PC');
+  }
+
+  @override
+  PinInformation getGpioPin(SmartDeviceBaseAbstract smartDevice,
+      int pinNumber) {
+    // TODO: implement getGpioPin
+    throw UnimplementedError();
+  }
+
+  @override
+  Future setPhysicalDeviceTypeByHostName() {
+    return Future.value('PC');
+  }
+
 }
