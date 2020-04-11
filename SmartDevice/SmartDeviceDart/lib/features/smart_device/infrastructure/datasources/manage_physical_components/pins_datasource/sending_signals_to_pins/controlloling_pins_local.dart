@@ -3,7 +3,12 @@ import 'dart:io';
 import 'package:SmartDeviceDart/core/shared_variables.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/pin_on_off.dart';
+import 'package:SmartDeviceDart/injection.dart';
+import 'package:injectable/injectable.dart';
 
+@RegisterAs(TurnPinOnOffAbstract, env: Env.dev_pc)
+@RegisterAs(TurnPinOnOffAbstract, env: Env.prod)
+@injectable
 class TurnPinOnOff extends TurnPinOnOffAbstract {
 //  Function to start c script to interact with pins
   @override
@@ -19,12 +24,12 @@ class TurnPinOnOff extends TurnPinOnOffAbstract {
 
     try {
       print('This is the pin number on ' +
-            pinNumber.pinAndPhysicalPinConfiguration.toString());
+          pinNumber.pinAndPhysicalPinConfiguration.toString());
       return await Process.run(
           SharedVariables.getProjectRootDirectoryPath() +
-          '/scripts/cScripts/turnOn',
+              '/scripts/cScripts/turnOn',
           [pinNumber.pinAndPhysicalPinConfiguration.toString()]).then((
-                                                                          ProcessResult results) {
+          ProcessResult results) {
         print(results.stdout);
         return results.stdout;
       });
@@ -40,12 +45,12 @@ class TurnPinOnOff extends TurnPinOnOffAbstract {
   Future<String> pinOff(PinInformation pinNumber) async {
     try {
       print('This is the pin number off:  ' +
-            pinNumber.pinAndPhysicalPinConfiguration.toString());
+          pinNumber.pinAndPhysicalPinConfiguration.toString());
       return await Process.run(
           SharedVariables.getProjectRootDirectoryPath() +
-          '/scripts/cScripts/turnOff',
+              '/scripts/cScripts/turnOff',
           [pinNumber.pinAndPhysicalPinConfiguration.toString()]).then((
-                                                                          ProcessResult results) {
+          ProcessResult results) {
         print(results.stdout);
         return results.stdout;
       });

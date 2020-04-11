@@ -8,7 +8,9 @@ unzip dartsdk-*.zip
 
 cd SmartDeviceDart
 sudo ../dart-sdk/bin/pub get --no-precompile
+sudo ../dart-sdk/bin/pub run build_runner build --delete-conflicting-outputs
 cd ..
+
 #chmod -R +rx dart-sdk/
 dart-sdk/bin/dart2native SmartDeviceDart/bin/main.dart
 
