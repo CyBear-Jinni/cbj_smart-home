@@ -1,5 +1,5 @@
-import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/devices_pin_configuration/pin_information.dart';
-import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/manage_physical_components/pins_datasource/sending_signals_to_pins/controlloling_pins_local.dart';
+import 'package:SmartDeviceDart/features/smart_device/application/usecases/devices_pin_configuration_u/pin_information.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositories/wish_classes_r/turn_pin_on_off_local.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -7,7 +7,7 @@ void main() {
       () async {
              var pinInformation = PinInformation();
 
-             var pinOnResponse = await TurnPinOnOff().pinOn(
+             var pinOnResponse = await TurnPinOnOffLocal().pinOn(
         pinInformation);
 
     expect(pinOnResponse,
@@ -18,7 +18,7 @@ void main() {
     var pinInformation =
         PinInformation(pinAndPhysicalPinConfiguration: 2);
 
-    var pinOnResponse = await TurnPinOnOff().pinOn(
+    var pinOnResponse = await TurnPinOnOffLocal().pinOn(
         pinInformation);
 
     expect(pinOnResponse,

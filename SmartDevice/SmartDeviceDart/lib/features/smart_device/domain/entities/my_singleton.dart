@@ -1,4 +1,4 @@
-import 'package:SmartDeviceDart/features/smart_device/domain/repositories/smart_device_base_abstract.dart';
+import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart';
 
 class MySingleton {
   static final MySingleton _singleton = MySingleton._internal();
