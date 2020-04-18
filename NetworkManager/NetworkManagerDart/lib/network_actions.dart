@@ -15,7 +15,7 @@ class NetworkActions {
 
   //  This function starts the connection to the requested wi-fi if the internet connection is down
   Future isConnectedToTheInternet() async {
-    print("Status is " + (await isConnectedToInternet()).toString());
+    print('Status is ' + (await isConnectedToInternet()).toString());
     bool processLocation = false; //  true = Started the process to connect to the admin wi-fi, false = waiting for the internet to go down
 
     Stream<DataConnectionStatus> listener = returnStatusIfChanged();
@@ -59,7 +59,7 @@ class NetworkActions {
         await connectToAdminWiFi(ssid: adminWifiName, pass: adminWifiPass);
       }
       // If the device is not connected to any Wi-Fi try reconnecting to the last network
-      else if (connectedWifiName == null || connectedWifiName == "") {
+      else if (connectedWifiName == null || connectedWifiName == '') {
         await connectToWiFi(wifiName, wifiPassword);
       }
       await Future.delayed(
@@ -68,7 +68,7 @@ class NetworkActions {
   }
 
   //  This function check if there is Wi-Fi with the name that it got, if true it will try to connect to it with the password that it got
-  Future connectToAdminWiFi({String ssid = "ho", String pass = "123"}) async {
+  Future connectToAdminWiFi({String ssid = 'ho', String pass = '123'}) async {
     String connectingResult = await connectToWiFi(ssid, pass);
     print('This is connection result');
     print(connectingResult);
@@ -102,7 +102,7 @@ class NetworkActions {
     return await Process.run('nmcli',
         ['-t', '-f', 'ssid', 'dev', 'wifi']).then((ProcessResult results) { //  nmcli -t -f ssid dev wifi
       List<String> wifi_results =
-      results.stdout.toString().split("\n");
+      results.stdout.toString().split('\n');
       wifi_results = wifi_results.sublist(0, wifi_results.length - 1);
       wifi_results.forEach((f) {
         print("This is f:" + f);
@@ -114,12 +114,12 @@ class NetworkActions {
 
   //  Connect to the wi-fi
   Future<String> connectToWiFi(String ssid, String pass) async {
-//    Not Working with snap from apt
+//    Not Working with snap from apthelllow
     return await Process.run('nmcli',
         ['dev', 'wifi', 'connect', ssid, 'password', pass]).then((  // nmcli dev wifi connect ssid password pass
         //  sudo nmcli dev wifi connect ssid password pass
         ProcessResult results) {
-      print(results.stdout.toString());
+      print('Connected to ' + results.stdout.toString());
       return results.stdout.toString();
     });
     //    Can iwconfig also be used but require root: iwconfig wlp3s0 essid ssid key pass
@@ -129,7 +129,7 @@ class NetworkActions {
   Future<String> getConnectedNetworkName() async {
     return await Process.run('iwgetid',
         ['-r']).then((ProcessResult results) {
-      print(results.stdout.toString());
+      print('Currently connected to ' + results.stdout.toString());
       return results.stdout.toString().replaceAll('\n', '');
     });
 
