@@ -20,14 +20,7 @@ parts:
     plugin: dump
     source: .
     override-build: |
-      scripts/bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct architecture
-
-      unzip dartsdk-*.zip
-
-      cd NetworkManagerDart
-      ../dart-sdk/bin/pub get --no-precompile
-      cd ..
-      dart-sdk/bin/dart2aot NetworkManagerDart/bin/main.dart main.aot
+      scripts/bashScripts/nativeExecutableMaker.sh  # Downloading dart-sdk for the correct architecture
 
       rm -r NetworkManagerDart
 
@@ -84,6 +77,6 @@ parts:
 
 apps:
   network-manager-dart:
-    command: dart-sdk/bin/dartaotruntime $SNAP/main.aot $SNAP
+    command: main.exe $SNAP
     #daemon: simple
     plugs: [network, network-bind, hardware-observe]
