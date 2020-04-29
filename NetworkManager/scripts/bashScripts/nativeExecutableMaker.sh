@@ -8,6 +8,7 @@ unzip dartsdk-*.zip
 
 cd NetworkManagerDart
 sudo ../dart-sdk/bin/pub get --no-precompile
+#sudo ../dart-sdk/bin/pub run build_runner build --delete-conflicting-outputs
 cd ..
 
 #chmod -R +rx dart-sdk/
