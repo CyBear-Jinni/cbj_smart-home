@@ -53,7 +53,6 @@ parts:
       - libpcsclite1
       - libpipeline1
       - libpolkit-agent-1-0
-      - libpolkit-backend-1-0
       - libpolkit-gobject-1-0
       - libqmi-glib5
       - libqmi-proxy
