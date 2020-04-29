@@ -50,6 +50,7 @@ parts:
       - make
       - libatlas-base-dev
       - libasound-dev
+      # - apt-get install g++ or avr-libc # stdint.h: No such file or directory
     stage-packages:
       - libatlas-base-dev
       - libevent-dev
