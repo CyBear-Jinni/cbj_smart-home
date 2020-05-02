@@ -82,21 +82,31 @@ class SmartServerU extends SmartServerServiceBase {
   }
 
 
-  SmartDeviceBaseAbstract getSmartDeviceBaseAbstract(SmartDevice request) =>
-      MySingleton.getSmartDevicesList()[int.parse(request.name)];
+  SmartDeviceBaseAbstract getSmartDeviceBaseAbstract(SmartDevice request) {
+    try {
+      return MySingleton.getSmartDevicesList().firstWhere((
+          smartDeviceBaseAbstractO) =>
+      smartDeviceBaseAbstractO.deviceName == request.name);
+    }
+    catch (exception) {
+      print('Exception, device name ' + request.name + ' could not be found: ' +
+          exception.message);
+      return null;
+    }
+  }
 
   CommendStatus executeWishEnumServer(SmartDevice request, WishEnum wishEnum) {
-    var smartDevice =
-    MySingleton.getSmartDevicesList()[int.parse(request.name)];
+    var smartDevice = getSmartDeviceBaseAbstract(request);
     ActionsToPreform.executeWishEnum(smartDevice, wishEnum);
     return CommendStatus()
       ..success = smartDevice.onOff;
   }
 
   String executeWishEnumString(SmartDevice request, WishEnum wishEnum) {
-    var smartDevice =
-    MySingleton.getSmartDevicesList()[int.parse(request.name)];
-
+    var smartDevice = getSmartDeviceBaseAbstract(request);
+    if (smartDevice == null) {
+      return "can't find device name";
+    }
     return ActionsToPreform.executeWishEnum(smartDevice, wishEnum);
   }
 }
