@@ -2,9 +2,10 @@ import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 
 // This class Preform most of the request
-class ActionsToPreform {
-  static String executeWishEnum(SmartDeviceBaseAbstract smartDevice, WishEnum wishEnum) {
-    var deviceStatus = smartDevice.wishInBaseClass(wishEnum);
+class ActionsToPreformU {
+  static String executeWishEnum(SmartDeviceBaseAbstract smartDevice,
+      WishEnum wishEnum, WishSourceEnum wishSourceEnum) {
+    var deviceStatus = smartDevice.wishInBaseClass(wishEnum, wishSourceEnum);
     print('Device state is ' + deviceStatus);
 
     return deviceStatus;
