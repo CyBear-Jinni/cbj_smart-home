@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:SmartDeviceDart/features/smart_device/application/usecases/core_u/actions_to_preform.dart';
+import 'package:SmartDeviceDart/features/smart_device/application/usecases/core_u/actions_to_preform_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singleton.dart';
@@ -10,6 +10,8 @@ import 'package:grpc/grpc.dart';
 
 // This class get what to execute straight from the grpc request,
 class SmartServerU extends SmartServerServiceBase {
+
+  static const WishSourceEnum _wishSourceEnum = WishSourceEnum.ServerRequest;
 
   //  Listening to port and deciding what to do with the response
   void waitForConnection() {
@@ -31,7 +33,7 @@ class SmartServerU extends SmartServerServiceBase {
   Future<SmartDeviceStatus> getStatus(ServiceCall call,
       SmartDevice request) async {
     var deviceStatus = executeWishEnumString(
-        request, WishEnum.GState);
+        request, WishEnum.GState, _wishSourceEnum);
 
     print('Getting status of device ' + request.toString() +
         ' and device status in bool ' + deviceStatus);
@@ -44,7 +46,7 @@ class SmartServerU extends SmartServerServiceBase {
   Future<CommendStatus> setOffDevice(ServiceCall call,
       SmartDevice request) async {
     print('Turn device ' + request.name + ' off');
-    return executeWishEnumServer(request, WishEnum.SOff);
+    return executeWishEnumServer(request, WishEnum.SOff, _wishSourceEnum);
   }
 
 
@@ -52,7 +54,7 @@ class SmartServerU extends SmartServerServiceBase {
   Future<CommendStatus> setOnDevice(ServiceCall call,
       SmartDevice request) async {
     print('Turn device ' + request.name + ' on');
-    return executeWishEnumServer(request, WishEnum.SOn);
+    return executeWishEnumServer(request, WishEnum.SOn, _wishSourceEnum);
   }
 
 
@@ -60,7 +62,7 @@ class SmartServerU extends SmartServerServiceBase {
   Future<CommendStatus> setBlindsUp(ServiceCall call,
       SmartDevice request) async {
     print('Turn blinds ' + request.name + ' up');
-    return executeWishEnumServer(request, WishEnum.blindsUp);
+    return executeWishEnumServer(request, WishEnum.blindsUp, _wishSourceEnum);
   }
 
 
@@ -69,7 +71,7 @@ class SmartServerU extends SmartServerServiceBase {
       SmartDevice request) async {
     print('Turn blinds ' + request.name + ' down');
 
-    return executeWishEnumServer(request, WishEnum.blindsDown);
+    return executeWishEnumServer(request, WishEnum.blindsDown, _wishSourceEnum);
   }
 
 
@@ -78,7 +80,7 @@ class SmartServerU extends SmartServerServiceBase {
       SmartDevice request) async {
     print('Turn blinds ' + request.name + ' stop');
 
-    return executeWishEnumServer(request, WishEnum.blindsStop);
+    return executeWishEnumServer(request, WishEnum.blindsStop, _wishSourceEnum);
   }
 
 
@@ -95,18 +97,21 @@ class SmartServerU extends SmartServerServiceBase {
     }
   }
 
-  CommendStatus executeWishEnumServer(SmartDevice request, WishEnum wishEnum) {
+  CommendStatus executeWishEnumServer(SmartDevice request, WishEnum wishEnum,
+      WishEnum) {
     var smartDevice = getSmartDeviceBaseAbstract(request);
-    ActionsToPreform.executeWishEnum(smartDevice, wishEnum);
+    ActionsToPreformU.executeWishEnum(smartDevice, wishEnum, _wishSourceEnum);
     return CommendStatus()
       ..success = smartDevice.onOff;
   }
 
-  String executeWishEnumString(SmartDevice request, WishEnum wishEnum) {
+  String executeWishEnumString(SmartDevice request, WishEnum wishEnum,
+      WishSourceEnum wishSourceEnum) {
     var smartDevice = getSmartDeviceBaseAbstract(request);
     if (smartDevice == null) {
       return "can't find device name";
     }
-    return ActionsToPreform.executeWishEnum(smartDevice, wishEnum);
+    return ActionsToPreformU.executeWishEnum(
+        smartDevice, wishEnum, wishSourceEnum);
   }
 }

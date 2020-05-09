@@ -32,19 +32,21 @@ class BlindsObject extends SmartDeviceStaticAbstract {
 
 
   @override
-  Future<String> executeWish(String wishString) async {
+  Future<String> executeWish(String wishString,
+      WishSourceEnum wishSourceEnum) async {
     var wish = convertWishStringToWishesObject(wishString);
-    return await wishInBlindsClass(wish);
+    return await wishInBlindsClass(wish, wishSourceEnum);
   }
 
   //  All the wishes that are legit to execute from the blinds class
-  Future<String> wishInBlindsClass(WishEnum wish) async {
+  Future<String> wishInBlindsClass(WishEnum wish,
+      WishSourceEnum wishSourceEnum) async {
     if(wish == null) return 'Your wish does not exist in blinds class';
     if (wish == WishEnum.blindsUp) return await BlindsWishU.BlindsUp(this);
     if (wish == WishEnum.blindsDown) return await BlindsWishU.blindsDown(this);
     if (wish == WishEnum.blindsStop) return await BlindsWishU.blindsStop(this);
 
-    return wishInStaticClass(wish);
+    return wishInStaticClass(wish, wishSourceEnum);
   }
 
 
