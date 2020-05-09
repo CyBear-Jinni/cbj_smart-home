@@ -9,6 +9,8 @@ class CloudFireStore {
   static const email = 'guyhome@gmail.com';
   static const password = '123IsNotSecure';
 
+  static Firestore fireStore;
+  FirebaseAuth auth;
 
   StreamController<Document> streamController = StreamController<Document>();
 
@@ -32,24 +34,10 @@ class CloudFireStore {
 
   //  Set the data in field
   void setDataInField(String dataPath, String dataToSave) async {
-    var auth = FirebaseAuth(apiKey, VolatileStore());
-    var fireStore =
-    Firestore(projectId, auth: auth); //  FireStore reuses the auth client
-
-    //  Monitor sign-in state
-    auth.signInState.listen((state) {
-      return print("Signed ${state ? "in" : "out"}");
-    });
+    await authenticationHelper();
 
     //  Sign in with user credentials
     try {
-      await auth.signIn(email, password);
-
-      //  Get user object
-      var user = await auth.getUser();
-      print(user);
-
-
       //  Instantiate a reference to a document - this happens offline
       var ref = fireStore.document(dataPath);
       //  Update the document
@@ -62,63 +50,54 @@ class CloudFireStore {
   }
 
   //  Update the data in field
-  void updateDataInField(String dataPath, String dataToSave) async {
-    var auth = FirebaseAuth(apiKey, VolatileStore());
-    var fireStore =
-    Firestore(projectId, auth: auth); //  FireStore reuses the auth client
+  Future <String> updateDataInStringField(String dataPath, String fieldToUpdate,
+      String valueToUpdate) async {
+    await authenticationHelper();
 
-    //  Monitor sign-in state
-    auth.signInState.listen((state) {
-      return print("Signed ${state ? "in" : "out"}");
-    });
-
-    //  Sign in with user credentials
     try {
-      await auth.signIn(email, password);
-
-      //  Get user object
-      var user = await auth.getUser();
-      print(user);
-
-
       //  Instantiate a reference to a document - this happens offline
       var ref = fireStore.document(dataPath);
       //  Update the document
-      await ref.update({'value': dataToSave});
+      await ref.update({fieldToUpdate: valueToUpdate});
     }
 
     catch (error) {
       print("Can't reach server, error: " + error.toString());
+      return "Can't reach server, error: " + error.toString();
     }
+    return 'Sucess';
+  }
+
+  Future <String> updateDataInBoolField(String dataPath, String fieldToUpdate,
+      bool valueToUpdate) async {
+    await authenticationHelper();
+
+    try {
+
+      //  Instantiate a reference to a document - this happens offline
+      var ref = fireStore.document(dataPath);
+      //  Update the document
+      await ref.update({fieldToUpdate: valueToUpdate});
+    }
+
+    catch (error) {
+      print("Can't reach server, error: " + error.toString());
+      return "Can't reach server, error: " + error.toString();
+    }
+    return 'Sucess';
   }
 
   //  Listen to changes of the data in path and return the value that change each time there is change
   Stream<Document> listenToChangeOfDataInPath(String dataPath) async* {
-    var auth = FirebaseAuth(apiKey, VolatileStore());
-    var fireStore =
-    Firestore(projectId, auth: auth); //  FireStore reuses the auth client
-
-    //  Monitor sign-in state
-    auth.signInState.listen((state) {
-      return print("Signed ${state ? "in" : "out"}");
-    });
+    await authenticationHelper();
 
     //  Sign in with user credentials
     try {
-      await auth.signIn(email, password);
-
-      //  Get user object
-      var user = await auth.getUser();
-      print(user);
-
       //  Instantiate a reference to a document - this happens offline
       var ref = fireStore.document(dataPath);
 
       //  Subscribe to changes to that document
       yield* ref.stream;
-
-//
-
 //
 //    //  Get a snapshot of the document
 //      var document = await ref.get();
@@ -133,6 +112,28 @@ class CloudFireStore {
   }
 
 
+  Future<void> authenticationHelper() async {
+    try {
+      auth = FirebaseAuth(apiKey, VolatileStore());
+      fireStore =
+          Firestore(projectId, auth: auth); //  FireStore reuses the auth client
+
+      //  Monitor sign-in state
+      auth.signInState.listen((state) {
+        return print("Signed ${state ? "in" : "out"}");
+      });
+
+      //  Sign in with user credentials
+      await auth.signIn(email, password);
+
+      //  Get user object
+      var user = await auth.getUser();
+      print(user);
+    }
+    catch (exception) {
+      print('FireBase autontication error: ' + exception.toString());
+    }
+  }
 //  Helper methods
 //  DocumentReference transferStringToPath(String pathString){
 //  }

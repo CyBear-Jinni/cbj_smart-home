@@ -3,14 +3,19 @@ import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositorie
 import 'package:firedart/firestore/models.dart';
 
 class CloudManagerR extends CloudManagerRAbstract {
-  CloudFireStoreListenToChangesDatasource cloudFireStoreListenToChanges;
+  CloudFireStoreListenToChangesDatasource _cloudFireStoreListenToChanges;
 
   CloudManagerR() {
-    cloudFireStoreListenToChanges = CloudFireStoreListenToChangesDatasource();
+    _cloudFireStoreListenToChanges = CloudFireStoreListenToChangesDatasource();
   }
 
   //  Listen to changes in the database for this device
   Stream<Document> listenToDataBase() async* {
-    yield* cloudFireStoreListenToChanges.listenAndExecute();
+    yield* _cloudFireStoreListenToChanges.listenAndExecute();
+  }
+
+  Future<String> updateDocument(String fieldToUpdate, bool valueToUpdate) {
+    return _cloudFireStoreListenToChanges.updateDocument(
+        fieldToUpdate, valueToUpdate);
   }
 }
