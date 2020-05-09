@@ -29,13 +29,19 @@ class DataBaseController {
     yield* _cloudFireStore.listenToChangeOfDataInPath(dataPath);
   }
 
+  String getValueOfLamp(Document document, String keyName) {
+    return document[keyName].toString();
+  }
+
   //  TODO: Write the code
   Future<String> setData(String dataPath, Object objectToInsert) async {
     return null;
   }
 
 
-  String getValueOfLamp(Document document, String keyName) {
-    return document[keyName].toString();
+  Future <String> updateDocument(String dataPath, String fieldToUpdate,
+      bool valueToUpdate) {
+    return _cloudFireStore.updateDataInBoolField(
+        dataPath, fieldToUpdate, valueToUpdate);
   }
 }
