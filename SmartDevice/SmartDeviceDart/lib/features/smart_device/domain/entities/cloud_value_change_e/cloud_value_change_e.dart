@@ -2,10 +2,10 @@ import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositorie
 import 'package:firedart/firestore/models.dart';
 
 class CloudValueChangeE {
-  CloudManagerR _cloudManager;
+  static CloudManagerR _cloudManager;
 
   CloudValueChangeE() {
-    _cloudManager = CloudManagerR();
+    _cloudManager ??= CloudManagerR();
 //    MySingleton.getSmartDevicesList()[0];
   }
 
