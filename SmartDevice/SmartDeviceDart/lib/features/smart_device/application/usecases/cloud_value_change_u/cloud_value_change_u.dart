@@ -16,13 +16,7 @@ class CloudValueChangeU {
   void listenToDataBase() {
     _cloudValueChangeEntity.listenToDataBase().listen((document) {
       Document myDocument = document;
-      print('updated: $document');
-      print(myDocument.id);
-      print(myDocument.path);
-      print(myDocument.map);
-      print(myDocument.reference);
-      print(myDocument.runtimeType);
-      print('This is one');
+      print('Change ditected in firestore');
 
       Map<SmartDeviceBaseAbstract, bool> devicesNamesThatValueChanged = Map<
           SmartDeviceBaseAbstract,
@@ -38,6 +32,8 @@ class CloudValueChangeU {
       });
 
       devicesNamesThatValueChanged.forEach((smartDeviceBaseAbstract, value) {
+        print('FireBase "' + smartDeviceBaseAbstract.deviceName +
+            '" have defferent value, will now change to ' + value.toString());
         WishEnum wishEnum = value ? WishEnum.SOn : WishEnum.SOff;
         ActionsToPreformU.executeWishEnum(
             smartDeviceBaseAbstract, wishEnum, WishSourceEnum.FireBase);
