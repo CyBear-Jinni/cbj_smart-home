@@ -8,7 +8,7 @@ void main(List<String> arguments) async {
   print('Smart device is activaited');
 
   String roomName = 'Bar';
-  await configureInjection(Env.dev_pc);
+  await configureInjection(Env.dev_pi);
   try {
     SharedVariables(arguments[0], roomName);
   } catch (error) {
