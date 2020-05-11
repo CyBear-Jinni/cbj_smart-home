@@ -3,9 +3,10 @@ import 'package:SmartDeviceDart/features/smart_device/application/usecases/devic
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/off_wish_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/on_wish_u.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 
 
-class ButtonObjectLocal extends ButtonObjectLocalAbstract {
+class ButtonObjectLocalU extends ButtonObjectLocalAbstract {
 
   @override
   void buttonPressed(SmartDeviceBaseAbstract smartDevice,
@@ -27,9 +28,9 @@ class ButtonObjectLocal extends ButtonObjectLocalAbstract {
         }
 
         if (lightPin.v == 1) {
-          OffWishU.setOff(smartDevice.deviceInformation, lightPin);
+          await smartDevice.executeWish(WishEnum.SOff, WishSourceEnum.ButtonPress);
         } else {
-          OnWishU.setOn(smartDevice.deviceInformation, lightPin);
+          await smartDevice.executeWish(WishEnum.SOn, WishSourceEnum.ButtonPress);
         }
 
         await Future.delayed(const Duration(seconds: 1));
@@ -69,7 +70,7 @@ class ButtonObjectLocal extends ButtonObjectLocalAbstract {
     }
   }
 
-  //  Logic of two buttons
+  //  Logic of two buttons that cannot be pressed together
   @override
   Future changePinsOutput(SmartDeviceBaseAbstract smartDevice,
                           PinInformation firstLightPin,

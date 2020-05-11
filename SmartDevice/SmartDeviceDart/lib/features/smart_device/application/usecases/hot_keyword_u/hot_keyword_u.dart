@@ -20,7 +20,7 @@ class HotKeywordU {
       print('Recived voice command');
       ActionsToPreformU.executeWishEnum(
           MySingleton.getSmartDevicesList()[0] as LightObject,
-          WishEnum.SChangeState, WishSourceEnum.ThisDevice);
+          WishEnum.SChangeState, WishSourceEnum.VoiceAssistant);
 
       print('Got Voice command');
     });
