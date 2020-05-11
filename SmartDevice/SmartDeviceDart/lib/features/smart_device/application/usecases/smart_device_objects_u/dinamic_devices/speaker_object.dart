@@ -4,7 +4,7 @@ import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart
 class SpeakerObject extends SmartDeviceDynamicAbstract {
 
 
-  SpeakerObject(macAddress, deviceName, onOffPinNumber,
-      {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber,
+  SpeakerObject(macAddress, smartInstanceName, onOffPinNumber,
+      {onOffButtonPinNumber}) : super(macAddress, smartInstanceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber);
 }

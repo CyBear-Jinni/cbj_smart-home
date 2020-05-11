@@ -8,19 +8,25 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
   double dynamicValue; //  Save how much power to do for action
 
 
-  SmartDeviceDynamicAbstract(macAddress, deviceName, onOffPinNumber,
-      {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber,
+  SmartDeviceDynamicAbstract(macAddress, smartInstanceName, onOffPinNumber,
+      {onOffButtonPinNumber}) : super(macAddress, smartInstanceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber);
 
 
   @override
-  Future<String> executeWish(String wishString,
+  Future<String> executeWishString(String wishString,
       WishSourceEnum wishSourceEnum) async {
     var wish = convertWishStringToWishesObject(wishString);
     if(wish == null) return 'Your wish does not exist on ';
-    return _WishInDynamicClass(wish, wishSourceEnum);
+    return executeWish(wish, wishSourceEnum);
   }
 
+  @override
+  Future<String> executeWish(WishEnum wishEnum,
+      WishSourceEnum wishSourceEnum) async {
+    return _WishInDynamicClass(wishEnum, wishSourceEnum);
+  }
+  
   //  Set dynamic value
   String _SetDynamicValue() {
     if (deviceInformation == null) {
