@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="">
+    <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="Moved to the new Firestore initialize method for one time aut">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/features/home_page/smart_device_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/features/home_page/smart_device_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/objects/interface_darta/cloud_interface_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/objects/interface_darta/cloud_interface_data.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/cloud_value_change_e/cloud_value_change_e.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/cloud_value_change_e/cloud_value_change_e.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/cloud_fire_store.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/cloud_fire_store_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/data_base_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/data_base_controller.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589056760517</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Moved to the new Firestore initialize method for one time aut">
+      <created>1589128847275</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1589128847275</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,7 +200,8 @@
     <MESSAGE value="More injection" />
     <MESSAGE value="Change files to much Domain-Driven Design (DDD)" />
     <MESSAGE value="Server now know how to use firebase and defrintiate between change from server request directly and change from firebase database, Updated dependencies versions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server now know how to use firebase and defrintiate between change from server request directly and change from firebase database, Updated dependencies versions" />
+    <MESSAGE value="Moved to the new Firestore initialize method for one time aut" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved to the new Firestore initialize method for one time aut" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -206,34 +210,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart</url>
-          <line>153</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
           <url>mock:///string_patch.dart</url>
           <line>261</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart</url>
-          <line>17</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart</url>
-          <line>36</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart</url>
-          <line>33</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart</url>
-          <line>27</line>
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
