@@ -32,7 +32,7 @@ class SmartServerU extends SmartServerServiceBase {
   @override
   Future<SmartDeviceStatus> getStatus(ServiceCall call,
       SmartDevice request) async {
-    var deviceStatus = executeWishEnumString(
+    var deviceStatus = await executeWishEnumString(
         request, WishEnum.GState, _wishSourceEnum);
 
     print('Getting status of device ' + request.toString() +
@@ -88,7 +88,7 @@ class SmartServerU extends SmartServerServiceBase {
     try {
       return MySingleton.getSmartDevicesList().firstWhere((
           smartDeviceBaseAbstractO) =>
-      smartDeviceBaseAbstractO.deviceName == request.name);
+      smartDeviceBaseAbstractO.smartInstanceName == request.name);
     }
     catch (exception) {
       print('Exception, device name ' + request.name + ' could not be found: ' +
@@ -105,13 +105,13 @@ class SmartServerU extends SmartServerServiceBase {
       ..success = smartDevice.onOff;
   }
 
-  String executeWishEnumString(SmartDevice request, WishEnum wishEnum,
-      WishSourceEnum wishSourceEnum) {
+  Future<String> executeWishEnumString(SmartDevice request, WishEnum wishEnum,
+      WishSourceEnum wishSourceEnum) async {
     var smartDevice = getSmartDeviceBaseAbstract(request);
     if (smartDevice == null) {
       return "can't find device name";
     }
-    return ActionsToPreformU.executeWishEnum(
+    return await ActionsToPreformU.executeWishEnum(
         smartDevice, wishEnum, wishSourceEnum);
   }
 }

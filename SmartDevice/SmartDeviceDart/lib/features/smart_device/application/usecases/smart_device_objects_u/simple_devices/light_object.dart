@@ -5,8 +5,8 @@ import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart
 class LightObject extends SmartDeviceSimpleAbstract {
 
 
-  LightObject(macAddress, deviceName, onOffPinNumber,
-      {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber,
+  LightObject(macAddress, smartInstanceName, onOffPinNumber,
+      {onOffButtonPinNumber}) : super(macAddress, smartInstanceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber) {
     print('New light object');
   }
@@ -17,9 +17,15 @@ class LightObject extends SmartDeviceSimpleAbstract {
 
 
   @override
-  Future<String> executeWish(String wishString,
+  Future<String> executeWishString(String wishString,
       WishSourceEnum wishSourceEnum) async {
     var wish = convertWishStringToWishesObject(wishString);
-    return wishInSimpleClass(wish, wishSourceEnum);
+    return executeWish(wish, wishSourceEnum);
+  }
+
+  @override
+  Future<String> executeWish(WishEnum wishEnum,
+      WishSourceEnum wishSourceEnum) async {
+    return wishInSimpleClass(wishEnum, wishSourceEnum);
   }
 }
