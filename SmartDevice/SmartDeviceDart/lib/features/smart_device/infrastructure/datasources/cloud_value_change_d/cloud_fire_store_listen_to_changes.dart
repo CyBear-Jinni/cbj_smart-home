@@ -3,7 +3,9 @@ import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources
 import 'package:firedart/firestore/models.dart';
 
 class CloudFireStoreListenToChangesDatasource {
-  String dataPath = 'smartDevices/';
+//  String dataPath = '/SmartHomes/GuyHome/Rooms/';
+  String dataPath = '/SmartHomes/GuyHome/Rooms/';
+  String restOfThePath = '/DevicesInTheRoom/Stairs and Storage';
   DataBaseController _dataBaseController;
 
   CloudFireStoreListenToChangesDatasource() {
@@ -11,12 +13,12 @@ class CloudFireStoreListenToChangesDatasource {
   }
 
   Stream<Document> listenAndExecute() async* {
-    String fullDataPath = dataPath + SharedVariables.getRoomName();
+    String fullDataPath = dataPath + SharedVariables.getRoomName() + restOfThePath;
     yield* _dataBaseController.listenToChangeOfDataInPath(fullDataPath);
   }
 
   Future<String> updateDocument(String fieldToUpdate, bool valueToUpdate) {
-    String fullDataPath = dataPath + SharedVariables.getRoomName();
+    String fullDataPath = dataPath + SharedVariables.getRoomName() + restOfThePath;
     return _dataBaseController.updateDocument(
         fullDataPath, fieldToUpdate, valueToUpdate);
   }
