@@ -23,16 +23,16 @@ class CloudValueChangeU {
           bool>();
 
       MySingleton.getSmartDevicesList().forEach((element) {
-        if (myDocument.map.containsKey(element.deviceName)) {
-          if (element.getDeviceState() != myDocument.map[element.deviceName]) {
+        if (myDocument.map.containsKey(element.smartInstanceName)) {
+          if (element.getDeviceState() != myDocument.map[element.smartInstanceName]) {
             devicesNamesThatValueChanged[element] =
-            myDocument.map[element.deviceName];
+            myDocument.map[element.smartInstanceName];
           }
         }
       });
 
       devicesNamesThatValueChanged.forEach((smartDeviceBaseAbstract, value) {
-        print('FireBase "' + smartDeviceBaseAbstract.deviceName +
+        print('FireBase "' + smartDeviceBaseAbstract.smartInstanceName +
             '" have defferent value, will now change to ' + value.toString());
         WishEnum wishEnum = value ? WishEnum.SOn : WishEnum.SOff;
         ActionsToPreformU.executeWishEnum(

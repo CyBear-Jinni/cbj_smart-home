@@ -9,9 +9,9 @@ class SetDevicesU {
     //  TODO: insert the number of the pin with class DevicePinListManager to check if pin is free to use and of the right type
     MySingleton.setSmartDevicesList([
       LightObject(
-          '30:23:a2:G3:34', 'Main', 8, onOffButtonPinNumber: 10),
+          '30:23:a2:G3:34', 'Stairs', 8, onOffButtonPinNumber: 10),
       LightObject(
-          '30:23:a2:G3:34', 'Bed', 12, onOffButtonPinNumber: 14)
+          '30:23:a2:G3:34', 'Storage', 12, onOffButtonPinNumber: 14)
 
 
 //        LightObject('30:23:a2:G3:34', 'Guy ceiling light', 11,

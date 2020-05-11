@@ -3,9 +3,9 @@ import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart
 
 // This class Preform most of the request
 class ActionsToPreformU {
-  static String executeWishEnum(SmartDeviceBaseAbstract smartDevice,
-      WishEnum wishEnum, WishSourceEnum wishSourceEnum) {
-    var deviceStatus = smartDevice.wishInBaseClass(wishEnum, wishSourceEnum);
+  static Future<String> executeWishEnum(SmartDeviceBaseAbstract smartDevice,
+      WishEnum wishEnum, WishSourceEnum wishSourceEnum) async {
+    var deviceStatus = await smartDevice.executeWish(wishEnum, wishSourceEnum);
     print('Device state is ' + deviceStatus);
 
     return deviceStatus;
