@@ -4,7 +4,7 @@ import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart
 class FanObject extends SmartDeviceDynamicAbstract {
 
 
-  FanObject(macAddress, deviceName, onOffPinNumber,
-      {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber,
+  FanObject(macAddress, smartInstanceName, onOffPinNumber,
+      {onOffButtonPinNumber}) : super(macAddress, smartInstanceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber);
 }
