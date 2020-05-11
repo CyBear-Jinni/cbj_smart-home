@@ -41,7 +41,9 @@ enum WishEnum {
 enum WishSourceEnum {
   ServerRequest,
   FireBase,
-  ThisDevice
+  ButtonPress,
+  VoiceAssistant,
+  ScheduleRequests,
 }
 
 //  List of all physical devices types
