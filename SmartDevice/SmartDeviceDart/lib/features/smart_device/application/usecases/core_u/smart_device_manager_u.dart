@@ -6,18 +6,18 @@ import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singlet
 
 
 class SmartDeviceManagerU {
-  SetDevicesU _setDevicesUsecase;
-  CloudValueChangeU _cloudValueChangeUsecases;
-  SmartServerU _smartServerUsecase;
+  SetDevicesU _setDevicesUseCase;
+  CloudValueChangeU _cloudValueChangeUseCases;
+  SmartServerU _smartServerUseCase;
 
   SmartDeviceManagerU() {
     MySingleton();
-    _setDevicesUsecase = SetDevicesU();
-    _setDevicesUsecase
+    _setDevicesUseCase = SetDevicesU();
+    _setDevicesUseCase
         .setAllDevices(); //  Setting up all the device from the memory
 
-    _cloudValueChangeUsecases = CloudValueChangeU();
-    _smartServerUsecase = SmartServerU();
+    _cloudValueChangeUseCases = CloudValueChangeU();
+    _smartServerUseCase = SmartServerU();
 
     SmartDeviceMainAsync();
   }
@@ -25,12 +25,12 @@ class SmartDeviceManagerU {
   Future SmartDeviceMainAsync() async {
     print(await getIps());
 
-    _cloudValueChangeUsecases
+    _cloudValueChangeUseCases
         .listenToDataBase(); //  Listen to changes in the database for this device
 
 //    _hotKeyword.startListeningToVoiceCommandForever(); // Listen to voice command does not work inside snap, alsa not working as root inside the snap
 
-    _smartServerUsecase
+    _smartServerUseCase
         .waitForConnection(); //  Start listen for in incoming connections from the local internet (LAN/Wifi)
   }
 }

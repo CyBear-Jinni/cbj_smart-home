@@ -4,7 +4,7 @@ import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart
 class ThermostatObject extends SmartDeviceSimpleAbstract {
 
 
-  ThermostatObject(macAddress, deviceName, onOffPinNumber,
-      {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber,
+  ThermostatObject(macAddress, smartInstanceName, onOffPinNumber,
+      {onOffButtonPinNumber}) : super(macAddress, smartInstanceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber);
 }
