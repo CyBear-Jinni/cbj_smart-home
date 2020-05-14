@@ -3,10 +3,11 @@ import 'dart:io';
 import 'package:SmartDeviceDart/core/device_information.dart';
 import 'package:SmartDeviceDart/core/helper_methods.dart';
 import 'package:SmartDeviceDart/core/permissions/permissions_manager.dart';
-import 'package:SmartDeviceDart/features/smart_device/application/usecases/button_object_u/button_object_local.dart';
+import 'package:SmartDeviceDart/features/smart_device/application/usecases/button_object_u/button_object_local_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/devices_pin_configuration_u/pin_information.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/off_wish_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/on_wish_u.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/cloud_value_change_e/cloud_value_change_e.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/device_pin_manager.dart';
 
@@ -17,7 +18,7 @@ abstract class SmartDeviceBaseAbstract {
 
   DeviceInformation deviceInformation = LocalDevice('This is the mac Address',
       'This is the name of the device'); //  Save data about the device, remote or local IP or pin number
-  String deviceName; //  Default name of the device to show in the app
+  String smartInstanceName; //  Default name of the device to show in the app
   final String macAddress; //  Mac addresses of the physical device
   Map<String, PermissionsManager>
   devicePermissions; //  Permissions of all the users to this device
@@ -34,9 +35,10 @@ abstract class SmartDeviceBaseAbstract {
   PinInformation onOffButtonPin; //  Pin for the button that control the onOffPin
   final List<PinInformation> _gpioPinList = <PinInformation>[
   ]; //  Save all the gpio pins that this instance is using
+  CloudValueChangeE _cloudValueChangeE;
 
 
-  SmartDeviceBaseAbstract(this.macAddress, this.deviceName, int onOffPinNumber,
+  SmartDeviceBaseAbstract(this.macAddress, this.smartInstanceName, int onOffPinNumber,
       {int onOffButtonPinNumber}) {
     onOffPin =
     onOffPinNumber == null ? null : addPinToGpioPinList(onOffPinNumber);
@@ -49,6 +51,7 @@ abstract class SmartDeviceBaseAbstract {
         listenToButtonPressed();
       }
     }
+    _cloudValueChangeE = CloudValueChangeE();
   }
 
   //  Getters
@@ -137,43 +140,61 @@ abstract class SmartDeviceBaseAbstract {
   }
 
   //  Check if wish exist at all if true than check if base abstract have this wish and if true than execute it
-  Future<String> executeWish(String wishString) async {
+  Future<String> executeWishString(String wishString,
+      WishSourceEnum wishSourceEnum) async {
     var wish = convertWishStringToWishesObject(wishString);
-    return wishInBaseClass(wish);
+    return executeWish(wish, wishSourceEnum);
   }
 
+  Future<String> executeWish(WishEnum wishEnum,
+      WishSourceEnum wishSourceEnum) async {
+    return wishInBaseClass(wishEnum, wishSourceEnum);
+  }
+  
   //  All the wishes that are legit to execute from the base class
-  String wishInBaseClass(WishEnum wish) {
+  String wishInBaseClass(WishEnum wish, WishSourceEnum wishSourceEnum) {
     if (wish == null) return 'Your wish does not exist';
+
+    bool deviceStatus = getDeviceState();
+    String resultOfTheWish;
 
     switch (wish) {
       case WishEnum.SOff:
         if (onOffPin == null) {
           return 'Cant turn off this pin: ' + onOffPin.toString() + ' Number';
         }
-        return _SetOff(onOffPin);
+        resultOfTheWish = _SetOff(onOffPin);
+        break;
       case WishEnum.SOn:
         if (onOffPin == null) {
 	        return 'Cant turn on this pin: ' + onOffPin.toString() + ' Number';
         }
-        return _SetOn(onOffPin);
+        resultOfTheWish = _SetOn(onOffPin);
+        break;
       case WishEnum.SChangeState:
         if (onOffPin == null) {
           return 'Cant chane pin to the opposit state: ' + onOffPin.toString() +
               ' Number';
         }
-        return _SetChangeOppositeToState(onOffPin);
-
+        resultOfTheWish = _SetChangeOppositeToState(onOffPin);
+        break;
       case WishEnum.GState:
-        return getDeviceState().toString();
+        return deviceStatus.toString();
       default:
         return 'Your wish does not exist for this class';
     }
+
+    if (deviceStatus != getDeviceState() &&
+        wishSourceEnum != WishSourceEnum.FireBase) {
+      _cloudValueChangeE.updateDocument(smartInstanceName, getDeviceState());
+    }
+
+    return resultOfTheWish;
   }
 
   //  Listen to button press
   void listenToButtonPressed() async {
-	  ButtonObjectLocal().buttonPressed(
+	  ButtonObjectLocalU().buttonPressed(
         this, onOffButtonPin, onOffPin);
   }
 }

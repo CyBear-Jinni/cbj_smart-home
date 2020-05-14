@@ -4,7 +4,7 @@ import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart
 class DynamicLightObject extends SmartDeviceDynamicAbstract {
 
 
-  DynamicLightObject(macAddress, deviceName, onOffPinNumber,
-      {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber,
+  DynamicLightObject(macAddress, smartInstanceName, onOffPinNumber,
+      {onOffButtonPinNumber}) : super(macAddress, smartInstanceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber);
 }
