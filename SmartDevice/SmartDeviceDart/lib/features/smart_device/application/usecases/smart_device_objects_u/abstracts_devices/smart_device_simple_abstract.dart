@@ -8,20 +8,27 @@ abstract class SmartDeviceSimpleAbstract extends SmartDeviceBaseAbstract {
   howMuchTimeTheDeviceDoingAction; //  How much time the smart device was active (Doing action) continuously
 
 
-  SmartDeviceSimpleAbstract(macAddress, deviceName,
-      onOffPinNumber, {onOffButtonPinNumber}) : super(macAddress, deviceName,
+  SmartDeviceSimpleAbstract(macAddress, smartInstanceName,
+      onOffPinNumber, {onOffButtonPinNumber}) : super(macAddress, smartInstanceName,
       onOffPinNumber, onOffButtonPinNumber: onOffButtonPinNumber);
 
 
   @override
-  Future<String> executeWish(String wishString) async {
+  Future<String> executeWishString(String wishString,
+      WishSourceEnum wishSourceEnum) async {
     var wish = convertWishStringToWishesObject(wishString);
-    return wishInSimpleClass(wish);
+    return executeWish(wish, wishSourceEnum);
+  }
+
+  @override
+  Future<String> executeWish(WishEnum wishEnum,
+      WishSourceEnum wishSourceEnum) async {
+    return wishInSimpleClass(wishEnum, wishSourceEnum);
   }
 
   //  All the wishes that are legit to execute from the simple class
-  String wishInSimpleClass(WishEnum wish) {
+  String wishInSimpleClass(WishEnum wish, WishSourceEnum wishSourceEnum) {
     if(wish == null) return 'Your wish does not exist on simple class';
-    return wishInBaseClass(wish);
+    return wishInBaseClass(wish, wishSourceEnum);
   }
 }
