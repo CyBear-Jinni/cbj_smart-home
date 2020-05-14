@@ -6,8 +6,8 @@ import 'smart_device_base_abstract.dart';
 abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
 
 
-  SmartDeviceStaticAbstract(macAddress, deviceName, onOffPinNumber,
-      {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber,
+  SmartDeviceStaticAbstract(macAddress, smartInstanceName, onOffPinNumber,
+      {onOffButtonPinNumber}) : super(macAddress, smartInstanceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber);
 
   //  TODO: set how much to move
@@ -23,21 +23,27 @@ abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
 
   //  All the wishes that are legit to execute from the static class
   @override
-  Future<String> executeWish(String wishString) async {
+  Future<String> executeWishString(String wishString,
+      WishSourceEnum wishSourceEnum) async {
     var wish = convertWishStringToWishesObject(wishString);
     print(wishString);
     print(wish.toString());
     if(wish == null) return 'Your wish does not exist on static class';
-    return wishInStaticClass(wish);
+    return executeWish(wish, wishSourceEnum);
   }
 
+  @override
+  Future<String> executeWish(WishEnum wishEnum,
+      WishSourceEnum wishSourceEnum) async {
+    return wishInStaticClass(wishEnum, wishSourceEnum);
+  }
 
-  String wishInStaticClass(WishEnum wish) {
+  String wishInStaticClass(WishEnum wish, WishSourceEnum wishSourceEnum) {
     switch (wish) {
       case WishEnum.SMovement:
         return _HowMuchToMove();
       default:
-        return wishInBaseClass(wish);
+        return wishInBaseClass(wish, wishSourceEnum);
     }
   }
 }

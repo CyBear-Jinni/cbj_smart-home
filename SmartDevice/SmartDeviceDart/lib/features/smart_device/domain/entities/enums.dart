@@ -37,6 +37,15 @@ enum WishEnum {
   blindsStop //  Stop the blinds
 }
 
+// List of all the sources
+enum WishSourceEnum {
+  ServerRequest,
+  FireBase,
+  ButtonPress,
+  VoiceAssistant,
+  ScheduleRequests,
+}
+
 //  List of all physical devices types
 enum PhysicalDeviceType { NanoPiDuo2, NanoPiNeo, NanoPiNeo2 }
 
