@@ -7,12 +7,18 @@ class SetDevicesU {
   //  Setting all the devices from saved data
   void setAllDevices() {
     //  TODO: insert the number of the pin with class DevicePinListManager to check if pin is free to use and of the right type
-    MySingleton.addToSmartDevicesList(
+    MySingleton.setSmartDevicesList([
+      LightObject(
+          '30:23:a2:G3:34', 'Stairs', 8, onOffButtonPinNumber: 10),
+      LightObject(
+          '30:23:a2:G3:34', 'Storage', 12, onOffButtonPinNumber: 14)
 
-//        LightObject("30:23:a2:G3:34", "Guy ceiling light", 11));
-        LightObject('30:23:a2:G3:34', 'Guy ceiling light', 11,
-            onOffButtonPinNumber:
-                2)); // NanoPi Duo2 will be pin 16 for the button
+
+//        LightObject('30:23:a2:G3:34', 'Guy ceiling light', 11,
+//            onOffButtonPinNumber:
+//                2)); // NanoPi Duo2 will be pin 16 for the button
+
+
 //        .add(BlindsObject(
 //        "30:23:a2:G3:34",
 //        "Guy ceiling light",
@@ -28,5 +34,6 @@ class SetDevicesU {
 //        //  blindsDownPin
 //        14 // downButtonPinNumber
 //    )); // NanoPi Duo2
+    ]);
   }
 }

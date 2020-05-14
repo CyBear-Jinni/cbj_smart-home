@@ -25,7 +25,8 @@ parts:
     plugin: dump
     source: .
     override-build: |
-      git clone https://github.com/friendlyarm/WiringNP
+      git clone https://github.com/guyluz11/WiringNP.git
+      # git clone https://github.com/friendlyarm/WiringNP  // Does not work on the armbian os,  https://forum.armbian.com/topic/13889-nanopiduo2-wiringnp-unable-to-determine-board-revision/
       cd WiringNP/
       chmod 755 build
       ./build
@@ -50,6 +51,7 @@ parts:
       - make
       - libatlas-base-dev
       - libasound-dev
+      # - apt-get install g++ or avr-libc # stdint.h: No such file or directory
     stage-packages:
       - libatlas-base-dev
       - libevent-dev

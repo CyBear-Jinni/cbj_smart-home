@@ -8,18 +8,25 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
   double dynamicValue; //  Save how much power to do for action
 
 
-  SmartDeviceDynamicAbstract(macAddress, deviceName, onOffPinNumber,
-      {onOffButtonPinNumber}) : super(macAddress, deviceName, onOffPinNumber,
+  SmartDeviceDynamicAbstract(macAddress, smartInstanceName, onOffPinNumber,
+      {onOffButtonPinNumber}) : super(macAddress, smartInstanceName, onOffPinNumber,
       onOffButtonPinNumber: onOffButtonPinNumber);
 
 
   @override
-  Future<String> executeWish(String wishString) async {
+  Future<String> executeWishString(String wishString,
+      WishSourceEnum wishSourceEnum) async {
     var wish = convertWishStringToWishesObject(wishString);
     if(wish == null) return 'Your wish does not exist on ';
-    return _WishInDynamicClass(wish);
+    return executeWish(wish, wishSourceEnum);
   }
 
+  @override
+  Future<String> executeWish(WishEnum wishEnum,
+      WishSourceEnum wishSourceEnum) async {
+    return _WishInDynamicClass(wishEnum, wishSourceEnum);
+  }
+  
   //  Set dynamic value
   String _SetDynamicValue() {
     if (deviceInformation == null) {
@@ -39,14 +46,14 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
   }
 
   //  All the wishes that are legit to execute from the dynamic class
-  String _WishInDynamicClass(WishEnum wish) {
+  String _WishInDynamicClass(WishEnum wish, WishSourceEnum wishSourceEnum) {
     switch (wish) {
       case WishEnum.SDynamic:
         return _SetDynamicValue();
       case WishEnum.ODynamic:
         return _OpenDynamicValue();
       default:
-        return wishInSimpleClass(wish);
+        return wishInSimpleClass(wish, wishSourceEnum);
     }
   }
 }
