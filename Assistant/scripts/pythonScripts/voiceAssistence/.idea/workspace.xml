@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="82ee5021-280a-4a32-ab60-8549b65e0f27" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1W7suTjTPydoM76QIVv1HXE3YCz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/programing/python/Snowboy detect ubuntu exaple" />
+    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="voiceAssistence" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="voiceAssistence" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="voiceAssistence" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="82ee5021-280a-4a32-ab60-8549b65e0f27" name="Default Changelist" comment="" />
+      <created>1578512190418</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578512190418</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2022" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585036883132">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="299" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1585036459403" />
+    <state x="2022" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1585036883132" />
+    <state x="2408" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578597364464">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2408" y="343" key="#com.intellij.fileTypes.FileTypeChooser/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1578597364464" />
+    <state x="578" y="301" key="EnvironmentVariablesDialog" timestamp="1585036398705">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="578" y="301" key="EnvironmentVariablesDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1585036398705" />
+    <state x="670" y="288" key="FileChooserDialogImpl" timestamp="1580327216254">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="670" y="288" key="FileChooserDialogImpl/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1580327216254" />
+    <state x="2446" y="296" key="FileChooserDialogImpl/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1578669338727" />
+    <state width="1853" height="308" key="GridCell.Tab.0.bottom" timestamp="1585037137873">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1089" height="117" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1585036360843" />
+    <state width="1853" height="308" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1585037137873" />
+    <state width="1853" height="308" key="GridCell.Tab.0.center" timestamp="1585037137873">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1089" height="117" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1585036360843" />
+    <state width="1853" height="308" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1585037137873" />
+    <state width="1853" height="308" key="GridCell.Tab.0.left" timestamp="1585037137873">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1089" height="117" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1585036360842" />
+    <state width="1853" height="308" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1585037137873" />
+    <state width="1853" height="308" key="GridCell.Tab.0.right" timestamp="1585037137873">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1089" height="117" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1585036360843" />
+    <state width="1853" height="308" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1585037137873" />
+    <state width="1657" height="342" key="GridCell.Tab.1.bottom" timestamp="1578514029324">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1657" height="342" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1578514029324" />
+    <state width="1657" height="342" key="GridCell.Tab.1.center" timestamp="1578514029323">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1657" height="342" key="GridCell.Tab.1.center/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1578514029323" />
+    <state width="1657" height="342" key="GridCell.Tab.1.left" timestamp="1578514029323">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1657" height="342" key="GridCell.Tab.1.left/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1578514029323" />
+    <state width="1657" height="342" key="GridCell.Tab.1.right" timestamp="1578514029323">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1657" height="342" key="GridCell.Tab.1.right/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1578514029323" />
+    <state x="466" y="188" width="1007" height="733" key="SettingsEditor" timestamp="1585036348206">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="466" y="188" width="1007" height="733" key="SettingsEditor/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1585036348206" />
+    <state x="2124" y="65" width="1007" height="733" key="SettingsEditor/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1578516983680" />
+    <state x="567" y="356" key="com.intellij.ide.util.TipDialog" timestamp="1585035769024">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="567" y="356" key="com.intellij.ide.util.TipDialog/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1585035769024" />
+    <state x="2328" y="366" key="com.intellij.ide.util.TipDialog/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1578669321834" />
+    <state x="2245" y="145" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578604442687">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="494" y="141" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1578514264891" />
+    <state x="2245" y="145" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1578604442687" />
+    <state x="2325" y="239" width="672" height="160" key="search.everywhere.popup" timestamp="1578603923448">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2325" y="239" width="672" height="160" key="search.everywhere.popup/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1578603923448" />
+  </component>
+</project>
