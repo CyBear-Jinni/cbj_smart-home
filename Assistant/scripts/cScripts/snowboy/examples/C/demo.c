@@ -189,7 +189,7 @@ int main(int argc, char* argv[]) {
 
   const char* pathToResources = argv[1];
   const char* commonRes = "/scripts/cScripts/resources/common.res";
-  const char* jarvisModel = "/scripts/cScripts/resources/models/jarvis.pmdl";
+  const char* jarvisModel = "/scripts/cScripts/resources/models/Jinni.pmdl";
 
 
   char* resource_filename[strlen(pathToResources) + strlen(commonRes) + 1];
