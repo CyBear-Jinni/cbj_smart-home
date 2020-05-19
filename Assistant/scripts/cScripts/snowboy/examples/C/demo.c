@@ -226,6 +226,7 @@ int main(int argc, char* argv[]) {
                                              g_data, array_length, false);
       if (result > 0) {
         printf("Hotword %d detected!\n", result);
+	    return 0;
       }
     }
   }
