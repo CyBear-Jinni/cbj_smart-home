@@ -5,7 +5,7 @@ echo "Compiling all C files"
 echo
 echo "Compiling snowboy C file"
 
-cd snowboy/examples/C/
+cd scripts/cScripts/snowboy/examples/C/
 
 make
 
