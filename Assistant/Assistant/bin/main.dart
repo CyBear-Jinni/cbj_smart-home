@@ -1,13 +1,15 @@
-import 'package:Assistant/speechToText.dart';
+import 'package:Assistant/core/shared_variables.dart';
+import 'package:Assistant/features/hot_key_word/application/usecases/hot_keyword_u/hot_keyword_u.dart';
 
 void main(List<String> arguments) {
-//  print('Hello world: ${assistant.calculate()}!');
-//
-//  MyAssistant myAssist = MyAssistant();
-//
-//  myAssist.a();
+  try {
+    SharedVariables(arguments[0]);
+  } catch (error) {
+    print('Path/argument 1 is not specified');
+    print('error: ' + error.toString());
+  }
 
-  SpeechToText speechToText = SpeechToText();
+  HotKeywordU hotKeywordU = HotKeywordU();
 
-  speechToText.start();
+  hotKeywordU.startListeningToVoiceCommandForever();
 }
