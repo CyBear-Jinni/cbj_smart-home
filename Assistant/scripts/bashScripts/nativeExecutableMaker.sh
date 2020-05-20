@@ -6,15 +6,15 @@ scripts/bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct a
 
 unzip dartsdk-*.zip
 
-cd SmartDeviceDart
+cd Assistant
 sudo ../dart-sdk/bin/pub get --no-precompile
 #sudo ../dart-sdk/bin/pub run build_runner build --delete-conflicting-outputs
 cd ..
 
 #chmod -R +rx dart-sdk/
-dart-sdk/bin/dart2native SmartDeviceDart/bin/main.dart
+dart-sdk/bin/dart2native Assistant/bin/main.dart
 
-mv SmartDeviceDart/bin/main.exe .
+mv Assistant/bin/main.exe .
 
 
 rm dartsdk-*.zip
