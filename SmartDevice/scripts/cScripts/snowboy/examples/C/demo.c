@@ -189,7 +189,7 @@ int main(int argc, char* argv[]) {
 
   const char* pathToResources = argv[1];
   const char* commonRes = "/scripts/cScripts/resources/common.res";
-  const char* jarvisModel = "/scripts/cScripts/resources/models/jarvis.pmdl";
+  const char* jarvisModel = "/scripts/cScripts/resources/models/Jinni.pmdl";
 
 
   char* resource_filename[strlen(pathToResources) + strlen(commonRes) + 1];
@@ -226,6 +226,7 @@ int main(int argc, char* argv[]) {
                                              g_data, array_length, false);
       if (result > 0) {
         printf("Hotword %d detected!\n", result);
+        return 0;
       }
     }
   }
