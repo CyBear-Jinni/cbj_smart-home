@@ -1,3 +1,4 @@
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/core_d/hive_store/hive_store_d.dart';
 import 'package:firedart/firedart.dart';
 
 
@@ -11,16 +12,25 @@ class CloudFireStoreD {
   CloudFireStoreD() {
     try {
       Firestore.initialize(projectId);
+//      initializeFirebaseAuth();
     }
     catch (exception) {
       print('This is exception initializing : ' + exception.toString());
     }
   }
 
+  Future initializeFirebaseAuth() async {
+    try {
+      await FirebaseAuth.initialize(apiKey, await HiveStore.create());
+      await FirebaseAuth.instance.signIn(email, password);
+      var user = await FirebaseAuth.instance.getUser();
+    } catch (exception) {
+      print('This was the exception here: ' + exception.toString());
+    }
+  }
 
   //  Set the data in field
   void setDataInField(String dataPath, String dataToSave) async {
-
     //  Sign in with user credentials
     try {
       //  Instantiate a reference to a document - this happens offline
@@ -69,9 +79,7 @@ class CloudFireStoreD {
 
   Future <String> updateDataInBoolField(String dataPath, String fieldToUpdate,
       bool valueToUpdate) async {
-
     try {
-
       //  Instantiate a reference to a document - this happens offline
       var ref = Firestore.instance.document(dataPath);
       //  Update the document
@@ -82,7 +90,7 @@ class CloudFireStoreD {
       print("Can't reach server, error: " + error.toString());
       return "Can't reach server, error: " + error.toString();
     }
-    return 'Sucess';
+    return 'Success';
   }
 
 }
