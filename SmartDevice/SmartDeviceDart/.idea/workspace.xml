@@ -2,32 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="Moved to the new Firestore initialize method for one time aut">
+      <change afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/hive_store/hive_store_d.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/SmartHome.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/SmartHome.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/database/firebase/cloud_firestore/firestore_class.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/database/firebase/cloud_firestore/firestore_class.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/objects/interface_darta/cloud_interface_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/smart_home_flutter/lib/objects/interface_darta/cloud_interface_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/objects/interface_darta/cloud_interface_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/objects/interface_darta/cloud_interface_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/button_object_u/button_object_local.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/button_object_u/button_object_local_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/core_u/actions_to_preform_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/core_u/actions_to_preform_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/core_u/smart_device_manager_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/core_u/smart_device_manager_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/hot_keyword_u/hot_keyword_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/hot_keyword_u/hot_keyword_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/set_devices_u/set_devices_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/set_devices_u/set_devices_u.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_dynamic_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_dynamic_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_simple_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_simple_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_static_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_static_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/dynamic_light_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/dynamic_light_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/fan_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/fan_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/speaker_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/speaker_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/simple_devices/light_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/simple_devices/light_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/simple_devices/thermostat_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/simple_devices/thermostat_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/static_devices/blinds_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/static_devices/blinds_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_server_u/smart_server_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_server_u/smart_server_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/enums.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/enums.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/cloud_value_change_d/cloud_fire_store_listen_to_changes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/cloud_value_change_d/cloud_fire_store_listen_to_changes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/device_information_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/device_information_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/bashScripts/dartSdkDownload.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/bashScripts/dartSdkDownload.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/cloud_fire_store_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/cloud_fire_store_d.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -237,34 +221,29 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/cloud_value_change_d/cloud_fire_store_listen_to_changes.dart</url>
-          <line>15</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart</url>
-          <line>33</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart</url>
-          <line>27</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart</url>
+          <url>file://$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/cloud_fire_store_d.dart</url>
           <line>26</line>
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart</url>
+          <url>file://$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/cloud_fire_store_d.dart</url>
           <line>24</line>
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart</url>
-          <line>34</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/cloud_fire_store_d.dart</url>
+          <line>29</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart</url>
+          <line>161</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/cloud_fire_store_d.dart</url>
+          <line>89</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
