@@ -14,9 +14,9 @@ dependencies:
   # For the injection, allow accessing an object from anywhere in an App
   get_it: ^4.0.2
   # Convenient code generator for get_it
-  #  injectable: ^0.2.3 # Does not work on my armhf32, can be lack of ram https://github.com/dart-lang/pub/issues/2347
+#  injectable: ^0.4.0+1 # Does not work on my armhf32, can be lack of ram https://TypeAdaptergithub.com/dart-lang/pub/issues/2347
   # Allow returning more than one type of object
-  equatable: ^1.1.1
+  equatable: ^1.2.0
   # Convert enum to string
   enum_to_string: ^1.0.9
   # Key-value database
@@ -28,6 +28,7 @@ dev_dependencies:
   test: ^1.14.3
   # Library for mocks
   mockito: ^4.1.1
-  build_runner:
+  hive_generator: ^0.7.0+2
   # A generator for injectable library
-#  injectable_generator: ^0.2.3 # Does not work on my armhf32, can be lack of ram https://github.com/dart-lang/pub/issues/2347
+  #  injectable_generator: ^0.4.0 # Does not work on my armhf32, can be lack of ram https://github.com/dart-lang/pub/issues/2347
+  build_runner:
