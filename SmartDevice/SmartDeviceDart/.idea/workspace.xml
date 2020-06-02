@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/core_e/my_singleton.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/bash_commends_d/common_bash_commends_d.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/smart_device_objects_d/smart_device_objects_d.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/core_r/my_singleton_helper.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/smart_device_objects_r/smart_device_objects_r.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+    <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="Adding more of hive implumentation, updating firedart version, firedart now use authentication to firestore">
+      <change afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/set_devices_e/set_devices_e.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/set_devices_d/set_devices_d.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/set_devices_r/set_devices_r.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/device_information.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/device_information.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/button_object_u/button_object_local_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/button_object_u/button_object_local_u.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/core_u/actions_to_preform_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/core_u/actions_to_preform_u.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/core_u/smart_device_manager_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/core_u/smart_device_manager_u.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/hot_keyword_u/hot_keyword_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/hot_keyword_u/hot_keyword_u.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/local_db_u/local_db_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/local_db_u/local_db_u.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/set_devices_u/set_devices_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/set_devices_u/set_devices_u.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_dynamic_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_dynamic_abstract.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_simple_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_simple_abstract.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_static_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_static_abstract.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/dynamic_light_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/dynamic_light_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/fan_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/fan_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/speaker_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/dinamic_devices/speaker_object.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/simple_devices/light_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/simple_devices/light_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/simple_devices/thermostat_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/simple_devices/thermostat_object.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/static_devices/blinds_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_device_objects_u/static_devices/blinds_object.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_server_u/smart_server_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/smart_server_u/smart_server_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/enums.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/core_e/enums.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/my_singleton.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/cloud_fire_store_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/fire_store/cloud_fire_store_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/hive_store/hive_store_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/hive_d/hive_store_d.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/core_e/enums.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/core_e/enums_e.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/core_e/my_singleton.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/core_e/my_singleton.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/local_db_e/local_db_e.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/local_db_e/local_db_e.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/bash_commends_d/common_bash_commends_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/bash_commends_d/common_bash_commends_d.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/device_pin_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/device_pin_manager.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/hive_d/hive_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/hive_d/hive_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/injection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/injection.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/local_db_d/local_db_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/local_db_d/local_db_d.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/smart_device_objects_d/smart_device_objects_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/smart_device_objects_d/smart_device_objects_d.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/core_r/my_singleton_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/core_r/my_singleton_helper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/local_db_r/local_db_r.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/local_db_r/local_db_r.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/smart_device_objects_r/smart_device_objects_r.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/smart_device_objects_r/smart_device_objects_r.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/device_information_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/device_information_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,19 +84,19 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/hive_d" />
-      <recent name="$PROJECT_DIR$/lib/features/smart_device/domain/entities/core_e" />
-      <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/microphone" />
-      <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/onSignal" />
-      <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/offSignal" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources" />
       <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories" />
       <recent name="$PROJECT_DIR$/lib/features/smart_device/domain/entities" />
       <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/offSignal" />
       <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/onSignal" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/hive_d" />
+      <recent name="$PROJECT_DIR$/lib/features/smart_device/domain/entities/core_e" />
+      <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/microphone" />
+      <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/onSignal" />
+      <recent name="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/offSignal" />
     </key>
   </component>
   <component name="RunManager">
@@ -99,6 +105,9 @@
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -188,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590965445028</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Adding more of hive implumentation, updating firedart version, firedart now use authentication to firestore">
+      <created>1591099849066</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1591099849067</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,45 +247,51 @@
     <MESSAGE value="Server now know how to use firebase and defrintiate between change from server request directly and change from firebase database, Updated dependencies versions" />
     <MESSAGE value="Moved to the new Firestore initialize method for one time aut" />
     <MESSAGE value="Starting to add local database named Hive" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting to add local database named Hive" />
+    <MESSAGE value="Adding more of hive implumentation, updating firedart version, firedart now use authentication to firestore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding more of hive implumentation, updating firedart version, firedart now use authentication to firestore" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="249" key="#xdebugger.evaluate" timestamp="1591097346451">
+    <state x="987" y="191" key="#xdebugger.evaluate" timestamp="1591115087034">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="223" y="249" key="#xdebugger.evaluate/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591097346451" />
-    <state x="1778" y="47" width="1759" height="993" key="CommitChangelistDialog2" timestamp="1591099704069">
+    <state x="987" y="191" key="#xdebugger.evaluate/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591115087034" />
+    <state x="1778" y="47" width="1759" height="993" key="CommitChangelistDialog2" timestamp="1591099859522">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="0" y="0" width="1670" height="984" key="CommitChangelistDialog2/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1590965444216" />
-    <state x="1778" y="47" width="1759" height="993" key="CommitChangelistDialog2/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591099704069" />
+    <state x="1778" y="47" width="1759" height="993" key="CommitChangelistDialog2/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591099859522" />
+    <state width="600" height="646" key="DebuggerActiveHint" timestamp="1591114200810">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="600" height="646" key="DebuggerActiveHint/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591114200810" />
     <state x="2451" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591024832582">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2451" y="310" width="424" height="484" key="FileChooserDialogImpl/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591024832582" />
-    <state width="1817" height="279" key="GridCell.Tab.0.bottom" timestamp="1591099723346">
+    <state width="1817" height="300" key="GridCell.Tab.0.bottom" timestamp="1591115141256">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state width="1634" height="415" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591098904134" />
-    <state width="1817" height="279" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591099723346" />
-    <state width="1817" height="279" key="GridCell.Tab.0.center" timestamp="1591099723346">
+    <state width="1817" height="300" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591115141256" />
+    <state width="1817" height="300" key="GridCell.Tab.0.center" timestamp="1591115141256">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state width="1634" height="415" key="GridCell.Tab.0.center/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591098904134" />
-    <state width="1817" height="279" key="GridCell.Tab.0.center/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591099723346" />
-    <state width="1817" height="279" key="GridCell.Tab.0.left" timestamp="1591099723346">
+    <state width="1817" height="300" key="GridCell.Tab.0.center/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591115141256" />
+    <state width="1817" height="300" key="GridCell.Tab.0.left" timestamp="1591115141256">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state width="1634" height="415" key="GridCell.Tab.0.left/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591098904133" />
-    <state width="1817" height="279" key="GridCell.Tab.0.left/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591099723346" />
-    <state width="1817" height="279" key="GridCell.Tab.0.right" timestamp="1591099723346">
+    <state width="1817" height="300" key="GridCell.Tab.0.left/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591115141256" />
+    <state width="1817" height="300" key="GridCell.Tab.0.right" timestamp="1591115141256">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state width="1634" height="415" key="GridCell.Tab.0.right/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591098904134" />
-    <state width="1817" height="279" key="GridCell.Tab.0.right/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591099723346" />
+    <state width="1817" height="300" key="GridCell.Tab.0.right/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591115141256" />
     <state x="2233" y="171" width="861" height="763" key="NewModule_or_Project.wizard" timestamp="1591024999504">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
@@ -278,15 +300,16 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="321" y="159" key="SettingsEditor/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1590958914754" />
-    <state x="435" y="256" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1590965449842">
-      <screen x="0" y="27" width="1680" height="1023" />
+    <state x="2177" y="242" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1591099863664">
+      <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="435" y="256" width="800" height="536" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1590965449842" />
-    <state x="2288" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1591088678216">
+    <state x="2177" y="242" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591099863664" />
+    <state x="2288" y="367" width="696" height="336" key="com.intellij.ide.util.TipDialog" timestamp="1591103052902">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="532" y="375" key="com.intellij.ide.util.TipDialog/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591006607121" />
-    <state x="2288" y="367" key="com.intellij.ide.util.TipDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591088678216" />
+    <state x="2288" y="367" width="696" height="336" key="com.intellij.ide.util.TipDialog/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591103052902" />
     <state x="2413" y="245" width="501" height="615" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590959116984">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
@@ -295,15 +318,55 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="598" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591006914537" />
-    <state x="540" y="275" width="1071" height="580" key="find.popup" timestamp="1591098610280">
-      <screen x="0" y="27" width="1680" height="1023" />
-    </state>
-    <state x="540" y="275" width="1071" height="580" key="find.popup/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591098610280" />
-    <state x="1945" y="224" width="1276" height="580" key="find.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591044405682" />
-    <state x="2331" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1591049010418">
+    <state x="1945" y="224" width="1276" height="652" key="find.popup" timestamp="1591114573146">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2331" y="257" width="672" height="678" key="search.everywhere.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591049010418" />
+    <state x="540" y="275" width="1071" height="580" key="find.popup/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591098610280" />
+    <state x="1945" y="224" width="1276" height="652" key="find.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591114573146" />
+    <state x="2332" y="253" key="run.anything.popup" timestamp="1591108938223">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2332" y="253" key="run.anything.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591108938223" />
+    <state x="2331" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1591110676906">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2331" y="257" width="672" height="678" key="search.everywhere.popup/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591110676906" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/features/smart_device/domain/entities/set_devices_e/set_devices_e.dart</url>
+          <line>45</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/features/smart_device/domain/entities/set_devices_e/set_devices_e.dart</url>
+          <line>49</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/features/smart_device/domain/entities/set_devices_e/set_devices_e.dart</url>
+          <line>55</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/features/smart_device/domain/entities/set_devices_e/set_devices_e.dart</url>
+          <line>47</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/features/smart_device/application/usecases/set_devices_u/set_devices_u.dart</url>
+          <line>30</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/features/smart_device/domain/entities/set_devices_e/set_devices_e.dart</url>
+          <line>73</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SmartDeviceDart$main_dart.json" NAME="main.dart Coverage Results" MODIFIED="1591024845377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="DartCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" CONTEXT_FILE_PATH="$PROJECT_DIR$/bin/main.dart" />

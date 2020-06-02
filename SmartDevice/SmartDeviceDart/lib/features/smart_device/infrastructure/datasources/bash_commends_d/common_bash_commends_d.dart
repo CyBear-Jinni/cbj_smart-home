@@ -9,7 +9,7 @@ class CommonBashCommendsD {
     return whoami.substring(0, whoami.indexOf('\n'));
   }
 
-  static Future<String> getUuidAddressOfCurrentDevice() async {
+  static Future<String> getUuidOfCurrentDevice() async {
     String df =
         await Process.run('df', ['-h', '/']).then((ProcessResult result) {
       return result.stdout;
@@ -35,7 +35,7 @@ class CommonBashCommendsD {
 
   static Future<String> getDeviceHostName() async {
     String hostName =
-        await Process.run('hostname', ['-s']).then((ProcessResult result) {
+    await Process.run('hostname', ['-s']).then((ProcessResult result) {
 //      String hostName = result.stdout;
 //      hostName = hostName.substring(
 //          0, hostName.length - 1); //  Removes the invisible new line at the end
@@ -43,5 +43,17 @@ class CommonBashCommendsD {
       return result.stdout;
     });
     return hostName.substring(0, hostName.indexOf('\n'));
+  }
+
+  static Future<String> getFileContent(fileFullPath) async {
+    String fileContent = await Process.run('cat', [fileFullPath]).then((
+        ProcessResult result) {
+      return result.stdout;
+    });
+
+    if (fileContent == '') {
+      return null;
+    }
+    return fileContent;
   }
 }
