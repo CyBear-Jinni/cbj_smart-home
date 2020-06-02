@@ -1,5 +1,5 @@
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/dynamic_wish_u.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums.dart';
 
 import 'smart_device_simple_abstract.dart';
 
