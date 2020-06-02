@@ -1,14 +1,29 @@
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/bash_commends_d/common_bash_commends_d.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_store_d.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/person.dart';
 import 'package:hive/hive.dart';
 
 class HiveD {
-  String hiveFolderPath = '/home/jinnme/Documents/hive';
+  HiveD._privateConstructor() {
+    contractorAsync();
+  }
 
-  HiveD() {
+  static final HiveD _instance = HiveD._privateConstructor();
+
+  factory HiveD() {
+    return _instance;
+  }
+
+  Future<void> contractorAsync() async {
+    String currentUserName = await CommonBashCommendsD.getCurrentUserName();
+    String hiveFolderPath = '/home/' + currentUserName + '/Documents/hive';
+    print('Path of hive: ' + hiveFolderPath);
     Hive..init(hiveFolderPath);
 
     Hive.openBox('SmartDevices');
-    usePerson();
+    Hive.registerAdapter(TokenAdapter());
+    Hive..registerAdapter(PersonAdapter());
+//    usePerson();
   }
 
   Future<String> getPersonName() async {
@@ -16,7 +31,6 @@ class HiveD {
   }
 
   Future<void> usePerson() async {
-    Hive..registerAdapter(PersonAdapter());
     var box = await Hive.openBox('testBox');
 
     var person = Person()
