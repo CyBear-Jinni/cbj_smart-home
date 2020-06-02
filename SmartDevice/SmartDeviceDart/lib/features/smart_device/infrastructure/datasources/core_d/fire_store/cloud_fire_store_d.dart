@@ -1,29 +1,30 @@
-import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/core_d/hive_store/hive_store_d.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_d.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_store_d.dart';
 import 'package:firedart/firedart.dart';
 
-
 class CloudFireStoreD {
-
   static const apiKey = 'AIzaSyBIEgdRhns2gX7xTLIVlgfqcK87RTXdAIo';
   static const projectId = 'smarthome-3765e';
   static const email = 'guyhome@gmail.com';
   static const password = '123IsNotSecure';
 
+  FirebaseAuth auth;
+
   CloudFireStoreD() {
     try {
-      Firestore.initialize(projectId);
-//      initializeFirebaseAuth();
-    }
-    catch (exception) {
+      initializeFirebaseAuthWithHivePersistingTokens();
+    } catch (exception) {
       print('This is exception initializing : ' + exception.toString());
     }
   }
 
-  Future initializeFirebaseAuth() async {
+  Future initializeFirebaseAuthWithHivePersistingTokens() async {
     try {
+      await HiveD();
+      await Firestore.initialize(projectId); // Firestore reuses the auth client
       await FirebaseAuth.initialize(apiKey, await HiveStore.create());
       await FirebaseAuth.instance.signIn(email, password);
-      var user = await FirebaseAuth.instance.getUser();
+//      var user = await FirebaseAuth.instance.getUser();
     } catch (exception) {
       print('This was the exception here: ' + exception.toString());
     }
@@ -52,7 +53,7 @@ class CloudFireStoreD {
 
   //  Get specific field from path
   String getFieldInPath(String dataPath, String field) {
-    return 'Data in path from server where equels to field';
+    return 'Data in path from server where equals to field';
   }
 
   //  Listen to changes of the data in path and return the value that change each time there is change
