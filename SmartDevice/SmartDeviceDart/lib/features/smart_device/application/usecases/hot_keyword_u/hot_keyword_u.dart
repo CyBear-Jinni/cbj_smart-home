@@ -1,8 +1,8 @@
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/core_u/actions_to_preform_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/simple_devices/light_object.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/my_singleton.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/hot_keyword_e/hot_keyword_e.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singleton.dart';
 
 //  This class will listen for the hot keyword using snowboy
 class HotKeywordU {
