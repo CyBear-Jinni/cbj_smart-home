@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:SmartDeviceDart/core/device_information.dart';
 import 'package:SmartDeviceDart/core/helper_methods.dart';
 import 'package:SmartDeviceDart/core/permissions/permissions_manager.dart';
@@ -8,9 +6,9 @@ import 'package:SmartDeviceDart/features/smart_device/application/usecases/devic
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/off_wish_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/on_wish_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/cloud_value_change_e/cloud_value_change_e.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/device_pin_manager.dart';
-
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositories/smart_device_objects_r/smart_device_objects_r.dart';
 
 //  The super base class of all the smart device class and smart device abstract classes
 abstract class SmartDeviceBaseAbstract {
@@ -70,13 +68,9 @@ abstract class SmartDeviceBaseAbstract {
     return _gpioPinList;
   }
 
-  //  TODO: Make the function return the mac address
-  String getMacAddress() {
-    Process.run('ls', ['-la']).then((ProcessResult result) {
-      print(result.stdout);
-      return result.stdout; //  This is mock mac address
-    });
-    return null;
+
+  Future<String> getUuidAddress() {
+    return SmartDeviceObjectsR.getUuidAddress();
   }
 
 
