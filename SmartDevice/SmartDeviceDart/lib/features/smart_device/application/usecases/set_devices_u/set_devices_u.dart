@@ -1,5 +1,5 @@
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/simple_devices/light_object.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singleton.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/my_singleton.dart';
 
 // This class will load all saved smart devices objects from file at startup into the program
 class SetDevicesU {
