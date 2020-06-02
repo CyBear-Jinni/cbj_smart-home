@@ -4,7 +4,7 @@ import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositorie
 class MySingleton {
   static final MySingleton _singleton = MySingleton._internal();
   static List<SmartDeviceBaseAbstract> smartDevicesList;
-  String macAddress;
+  String uuid;
 
   factory MySingleton() {
     return _singleton;
@@ -12,11 +12,11 @@ class MySingleton {
 
   MySingleton._internal() {
     smartDevicesList = <SmartDeviceBaseAbstract>[];
-    getUuidAddress();
+    getUuid();
   }
 
-  Future<String> getUuidAddress() async {
-    return MySingletonHelper.getUuidAddress();
+  Future<String> getUuid() async {
+    return MySingletonHelper.getUuid();
 //    /sbin/blkid | grep "$(df -h / | sed -n 2p | cut -d" " -f1):" | grep -o "UUID=\"[^\"]*\" " | sed "s/UUID=\"//;s/\"//"
 //
 //    print('Start');

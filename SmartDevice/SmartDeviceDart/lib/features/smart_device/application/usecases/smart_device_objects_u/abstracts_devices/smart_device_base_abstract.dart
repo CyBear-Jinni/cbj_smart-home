@@ -6,7 +6,7 @@ import 'package:SmartDeviceDart/features/smart_device/application/usecases/devic
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/off_wish_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/on_wish_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/cloud_value_change_e/cloud_value_change_e.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums_e.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/device_pin_manager.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositories/smart_device_objects_r/smart_device_objects_r.dart';
 
@@ -17,18 +17,18 @@ abstract class SmartDeviceBaseAbstract {
   DeviceInformation deviceInformation = LocalDevice('This is the mac Address',
       'This is the name of the device'); //  Save data about the device, remote or local IP or pin number
   String smartInstanceName; //  Default name of the device to show in the app
-  final String macAddress; //  Mac addresses of the physical device
+  final String uuid; //  Mac addresses of the physical device
   Map<String, PermissionsManager>
-  devicePermissions; //  Permissions of all the users to this device
+      devicePermissions; //  Permissions of all the users to this device
   double watts; //  Power consumption of the device
   DateTime
       computerActiveTime; //  How much time the computer is on since last boot
   DateTime
-  activeTimeTotal; //  How much time the smart device was active (Doing action) total
+      activeTimeTotal; //  How much time the smart device was active (Doing action) total
   Map<DateTime, Function>
-  activitiesLog; //  Log of all the actions the device was and will do
+      activitiesLog; //  Log of all the actions the device was and will do
   bool onOff =
-  false; //  Save the device state on = true, off = false of onOffPin
+      false; //  Save the device state on = true, off = false of onOffPin
   PinInformation onOffPin; //  Number of on or off pin
   PinInformation onOffButtonPin; //  Pin for the button that control the onOffPin
   final List<PinInformation> _gpioPinList = <PinInformation>[
@@ -36,7 +36,7 @@ abstract class SmartDeviceBaseAbstract {
   CloudValueChangeE _cloudValueChangeE;
 
 
-  SmartDeviceBaseAbstract(this.macAddress, this.smartInstanceName, int onOffPinNumber,
+  SmartDeviceBaseAbstract(this.uuid, this.smartInstanceName, int onOffPinNumber,
       {int onOffButtonPinNumber}) {
     onOffPin =
     onOffPinNumber == null ? null : addPinToGpioPinList(onOffPinNumber);
@@ -45,7 +45,7 @@ abstract class SmartDeviceBaseAbstract {
     if (onOffButtonPinNumber != null) {
       onOffButtonPin = addPinToGpioPinList(onOffButtonPinNumber);
 
-      if(onOffButtonPin != null) {
+      if (onOffButtonPin != null) {
         listenToButtonPressed();
       }
     }
@@ -69,8 +69,8 @@ abstract class SmartDeviceBaseAbstract {
   }
 
 
-  Future<String> getUuidAddress() {
-    return SmartDeviceObjectsR.getUuidAddress();
+  Future<String> getUuid() {
+    return SmartDeviceObjectsR.getUuid();
   }
 
 

@@ -55,6 +55,15 @@ class EnumHelper {
     return deviceType.toString().replaceAll('DeviceType.', '');
   }
 
+  static DeviceType stringToDeviceType(String deviceTypeString) {
+    for (DeviceType deviceType in DeviceType.values) {
+      if (deviceTypeToString(deviceType) == deviceTypeString) {
+        return deviceType;
+      }
+    }
+    return null;
+  }
+
   //  Convert wishEnum to string
   static String wishEnumToString(WishEnum deviceType) {
     return deviceType.toString().replaceAll('WishEnum.', '');
