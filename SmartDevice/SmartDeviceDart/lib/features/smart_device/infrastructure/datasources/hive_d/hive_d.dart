@@ -42,6 +42,10 @@ class HiveD {
     print(box.get('dave')); // Dave: 22
   }
 
+  String getListOfSmartDevices() {
+    return null;
+  }
+
 //  void main() async {
 //    var path = hiveFolderPath;
 //    Hive
