@@ -26,6 +26,24 @@ class SmartServerU extends SmartServerServiceBase {
     print('Server listening on port ${server.port}...');
   }
 
+
+  @override
+  Stream<SmartDevice> getAllDevices(ServiceCall call, SmartDeviceStatus request) async*{
+    print('getAllDevices');
+    for(SmartDeviceBaseAbstract smartDeviceBaseAbstract in MySingleton.getSmartDevicesList()) {
+      String deviceType = smartDeviceBaseAbstract.runtimeType.toString();
+
+      SmartDevice smartDevice = SmartDevice();
+      smartDevice.uuid = smartDeviceBaseAbstract.uuid;
+      smartDevice.name = smartDeviceBaseAbstract.smartInstanceName;
+      smartDevice.deviceType = deviceType;
+//      smartDevice.deviceType = smartDeviceBaseAbstract.getDeviceType();
+
+      yield smartDevice;
+    }
+
+  }
+
   //  Return the status of the specified device
   @override
   Future<SmartDeviceStatus> getStatus(ServiceCall call,
