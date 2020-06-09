@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="Adding more of hive implumentation, updating firedart version, firedart now use authentication to firestore">
-      <change beforePath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/features/shared_widgets/insert_details_of_new_device.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/features/shared_widgets/insert_details_of_new_device.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/objects/enums.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/objects/enums.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/objects/smart_device/send_to_smart_device.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/objects/smart_device/send_to_smart_device.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/set_devices_e/set_devices_e.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/set_devices_e/set_devices_e.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
