@@ -5,6 +5,8 @@ package SmartConnection;
 // The greeting service definition.
 service SmartServer {
     // Sends a greeting
+    rpc GetAllDevices (SmartDeviceStatus) returns (stream SmartDevice) {
+    }
     rpc GetStatus (SmartDevice) returns (SmartDeviceStatus) {
     }
     rpc SetOnDevice (SmartDevice) returns (CommendStatus) {
@@ -21,15 +23,17 @@ service SmartServer {
 
 // The request message containing the user's name.
 message SmartDevice {
-    string name = 1;
+    string uuid = 1;
+    string name = 2;
+    string deviceType = 3;
 }
 
 // The response message containing the greetings
 message SmartDeviceStatus {
-    bool onOffState = 2;
+    bool onOffState = 4;
 }
 
 // Did the commend succeeded (true) or not (false)
 message CommendStatus {
-    bool success = 3;
+    bool success = 5;
 }

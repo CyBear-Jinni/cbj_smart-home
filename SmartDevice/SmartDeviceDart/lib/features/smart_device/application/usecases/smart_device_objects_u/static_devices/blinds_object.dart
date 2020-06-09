@@ -33,6 +33,8 @@ class BlindsObject extends SmartDeviceStaticAbstract {
     listenToTwoButtonsPress();
   }
 
+  @override
+  DeviceType getDeviceType() => DeviceType.Blinds;
 
   @override
   Future<String> executeWishString(String wishString,
