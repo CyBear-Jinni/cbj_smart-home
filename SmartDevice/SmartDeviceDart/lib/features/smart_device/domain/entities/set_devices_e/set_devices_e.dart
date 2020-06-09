@@ -40,10 +40,10 @@ class SetDevicesE {
     List<SmartDeviceBaseAbstract> smartDeviceList =
         List<SmartDeviceBaseAbstract>();
     String uuid = await getCurrentDeviceUUid();
-
+    int index = 0;
 //    Todo: make this part work automatically
     for (DeviceType deviceType in deviceTypeList) {
-      int index = deviceTypeList.indexOf(deviceType);
+
       if (deviceType == DeviceType.Light) {
         if (index == 0) {
           smartDeviceList
@@ -71,6 +71,7 @@ class SetDevicesE {
               ));
         }
       }
+      index++;
     }
     if (smartDeviceList.isEmpty) {
       return null;
