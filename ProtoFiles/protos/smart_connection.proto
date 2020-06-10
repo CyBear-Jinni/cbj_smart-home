@@ -9,6 +9,8 @@ service SmartServer {
     }
     rpc GetStatus (SmartDevice) returns (SmartDeviceStatus) {
     }
+    rpc UpdateDeviceName (SmartDeviceUpdateDetails) returns (CommendStatus){
+    }
     rpc SetOnDevice (SmartDevice) returns (CommendStatus) {
     }
     rpc SetOffDevice (SmartDevice) returns (CommendStatus) {
@@ -36,4 +38,9 @@ message SmartDeviceStatus {
 // Did the commend succeeded (true) or not (false)
 message CommendStatus {
     bool success = 5;
+}
+
+message SmartDeviceUpdateDetails  {
+    SmartDevice smartDevice = 6;
+    string newName = 7;
 }
