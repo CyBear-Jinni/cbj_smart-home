@@ -48,23 +48,39 @@ class SmartServerU extends SmartServerServiceBase {
   @override
   Future<SmartDeviceStatus> getStatus(ServiceCall call,
       SmartDevice request) async {
-    var deviceStatus = await executeWishEnumString(
-        request, WishEnum.GState, _wishSourceEnum);
+    var deviceStatus =
+        await executeWishEnumString(request, WishEnum.GState, _wishSourceEnum);
 
-    print('Getting status of device ' + request.toString() +
-        ' and device status in bool ' + deviceStatus);
+    print('Getting status of device ' +
+        request.toString() +
+        ' and device status in bool ' +
+        deviceStatus);
     return SmartDeviceStatus()
       ..onOffState = deviceStatus == 'true' ? true : false;
   }
 
+  @override
+  Future<CommendStatus> updateDeviceName(
+      ServiceCall call, SmartDeviceUpdateDetails request) {
+    print('Updating device name:' +
+        request.smartDevice.name +
+        ' into: ' +
+        request.newName);
+    SmartDeviceBaseAbstract smartDevice =
+        getSmartDeviceBaseAbstract(request.smartDevice);
+    smartDevice.smartInstanceName = request.newName;
+    CommendStatus commendStatus = CommendStatus();
+    commendStatus.success = true;
+    // TODO create method to save devices from singleton and call it here
+    return Future.value(commendStatus);
+  }
 
   @override
-  Future<CommendStatus> setOffDevice(ServiceCall call,
-      SmartDevice request) async {
+  Future<CommendStatus> setOffDevice(
+      ServiceCall call, SmartDevice request) async {
     print('Turn device ' + request.name + ' off');
     return executeWishEnumServer(request, WishEnum.SOff, _wishSourceEnum);
   }
-
 
   @override
   Future<CommendStatus> setOnDevice(ServiceCall call,
@@ -115,7 +131,7 @@ class SmartServerU extends SmartServerServiceBase {
 
   CommendStatus executeWishEnumServer(SmartDevice request, WishEnum wishEnum,
       WishEnum) {
-    var smartDevice = getSmartDeviceBaseAbstract(request);
+    SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
     ActionsToPreformU.executeWishEnum(smartDevice, wishEnum, _wishSourceEnum);
     return CommendStatus()
       ..success = smartDevice.onOff;
@@ -123,7 +139,7 @@ class SmartServerU extends SmartServerServiceBase {
 
   Future<String> executeWishEnumString(SmartDevice request, WishEnum wishEnum,
       WishSourceEnum wishSourceEnum) async {
-    var smartDevice = getSmartDeviceBaseAbstract(request);
+    SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
     if (smartDevice == null) {
       return "can't find device name";
     }
