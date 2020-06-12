@@ -1,9 +1,12 @@
-import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/bash_commends_d/common_bash_commends_d.dart';
+import 'package:SmartDeviceDart/core/my_singleton.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_objects_d/hive_devices_d.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_objects_d/person.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_store_d.dart';
-import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/person.dart';
 import 'package:hive/hive.dart';
 
 class HiveD {
+  String hiveFolderPath;
+
   HiveD._privateConstructor() {
     contractorAsync();
   }
@@ -15,19 +18,16 @@ class HiveD {
   }
 
   Future<void> contractorAsync() async {
-    String currentUserName = await CommonBashCommendsD.getCurrentUserName();
-    String hiveFolderPath = '/home/' + currentUserName + '/Documents/hive';
+    String currentUserName = await MySingleton.getCurrentUserName();
+    hiveFolderPath = '/home/' + currentUserName + '/Documents/hive';
     print('Path of hive: ' + hiveFolderPath);
     Hive..init(hiveFolderPath);
 
     Hive.openBox('SmartDevices');
     Hive.registerAdapter(TokenAdapter());
     Hive..registerAdapter(PersonAdapter());
+    Hive..registerAdapter(HiveDevicesDAdapter());
 //    usePerson();
-  }
-
-  Future<String> getPersonName() async {
-//    tryMe();
   }
 
   Future<void> usePerson() async {
@@ -44,6 +44,25 @@ class HiveD {
 
   String getListOfSmartDevices() {
     return null;
+  }
+
+
+  Future<void> saveAllDevices(
+      Map<String, List<String>> smartDevicesMapList) async {
+//    String saveDevicePath = hiveFolderPath + '/devices';
+
+    var box = await Hive.openBox('SmartDevices');
+
+    HiveDevicesD hiveDevicesD = HiveDevicesD()
+      ..smartDeviceList = smartDevicesMapList;
+
+    await box.put('deviceList', hiveDevicesD);
+
+
+    HiveDevicesD a = box.get('deviceList');
+    print('this is the long long list:' + a.toString()); // Dave: 22
+    print('this is the long long list:' +
+        a.smartDeviceList.toString()); // Dave: 22
   }
 
 //  void main() async {

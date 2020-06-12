@@ -4,4 +4,8 @@ class MySingletonHelper {
   static Future<String> getUuid() {
     return CommonBashCommendsD.getUuidOfCurrentDevice();
   }
+
+  static Future<String> getCurrentUserName() {
+    return CommonBashCommendsD.getCurrentUserName();
+  }
 }

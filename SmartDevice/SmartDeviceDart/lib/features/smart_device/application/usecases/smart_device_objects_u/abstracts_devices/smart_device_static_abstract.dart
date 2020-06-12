@@ -20,14 +20,17 @@ abstract class SmartDeviceStaticAbstract extends SmartDeviceBaseAbstract {
 //    return 'Turn on sucsessfuly';
   }
 
+  @override
+  void setDeviceType(DeviceType deviceType) => super.setDeviceType(deviceType);
+
   //  All the wishes that are legit to execute from the static class
   @override
-  Future<String> executeWishString(String wishString,
-      WishSourceEnum wishSourceEnum) async {
+  Future<String> executeWishString(
+      String wishString, WishSourceEnum wishSourceEnum) async {
     var wish = convertWishStringToWishesObject(wishString);
     print(wishString);
     print(wish.toString());
-    if(wish == null) return 'Your wish does not exist on static class';
+    if (wish == null) return 'Your wish does not exist on static class';
     return executeWish(wish, wishSourceEnum);
   }
 
