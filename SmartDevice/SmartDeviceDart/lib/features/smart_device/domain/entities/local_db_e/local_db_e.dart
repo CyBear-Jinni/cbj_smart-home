@@ -14,4 +14,8 @@ class LocalDbE {
     smartDeviceList.add(_localDbR.getListOfSmartDevices());
     return smartDeviceList;
   }
+
+  void saveAllDevices(List<SmartDeviceBaseAbstract> smartDevicesList) {
+    _localDbR.saveAllDevices(smartDevicesList);
+  }
 }

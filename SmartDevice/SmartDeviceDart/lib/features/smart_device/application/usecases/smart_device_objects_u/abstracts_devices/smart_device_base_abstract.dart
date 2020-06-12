@@ -30,16 +30,17 @@ abstract class SmartDeviceBaseAbstract {
   bool onOff =
       false; //  Save the device state on = true, off = false of onOffPin
   PinInformation onOffPin; //  Number of on or off pin
-  PinInformation onOffButtonPin; //  Pin for the button that control the onOffPin
-  final List<PinInformation> _gpioPinList = <PinInformation>[
-  ]; //  Save all the gpio pins that this instance is using
+  PinInformation
+      onOffButtonPin; //  Pin for the button that control the onOffPin
+  final List<PinInformation> _gpioPinList =
+      <PinInformation>[]; //  Save all the gpio pins that this instance is using
   CloudValueChangeE _cloudValueChangeE;
-
+  DeviceType smartDeviceType; //  The type of the smart device Light blinds etc
 
   SmartDeviceBaseAbstract(this.uuid, this.smartInstanceName, int onOffPinNumber,
       {int onOffButtonPinNumber}) {
     onOffPin =
-    onOffPinNumber == null ? null : addPinToGpioPinList(onOffPinNumber);
+        onOffPinNumber == null ? null : addPinToGpioPinList(onOffPinNumber);
 
     //  If pin number was inserted and it exists than listen to button press
     if (onOffButtonPinNumber != null) {
@@ -56,7 +57,7 @@ abstract class SmartDeviceBaseAbstract {
 
 
   //  Get smart device type
-  DeviceType getDeviceType() => null;
+  DeviceType getDeviceType() => smartDeviceType;
 
 
   Future<String> getIp() async {
@@ -100,11 +101,14 @@ abstract class SmartDeviceBaseAbstract {
     return 'Turn off sucsessfuly';
   }
 
+
+  void setDeviceType(DeviceType deviceType) => smartDeviceType = deviceType;
+
+
   //  Turn device pin to the opposite state
   String _SetChangeOppositeToState(PinInformation pinNumber) {
     return onOff ? _SetOff(onOffPin) : _SetOn(onOffPin);
   }
-
 
 
   //  More functions
