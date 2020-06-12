@@ -5,16 +5,20 @@ class LightObject extends SmartDeviceSimpleAbstract {
   LightObject(uuid, smartInstanceName, onOffPinNumber, {onOffButtonPinNumber})
       : super(uuid, smartInstanceName, onOffPinNumber,
             onOffButtonPinNumber: onOffButtonPinNumber) {
+    setDeviceType(DeviceType.Light);
     print('New light object');
   }
+
+  @override
+  void setDeviceType(DeviceType deviceType) => super.setDeviceType(deviceType);
 
   //  Return smart device type
   @override
   DeviceType getDeviceType() => DeviceType.Light;
 
   @override
-  Future<String> executeWishString(String wishString,
-      WishSourceEnum wishSourceEnum) async {
+  Future<String> executeWishString(
+      String wishString, WishSourceEnum wishSourceEnum) async {
     var wish = convertWishStringToWishesObject(wishString);
     return executeWish(wish, wishSourceEnum);
   }
