@@ -46,8 +46,8 @@ class CommonBashCommendsD {
   }
 
   static Future<String> getFileContent(fileFullPath) async {
-    String fileContent = await Process.run('cat', [fileFullPath]).then((
-        ProcessResult result) {
+    String fileContent =
+        await Process.run('cat', [fileFullPath]).then((ProcessResult result) {
       return result.stdout;
     });
 
@@ -56,4 +56,6 @@ class CommonBashCommendsD {
     }
     return fileContent;
   }
+
+  static Future<String> getUserName() {}
 }

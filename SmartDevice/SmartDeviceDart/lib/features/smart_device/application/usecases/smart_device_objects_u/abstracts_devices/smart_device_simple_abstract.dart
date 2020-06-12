@@ -13,6 +13,9 @@ abstract class SmartDeviceSimpleAbstract extends SmartDeviceBaseAbstract {
             onOffButtonPinNumber: onOffButtonPinNumber);
 
   @override
+  void setDeviceType(DeviceType deviceType) => super.setDeviceType(deviceType);
+
+  @override
   Future<String> executeWishString(
       String wishString, WishSourceEnum wishSourceEnum) async {
     var wish = convertWishStringToWishesObject(wishString);
@@ -20,8 +23,8 @@ abstract class SmartDeviceSimpleAbstract extends SmartDeviceBaseAbstract {
   }
 
   @override
-  Future<String> executeWish(WishEnum wishEnum,
-      WishSourceEnum wishSourceEnum) async {
+  Future<String> executeWish(
+      WishEnum wishEnum, WishSourceEnum wishSourceEnum) async {
     return wishInSimpleClass(wishEnum, wishSourceEnum);
   }
 
