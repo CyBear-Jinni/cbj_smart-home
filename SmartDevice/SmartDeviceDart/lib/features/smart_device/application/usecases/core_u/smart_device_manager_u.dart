@@ -19,18 +19,17 @@ class SmartDeviceManagerU {
     _cloudValueChangeUseCases = CloudValueChangeU();
     _smartServerUseCase = SmartServerU();
 
+    SmartDeviceMainAsync();
+  }
+
+  Future SmartDeviceMainAsync() async {
     List<SmartDeviceBaseAbstract> smartDeviceFromDb =
-        _localDbU.getListOfSmartDevices();
+        await _localDbU.getListOfSmartDevices();
 
     _setDevicesUseCase.setAllDevices(
         deviceList:
             smartDeviceFromDb); //  Setting up all the device from the memory
 
-    SmartDeviceMainAsync();
-  }
-
-
-  Future SmartDeviceMainAsync() async {
     print(await getIps());
 
     _cloudValueChangeUseCases

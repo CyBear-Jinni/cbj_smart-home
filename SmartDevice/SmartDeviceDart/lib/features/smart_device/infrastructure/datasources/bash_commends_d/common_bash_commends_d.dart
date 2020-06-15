@@ -4,9 +4,9 @@ class CommonBashCommendsD {
   static Future<String> getCurrentUserName() async {
     String whoami =
         await Process.run('whoami', []).then((ProcessResult result) {
-      return result.stdout; //  This is mock mac address
+      return result.stdout;
     });
-    return whoami.substring(0, whoami.indexOf('\n'));
+    return await whoami.substring(0, whoami.indexOf('\n'));
   }
 
   static Future<String> getUuidOfCurrentDevice() async {
