@@ -1,4 +1,8 @@
+import 'package:SmartDeviceDart/core/my_singleton.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart';
+import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/simple_devices/light_object.dart';
+import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/static_devices/blinds_object.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums_e.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/local_db_d/local_db_d.dart';
 
 class LocalDbR {
@@ -8,11 +12,49 @@ class LocalDbR {
     _localDbD = LocalDbD();
   }
 
-  SmartDeviceBaseAbstract getListOfSmartDevices() {
-    SmartDeviceBaseAbstract smartDeviceBaseAbstract;
-    // Todo: add all devices that are saved in hive
-    _localDbD.getListOfSmartDevices();
-    return smartDeviceBaseAbstract;
+  Future<List<SmartDeviceBaseAbstract>> getListOfSmartDevices() async {
+    List<SmartDeviceBaseAbstract> smartDeviceBaseAbstractList =
+        List<SmartDeviceBaseAbstract>();
+    String currentDeviceUuid = await MySingleton.getUuid();
+
+    Map<String, List<String>> deviceListMap =
+        await _localDbD.getListOfSmartDevices();
+    for (String deviceName in deviceListMap.keys) {
+      List<String> values = deviceListMap[deviceName];
+      DeviceType deviceType = EnumHelper.stringToDeviceType(values.first);
+      switch (deviceType) {
+        case (DeviceType.Light):
+          print('Adding from local db light object');
+          smartDeviceBaseAbstractList.add(LightObject(
+              currentDeviceUuid, deviceName, values[1],
+              onOffButtonPinNumber: values[2]));
+          break;
+        case (DeviceType.Blinds):
+          print('Adding from local db blind object');
+          smartDeviceBaseAbstractList.add(BlindsObject(
+              currentDeviceUuid,
+              deviceName,
+              values[1],
+              values[2],
+              //  onOffButtonPinNumber
+              null,
+              //  blindsUpPin
+              null,
+              //  upButtonPinNumber
+              null,
+              //  blindsDownPin
+              null // downButtonPinNumber
+              )); // NanoPi Duo2
+          break;
+        default:
+          print('Cannot add from local db, device type is not supported');
+          break;
+      }
+    }
+    if (smartDeviceBaseAbstractList.isEmpty) {
+      smartDeviceBaseAbstractList = null;
+    }
+    return smartDeviceBaseAbstractList;
   }
 
   void saveAllDevices(List<SmartDeviceBaseAbstract> smartDevicesList) {
