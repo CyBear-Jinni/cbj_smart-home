@@ -1,4 +1,4 @@
-import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/bash_commends_d/common_bash_commends_d.dart';
+import 'package:SmartDeviceDart/core/my_singleton.dart';
 import 'package:firedart/firedart.dart';
 import 'package:hive/hive.dart';
 
@@ -8,7 +8,7 @@ class HiveStore extends TokenStore {
   static const keyToken = 'auth_token';
 
   static Future<HiveStore> create() async {
-    String currentUserName = await CommonBashCommendsD.getCurrentUserName();
+    String currentUserName = await MySingleton.getCurrentUserName();
     String hiveFolderPath = '/home/' + currentUserName + '/Documents/hive';
 //    print('Path of hive: ' + hiveFolderPath);
     Hive.init(hiveFolderPath);
