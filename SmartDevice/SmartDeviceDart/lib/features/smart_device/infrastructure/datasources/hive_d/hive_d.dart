@@ -55,10 +55,8 @@ class HiveD {
     var box = await Hive.openBox('SmartDevices');
 
     HiveDevicesD a = box.get('deviceList');
-    print('this is the long long list:' + a.toString()); // Dave: 22
-    print('this is the long long list:' +
-        a.smartDeviceList.toString()); // Dave: 22
-    return a.smartDeviceList;
+
+    return a?.smartDeviceList;
   }
 
   Future<void> saveAllDevices(
