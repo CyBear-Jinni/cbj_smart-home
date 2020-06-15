@@ -8,8 +8,7 @@ class LocalDbU {
     _localDbE = LocalDbE();
   }
 
-  List<SmartDeviceBaseAbstract> getListOfSmartDevices() {
-//    return _localDbE.getListOfSmartDevices();
-    return null;
+  Future<List<SmartDeviceBaseAbstract>> getListOfSmartDevices() async {
+    return await _localDbE.getListOfSmartDevices();
   }
 }

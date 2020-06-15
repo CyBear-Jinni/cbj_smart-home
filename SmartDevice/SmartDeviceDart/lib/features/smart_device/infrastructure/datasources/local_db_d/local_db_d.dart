@@ -9,7 +9,7 @@ class LocalDbD {
     _hiveD = HiveD();
   }
 
-  String getListOfSmartDevices() {
+  Future<Map<String, List<String>>> getListOfSmartDevices() {
     return _hiveD.getListOfSmartDevices();
   }
 
