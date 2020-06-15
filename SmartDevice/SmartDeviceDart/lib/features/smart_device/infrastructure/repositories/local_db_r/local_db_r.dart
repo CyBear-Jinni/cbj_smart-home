@@ -19,6 +19,9 @@ class LocalDbR {
 
     Map<String, List<String>> deviceListMap =
         await _localDbD.getListOfSmartDevices();
+    if (deviceListMap == null) {
+      return null;
+    }
     for (String deviceName in deviceListMap.keys) {
       List<String> values = deviceListMap[deviceName];
       DeviceType deviceType = EnumHelper.stringToDeviceType(values.first);
@@ -31,20 +34,30 @@ class LocalDbR {
           break;
         case (DeviceType.Blinds):
           print('Adding from local db blind object');
+          if (values.length < 7) {
+            break;
+          }
+          int blindsUpPin = values[3] == null ? null : int.parse(values[3]);
+          int upButtonPinNumber = values[4] == null ? null : int.parse(
+              values[4]);
+          int blindsDownPin = values[5] == null ? null : int.parse(values[5]);
+          int downButtonPinNumber = values[6] == null ? null : int.parse(
+              values[6]);
+
           smartDeviceBaseAbstractList.add(BlindsObject(
-              currentDeviceUuid,
-              deviceName,
-              values[1],
-              values[2],
-              //  onOffButtonPinNumber
-              null,
-              //  blindsUpPin
-              null,
-              //  upButtonPinNumber
-              null,
-              //  blindsDownPin
-              null // downButtonPinNumber
-              )); // NanoPi Duo2
+            currentDeviceUuid,
+            deviceName,
+            values[1],
+            values[2],
+            //  onOffButtonPinNumber
+            blindsUpPin,
+            //  blindsUpPin
+            upButtonPinNumber,
+            //  upButtonPinNumber
+            blindsDownPin,
+            //  blindsDownPin
+            downButtonPinNumber, // downButtonPinNumber
+          )); // NanoPi Duo2
           break;
         default:
           print('Cannot add from local db, device type is not supported');

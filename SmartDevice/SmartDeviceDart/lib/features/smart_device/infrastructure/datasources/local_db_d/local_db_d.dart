@@ -1,4 +1,5 @@
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart';
+import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/static_devices/blinds_object.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums_e.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_d.dart';
 
@@ -37,11 +38,46 @@ class LocalDbD {
             .onOffButtonPin.pinAndPhysicalPinConfiguration
             .toString();
       }
-      smartDevicesMapList[deviceName] = [
-        deviceTypeAsString,
-        onOffPin,
-        onOffButtonPinNumber
-      ];
+      if (smartDeviceBaseAbstract.getDeviceType() == DeviceType.Blinds) {
+        BlindsObject blindsObjectTemp = smartDeviceBaseAbstract as BlindsObject;
+
+        String blindsUpPin = null,
+            buttonPinUp = null,
+            blindsDownPin = null,
+            buttonPinDown = null;
+
+        if (blindsObjectTemp.blindsUpPin != null) {
+          blindsUpPin = blindsObjectTemp.blindsUpPin.toString();
+        }
+
+        if (blindsObjectTemp.blindsUpPin != null) {
+          buttonPinUp = blindsObjectTemp.buttonPinUp.toString();
+        }
+
+        if (blindsObjectTemp.blindsDownPin != null) {
+          blindsDownPin = blindsObjectTemp.blindsDownPin.toString();
+        }
+
+        if (blindsObjectTemp.buttonPinDown != null) {
+          buttonPinDown = blindsObjectTemp.buttonPinDown.toString();
+        }
+
+        smartDevicesMapList[deviceName] = [
+          deviceTypeAsString,
+          onOffPin,
+          onOffButtonPinNumber,
+          blindsUpPin,
+          buttonPinUp,
+          blindsDownPin,
+          buttonPinDown
+        ];
+      } else {
+        smartDevicesMapList[deviceName] = [
+          deviceTypeAsString,
+          onOffPin,
+          onOffButtonPinNumber
+        ];
+      }
     }
 
     _hiveD.saveAllDevices(smartDevicesMapList);

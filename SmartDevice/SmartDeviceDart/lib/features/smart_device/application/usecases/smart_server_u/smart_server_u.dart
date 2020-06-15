@@ -38,7 +38,6 @@ class SmartServerU extends SmartServerServiceBase {
       smartDevice.uuid = smartDeviceBaseAbstract.uuid;
       smartDevice.name = smartDeviceBaseAbstract.smartInstanceName;
       smartDevice.deviceType = deviceType;
-//      smartDevice.deviceType = smartDeviceBaseAbstract.getDeviceType();
 
       yield smartDevice;
     }
@@ -134,9 +133,11 @@ class SmartServerU extends SmartServerServiceBase {
   CommendStatus executeWishEnumServer(SmartDevice request, WishEnum wishEnum,
       WishEnum) {
     SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
+    if (smartDevice == null) {
+      return CommendStatus()..success = false;
+    }
     ActionsToPreformU.executeWishEnum(smartDevice, wishEnum, _wishSourceEnum);
-    return CommendStatus()
-      ..success = smartDevice.onOff;
+    return CommendStatus()..success = smartDevice.onOff;
   }
 
   Future<String> executeWishEnumString(SmartDevice request, WishEnum wishEnum,
