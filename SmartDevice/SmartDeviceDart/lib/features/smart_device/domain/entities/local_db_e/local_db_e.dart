@@ -8,10 +8,9 @@ class LocalDbE {
     _localDbR = LocalDbR();
   }
 
-  List<SmartDeviceBaseAbstract> getListOfSmartDevices() {
+  Future<List<SmartDeviceBaseAbstract>> getListOfSmartDevices() async {
     List<SmartDeviceBaseAbstract> smartDeviceList =
-        List<SmartDeviceBaseAbstract>();
-    smartDeviceList.add(_localDbR.getListOfSmartDevices());
+        await _localDbR.getListOfSmartDevices();
     return smartDeviceList;
   }
 
