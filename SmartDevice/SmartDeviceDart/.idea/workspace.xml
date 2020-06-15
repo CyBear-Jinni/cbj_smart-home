@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="Loads the smart device from the local db into the singlton of devices">
+    <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/my_singleton.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/my_singleton.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/core_u/smart_device_manager_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/core_u/smart_device_manager_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/local_db_u/local_db_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/application/usecases/local_db_u/local_db_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/local_db_e/local_db_e.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/domain/entities/local_db_e/local_db_e.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/bash_commends_d/common_bash_commends_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/bash_commends_d/common_bash_commends_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/hive_d/hive_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/hive_d/hive_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/hive_d/hive_store_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/hive_d/hive_store_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/local_db_d/local_db_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/local_db_d/local_db_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/local_db_r/local_db_r.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/local_db_r/local_db_r.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591099849067</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Loads the smart device from the local db into the singlton of devices">
+      <created>1592212324252</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1592212324252</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,7 +221,8 @@
     <MESSAGE value="Moved to the new Firestore initialize method for one time aut" />
     <MESSAGE value="Starting to add local database named Hive" />
     <MESSAGE value="Adding more of hive implumentation, updating firedart version, firedart now use authentication to firestore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding more of hive implumentation, updating firedart version, firedart now use authentication to firestore" />
+    <MESSAGE value="Loads the smart device from the local db into the singlton of devices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Loads the smart device from the local db into the singlton of devices" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -234,11 +233,11 @@
     </state>
     <state x="223" y="249" key="#xdebugger.evaluate/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591097346451" />
     <state x="987" y="191" key="#xdebugger.evaluate/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592127731946" />
-    <state x="1778" y="47" width="1759" height="993" key="CommitChangelistDialog2" timestamp="1592212200022">
+    <state x="1778" y="47" width="1759" height="993" key="CommitChangelistDialog2" timestamp="1592212323936">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="0" y="0" width="1670" height="984" key="CommitChangelistDialog2/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1590965444216" />
-    <state x="1778" y="47" width="1759" height="993" key="CommitChangelistDialog2/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592212200022" />
+    <state x="1778" y="47" width="1759" height="993" key="CommitChangelistDialog2/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592212323936" />
     <state width="658" height="646" key="DebuggerActiveHint" timestamp="1592211356195">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
@@ -247,26 +246,26 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2451" y="310" width="424" height="484" key="FileChooserDialogImpl/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591776777963" />
-    <state width="1817" height="405" key="GridCell.Tab.0.bottom" timestamp="1592212061889">
+    <state width="1817" height="255" key="GridCell.Tab.0.bottom" timestamp="1592212371956">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state width="1634" height="436" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591818066883" />
-    <state width="1817" height="405" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592212061889" />
-    <state width="1817" height="405" key="GridCell.Tab.0.center" timestamp="1592212061889">
+    <state width="1817" height="255" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592212371956" />
+    <state width="1817" height="255" key="GridCell.Tab.0.center" timestamp="1592212371956">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state width="1634" height="436" key="GridCell.Tab.0.center/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591818066883" />
-    <state width="1817" height="405" key="GridCell.Tab.0.center/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592212061889" />
-    <state width="1817" height="405" key="GridCell.Tab.0.left" timestamp="1592212061889">
+    <state width="1817" height="255" key="GridCell.Tab.0.center/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592212371956" />
+    <state width="1817" height="255" key="GridCell.Tab.0.left" timestamp="1592212371956">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state width="1634" height="436" key="GridCell.Tab.0.left/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591818066883" />
-    <state width="1817" height="405" key="GridCell.Tab.0.left/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592212061889" />
-    <state width="1817" height="405" key="GridCell.Tab.0.right" timestamp="1592212061889">
+    <state width="1817" height="255" key="GridCell.Tab.0.left/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592212371956" />
+    <state width="1817" height="255" key="GridCell.Tab.0.right" timestamp="1592212371956">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state width="1634" height="436" key="GridCell.Tab.0.right/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591818066883" />
-    <state width="1817" height="405" key="GridCell.Tab.0.right/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592212061889" />
+    <state width="1817" height="255" key="GridCell.Tab.0.right/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592212371956" />
     <state x="2233" y="171" width="861" height="763" key="NewModule_or_Project.wizard" timestamp="1591024999504">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
@@ -275,11 +274,11 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="321" y="159" key="SettingsEditor/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1590958914754" />
-    <state x="2177" y="242" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1591921494518">
+    <state x="2177" y="242" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1592212327881">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="435" y="256" width="800" height="536" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1590965449842" />
-    <state x="2177" y="242" width="800" height="536" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591921494518" />
+    <state x="2177" y="242" width="800" height="536" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592212327881" />
     <state x="532" y="375" width="696" height="336" key="com.intellij.ide.util.TipDialog" timestamp="1592210712334">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
@@ -322,7 +321,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/hive_d/hive_d.dart</url>
-          <line>73</line>
+          <line>72</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
@@ -357,7 +356,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/local_db_r/local_db_r.dart</url>
-          <line>51</line>
+          <line>56</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
@@ -372,13 +371,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/features/smart_device/domain/entities/local_db_e/local_db_e.dart</url>
-          <line>12</line>
+          <line>13</line>
           <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/smart_device/infrastructure/repositories/local_db_r/local_db_r.dart</url>
-          <line>20</line>
-          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
