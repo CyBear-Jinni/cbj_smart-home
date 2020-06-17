@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:SmartDeviceDart/core/device_information.dart';
 import 'package:SmartDeviceDart/core/helper_methods.dart';
 import 'package:SmartDeviceDart/core/permissions/permissions_manager.dart';
@@ -8,9 +6,9 @@ import 'package:SmartDeviceDart/features/smart_device/application/usecases/devic
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/off_wish_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/on_wish_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/cloud_value_change_e/cloud_value_change_e.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums_e.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/device_pin_manager.dart';
-
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositories/smart_device_objects_r/smart_device_objects_r.dart';
 
 //  The super base class of all the smart device class and smart device abstract classes
 abstract class SmartDeviceBaseAbstract {
@@ -19,35 +17,36 @@ abstract class SmartDeviceBaseAbstract {
   DeviceInformation deviceInformation = LocalDevice('This is the mac Address',
       'This is the name of the device'); //  Save data about the device, remote or local IP or pin number
   String smartInstanceName; //  Default name of the device to show in the app
-  final String macAddress; //  Mac addresses of the physical device
+  final String uuid; //  Mac addresses of the physical device
   Map<String, PermissionsManager>
-  devicePermissions; //  Permissions of all the users to this device
+      devicePermissions; //  Permissions of all the users to this device
   double watts; //  Power consumption of the device
   DateTime
       computerActiveTime; //  How much time the computer is on since last boot
   DateTime
-  activeTimeTotal; //  How much time the smart device was active (Doing action) total
+      activeTimeTotal; //  How much time the smart device was active (Doing action) total
   Map<DateTime, Function>
-  activitiesLog; //  Log of all the actions the device was and will do
+      activitiesLog; //  Log of all the actions the device was and will do
   bool onOff =
-  false; //  Save the device state on = true, off = false of onOffPin
+      false; //  Save the device state on = true, off = false of onOffPin
   PinInformation onOffPin; //  Number of on or off pin
-  PinInformation onOffButtonPin; //  Pin for the button that control the onOffPin
-  final List<PinInformation> _gpioPinList = <PinInformation>[
-  ]; //  Save all the gpio pins that this instance is using
+  PinInformation
+      onOffButtonPin; //  Pin for the button that control the onOffPin
+  final List<PinInformation> _gpioPinList =
+      <PinInformation>[]; //  Save all the gpio pins that this instance is using
   CloudValueChangeE _cloudValueChangeE;
+  DeviceType smartDeviceType; //  The type of the smart device Light blinds etc
 
-
-  SmartDeviceBaseAbstract(this.macAddress, this.smartInstanceName, int onOffPinNumber,
+  SmartDeviceBaseAbstract(this.uuid, this.smartInstanceName, int onOffPinNumber,
       {int onOffButtonPinNumber}) {
     onOffPin =
-    onOffPinNumber == null ? null : addPinToGpioPinList(onOffPinNumber);
+        onOffPinNumber == null ? null : addPinToGpioPinList(onOffPinNumber);
 
     //  If pin number was inserted and it exists than listen to button press
     if (onOffButtonPinNumber != null) {
       onOffButtonPin = addPinToGpioPinList(onOffButtonPinNumber);
 
-      if(onOffButtonPin != null) {
+      if (onOffButtonPin != null) {
         listenToButtonPressed();
       }
     }
@@ -58,7 +57,7 @@ abstract class SmartDeviceBaseAbstract {
 
 
   //  Get smart device type
-  DeviceType getDeviceType() => null;
+  DeviceType getDeviceType() => smartDeviceType;
 
 
   Future<String> getIp() async {
@@ -70,13 +69,9 @@ abstract class SmartDeviceBaseAbstract {
     return _gpioPinList;
   }
 
-  //  TODO: Make the function return the mac address
-  String getMacAddress() {
-    Process.run('ls', ['-la']).then((ProcessResult result) {
-      print(result.stdout);
-      return result.stdout; //  This is mock mac address
-    });
-    return null;
+
+  Future<String> getUuid() {
+    return SmartDeviceObjectsR.getUuid();
   }
 
 
@@ -106,11 +101,14 @@ abstract class SmartDeviceBaseAbstract {
     return 'Turn off sucsessfuly';
   }
 
+
+  void setDeviceType(DeviceType deviceType) => smartDeviceType = deviceType;
+
+
   //  Turn device pin to the opposite state
   String _SetChangeOppositeToState(PinInformation pinNumber) {
     return onOff ? _SetOff(onOffPin) : _SetOn(onOffPin);
   }
-
 
 
   //  More functions
