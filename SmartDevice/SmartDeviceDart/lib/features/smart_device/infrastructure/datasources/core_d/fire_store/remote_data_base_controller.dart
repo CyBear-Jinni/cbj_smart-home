@@ -5,12 +5,10 @@ import 'package:firedart/firestore/models.dart';
 
 
 
-class DataBaseController {
-
+class RemoteDataBaseController {
   CloudFireStoreD _cloudFireStoreNewD;
 
-
-  DataBaseController() {
+  RemoteDataBaseController() {
     _cloudFireStoreNewD = CloudFireStoreD();
   }
 
