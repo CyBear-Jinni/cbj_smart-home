@@ -1,16 +1,15 @@
 import 'dart:async';
 
+import 'package:SmartDeviceDart/core/my_singleton.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/core_u/actions_to_preform_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/my_singleton.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums_e.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/local_db_e/local_db_e.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pbgrpc.dart';
 import 'package:grpc/grpc.dart';
 
-
 // This class get what to execute straight from the grpc request,
 class SmartServerU extends SmartServerServiceBase {
-
   static const WishSourceEnum _wishSourceEnum = WishSourceEnum.ServerRequest;
 
   //  Listening to port and deciding what to do with the response
@@ -28,27 +27,61 @@ class SmartServerU extends SmartServerServiceBase {
     print('Server listening on port ${server.port}...');
   }
 
+
+  @override
+  Stream<SmartDevice> getAllDevices(ServiceCall call, SmartDeviceStatus request) async*{
+    print('getAllDevices');
+    for(SmartDeviceBaseAbstract smartDeviceBaseAbstract in MySingleton.getSmartDevicesList()) {
+      String deviceType = smartDeviceBaseAbstract.runtimeType.toString();
+
+      SmartDevice smartDevice = SmartDevice();
+      smartDevice.uuid = smartDeviceBaseAbstract.uuid;
+      smartDevice.name = smartDeviceBaseAbstract.smartInstanceName;
+      smartDevice.deviceType = deviceType;
+
+      yield smartDevice;
+    }
+
+  }
+
   //  Return the status of the specified device
   @override
   Future<SmartDeviceStatus> getStatus(ServiceCall call,
       SmartDevice request) async {
-    var deviceStatus = await executeWishEnumString(
-        request, WishEnum.GState, _wishSourceEnum);
+    var deviceStatus =
+        await executeWishEnumString(request, WishEnum.GState, _wishSourceEnum);
 
-    print('Getting status of device ' + request.toString() +
-        ' and device status in bool ' + deviceStatus);
+    print('Getting status of device ' +
+        request.toString() +
+        ' and device status in bool ' +
+        deviceStatus);
     return SmartDeviceStatus()
       ..onOffState = deviceStatus == 'true' ? true : false;
   }
 
+  @override
+  Future<CommendStatus> updateDeviceName(
+      ServiceCall call, SmartDeviceUpdateDetails request) {
+    print('Updating device name:' +
+        request.smartDevice.name +
+        ' into: ' +
+        request.newName);
+    SmartDeviceBaseAbstract smartDevice =
+        getSmartDeviceBaseAbstract(request.smartDevice);
+    smartDevice.smartInstanceName = request.newName;
+    CommendStatus commendStatus = CommendStatus();
+    commendStatus.success = true;
+    LocalDbE localDbE = LocalDbE();
+    localDbE.saveAllDevices(MySingleton.getSmartDevicesList());
+    return Future.value(commendStatus);
+  }
 
   @override
-  Future<CommendStatus> setOffDevice(ServiceCall call,
-      SmartDevice request) async {
+  Future<CommendStatus> setOffDevice(
+      ServiceCall call, SmartDevice request) async {
     print('Turn device ' + request.name + ' off');
     return executeWishEnumServer(request, WishEnum.SOff, _wishSourceEnum);
   }
-
 
   @override
   Future<CommendStatus> setOnDevice(ServiceCall call,
@@ -99,15 +132,17 @@ class SmartServerU extends SmartServerServiceBase {
 
   CommendStatus executeWishEnumServer(SmartDevice request, WishEnum wishEnum,
       WishEnum) {
-    var smartDevice = getSmartDeviceBaseAbstract(request);
+    SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
+    if (smartDevice == null) {
+      return CommendStatus()..success = false;
+    }
     ActionsToPreformU.executeWishEnum(smartDevice, wishEnum, _wishSourceEnum);
-    return CommendStatus()
-      ..success = smartDevice.onOff;
+    return CommendStatus()..success = smartDevice.onOff;
   }
 
   Future<String> executeWishEnumString(SmartDevice request, WishEnum wishEnum,
       WishSourceEnum wishSourceEnum) async {
-    var smartDevice = getSmartDeviceBaseAbstract(request);
+    SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
     if (smartDevice == null) {
       return "can't find device name";
     }
