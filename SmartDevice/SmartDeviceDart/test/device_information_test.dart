@@ -3,36 +3,35 @@ import 'package:test/test.dart';
 
 void main() {
   test('DeviceInformation', () {
-    var deviceMacAddress = '30:23:a2:G3:34';
+    var deviceUuid = '30:23:a2:G3:34';
     var smartInstanceName = 'Guy ceiling light';
 
-    var deviceInformation =
-        DeviceInformation(deviceMacAddress, smartInstanceName);
+    var deviceInformation = DeviceInformation(deviceUuid, smartInstanceName);
 
-    expect(deviceInformation.getMacAddress(), deviceMacAddress);
+    expect(deviceInformation.getUuid(), deviceUuid);
     expect(deviceInformation.getName(), smartInstanceName);
   });
 
   test('RemoteDevice', () {
-    var deviceMacAddress = '30:23:a2:G3:34';
+    var deviceUuid = '30:23:a2:G3:34';
     var smartInstanceName = 'Guy ceiling light';
     var deviceIp = '10.0.0.10';
 
     var deviceInformation =
-        RemoteDevice(deviceMacAddress, smartInstanceName, deviceIp);
+    RemoteDevice(deviceUuid, smartInstanceName, deviceIp);
 
-    expect(deviceInformation.getMacAddress(), deviceMacAddress);
+    expect(deviceInformation.getUuid(), deviceUuid);
     expect(deviceInformation.getName(), smartInstanceName);
     expect(deviceInformation.getIp(), deviceIp);
   });
 
   test('LocalDevice', () {
-    var deviceMacAddress = '30:23:a2:G3:34';
+    var deviceUuid = '30:23:a2:G3:34';
     var smartInstanceName = 'Guy ceiling light';
 
-    var deviceInformation = LocalDevice(deviceMacAddress, smartInstanceName);
+    var deviceInformation = LocalDevice(deviceUuid, smartInstanceName);
 
-    expect(deviceInformation.getMacAddress(), deviceMacAddress);
+    expect(deviceInformation.getUuid(), deviceUuid);
     expect(deviceInformation.getName(), smartInstanceName);
   });
 }
