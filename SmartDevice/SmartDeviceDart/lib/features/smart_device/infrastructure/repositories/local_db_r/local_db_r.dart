@@ -25,12 +25,16 @@ class LocalDbR {
     for (String deviceName in deviceListMap.keys) {
       List<String> values = deviceListMap[deviceName];
       DeviceType deviceType = EnumHelper.stringToDeviceType(values.first);
+
+      int onOffPinNumber = int.parse(values[1]);
+      int onOffButtonPinNumber = int.parse(values[2]);
+
       switch (deviceType) {
         case (DeviceType.Light):
           print('Adding from local db light object');
           smartDeviceBaseAbstractList.add(LightObject(
-              currentDeviceUuid, deviceName, values[1],
-              onOffButtonPinNumber: values[2]));
+              currentDeviceUuid, deviceName, onOffPinNumber,
+              onOffButtonPinNumber: onOffButtonPinNumber));
           break;
         case (DeviceType.Blinds):
           print('Adding from local db blind object');
@@ -47,8 +51,8 @@ class LocalDbR {
           smartDeviceBaseAbstractList.add(BlindsObject(
             currentDeviceUuid,
             deviceName,
-            values[1],
-            values[2],
+            onOffPinNumber,
+            onOffButtonPinNumber,
             //  onOffButtonPinNumber
             blindsUpPin,
             //  blindsUpPin
