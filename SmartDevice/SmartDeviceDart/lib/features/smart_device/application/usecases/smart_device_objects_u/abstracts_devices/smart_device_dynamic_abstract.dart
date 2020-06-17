@@ -1,5 +1,5 @@
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/dynamic_wish_u.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/enums.dart';
+import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums_e.dart';
 
 import 'smart_device_simple_abstract.dart';
 
@@ -7,17 +7,16 @@ import 'smart_device_simple_abstract.dart';
 abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
   double dynamicValue; //  Save how much power to do for action
 
-
-  SmartDeviceDynamicAbstract(macAddress, smartInstanceName, onOffPinNumber,
-      {onOffButtonPinNumber}) : super(macAddress, smartInstanceName, onOffPinNumber,
-      onOffButtonPinNumber: onOffButtonPinNumber);
-
+  SmartDeviceDynamicAbstract(uuid, smartInstanceName, onOffPinNumber,
+      {onOffButtonPinNumber})
+      : super(uuid, smartInstanceName, onOffPinNumber,
+            onOffButtonPinNumber: onOffButtonPinNumber);
 
   @override
-  Future<String> executeWishString(String wishString,
-      WishSourceEnum wishSourceEnum) async {
+  Future<String> executeWishString(
+      String wishString, WishSourceEnum wishSourceEnum) async {
     var wish = convertWishStringToWishesObject(wishString);
-    if(wish == null) return 'Your wish does not exist on ';
+    if (wish == null) return 'Your wish does not exist on ';
     return executeWish(wish, wishSourceEnum);
   }
 
