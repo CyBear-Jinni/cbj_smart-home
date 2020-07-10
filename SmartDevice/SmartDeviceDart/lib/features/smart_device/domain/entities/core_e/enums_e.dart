@@ -32,9 +32,9 @@ enum WishEnum {
   ODynamic, //  Open connection to change dynamic value
   SMovement, //  Open connection to change dynamic value
   GState, //  Get device state on/off
-  blindsUp, //  Turn the blinds up
-  blindsDown, //  Turn the blinds Down
-  blindsStop //  Stop the blinds
+  SBlindsUp, //  Turn the blinds up
+  SBlindsDown, //  Turn the blinds Down
+  SBlindsStop //  Stop the blinds
 }
 
 // List of all the sources
@@ -65,8 +65,18 @@ class EnumHelper {
   }
 
   //  Convert wishEnum to string
-  static String wishEnumToString(WishEnum deviceType) {
-    return deviceType.toString().replaceAll('WishEnum.', '');
+  static String wishEnumToString(WishEnum wishEnum) {
+    return wishEnum.toString().replaceAll('WishEnum.', '');
+  }
+
+  //  Convert string to wishEnum
+  static WishEnum stringToWishEnum(String wishEnumString) {
+    for (WishEnum wishEnum in WishEnum.values) {
+      if (wishEnumToString(wishEnum) == wishEnumString) {
+        return wishEnum;
+      }
+    }
+    return null;
   }
 
   //  Convert physicalDeviceType to string
