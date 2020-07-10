@@ -14,7 +14,7 @@ class CloudManagerR extends CloudManagerRAbstract {
     yield* _cloudFireStoreListenToChanges.listenAndExecute();
   }
 
-  Future<String> updateDocument(String fieldToUpdate, bool valueToUpdate) {
+  Future<String> updateDocument(String fieldToUpdate, String valueToUpdate) {
     return _cloudFireStoreListenToChanges.updateDocument(
         fieldToUpdate, valueToUpdate);
   }
