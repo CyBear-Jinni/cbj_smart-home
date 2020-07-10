@@ -184,15 +184,18 @@ abstract class SmartDeviceBaseAbstract {
 
     if (deviceStatus != getDeviceState() &&
         wishSourceEnum != WishSourceEnum.FireBase) {
-      _cloudValueChangeE.updateDocument(smartInstanceName, getDeviceState());
+      updateCloudValue(getDeviceState().toString());
     }
 
     return resultOfTheWish;
   }
 
+  void updateCloudValue(String value) {
+    _cloudValueChangeE.updateDocument(smartInstanceName, value);
+  }
+
   //  Listen to button press
   void listenToButtonPressed() async {
-	  ButtonObjectLocalU().buttonPressed(
-        this, onOffButtonPin, onOffPin);
+    ButtonObjectLocalU().buttonPressed(this, onOffButtonPin, onOffPin);
   }
 }
