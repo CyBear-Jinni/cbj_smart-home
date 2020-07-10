@@ -26,8 +26,9 @@ class LocalDbR {
       List<String> values = deviceListMap[deviceName];
       DeviceType deviceType = EnumHelper.stringToDeviceType(values.first);
 
-      int onOffPinNumber = int.parse(values[1]);
-      int onOffButtonPinNumber = int.parse(values[2]);
+      int onOffPinNumber = values[1] == null ? null : int.parse(values[1]);
+      int onOffButtonPinNumber =
+          values[2] == null ? null : int.parse(values[2]);
 
       switch (deviceType) {
         case (DeviceType.Light):
