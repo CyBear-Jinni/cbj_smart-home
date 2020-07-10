@@ -71,23 +71,19 @@ class CloudFireStoreD {
 
 //    print("snapshot: ${document["value"]}");
 
-    }
-    catch (error) {
+    } catch (error) {
       print("Can't reach server, error: " + error.toString());
     }
   }
 
-
-  Future <String> updateDataInBoolField(String dataPath, String fieldToUpdate,
-      bool valueToUpdate) async {
+  Future<String> updateDataInBoolField(
+      String dataPath, String fieldToUpdate, String valueToUpdate) async {
     try {
       //  Instantiate a reference to a document - this happens offline
       var ref = Firestore.instance.document(dataPath);
       //  Update the document
       await ref.update({fieldToUpdate: valueToUpdate});
-    }
-
-    catch (error) {
+    } catch (error) {
       print("Can't reach server, error: " + error.toString());
       return "Can't reach server, error: " + error.toString();
     }
