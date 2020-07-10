@@ -95,7 +95,7 @@ class SmartServerU extends SmartServerServiceBase {
   Future<CommendStatus> setBlindsUp(ServiceCall call,
       SmartDevice request) async {
     print('Turn blinds ' + request.name + ' up');
-    return executeWishEnumServer(request, WishEnum.blindsUp, _wishSourceEnum);
+    return executeWishEnumServer(request, WishEnum.SBlindsUp, _wishSourceEnum);
   }
 
 
@@ -104,7 +104,8 @@ class SmartServerU extends SmartServerServiceBase {
       SmartDevice request) async {
     print('Turn blinds ' + request.name + ' down');
 
-    return executeWishEnumServer(request, WishEnum.blindsDown, _wishSourceEnum);
+    return executeWishEnumServer(
+        request, WishEnum.SBlindsDown, _wishSourceEnum);
   }
 
 
@@ -113,7 +114,8 @@ class SmartServerU extends SmartServerServiceBase {
       SmartDevice request) async {
     print('Turn blinds ' + request.name + ' stop');
 
-    return executeWishEnumServer(request, WishEnum.blindsStop, _wishSourceEnum);
+    return executeWishEnumServer(
+        request, WishEnum.SBlindsStop, _wishSourceEnum);
   }
 
 

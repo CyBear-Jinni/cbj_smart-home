@@ -47,19 +47,27 @@ class LocalDbD {
             buttonPinDown = null;
 
         if (blindsObjectTemp.blindsUpPin != null) {
-          blindsUpPin = blindsObjectTemp.blindsUpPin.toString();
+          blindsUpPin = blindsObjectTemp
+              .blindsUpPin.pinAndPhysicalPinConfiguration
+              .toString();
         }
 
         if (blindsObjectTemp.blindsUpPin != null) {
-          buttonPinUp = blindsObjectTemp.buttonPinUp.toString();
+          buttonPinUp = blindsObjectTemp
+              .buttonPinUp.pinAndPhysicalPinConfiguration
+              .toString();
         }
 
         if (blindsObjectTemp.blindsDownPin != null) {
-          blindsDownPin = blindsObjectTemp.blindsDownPin.toString();
+          blindsDownPin =
+              blindsObjectTemp.blindsDownPin.pinAndPhysicalPinConfiguration
+                  .toString();
         }
 
         if (blindsObjectTemp.buttonPinDown != null) {
-          buttonPinDown = blindsObjectTemp.buttonPinDown.toString();
+          buttonPinDown =
+              blindsObjectTemp.buttonPinDown.pinAndPhysicalPinConfiguration
+                  .toString();
         }
 
         smartDevicesMapList[deviceName] = [
