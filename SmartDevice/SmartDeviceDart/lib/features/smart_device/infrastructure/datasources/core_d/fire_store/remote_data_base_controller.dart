@@ -37,9 +37,8 @@ class RemoteDataBaseController {
     return null;
   }
 
-
-  Future <String> updateDocument(String dataPath, String fieldToUpdate,
-      bool valueToUpdate) {
+  Future<String> updateDocument(
+      String dataPath, String fieldToUpdate, String valueToUpdate) {
     return _cloudFireStoreNewD.updateDataInBoolField(
         dataPath, fieldToUpdate, valueToUpdate);
   }
