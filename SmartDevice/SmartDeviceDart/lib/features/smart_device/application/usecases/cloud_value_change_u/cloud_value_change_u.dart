@@ -18,15 +18,15 @@ class CloudValueChangeU {
       Document myDocument = document;
       print('Change ditected in firestore');
 
-      Map<SmartDeviceBaseAbstract, bool> devicesNamesThatValueChanged = Map<
-          SmartDeviceBaseAbstract,
-          bool>();
+      Map<SmartDeviceBaseAbstract, String> devicesNamesThatValueChanged =
+          Map<SmartDeviceBaseAbstract, String>();
 
       MySingleton.getSmartDevicesList().forEach((element) {
         if (myDocument.map.containsKey(element.smartInstanceName)) {
-          if (element.getDeviceState() != myDocument.map[element.smartInstanceName]) {
+          if (element.getDeviceState() !=
+              myDocument.map[element.smartInstanceName]) {
             devicesNamesThatValueChanged[element] =
-            myDocument.map[element.smartInstanceName];
+                myDocument.map[element.smartInstanceName].toString();
           }
         }
       });
@@ -34,7 +34,18 @@ class CloudValueChangeU {
       devicesNamesThatValueChanged.forEach((smartDeviceBaseAbstract, value) {
         print('FireBase "' + smartDeviceBaseAbstract.smartInstanceName +
             '" have defferent value, will now change to ' + value.toString());
-        WishEnum wishEnum = value ? WishEnum.SOn : WishEnum.SOff;
+        WishEnum wishEnum;
+        switch (value) {
+          case('true'):
+            wishEnum = WishEnum.SOn;
+            break;
+          case('false'):
+            wishEnum = WishEnum.SOff;
+            break;
+          default:
+            wishEnum = EnumHelper.stringToWishEnum(value);
+            break;
+        }
         ActionsToPreformU.executeWishEnum(
             smartDeviceBaseAbstract, wishEnum, WishSourceEnum.FireBase);
       });
