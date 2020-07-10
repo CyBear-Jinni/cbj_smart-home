@@ -17,7 +17,7 @@ class CloudFireStoreListenToChangesD {
     yield* _dataBaseController.listenToChangeOfDataInPath(dataPath);
   }
 
-  Future<String> updateDocument(String fieldToUpdate, bool valueToUpdate) {
+  Future<String> updateDocument(String fieldToUpdate, String valueToUpdate) {
 //    String fullDataPath =
 //        dataPath + SharedVariables.getRoomName() + restOfThePath;
     return _dataBaseController.updateDocument(
