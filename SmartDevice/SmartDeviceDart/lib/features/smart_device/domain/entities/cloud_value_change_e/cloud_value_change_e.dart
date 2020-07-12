@@ -13,8 +13,7 @@ class CloudValueChangeE {
     yield* _cloudManager.listenToDataBase();
   }
 
-  Future<String> updateDocument(String fieldToUpdate, bool valueToUpdate) {
+  Future<String> updateDocument(String fieldToUpdate, String valueToUpdate) {
     return _cloudManager.updateDocument(fieldToUpdate, valueToUpdate);
   }
-
 }
