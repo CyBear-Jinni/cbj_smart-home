@@ -38,19 +38,3 @@ cd ../../../
 
 
 echo "Done C scripts"
-
-echo "Compiling snowboy C file"
-
-cd snowboy/examples/C/
-
-make
-
-mv demo ../../../
-
-mv ../../resources ../../../
-
-cd ../../../..
-
-echo "Removing snowboy directory now"
-
-rm -rf snowboy/
