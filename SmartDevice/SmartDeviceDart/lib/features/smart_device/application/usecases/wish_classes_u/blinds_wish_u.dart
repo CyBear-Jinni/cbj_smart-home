@@ -10,35 +10,56 @@ class BlindsWishU {
     String status;
     print('Turning blind up');
 
-    blindsInformation.blindsDownPin.onDuration = 0;
+    if (blindsInformation.blindsUpPin == null ||
+        blindsInformation.blindsDownPin == null) {
+      print('Blinds pin was not set');
+      return 'Failed';
+    }
+
+    blindsInformation.blindsDownPin?.onDuration = 0;
     status = await OffWishU.setOff(
         blindsInformation.deviceInformation, blindsInformation.blindsDownPin);
 
-    await Future.delayed(
-        const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
 
-    blindsInformation.blindsUpPin.onDuration = -1;
+    blindsInformation.blindsUpPin?.onDuration = -1;
+
     status += ' ' +
         OnWishU.setOn(
             blindsInformation.deviceInformation, blindsInformation.blindsUpPin);
+
+    blindsInformation.blindsDownPin?.onDuration = 0;
+    await OffWishU.setOff(
+        blindsInformation.deviceInformation, blindsInformation.blindsDownPin);
 
     return status;
   }
 
   static Future<String> blindsDown(BlindsObject blindsInformation) async {
     String status;
+    // In case the pin was not set
+    print('Turning blind Down');
 
-    blindsInformation.blindsUpPin.onDuration = 0;
+    if (blindsInformation.blindsUpPin == null ||
+        blindsInformation.blindsDownPin == null) {
+      print('Blinds pin was not set');
+      return 'Failed';
+    }
+
+    blindsInformation.blindsUpPin?.onDuration = 0;
     status = await OffWishU.setOff(
         blindsInformation.deviceInformation, blindsInformation.blindsUpPin);
 
-    await Future.delayed(
-        const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
 
-    blindsInformation.blindsDownPin.onDuration = -1;
+    blindsInformation.blindsDownPin?.onDuration = -1;
     status += ' ' +
         OnWishU.setOn(blindsInformation.deviceInformation,
             blindsInformation.blindsDownPin);
+
+    blindsInformation.blindsUpPin?.onDuration = 0;
+    await OffWishU.setOff(
+        blindsInformation.deviceInformation, blindsInformation.blindsUpPin);
 
     return status;
   }
@@ -46,12 +67,19 @@ class BlindsWishU {
   static String blindsStop(BlindsObject blindsInformation) {
     String status;
 
+    print('Stop blinds');
 
-    blindsInformation.blindsUpPin.onDuration = 0;
+    if (blindsInformation.blindsUpPin == null ||
+        blindsInformation.blindsDownPin == null) {
+      print('Blinds pin was not set');
+      return 'Failed';
+    }
+
+    blindsInformation.blindsUpPin?.onDuration = 0;
     status = OffWishU.setOff(
         blindsInformation.deviceInformation, blindsInformation.blindsUpPin);
 
-    blindsInformation.blindsDownPin.onDuration = 0;
+    blindsInformation.blindsDownPin?.onDuration = 0;
     status += ' ' +
         OffWishU.setOff(blindsInformation.deviceInformation,
             blindsInformation.blindsDownPin);
