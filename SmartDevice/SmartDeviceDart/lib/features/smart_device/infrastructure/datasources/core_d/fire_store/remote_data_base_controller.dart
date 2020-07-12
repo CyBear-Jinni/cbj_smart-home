@@ -5,12 +5,10 @@ import 'package:firedart/firestore/models.dart';
 
 
 
-class DataBaseController {
-
+class RemoteDataBaseController {
   CloudFireStoreD _cloudFireStoreNewD;
 
-
-  DataBaseController() {
+  RemoteDataBaseController() {
     _cloudFireStoreNewD = CloudFireStoreD();
   }
 
@@ -39,9 +37,8 @@ class DataBaseController {
     return null;
   }
 
-
-  Future <String> updateDocument(String dataPath, String fieldToUpdate,
-      bool valueToUpdate) {
+  Future<String> updateDocument(
+      String dataPath, String fieldToUpdate, String valueToUpdate) {
     return _cloudFireStoreNewD.updateDataInBoolField(
         dataPath, fieldToUpdate, valueToUpdate);
   }
