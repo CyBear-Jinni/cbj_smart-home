@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-echo "Compiling all C files"
 echo
 echo "Compiling snowboy C file"
 
