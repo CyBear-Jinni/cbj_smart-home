@@ -12,13 +12,17 @@ sunxi_board_id    : 8(0)
 board_manufacturer: FriendlyElec
 board_name        : FriendlyElec NanoPi-Duo2" > /etc/sys_info
 
-# sudo -s
+sudo -s
 # Add the directory and configuration file:
 mkdir /etc/cbjinni/
-echo 'Light,' > /etc/cbjinni/deviceConfigs.txt
+
+echo 'Light, Light, ' > /etc/cbjinni/deviceConfigs.txt
+#echo 'Blinds, ' > /etc/cbjinni/deviceConfigs.txt  # 'Light,' and 'Blinds,' can be used
 
 # Connect device to the wifi
 nmcli dev wifi connect amiuz1 password imazul4142
+
+sudo apt update
 
 # Install snapd:
 sudo apt install snapd
@@ -28,7 +32,7 @@ sudo snap login guyluz11@gmail.com
 sudo snap install network-manager-dart --edge --devmode
 sudo snap install smart-home --beta --devmode
 
-sudo apt update && sudo apt upgrade
+sudo apt upgrade
 
 # Change the prosessor sepeed to 1Ghz, armbian-config -> system
 # Check if it was fixed https://forum.armbian.com/topic/13993-nanopiduo2-not-booting-after-intense-processing-task/
