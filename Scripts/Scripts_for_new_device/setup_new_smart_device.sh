@@ -20,7 +20,7 @@ echo 'Light, Light, ' > /etc/cbjinni/deviceConfigs.txt
 #echo 'Blinds, ' > /etc/cbjinni/deviceConfigs.txt  # 'Light,' and 'Blinds,' can be used
 
 # Connect device to the wifi
-nmcli dev wifi connect amiuz1 password imazul4142
+nmcli dev wifi connect WiFi-ssid password WiFi-password
 
 sudo apt update
 
