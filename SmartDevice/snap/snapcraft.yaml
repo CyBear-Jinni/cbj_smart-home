@@ -48,6 +48,7 @@ parts:
       - unzip
       - git
       - gcc
+      - g++
       - make
       - libatlas-base-dev
       - libasound-dev
