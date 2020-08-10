@@ -8,21 +8,21 @@ environment:
   sdk: '>=2.4.0 <3.0.0'
 
 dependencies:
-  firedart: ^0.8.0+1
+  firedart: ^0.8.2
   # Functional programming thingies, let you use multiple return types
   dartz: ^0.9.1
   # For the injection, allow accessing an object from anywhere in an App
-  get_it: ^4.0.2
+  get_it: ^4.0.4
   # Convenient code generator for get_it
   #  injectable: ^0.4.0+1 # Does not work on my armhf32, can be lack of ram https://TypeAdaptergithub.com/dart-lang/pub/issues/2347
   # Allow returning more than one type of object
-  equatable: ^1.2.0
+  equatable: ^1.2.2
   # Convert enum to string
   enum_to_string: ^1.0.9
   # Key-value database
   hive: ^1.4.1+1
   # Process run helpers for Linux/Win/Mac.
-  process_run: ^0.10.10+1
+  process_run: ^0.10.10+2
 
 
 dev_dependencies:
