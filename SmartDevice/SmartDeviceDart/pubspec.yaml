@@ -16,13 +16,13 @@ dependencies:
   # Convenient code generator for get_it
   #  injectable: ^0.4.0+1 # Does not work on my armhf32, can be lack of ram https://TypeAdaptergithub.com/dart-lang/pub/issues/2347
   # Allow returning more than one type of object
-  equatable: ^1.2.2
+  equatable: ^1.2.3
   # Convert enum to string
   enum_to_string: ^1.0.9
   # Key-value database
-  hive: ^1.4.1+1
+  hive: ^1.4.4
   # Process run helpers for Linux/Win/Mac.
-  process_run: ^0.10.10+2
+  process_run: ^0.10.12+2
 
 
 dev_dependencies:
