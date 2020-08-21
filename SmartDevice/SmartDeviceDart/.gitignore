@@ -1,6 +1,6 @@
 
 # Cache and build files
-
+.packages
 .pub/
 build/
 ios/.generated/
