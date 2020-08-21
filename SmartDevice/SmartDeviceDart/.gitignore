@@ -25,5 +25,5 @@ token.json
 /lib/core/constant_credentials.dart
 lib/core/constant_credentials.dart
 
-#test
-/.directory
+# test
+bin/*
