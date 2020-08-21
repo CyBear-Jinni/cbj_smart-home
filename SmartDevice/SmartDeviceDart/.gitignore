@@ -21,4 +21,5 @@ token.json
 # MacOS garbage
 .DS_Store
 
-
+# contains privet information
+lib/core/constant_credentials.dart
