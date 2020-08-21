@@ -1,4 +1,9 @@
 
+# contains privet information
+/lib/core/constant_credentials.dart
+lib/core/constant_credentials.dart
+
+
 # Cache and build files
 .packages
 .pub/
@@ -20,7 +25,3 @@ token.json
 
 # MacOS garbage
 .DS_Store
-
-# contains privet information
-/lib/core/constant_credentials.dart
-lib/core/constant_credentials.dart
