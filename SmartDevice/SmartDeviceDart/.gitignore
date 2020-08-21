@@ -22,8 +22,4 @@ token.json
 .DS_Store
 
 # contains privet information
-/lib/core/constant_credentials.dart
 lib/core/constant_credentials.dart
-
-# test
-bin/*
