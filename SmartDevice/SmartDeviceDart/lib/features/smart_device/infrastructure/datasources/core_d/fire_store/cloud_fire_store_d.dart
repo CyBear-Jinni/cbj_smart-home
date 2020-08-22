@@ -1,10 +1,9 @@
+import 'package:SmartDeviceDart/core/constant_credentials.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_d.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_store_d.dart';
 import 'package:firedart/firedart.dart';
 
 class CloudFireStoreD {
-  static const apiKey = 'AIzaSyBIEgdRhns2gX7xTLIVlgfqcK87RTXdAIo';
-  static const projectId = 'smarthome-3765e';
   static const email = 'guyhome@gmail.com';
   static const password = '123IsNotSecure';
 
@@ -21,8 +20,10 @@ class CloudFireStoreD {
   Future initializeFirebaseAuthWithHivePersistingTokens() async {
     try {
       await HiveD();
-      await Firestore.initialize(projectId); // Firestore reuses the auth client
-      await FirebaseAuth.initialize(apiKey, await HiveStore.create());
+      await Firestore.initialize(ConstantCredentials
+          .fireBaseProjectId); // Firestore reuses the auth client
+      await FirebaseAuth.initialize(
+          ConstantCredentials.fireBaseWebApiKey, await HiveStore.create());
       await FirebaseAuth.instance.signIn(email, password);
 //      var user = await FirebaseAuth.instance.getUser();
     } catch (exception) {
@@ -76,8 +77,7 @@ class CloudFireStoreD {
     }
   }
 
-  Future<String> updateDataInBoolField(
-      String dataPath, String fieldToUpdate, String valueToUpdate) async {
+  Future<String> updateDataInBoolField(String dataPath, String fieldToUpdate, String valueToUpdate) async {
     try {
       //  Instantiate a reference to a document - this happens offline
       var ref = Firestore.instance.document(dataPath);
