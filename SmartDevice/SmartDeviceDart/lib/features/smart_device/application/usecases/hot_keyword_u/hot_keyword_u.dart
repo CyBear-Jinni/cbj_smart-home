@@ -17,7 +17,7 @@ class HotKeywordU {
       if (!event) {
         return;
       }
-      print('Recived voice command');
+      print('Received voice command');
       ActionsToPreformU.executeWishEnum(
           MySingleton.getSmartDevicesList()[0] as LightObject,
           WishEnum.SChangeState, WishSourceEnum.VoiceAssistant);
