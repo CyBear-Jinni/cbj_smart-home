@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1e26d5e-a8e9-4a67-800b-493445f371bc" name="Default Changelist" comment="Add support for saving localy blinds configuration">
+      <change beforePath="$PROJECT_DIR$/../../.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/database/firebase/cloud_firestore/firestore_class.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/database/firebase/cloud_firestore/firestore_class.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/objects/interface_darta/cloud_interface_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/lib/objects/interface_darta/cloud_interface_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlutterApp/cybear_jinni_flutter/cybear_jinni_flutter/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scripts/Scripts_for_new_device/setup_new_smart_device.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scripts/Scripts_for_new_device/setup_new_smart_device.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/cloud_value_change_d/cloud_fire_store_listen_to_changes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources/cloud_value_change_d/cloud_fire_store_listen_to_changes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scripts/bashScripts/dartSdkDownload.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/bashScripts/dartSdkDownload.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snap/snapcraft.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../snap/snapcraft.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +49,10 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ChangesTree.GroupingKeys" value="module" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/features/smart_device/infrastructure/datasources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -257,26 +264,30 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2451" y="310" width="424" height="484" key="FileChooserDialogImpl/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1591776777963" />
-    <state width="1817" height="447" key="GridCell.Tab.0.bottom" timestamp="1592343404759">
-      <screen x="1680" y="0" width="1920" height="1080" />
+    <state width="1824" height="261" key="GridCell.Tab.0.bottom" timestamp="1595582679966">
+      <screen x="50" y="0" width="1870" height="1080" />
     </state>
     <state width="1634" height="436" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591818066883" />
     <state width="1817" height="447" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592343404759" />
-    <state width="1817" height="447" key="GridCell.Tab.0.center" timestamp="1592343404759">
-      <screen x="1680" y="0" width="1920" height="1080" />
+    <state width="1824" height="261" key="GridCell.Tab.0.bottom/50.0.1870.1080@50.0.1870.1080" timestamp="1595582679966" />
+    <state width="1824" height="261" key="GridCell.Tab.0.center" timestamp="1595582679966">
+      <screen x="50" y="0" width="1870" height="1080" />
     </state>
     <state width="1634" height="436" key="GridCell.Tab.0.center/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591818066883" />
     <state width="1817" height="447" key="GridCell.Tab.0.center/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592343404759" />
-    <state width="1817" height="447" key="GridCell.Tab.0.left" timestamp="1592343404759">
-      <screen x="1680" y="0" width="1920" height="1080" />
+    <state width="1824" height="261" key="GridCell.Tab.0.center/50.0.1870.1080@50.0.1870.1080" timestamp="1595582679966" />
+    <state width="1824" height="261" key="GridCell.Tab.0.left" timestamp="1595582679966">
+      <screen x="50" y="0" width="1870" height="1080" />
     </state>
     <state width="1634" height="436" key="GridCell.Tab.0.left/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591818066883" />
     <state width="1817" height="447" key="GridCell.Tab.0.left/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592343404759" />
-    <state width="1817" height="447" key="GridCell.Tab.0.right" timestamp="1592343404759">
-      <screen x="1680" y="0" width="1920" height="1080" />
+    <state width="1824" height="261" key="GridCell.Tab.0.left/50.0.1870.1080@50.0.1870.1080" timestamp="1595582679966" />
+    <state width="1824" height="261" key="GridCell.Tab.0.right" timestamp="1595582679966">
+      <screen x="50" y="0" width="1870" height="1080" />
     </state>
     <state width="1634" height="436" key="GridCell.Tab.0.right/1680.0.1920.1080/0.27.1680.1023@0.27.1680.1023" timestamp="1591818066883" />
     <state width="1817" height="447" key="GridCell.Tab.0.right/1680.0.1920.1080/0.27.1680.1023@1680.0.1920.1080" timestamp="1592343404759" />
+    <state width="1824" height="261" key="GridCell.Tab.0.right/50.0.1870.1080@50.0.1870.1080" timestamp="1595582679966" />
     <state x="2233" y="171" width="861" height="763" key="NewModule_or_Project.wizard" timestamp="1591024999504">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
