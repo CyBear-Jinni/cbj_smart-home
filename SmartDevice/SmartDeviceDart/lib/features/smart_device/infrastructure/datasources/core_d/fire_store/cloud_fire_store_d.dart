@@ -23,7 +23,7 @@ class CloudFireStoreD {
       await Firestore.initialize(ConstantCredentials
           .fireBaseProjectId); // Firestore reuses the auth client
       await FirebaseAuth.initialize(
-          ConstantCredentials.fireBaseWebApiKey, await HiveStore.create());
+          ConstantCredentials.fireBaseApiKey, await HiveStore.create());
       await FirebaseAuth.instance.signIn(email, password);
 //      var user = await FirebaseAuth.instance.getUser();
     } catch (exception) {
