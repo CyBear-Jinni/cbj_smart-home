@@ -1,15 +1,22 @@
-import 'package:SmartDeviceDart/core/constant_credentials.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/accounts_information_d/accounts_information_d.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_d.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_store_d.dart';
 import 'package:firedart/firedart.dart';
 
 class CloudFireStoreD {
-  static const email = 'guyhome@gmail.com';
-  static const password = '123IsNotSecure';
+  String _fireBaseProjectId;
+  String _fireBaseApiKey;
+  String _userEmail;
+  String _userPassword;
 
   FirebaseAuth auth;
 
-  CloudFireStoreD() {
+  CloudFireStoreD(FirebaseAccountsInformationD firebaseAccountsInformationD) {
+    _fireBaseProjectId = firebaseAccountsInformationD.fireBaseProjectId;
+    _fireBaseApiKey = firebaseAccountsInformationD.fireBaseApiKey;
+    _userEmail = firebaseAccountsInformationD.userEmail;
+    _userPassword = firebaseAccountsInformationD.userPassword;
+
     try {
       initializeFirebaseAuthWithHivePersistingTokens();
     } catch (exception) {
@@ -20,11 +27,10 @@ class CloudFireStoreD {
   Future initializeFirebaseAuthWithHivePersistingTokens() async {
     try {
       await HiveD();
-      await Firestore.initialize(ConstantCredentials
-          .fireBaseProjectId); // Firestore reuses the auth client
-      await FirebaseAuth.initialize(
-          ConstantCredentials.fireBaseApiKey, await HiveStore.create());
-      await FirebaseAuth.instance.signIn(email, password);
+      await Firestore.initialize(
+          _fireBaseProjectId); // Firestore reuses the auth client
+      await FirebaseAuth.initialize(_fireBaseApiKey, await HiveStore.create());
+      await FirebaseAuth.instance.signIn(_userEmail, _userPassword);
 //      var user = await FirebaseAuth.instance.getUser();
     } catch (exception) {
       print('This was the exception here: ' + exception.toString());
