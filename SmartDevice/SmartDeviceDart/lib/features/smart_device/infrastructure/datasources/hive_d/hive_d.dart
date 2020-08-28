@@ -1,12 +1,16 @@
 import 'package:SmartDeviceDart/core/my_singleton.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/accounts_information_d/accounts_information_d.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_objects_d/hive_devices_d.dart';
-import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_objects_d/person.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_store_d.dart';
 import 'package:hive/hive.dart';
 
 class HiveD {
   String hiveFolderPath;
   static bool finishedInitializing;
+  static const String smartDeviceBoxName = 'SmartDevices';
+  static const String cellDeviceListInSmartDeviceBox = 'deviceList';
+  static const String cellDatabaseInformationInSmartDeviceBox =
+      'databaseInformation';
 
   HiveD._privateConstructor() {
 //    contractorAsync();
@@ -25,9 +29,9 @@ class HiveD {
       print('Path of hive: ' + hiveFolderPath);
       Hive..init(hiveFolderPath);
 
-      Hive.openBox('SmartDevices');
+      Hive.openBox(
+          smartDeviceBoxName); // TODO: check if need await, it creates error: HiveError: Cannot read, unknown typeId: 34
       Hive.registerAdapter(TokenAdapter());
-      Hive..registerAdapter(PersonAdapter());
       Hive..registerAdapter(HiveDevicesDAdapter());
 //    usePerson();
       finishedInitializing = true;
@@ -35,29 +39,26 @@ class HiveD {
     return finishedInitializing;
   }
 
-  Future<void> usePerson() async {
-    await finishedInitializing;
-
-    var box = await Hive.openBox('testBox');
-
-    var person = Person()
-      ..name = 'Dave'
-      ..age = 22;
-
-    await box.put('dave', person);
-
-    print(box.get('dave')); // Dave: 22
-  }
-
   Future<Map<String, List<String>>> getListOfSmartDevices() async {
-    bool temp = await contractorAsync();
+    await contractorAsync();
 
-    var box = await Hive.openBox('SmartDevices');
+    var box = await Hive.openBox(smartDeviceBoxName);
 
-    HiveDevicesD a = box.get('deviceList');
+    HiveDevicesD a = box.get(cellDeviceListInSmartDeviceBox);
 
     return a?.smartDeviceList;
   }
+
+  Future<FirebaseAccountsInformationD> getListOfDatabaseInformation() async {
+    await contractorAsync();
+
+    var box = await Hive.openBox(smartDeviceBoxName);
+
+    HiveDevicesD a = box.get(cellDatabaseInformationInSmartDeviceBox);
+
+    return a?.databaseInformationList;
+  }
+
 
   Future<void> saveAllDevices(
       Map<String, List<String>> smartDevicesMapList) async {
@@ -65,7 +66,7 @@ class HiveD {
 
 //    String saveDevicePath = hiveFolderPath + '/devices';
 
-    var box = await Hive.openBox('SmartDevices');
+    var box = await Hive.openBox(smartDeviceBoxName);
 
     HiveDevicesD hiveDevicesD = HiveDevicesD()
       ..smartDeviceList = smartDevicesMapList;
@@ -73,21 +74,4 @@ class HiveD {
     await box.put('deviceList', hiveDevicesD);
   }
 
-//  void main() async {
-//    var path = hiveFolderPath;
-//    Hive
-//      ..init(path)
-//      ..registerAdapter(PersonAdapter());
-//
-//    var box = await Hive.openBox('testBox');
-//
-//    var person = Person()
-//      ..name = 'Dave'
-//      ..age = 22
-//      ..friends = ['Linda', 'Marc', 'Anne'];
-//
-//    await box.put('dave', person);
-//
-//    print(box.get('dave')); // Dave: 22
-//  }
 }
