@@ -7,6 +7,8 @@ service SmartServer {
     // Sends a greeting
     rpc GetAllDevices (SmartDeviceStatus) returns (stream SmartDevice) {
     }
+    rpc SetFirebaseAccountInformation (SmartDeviceStatus) returns (FirebaseAccountInformation) {
+    }
     rpc GetStatus (SmartDevice) returns (SmartDeviceStatus) {
     }
     rpc UpdateDeviceName (SmartDeviceUpdateDetails) returns (CommendStatus){
@@ -43,4 +45,11 @@ message CommendStatus {
 message SmartDeviceUpdateDetails  {
     SmartDevice smartDevice = 6;
     string newName = 7;
+}
+
+message FirebaseAccountInformation  {
+    string fireBaseProjectId = 8;
+    string fireBaseApiKey = 9;
+    string userEmail = 10;
+    string userPassword = 11;
 }
