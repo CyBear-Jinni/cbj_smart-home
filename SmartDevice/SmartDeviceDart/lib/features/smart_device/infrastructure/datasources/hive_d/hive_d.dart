@@ -1,5 +1,4 @@
 import 'package:SmartDeviceDart/core/my_singleton.dart';
-import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/accounts_information_d/accounts_information_d.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_objects_d/hive_devices_d.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/hive_d/hive_store_d.dart';
 import 'package:hive/hive.dart';
@@ -33,7 +32,7 @@ class HiveD {
           smartDeviceBoxName); // TODO: check if need await, it creates error: HiveError: Cannot read, unknown typeId: 34
       Hive.registerAdapter(TokenAdapter());
       Hive..registerAdapter(HiveDevicesDAdapter());
-//    usePerson();
+
       finishedInitializing = true;
     }
     return finishedInitializing;
@@ -49,29 +48,38 @@ class HiveD {
     return a?.smartDeviceList;
   }
 
-  Future<FirebaseAccountsInformationD> getListOfDatabaseInformation() async {
+  Future<Map<String, String>> getListOfDatabaseInformation() async {
     await contractorAsync();
 
     var box = await Hive.openBox(smartDeviceBoxName);
 
-    HiveDevicesD a = box.get(cellDatabaseInformationInSmartDeviceBox);
+    HiveDevicesD firebaseAccountsInformationMap =
+        box.get(cellDatabaseInformationInSmartDeviceBox);
 
-    return a?.databaseInformationList;
+    return firebaseAccountsInformationMap?.databaseInformationList;
   }
-
 
   Future<void> saveAllDevices(
       Map<String, List<String>> smartDevicesMapList) async {
     await finishedInitializing;
-
-//    String saveDevicePath = hiveFolderPath + '/devices';
 
     var box = await Hive.openBox(smartDeviceBoxName);
 
     HiveDevicesD hiveDevicesD = HiveDevicesD()
       ..smartDeviceList = smartDevicesMapList;
 
-    await box.put('deviceList', hiveDevicesD);
+    await box.put(cellDeviceListInSmartDeviceBox, hiveDevicesD);
   }
 
+  Future<void> saveListOfDatabaseInformation(
+      Map<String, String> firebaseAccountsInformationMap) async {
+    await finishedInitializing;
+
+    var box = await Hive.openBox(smartDeviceBoxName);
+
+    HiveDevicesD hiveDevicesD = HiveDevicesD()
+      ..databaseInformationList = firebaseAccountsInformationMap;
+
+    await box.put(cellDatabaseInformationInSmartDeviceBox, hiveDevicesD);
+  }
 }
