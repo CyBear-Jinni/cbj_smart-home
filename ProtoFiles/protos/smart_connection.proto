@@ -7,7 +7,7 @@ service SmartServer {
     // Sends a greeting
     rpc GetAllDevices (SmartDeviceStatus) returns (stream SmartDevice) {
     }
-    rpc SetFirebaseAccountInformation (SmartDeviceStatus) returns (FirebaseAccountInformation) {
+    rpc SetFirebaseAccountInformation (FirebaseAccountInformation) returns (CommendStatus) {
     }
     rpc GetStatus (SmartDevice) returns (SmartDeviceStatus) {
     }
