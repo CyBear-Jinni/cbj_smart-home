@@ -173,7 +173,7 @@ class SmartServerU extends SmartServerServiceBase {
       WishSourceEnum wishSourceEnum) async {
     SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
     if (smartDevice == null) {
-      return "can't find device name";
+      return "SmartDevice is null in executeWishEnumString";
     }
     return await ActionsToPreformU.executeWishEnum(
         smartDevice, wishEnum, wishSourceEnum);
@@ -185,13 +185,13 @@ class SmartServerU extends SmartServerServiceBase {
     print('This is the function setFirebaseAccountInformation');
 
     FirebaseAccountsInformationD firebaseAccountsInformationD =
-    FirebaseAccountsInformationD(request.fireBaseProjectId,
-        request.fireBaseApiKey, request.userEmail, request.userPassword);
+        FirebaseAccountsInformationD(request.fireBaseProjectId,
+            request.fireBaseApiKey, request.userEmail, request.userPassword);
 
-    // TODO: save firebase accounts information into the database
+    LocalDbE localDbE = LocalDbE();
+    localDbE.saveListOfDatabaseInformation(firebaseAccountsInformationD);
 
     startListenToDb(firebaseAccountsInformationD);
-
 
     CommendStatus commendStatus = CommendStatus();
 
