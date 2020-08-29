@@ -114,7 +114,6 @@ class CommendStatus extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $core.bool get success => $_getBF(0);
-
   @$pb.TagNumber(5)
   set success($core.bool v) {
     $_setBool(0, v);
@@ -122,7 +121,6 @@ class CommendStatus extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $core.bool hasSuccess() => $_has(0);
-
   @$pb.TagNumber(5)
   void clearSuccess() => clearField(5);
 }
@@ -131,28 +129,32 @@ class SmartDeviceUpdateDetails extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('SmartDeviceUpdateDetails',
       package: const $pb.PackageName('SmartConnection'),
       createEmptyInstance: create)
-    ..aOM<SmartDevice>(6, 'smartDevice',
-        protoName: 'smartDevice', subBuilder: SmartDevice.create)
+    ..aOM<SmartDevice>(6, 'smartDevice', protoName: 'smartDevice',
+        subBuilder: SmartDevice.create)
     ..aOS(7, 'newName', protoName: 'newName')
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
   SmartDeviceUpdateDetails._() : super();
 
   factory SmartDeviceUpdateDetails() => create();
 
   factory SmartDeviceUpdateDetails.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
+      [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()
+        ..mergeFromBuffer(i, r);
 
   factory SmartDeviceUpdateDetails.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
+      [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()
+        ..mergeFromJson(i, r);
 
   SmartDeviceUpdateDetails clone() =>
-      SmartDeviceUpdateDetails()..mergeFromMessage(this);
+      SmartDeviceUpdateDetails()
+        ..mergeFromMessage(this);
 
   SmartDeviceUpdateDetails copyWith(
-          void Function(SmartDeviceUpdateDetails) updates) =>
+      void Function(SmartDeviceUpdateDetails) updates) =>
       super.copyWith((message) => updates(message as SmartDeviceUpdateDetails));
 
   $pb.BuilderInfo get info_ => _i;
@@ -177,13 +179,10 @@ class SmartDeviceUpdateDetails extends $pb.GeneratedMessage {
   set smartDevice(SmartDevice v) {
     setField(6, v);
   }
-
   @$pb.TagNumber(6)
   $core.bool hasSmartDevice() => $_has(0);
-
   @$pb.TagNumber(6)
   void clearSmartDevice() => clearField(6);
-
   @$pb.TagNumber(6)
   SmartDevice ensureSmartDevice() => $_ensure(0);
 
@@ -201,3 +200,111 @@ class SmartDeviceUpdateDetails extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearNewName() => clearField(7);
 }
+
+class FirebaseAccountInformation extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      'FirebaseAccountInformation',
+      package: const $pb.PackageName('SmartConnection'),
+      createEmptyInstance: create)
+    ..aOS(8, 'fireBaseProjectId', protoName: 'fireBaseProjectId')..aOS(
+        9, 'fireBaseApiKey', protoName: 'fireBaseApiKey')..aOS(
+        10, 'userEmail', protoName: 'userEmail')..aOS(
+        11, 'userPassword', protoName: 'userPassword')
+    ..hasRequiredFields = false
+  ;
+
+  FirebaseAccountInformation._() : super();
+
+  factory FirebaseAccountInformation() => create();
+
+  factory FirebaseAccountInformation.fromBuffer($core.List<$core.int> i,
+      [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()
+        ..mergeFromBuffer(i, r);
+
+  factory FirebaseAccountInformation.fromJson($core.String i,
+      [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()
+        ..mergeFromJson(i, r);
+
+  FirebaseAccountInformation clone() =>
+      FirebaseAccountInformation()
+        ..mergeFromMessage(this);
+
+  FirebaseAccountInformation copyWith(
+      void Function(FirebaseAccountInformation) updates) =>
+      super.copyWith((message) =>
+          updates(message as FirebaseAccountInformation));
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FirebaseAccountInformation create() => FirebaseAccountInformation._();
+
+  FirebaseAccountInformation createEmptyInstance() => create();
+
+  static $pb.PbList<FirebaseAccountInformation> createRepeated() =>
+      $pb.PbList<FirebaseAccountInformation>();
+
+  @$core.pragma('dart2js:noInline')
+  static FirebaseAccountInformation getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FirebaseAccountInformation>(create);
+  static FirebaseAccountInformation _defaultInstance;
+
+  @$pb.TagNumber(8)
+  $core.String get fireBaseProjectId => $_getSZ(0);
+
+  @$pb.TagNumber(8)
+  set fireBaseProjectId($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(8)
+  $core.bool hasFireBaseProjectId() => $_has(0);
+
+  @$pb.TagNumber(8)
+  void clearFireBaseProjectId() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get fireBaseApiKey => $_getSZ(1);
+
+  @$pb.TagNumber(9)
+  set fireBaseApiKey($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(9)
+  $core.bool hasFireBaseApiKey() => $_has(1);
+
+  @$pb.TagNumber(9)
+  void clearFireBaseApiKey() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get userEmail => $_getSZ(2);
+
+  @$pb.TagNumber(10)
+  set userEmail($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(10)
+  $core.bool hasUserEmail() => $_has(2);
+
+  @$pb.TagNumber(10)
+  void clearUserEmail() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get userPassword => $_getSZ(3);
+
+  @$pb.TagNumber(11)
+  set userPassword($core.String v) {
+    $_setString(3, v);
+  }
+
+  @$pb.TagNumber(11)
+  $core.bool hasUserPassword() => $_has(3);
+
+  @$pb.TagNumber(11)
+  void clearUserPassword() => clearField(11);
+}
+
