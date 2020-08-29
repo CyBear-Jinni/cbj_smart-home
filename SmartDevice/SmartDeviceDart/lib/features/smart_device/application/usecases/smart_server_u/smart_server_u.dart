@@ -32,24 +32,15 @@ class SmartServerU extends SmartServerServiceBase {
   }
 
   void startListenToDb(
-      FirebaseAccountsInformationD firebaseAccountsInformationD) {
-//    const email = '***REMOVED***';
-//    const password = '***REMOVED***';
-//
-//    const fireBaseProjectId = '***REMOVED***';
-//    const fireBaseApiKey = '***REMOVED***';
-//
-//    firebaseAccountsInformationD = FirebaseAccountsInformationD(fireBaseProjectId, fireBaseApiKey, email, password);
-
-
-    if (firebaseAccountsInformationD == null) {
+      FirebaseAccountsInformationD firebaseAccountInformationD) {
+    if (firebaseAccountInformationD == null) {
       print('Database var databaseInformationFromDb is null');
       return;
     }
 
-    if (firebaseAccountsInformationD.areAllValuesNotNull()) {
-      CloudValueChangeU cloudValueChangeUseCases = CloudValueChangeU(
-          firebaseAccountsInformationD);
+    if (firebaseAccountInformationD.areAllValuesNotNull()) {
+      CloudValueChangeU cloudValueChangeUseCases =
+          CloudValueChangeU(firebaseAccountInformationD);
       cloudValueChangeUseCases
           .listenToDataBase(); //  Listen to changes in the database for this device
     }
@@ -78,6 +69,7 @@ class SmartServerU extends SmartServerServiceBase {
     }
 
   }
+
 
   //  Return the status of the specified device
   @override
@@ -187,5 +179,23 @@ class SmartServerU extends SmartServerServiceBase {
         smartDevice, wishEnum, wishSourceEnum);
   }
 
+  @override
+  Future<CommendStatus> setFirebaseAccountInformation(ServiceCall call,
+      FirebaseAccountInformation request) {
+    print('This is the function setFirebaseAccountInformation');
 
+    FirebaseAccountsInformationD firebaseAccountsInformationD =
+    FirebaseAccountsInformationD(request.fireBaseProjectId,
+        request.fireBaseApiKey, request.userEmail, request.userPassword);
+
+    // TODO: save firebase accounts information into the database
+
+    startListenToDb(firebaseAccountsInformationD);
+
+
+    CommendStatus commendStatus = CommendStatus();
+
+    commendStatus.success = true;
+    return Future.value(commendStatus);
+  }
 }
