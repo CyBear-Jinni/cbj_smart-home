@@ -33,4 +33,35 @@ class MySingleton {
 
   static List<SmartDeviceBaseAbstract> getSmartDevicesList() =>
       smartDevicesList;
+
+  static FirebaseAccountInformationFlutter getAccountFirebaseInformation() {
+    String fireBaseProjectId =
+        'smarthome-3765e'; // TODO: insert that from the firebase json and from the user credentials
+    String fireBaseApiKey = 'AIzaSyALyGan-9iIBJ59FbRrXXNkyTDSGS22ZE8';
+    String userEmail = 'guyhome@gmail.com';
+    String userPassword = '123IsNotSecure';
+
+    FirebaseAccountInformationFlutter firebaseAccountInformationFlutter =
+        FirebaseAccountInformationFlutter(
+            fireBaseProjectId, fireBaseApiKey, userEmail, userPassword);
+
+    return firebaseAccountInformationFlutter;
+  }
+}
+
+class FirebaseAccountInformationFlutter {
+  String fireBaseProjectId;
+  String fireBaseApiKey;
+  String userEmail;
+  String userPassword;
+
+  FirebaseAccountInformationFlutter(this.fireBaseProjectId, this.fireBaseApiKey,
+      this.userEmail, this.userPassword);
+
+  bool areAllValuesNotNull() {
+    return fireBaseProjectId != null &&
+        fireBaseApiKey != null &&
+        userEmail != null &&
+        userPassword != null;
+  }
 }

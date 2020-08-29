@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # You mast have pub and protoc inside the path 
-# Example PATH=$PATH:~/Programmes/flutter/bin/cache/dart-sdk/bin
+# Example PATH=$PATH:~/Programs/flutter/bin/cache/dart-sdk/bin
 
 pub global activate protoc_plugin
 

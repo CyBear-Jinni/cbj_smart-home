@@ -16,7 +16,7 @@ dependencies:
   # Convenient code generator for get_it
   #  injectable: ^0.4.0+1 # Does not work on my armhf32, can be lack of ram https://TypeAdaptergithub.com/dart-lang/pub/issues/2347
   # Allow returning more than one type of object
-  equatable: ^1.2.3
+  equatable: ^1.2.4
   # Convert enum to string
   enum_to_string: ^1.0.9
   # Key-value database
