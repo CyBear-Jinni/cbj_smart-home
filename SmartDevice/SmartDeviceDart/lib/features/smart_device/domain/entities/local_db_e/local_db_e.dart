@@ -24,4 +24,9 @@ class LocalDbE {
   void saveAllDevices(List<SmartDeviceBaseAbstract> smartDevicesList) {
     _localDbR.saveAllDevices(smartDevicesList);
   }
+
+  void saveListOfDatabaseInformation(
+      FirebaseAccountsInformationD firebaseAccountsInformationD) {
+    _localDbR.saveListOfDatabaseInformation(firebaseAccountsInformationD);
+  }
 }

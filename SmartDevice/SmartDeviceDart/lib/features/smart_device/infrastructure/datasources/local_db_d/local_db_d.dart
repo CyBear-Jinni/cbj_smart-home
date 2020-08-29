@@ -15,7 +15,7 @@ class LocalDbD {
     return _hiveD.getListOfSmartDevices();
   }
 
-  Future<FirebaseAccountsInformationD> getListOfDatabaseInformation() {
+  Future<Map<String, String>> getListOfDatabaseInformation() {
     return _hiveD.getListOfDatabaseInformation();
   }
 
@@ -95,4 +95,22 @@ class LocalDbD {
 
     _hiveD.saveAllDevices(smartDevicesMapList);
   }
+
+
+  void saveListOfDatabaseInformation(
+      FirebaseAccountsInformationD firebaseAccountsInformationD) {
+    Map<String, String> firebaseAccountsInformationMap = Map<String, String>();
+
+    firebaseAccountsInformationMap[AccountsInformationD.fireBaseProjectId] =
+        firebaseAccountsInformationD.fireBaseProjectId;
+    firebaseAccountsInformationMap[AccountsInformationD.fireBaseApiKey] =
+        firebaseAccountsInformationD.fireBaseApiKey;
+    firebaseAccountsInformationMap[AccountsInformationD.userEmail] =
+        firebaseAccountsInformationD.userEmail;
+    firebaseAccountsInformationMap[AccountsInformationD.userPassword] =
+        firebaseAccountsInformationD.userPassword;
+
+    _hiveD.saveListOfDatabaseInformation(firebaseAccountsInformationMap);
+  }
+
 }
