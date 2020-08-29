@@ -18,14 +18,17 @@ class HiveDevicesDAdapter extends TypeAdapter<HiveDevicesD> {
     };
     return HiveDevicesD()
       ..smartDeviceList = (fields[0] as Map)?.map((dynamic k, dynamic v) =>
-          MapEntry(k as String, (v as List)?.cast<String>()));
+          MapEntry(k as String, (v as List)?.cast<String>()))
+      ..databaseInformationList = (fields[1] as Map)?.cast<String, String>();
   }
 
   @override
   void write(BinaryWriter writer, HiveDevicesD obj) {
     writer
-      ..writeByte(1)
+      ..writeByte(2)
       ..writeByte(0)
-      ..write(obj.smartDeviceList);
+      ..write(obj.smartDeviceList)
+      ..writeByte(1)
+      ..write(obj.databaseInformationList);
   }
 }

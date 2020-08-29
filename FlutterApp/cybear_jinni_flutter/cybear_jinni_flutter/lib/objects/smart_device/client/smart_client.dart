@@ -33,9 +33,10 @@ class SmartClient {
     final SmartServerClient stub = SmartServerClient(channel);
 
     String fireBaseProjectId =
-        'smarthome-3765e'; // TODO: insert that from the firebase json and from the user credentials
+        'smarthome-3765e'; // TODO: insert it from the firebase json
     String fireBaseApiKey = 'AIzaSyALyGan-9iIBJ59FbRrXXNkyTDSGS22ZE8';
-    String userEmail = 'guyhome@gmail.com';
+    String userEmail =
+        'guyhome@gmail.com'; // TODO: insert that from the user credentials
     String userPassword = '123IsNotSecure';
 
     CommendStatus response;
