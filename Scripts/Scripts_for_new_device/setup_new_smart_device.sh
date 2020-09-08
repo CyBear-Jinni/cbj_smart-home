@@ -10,17 +10,16 @@ sunxi_chiptype    : unsupported
 sunxi_batchno     : unsupported
 sunxi_board_id    : 8(0)
 board_manufacturer: FriendlyElec
-board_name        : FriendlyElec NanoPi-Duo2" > /etc/sys_info
+board_name        : FriendlyElec NanoPi-Duo2" >/etc/sys_info
 
-sudo -s
 # Add the directory and configuration file:
 mkdir /etc/cbjinni/
 
-echo 'Light, Light, ' > /etc/cbjinni/deviceConfigs.txt
+echo 'Light, ' >/etc/cbjinni/deviceConfigs.txt
 #echo 'Blinds, ' > /etc/cbjinni/deviceConfigs.txt  # 'Light,' and 'Blinds,' can be used
 
 # Connect device to the wifi
-nmcli dev wifi connect WiFi-ssid password WiFi-password
+nmcli dev wifi connect ***REMOVED*** password ***REMOVED***
 
 sudo apt update
 
