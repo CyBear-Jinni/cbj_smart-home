@@ -1,10 +1,12 @@
 import 'dart:async';
 
 import 'package:SmartDeviceDart/core/my_singleton.dart';
+import 'package:SmartDeviceDart/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/core_u/actions_to_preform_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums_e.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/local_db_e/local_db_e.dart';
+import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/accounts_information_d/accounts_information_d.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pbgrpc.dart';
 import 'package:grpc/grpc.dart';
 
@@ -13,25 +15,49 @@ class SmartServerU extends SmartServerServiceBase {
   static const WishSourceEnum _wishSourceEnum = WishSourceEnum.ServerRequest;
 
   //  Listening to port and deciding what to do with the response
-  void waitForConnection() {
+  void waitForConnection(
+      FirebaseAccountsInformationD firebaseAccountsInformationD) {
     print('Wait for connection');
+
     var smartServer = SmartServerU();
-    smartServer
-        .startListen(); // Will go throw the model with the grpc logic and converter to objects
+    smartServer.startListen(
+        firebaseAccountsInformationD); // Will go throw the model with the grpc logic and converter to objects
   }
 
   //  Listening in the background to incoming connections
-  Future startListen() async {
+  Future startListen(
+      FirebaseAccountsInformationD firebaseAccountsInformationD) async {
+    startListenToDb(firebaseAccountsInformationD);
+    await startLocalServer();
+  }
+
+  void startListenToDb(
+      FirebaseAccountsInformationD firebaseAccountInformationD) {
+    if (firebaseAccountInformationD == null) {
+      print('Database var databaseInformationFromDb is null');
+      return;
+    }
+
+    if (firebaseAccountInformationD.areAllValuesNotNull()) {
+      CloudValueChangeU cloudValueChangeUseCases =
+          CloudValueChangeU(firebaseAccountInformationD);
+      cloudValueChangeUseCases
+          .listenToDataBase(); //  Listen to changes in the database for this device
+    }
+  }
+
+  Future startLocalServer() async {
     final server = Server([SmartServerU()]);
     await server.serve(port: 50051);
     print('Server listening on port ${server.port}...');
   }
 
-
   @override
-  Stream<SmartDevice> getAllDevices(ServiceCall call, SmartDeviceStatus request) async*{
+  Stream<SmartDevice> getAllDevices(ServiceCall call,
+      SmartDeviceStatus request) async* {
     print('getAllDevices');
-    for(SmartDeviceBaseAbstract smartDeviceBaseAbstract in MySingleton.getSmartDevicesList()) {
+    for (SmartDeviceBaseAbstract smartDeviceBaseAbstract in MySingleton
+        .getSmartDevicesList()) {
       String deviceType = smartDeviceBaseAbstract.runtimeType.toString();
 
       SmartDevice smartDevice = SmartDevice();
@@ -43,6 +69,7 @@ class SmartServerU extends SmartServerServiceBase {
     }
 
   }
+
 
   //  Return the status of the specified device
   @override
@@ -146,9 +173,29 @@ class SmartServerU extends SmartServerServiceBase {
       WishSourceEnum wishSourceEnum) async {
     SmartDeviceBaseAbstract smartDevice = getSmartDeviceBaseAbstract(request);
     if (smartDevice == null) {
-      return "can't find device name";
+      return "SmartDevice is null in executeWishEnumString";
     }
     return await ActionsToPreformU.executeWishEnum(
         smartDevice, wishEnum, wishSourceEnum);
+  }
+
+  @override
+  Future<CommendStatus> setFirebaseAccountInformation(ServiceCall call,
+      FirebaseAccountInformation request) {
+    print('This is the function setFirebaseAccountInformation');
+
+    FirebaseAccountsInformationD firebaseAccountsInformationD =
+        FirebaseAccountsInformationD(request.fireBaseProjectId,
+            request.fireBaseApiKey, request.userEmail, request.userPassword);
+
+    LocalDbE localDbE = LocalDbE();
+    localDbE.saveListOfDatabaseInformation(firebaseAccountsInformationD);
+
+    startListenToDb(firebaseAccountsInformationD);
+
+    CommendStatus commendStatus = CommendStatus();
+
+    commendStatus.success = true;
+    return Future.value(commendStatus);
   }
 }
