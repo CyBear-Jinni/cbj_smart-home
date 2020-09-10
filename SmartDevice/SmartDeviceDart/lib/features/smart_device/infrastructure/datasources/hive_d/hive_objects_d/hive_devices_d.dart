@@ -6,4 +6,6 @@ part 'hive_devices_d.g.dart';
 class HiveDevicesD {
   @HiveField(0)
   Map<String, List<String>> smartDeviceList;
+  @HiveField(1)
+  Map<String, String> databaseInformationList;
 }

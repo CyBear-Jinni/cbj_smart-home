@@ -42,7 +42,7 @@ class DevicePinListManager extends DevicePinListManagerAbstract {
     physicalDeviceType =
         convertPhysicalDeviceTypeStringToPhysicalDeviceTypeObject(
             deviceHostName);
-    print('phyc type is ' + physicalDeviceType.toString());
+    print('phys type is ' + physicalDeviceType.toString());
     //  Save the current physical device configuration to the physicalDevice variable
     switch (physicalDeviceType) {
       case PhysicalDeviceType.NanoPiDuo2:
