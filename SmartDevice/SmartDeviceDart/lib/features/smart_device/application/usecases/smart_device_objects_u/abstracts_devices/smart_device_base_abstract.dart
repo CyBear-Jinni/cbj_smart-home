@@ -2,10 +2,10 @@ import 'package:SmartDeviceDart/core/device_information.dart';
 import 'package:SmartDeviceDart/core/helper_methods.dart';
 import 'package:SmartDeviceDart/core/permissions/permissions_manager.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/button_object_u/button_object_local_u.dart';
+import 'package:SmartDeviceDart/features/smart_device/application/usecases/cloud_value_change_u/cloud_value_change_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/devices_pin_configuration_u/pin_information.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/off_wish_u.dart';
 import 'package:SmartDeviceDart/features/smart_device/application/usecases/wish_classes_u/on_wish_u.dart';
-import 'package:SmartDeviceDart/features/smart_device/domain/entities/cloud_value_change_e/cloud_value_change_e.dart';
 import 'package:SmartDeviceDart/features/smart_device/domain/entities/core_e/enums_e.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/datasources/core_d/manage_physical_components/device_pin_manager.dart';
 import 'package:SmartDeviceDart/features/smart_device/infrastructure/repositories/smart_device_objects_r/smart_device_objects_r.dart';
@@ -34,7 +34,7 @@ abstract class SmartDeviceBaseAbstract {
       onOffButtonPin; //  Pin for the button that control the onOffPin
   final List<PinInformation> _gpioPinList =
       <PinInformation>[]; //  Save all the gpio pins that this instance is using
-  CloudValueChangeE _cloudValueChangeE;
+  CloudValueChangeU _cloudValueChangeU;
   DeviceType smartDeviceType; //  The type of the smart device Light blinds etc
 
   SmartDeviceBaseAbstract(this.uuid, this.smartInstanceName, int onOffPinNumber,
@@ -50,7 +50,7 @@ abstract class SmartDeviceBaseAbstract {
         listenToButtonPressed();
       }
     }
-    _cloudValueChangeE = CloudValueChangeE();
+    _cloudValueChangeU = CloudValueChangeU.getCloudValueChangeU();
   }
 
   //  Getters
@@ -88,7 +88,7 @@ abstract class SmartDeviceBaseAbstract {
 //    }
     OnWishU.setOn(deviceInformation, pinNumber);
     onOff = true;
-    return 'Turn on sucsessfuly';
+    return 'Turn on successfully';
   }
 
   //  Turn off the device basic action
@@ -98,7 +98,7 @@ abstract class SmartDeviceBaseAbstract {
 //    }
     OffWishU.setOff(deviceInformation, pinNumber);
     onOff = false;
-    return 'Turn off sucsessfuly';
+    return 'Turn off successfully';
   }
 
 
@@ -171,7 +171,8 @@ abstract class SmartDeviceBaseAbstract {
         break;
       case WishEnum.SChangeState:
         if (onOffPin == null) {
-          return 'Cant chane pin to the opposit state: ' + onOffPin.toString() +
+          return 'Cant chane pin to the opposite state: ' +
+              onOffPin.toString() +
               ' Number';
         }
         resultOfTheWish = _SetChangeOppositeToState(onOffPin);
@@ -191,7 +192,10 @@ abstract class SmartDeviceBaseAbstract {
   }
 
   void updateCloudValue(String value) {
-    _cloudValueChangeE.updateDocument(smartInstanceName, value);
+    _cloudValueChangeU ??= CloudValueChangeU.getCloudValueChangeU();
+    if (_cloudValueChangeU != null) {
+      _cloudValueChangeU.updateDocument(smartInstanceName, value);
+    }
   }
 
   //  Listen to button press
