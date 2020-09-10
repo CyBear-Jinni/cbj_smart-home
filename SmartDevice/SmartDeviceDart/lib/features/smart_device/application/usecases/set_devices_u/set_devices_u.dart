@@ -20,7 +20,7 @@ class SetDevicesU {
     } else {
       String deviceConfiguration = await _setDevicesE.getDeviceDefaultConfig();
       if (deviceConfiguration == null) {
-        print('default config file content is null !!!!!!!!!!!!!!!');
+        print('Default config file content is null !!!!!!!!!!!!!!!');
         return;
       }
       List<SmartDeviceBaseAbstract> listOfSmartDevices =
