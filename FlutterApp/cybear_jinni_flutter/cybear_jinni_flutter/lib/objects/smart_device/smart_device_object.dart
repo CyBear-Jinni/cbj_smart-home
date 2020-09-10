@@ -14,7 +14,7 @@ class SmartDeviceObject {
   String name;
   String ip;
   FireStoreClass fireStoreClass;
-  static const String homeWifiName = '***REMOVED***';
+  static const String homeWifiName = 'amiuz1';
 
   SmartDeviceObject(this.deviceType, this.name, String ip, [this.roomName]) {
     if (legitIp(ip)) {
