@@ -4,6 +4,8 @@ echo "Download dart sdk zip"
 
 architecture="$(uname -p)"
 
+echo "architecture: ${architecture}"
+
 dartSdkPath="https://storage.googleapis.com/dart-archive/channels/stable/release/2.9.2/sdk/dartsdk-linux-" # Sdk url: https://dart.dev/tools/sdk/archive
 
 case ${architecture} in
