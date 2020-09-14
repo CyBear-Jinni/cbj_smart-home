@@ -7,7 +7,7 @@ scripts/bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct a
 unzip dartsdk-*.zip
 
 cd SmartDeviceDart
-sudo ../dart-sdk/bin/pub get --no-precompile
+../dart-sdk/bin/pub get --no-precompile
 #sudo ../dart-sdk/bin/pub run build_runner build --delete-conflicting-outputs
 cd ..
 
