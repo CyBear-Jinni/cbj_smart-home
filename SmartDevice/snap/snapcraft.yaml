@@ -1,76 +1,70 @@
 name: smart-home
 base: core20
-version: '0.7'  # Just for humans, typically '1.2+git' or '1.3.2'
-summary: The best app that I made.
+version: '0.8'  # Just for humans, typically '1.2+git' or '1.3.2'
+summary: Smart home snap for CyBear Jinni smart devices.
 description: |
-  The best app smart home snap.
+  Smart home snap for CyBear Jinni smart devices.
 
 grade: devel  # stable
 confinement: devmode  # use 'strict' once you have the right plugs and slot
+
 #architectures: [all]
 architectures:
   - build-on: armhf
     run-on: armhf
 
 parts:
-  #  alsa-mixin: # Not working inside snap with root privileges
-  #    plugin: dump
-  #    source: https://github.com/diddlesnaps/snapcraft-alsa.git
-  #    source-subdir: snapcraft-assets
-  #    build-packages:
-  #      - libasound2-dev
-  #    stage-packages:
-  #      - libasound2
-  #      - libasound2-plugins
-
-  smart-home:
-    #    after: [alsa-mixin]
+  wiring-np:
     plugin: dump
     source: .
     build-attributes: [keep-execstack]
     override-build: |
-      git clone https://github.com/guyluz11/WiringNP.git
+      git clone https://github.com/CyBear-Jinni/WiringNP
       # git clone https://github.com/friendlyarm/WiringNP  // Does not work on the armbian os,  https://forum.armbian.com/topic/13889-nanopiduo2-wiringnp-unable-to-determine-board-revision/
       cd WiringNP/
       chmod 755 build
       ./build
       cd ..
+    build-packages:
+      - git
+      - make
 
-
+  smart-home:
+    after: [wiring-np]
+    plugin: dump
+    source: .
+    override-build: |
       scripts/bashScripts/nativeExecutableMaker.sh  # Downloading dart-sdk for the correct architecture.
+
+      rm -r SmartDeviceDart
 
       cd scripts/bashScripts/
       ./compileAllCFiles.sh # Have to be executed when working directory is this file location
       cd ../..
 
-      rm -r SmartDeviceDart
-
       snapcraftctl build
+
+      mkdir ~/stage/
+      mkdir ~/stage/usr/
+      mkdir ~/stage/usr/local/
+      mkdir ~/stage/usr/local/lib
+
+      cp /usr/local/lib/libwiringPi.so  ~/stage/usr/local/lib
+      cp /usr/local/lib/libwiringPi.so.2.0  ~/stage/usr/local/lib
+      cp /usr/local/lib/libwiringPiDev.so   ~/stage/usr/local/lib
+      cp /usr/local/lib/libwiringPiDev.so.2.0  ~/stage/usr/local/lib
 
     build-packages:
       - wget
       - unzip
-      - git
       - gcc
       - g++
-      - make
-      - libatlas-base-dev
-      - libasound-dev
-      #      - libblas3
-      #      - libatlas3-base
-      # - apt-get install g++ or avr-libc # stdint.h: No such file or directory
     stage-packages:
       - libatlas-base-dev
       - libevent-dev
 
-#layout: # Taneling the alsa comands inside the snap to the alsa on the device
-#  /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib:
-#    bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib
-
 apps:
   smart-home:
-    #    command-chain: ["snap/command-chain/alsa-launch"]
-    #    command: ./scripts/cScripts/phisicalComponents/sendingSignals/onSignal/turnOnWiringPiSetupPhys 8
     command: main.exe $SNAP
     daemon: simple
     plugs: [network, network-bind, gpio, hardware-observe, audio-playback, audio-record, pulseaudio, alsa]
