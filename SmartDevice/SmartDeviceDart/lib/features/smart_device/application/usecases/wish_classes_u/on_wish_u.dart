@@ -15,7 +15,7 @@ class OnWishU {
       case RemoteDevice:
         return setOnRemote(deviceInformation, pinNumber);
     }
-    print('Device type ' + deviceInformation.getName() + ' is not specefied ');
+    print('Device type ' + deviceInformation.getName() + ' is not specified ');
     return 'DeviceBase type not supported';
   }
 
@@ -23,7 +23,7 @@ class OnWishU {
   static String setOnLocal(LocalDevice deviceInformation,
                            PinInformation pinNumber) {
     TurnPinOnOffLocal().pinOn(pinNumber);
-    return 'Response from this device on sucsessful';
+    return 'Response from this device on successful';
   }
 
   //  Turn the remote device on
@@ -41,6 +41,6 @@ class OnWishU {
 //    } catch (e) {
 //      print('Exeption: ' + e);
 //    }
-    return 'Response from remote device on sucsessful';
+    return 'Response from remote device on successful';
   }
 }
