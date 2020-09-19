@@ -5,7 +5,7 @@ summary: Smart home snap for CyBear Jinni smart devices.
 description: |
   Smart home snap for CyBear Jinni smart devices.
 
-grade: devel  # stable
+grade: stable  # devel/stable
 confinement: devmode  # use 'strict' once you have the right plugs and slot
 
 #architectures: [all]
@@ -43,16 +43,6 @@ parts:
       cd ../..
 
       snapcraftctl build
-
-      mkdir ~/stage/
-      mkdir ~/stage/usr/
-      mkdir ~/stage/usr/local/
-      mkdir ~/stage/usr/local/lib
-
-      cp /usr/local/lib/libwiringPi.so  ~/stage/usr/local/lib
-      cp /usr/local/lib/libwiringPi.so.2.0  ~/stage/usr/local/lib
-      cp /usr/local/lib/libwiringPiDev.so   ~/stage/usr/local/lib
-      cp /usr/local/lib/libwiringPiDev.so.2.0  ~/stage/usr/local/lib
 
     build-packages:
       - wget
