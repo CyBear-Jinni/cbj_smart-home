@@ -13,7 +13,7 @@ description: |
   This is open source project so feel free to take a look at the code on github and join us advancing the world forward.
 
 grade: stable  # devel/stable
-confinement: classic  # devmode/classic/strict
+confinement: strict  # devmode/classic/strict
 
 #architectures: [all]
 architectures:
@@ -61,7 +61,7 @@ parts:
       - libevent-dev
 
 apps:
-  smart-home:
+  cybear-jinni:
     command: main.exe $SNAP
     daemon: simple
-    # plugs: [network, network-bind, gpio, hardware-observe, audio-playback, audio-record, pulseaudio, alsa]
+    plugs: [network, network-bind, gpio, gpio-control, hardware-observe]
