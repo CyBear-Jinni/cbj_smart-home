@@ -3,14 +3,14 @@ base: core20
 version: '0.1.0'  # Just for humans, typically '1.2+git' or '1.3.2'
 summary: Smart home snap for CyBear Jinni smart devices.
 description: |
-  A CyBear Jinni snap for smart devices. Using this snap you can turn your devices to smart lamp or blinds (if the device is supported),
-  and you will be able to control it using physical buttons and even from your phones using CyBear Jinni app.
+  A CyBear Jinni snap for smart devices.
+
+  Using this snap you can make your device smart and control lamp or blind (if the device is supported currently only NanoPi Duo2), you will be able to control it using physical buttons and even from your phones using CyBear Jinni app.
 
   Our goal here at CyBear Jinni is to raise the quality of life for everyone.
+  We are doing this by making Smart-Home accessible for the common person.
 
-  We are doing this by making Smart-Home more affordable and accessible for the common person.
-
-  This is open source project so feel free to take a look at the code on github and join us advancing the world forward.
+  This is open source project so feel free to take a look at the code and join us advancing the world forward.
 
 grade: stable  # devel/stable
 confinement: strict  # devmode/classic/strict
