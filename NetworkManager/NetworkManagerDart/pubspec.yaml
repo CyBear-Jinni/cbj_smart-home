@@ -2,7 +2,7 @@ name: NetworkManagerDart
 description: A sample command-line application.
 # version: 1.0.0
 # homepage: https://www.example.com
-# author: guyl <***REMOVED***>
+# author: null
 
 environment:
   sdk: '>=2.5.0 <3.0.0'
