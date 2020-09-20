@@ -1,11 +1,11 @@
 import 'dart:io';
 
-class PaythonSpeechToText {
-  String projectPeth;
+class PythonSpeechToText {
+  String projectPath;
 
-  PaythonSpeechToText() {
-    projectPeth =
-        '/home/guyl/Documents/programing/git/SmartHome/SmartDevice/scripts/pythonScripts/voiceAssistence/';
+  PythonSpeechToText() {
+    projectPath =
+        '/home/guyl/Documents/programing/git/Smart-Home/SmartDevice/scripts/pythonScripts/voiceAssistance/';
   }
 
   Future<ProcessResult> listenToVoiceCommand() async {
@@ -13,7 +13,7 @@ class PaythonSpeechToText {
     await Future.delayed(const Duration(milliseconds: 3000));
 
     return await Process.run(
-        projectPeth + 'venv/bin/python3', [projectPeth + 'main.py']);
+        projectPath + 'venv/bin/python3', [projectPath + 'main.py']);
 //        .then((ProcessResult results) { print(results.stdout.toString());});
   }
 }
