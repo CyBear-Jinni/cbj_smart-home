@@ -16,7 +16,7 @@ board_name        : FriendlyElec NanoPi-Duo2" >/etc/sys_info
 mkdir /etc/cbjinni/
 
 echo 'Light, ' >/etc/cbjinni/deviceConfigs.txt
-#echo 'Blinds, ' > /etc/cbjinni/deviceConfigs.txt  # 'Light,' and 'Blinds,' can be used
+#echo 'Blinds, ' > /etc/cbjinni/deviceConfigs.txt  # 'Light,' and 'Light, Light, ' and 'Blinds,' can be used
 
 # Connect device to the wifi
 nmcli dev wifi connect wifiSsid password wifiPassword
@@ -25,11 +25,9 @@ sudo apt update
 
 # Install snapd:
 sudo apt install snapd
-# Login into snap account
-sudo snap login ***REMOVED***
 
-sudo snap install network-manager-dart --edge --devmode
-sudo snap install smart-home --beta --devmode
+#sudo snap install network-manager-dart --edge --devmode  # Privet snap for now
+sudo snap install cybear-jinni --beta --devmode
 
 sudo apt upgrade
 
