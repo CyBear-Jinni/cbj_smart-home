@@ -62,9 +62,10 @@ class ButtonObjectLocalU extends ButtonObjectLocalAbstract {
     while (true) {
       await buttonObjectRepository.listenToButtonPress(buttonPinNumber).then((
           int exitCode) async {
+        print(
+            'Blind button number ' + buttonNumber.toString() + ' was pressed');
         await changePinsOutput(
-            smartDevice, firstLightPin, secondLightPin,
-            buttonNumber);
+            smartDevice, firstLightPin, secondLightPin, buttonNumber);
       });
     }
   }
