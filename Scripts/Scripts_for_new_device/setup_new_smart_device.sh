@@ -13,7 +13,7 @@ board_manufacturer: FriendlyElec
 board_name        : FriendlyElec NanoPi-Duo2" >/etc/sys_info
 
 # Add the directory and configuration file:
-mkdir /etc/cbjinni/
+mkdir -p /etc/cbjinni/
 
 echo 'Light, ' >/etc/cbjinni/deviceConfigs.txt
 #echo 'Blinds, ' > /etc/cbjinni/deviceConfigs.txt  # 'Light,' and 'Light, Light, ' and 'Blinds,' can be used
@@ -27,7 +27,7 @@ sudo apt update
 sudo apt install snapd
 
 #sudo snap install network-manager-dart --edge --devmode  # Privet snap for now
-sudo snap install cybear-jinni --beta --devmode
+sudo snap install cybear-jinni
 
 sudo apt upgrade
 
