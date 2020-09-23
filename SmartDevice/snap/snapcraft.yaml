@@ -64,4 +64,4 @@ apps:
   cybear-jinni:
     command: main.exe $SNAP
     daemon: simple
-    plugs: [network, network-bind, gpio, gpio-control, hardware-observe]
+    plugs: [network, network-bind, gpio, hardware-observe]
