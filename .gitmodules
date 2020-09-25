@@ -1,0 +1,6 @@
+[submodule "CBJ_Smart-Device"]
+	path = CBJ_Smart-Device
+	url = https://github.com/CyBear-Jinni/CBJ_Smart-Device.git
+[submodule "CBJ_Smartphone-App"]
+	path = CBJ_Smartphone-App
+	url = https://github.com/CyBear-Jinni/CBJ_Smartphone-App.git
