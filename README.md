@@ -10,6 +10,10 @@ The devices can be controlled using physical buttons and from a smartphone app.
 
 This is **not** project to create "Home automation system" like the project [Home Assistant](https://www.home-assistant.io).
 
+
+![CyBear Jinni App stairs lamp on/off](https://user-images.githubusercontent.com/9304740/94340649-2f69c300-000c-11eb-9131-674c1aba566b.gif)
+
+
 ## Project structure
 
 The project is made out of two main parts:
@@ -22,9 +26,10 @@ This is an Android and IOS app written in [Flutter](https://flutter.dev) that le
 
 ### CyBear Jinni Smart Device
 
-[CyBear Jinni Smart Device](https://github.com/CyBear-Jinni/CBJ_Smart-Device.git) is the smart device software installed on physical device (now only NanoPi Duo2).
+[CyBear Jinni Smart Device](https://github.com/CyBear-Jinni/CBJ_Smart-Device.git) is the smart device software installed on physical device.
 It lets you control (but not limited to) lights and blinds using physical buttons and phone app.
-This part is using the snap store in order to have easy way to update all the devices software versions with new features and security updates.
+
+Smart Device part is using the snap store in order to have easy way to install and update all the devices software versions with new features and security updates.
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/cybear-jinni)
  
