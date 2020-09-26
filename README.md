@@ -11,7 +11,7 @@ The devices can be controlled using physical buttons and from a smartphone app.
 This is **not** project to create "Home automation system" like the project [Home Assistant](https://www.home-assistant.io).
 
 
-![CyBear Jinni App stairs lamp on/off](https://user-images.githubusercontent.com/9304740/94340649-2f69c300-000c-11eb-9131-674c1aba566b.gif)
+<img src="https://user-images.githubusercontent.com/9304740/94340649-2f69c300-000c-11eb-9131-674c1aba566b.gif" height="450">
 
 
 ## Project structure
