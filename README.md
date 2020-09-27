@@ -50,3 +50,9 @@ Smart Device part is using the snap store in order to have easy way to install a
 **we do not take responsibility on any outcome using anything in this repo.**
 
 The project is under heavy work and may contain bugs and incorrect instructions.
+
+# Social Media Links
+
+If you have any questions feel free to ask in our Discord server 
+
+[<img src="https://www.pinclipart.com/picdir/middle/173-1732966_join-the-bitguild-community-purple-discord-logo-clipart.png" height="450">](https://discord.gg/mUXfwUY)
