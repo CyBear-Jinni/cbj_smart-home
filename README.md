@@ -11,7 +11,7 @@ The devices can be controlled using physical buttons and from a smartphone app.
 This is **not** project to create "Home automation system" like the project [Home Assistant](https://www.home-assistant.io).
 
 
-![CyBear Jinni App stairs lamp on/off](https://user-images.githubusercontent.com/9304740/94340649-2f69c300-000c-11eb-9131-674c1aba566b.gif)
+![CyBear Jinni App stairs lamp on/off](https://i.imgur.com/jqDYnBm.gif)
 
 
 ## Project structure
@@ -51,8 +51,10 @@ Smart Device part is using the snap store in order to have easy way to install a
 
 The project is under heavy work and may contain bugs and incorrect instructions.
 
+
 # Social Media Links
 
 If you have any questions feel free to ask in our Discord server 
 
 [<img src="https://cdn.icon-icons.com/icons2/2108/PNG/512/discord_icon_130958.png" height="80">](https://discord.gg/mUXfwUY)
+
