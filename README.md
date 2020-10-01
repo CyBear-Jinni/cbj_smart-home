@@ -10,7 +10,7 @@ The devices can be controlled using physical buttons and from a smartphone app.
 
 This is **not** project to create "Home automation system" like the project [Home Assistant](https://www.home-assistant.io).
 
-<img src="https://user-images.githubusercontent.com/9304740/94340649-2f69c300-000c-11eb-9131-674c1aba566b.gif" height="450">
+<img src="https://i.imgur.com/jqDYnBm.gif" height="450">
 
 ## Project structure
 
@@ -31,8 +31,8 @@ Smart Device part is using the snap store in order to have easy way to install a
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/cybear-jinni)
  
-
-
+ 
+ 
 ### Attention
 
 * For now only NanoPi Duo2 is supported as smart device.
@@ -40,7 +40,6 @@ Smart Device part is using the snap store in order to have easy way to install a
 * You need to buy and solder the parts into the device yourself.
 
 * The app is not in the play store so you will need to upload it to your phone with a little knowledge about [Flutter](https://flutter.dev).
-
 
 ## Disclaimers
 
