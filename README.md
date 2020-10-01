@@ -10,9 +10,7 @@ The devices can be controlled using physical buttons and from a smartphone app.
 
 This is **not** project to create "Home automation system" like the project [Home Assistant](https://www.home-assistant.io).
 
-
-![CyBear Jinni App stairs lamp on/off](https://i.imgur.com/jqDYnBm.gif)
-
+<img src="https://i.imgur.com/jqDYnBm.gif" height="300">
 
 ## Project structure
 
@@ -33,8 +31,6 @@ Smart Device part is using the snap store in order to have easy way to install a
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/cybear-jinni)
  
-
-
 ### Attention
 
 * For now only NanoPi Duo2 is supported as smart device.
@@ -43,7 +39,6 @@ Smart Device part is using the snap store in order to have easy way to install a
 
 * The app is not in the play store so you will need to upload it to your phone with a little knowledge about [Flutter](https://flutter.dev).
 
-
 ## Disclaimers
 
 **Use at Your Own Risk,**
@@ -51,10 +46,8 @@ Smart Device part is using the snap store in order to have easy way to install a
 
 The project is under heavy work and may contain bugs and incorrect instructions.
 
-
 # Social Media Links
 
 If you have any questions feel free to ask in our Discord server 
 
 [<img src="https://cdn.icon-icons.com/icons2/2108/PNG/512/discord_icon_130958.png" height="80">](https://discord.gg/mUXfwUY)
-
