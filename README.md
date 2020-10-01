@@ -1,5 +1,9 @@
 # CyBear Jinni Smart Home
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/9304740/94843279-24a49900-0425-11eb-83f3-87e8ba40b1dc.png" height="300" alt="CyBear Jinni" />
+</p>
+
 Welcome
 
 This repository let you **create** your own smart home.
