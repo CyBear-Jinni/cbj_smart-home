@@ -10,7 +10,7 @@ The devices can be controlled using physical buttons and from a smartphone app.
 
 This is **not** project to create "Home automation system" like the project [Home Assistant](https://www.home-assistant.io).
 
-<img src="https://i.imgur.com/jqDYnBm.gif" height="450">
+<img src="https://i.imgur.com/jqDYnBm.gif" height="300">
 
 ## Project structure
 
@@ -30,8 +30,6 @@ It lets you control (but not limited to) lights and blinds using physical button
 Smart Device part is using the snap store in order to have easy way to install and update all the devices software versions with new features and security updates.
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/cybear-jinni)
- 
- 
  
 ### Attention
 
