@@ -1,13 +1,11 @@
 <h1 align="center">CyBear Jinni Smart Home</h1>
 
+<div align="center">
+ 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://en.wikipedia.org/wiki/Open_source)
 </div>
 
-
-
 [![CyBear Jinni](https://user-images.githubusercontent.com/9304740/94843279-24a49900-0425-11eb-83f3-87e8ba40b1dc.png)](https://github.com/CyBear-Jinni/CBJ_Smart-Home)
-
-<div align="center">
 
 # Welcome!
 
