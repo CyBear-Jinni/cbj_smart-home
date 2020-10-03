@@ -55,6 +55,6 @@ The project is under heavy work and may contain bugs and incorrect instructions.
 
 # Social Media Links
 
-If you have any questions feel free to ask in our Discord server 
+If you have any questions feel free to ask in our Discord server
 
 [<img src="https://cdn.icon-icons.com/icons2/2108/PNG/512/discord_icon_130958.png" height="80">](https://discord.gg/mUXfwUY)
