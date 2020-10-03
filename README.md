@@ -1,3 +1,13 @@
+<div align="center">
+<h1 align="center">CyBear Smart Home</h1>
+
+<p align="center"><a href="https://www.gnu.org/licenses/gpl-3.0" rel="nofollow"><img src="https://camo.githubusercontent.com/ec385922fa349d9c349f34b7f3bf311843e35ba8/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d47504c76332d626c75652e737667" alt="License: GPL v3" data-canonical-src="https://img.shields.io/badge/License-GPLv3-blue.svg" style="max-width:100%;"></a> <a href="https://en.wikipedia.org/wiki/Open_source" rel="nofollow"><img src="https://camo.githubusercontent.com/60dcf2177b53824e7912a6adfb3ff5e318d14ae4/68747470733a2f2f6261646765732e66726170736f66742e636f6d2f6f732f76312f6f70656e2d736f757263652e706e673f763d313033" alt="Open Source Love" data-canonical-src="https://badges.frapsoft.com/os/v1/open-source.png?v=103" style="max-width:100%;"></a></p>
+
+<div align="right"><a href="https://github.com/CyBear-Jinni/CBJ_Smart-Home"><img alt="CyBear Jinni image" height="300" src="https://user-images.githubusercontent.com/9304740/94843279-24a49900-0425-11eb-83f3-87e8ba40b1dc.png" style="max-width:100%;"></a><p></p>
+</div>
+<h1 align="center">Welcome!</h1>
+     </div>
+
 # CyBear Jinni Smart Home
 
 Welcome
