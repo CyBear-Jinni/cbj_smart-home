@@ -5,8 +5,8 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://en.wikipedia.org/wiki/Open_source)
 </div>
 
-[<div align="center"><img alt="CyBear Jinni image" height="400" src="https://user-images.githubusercontent.com/9304740/95004821-f8417600-05f8-11eb-95bb-60a7863364e0.png">](https://github.com/CyBear-Jinni/CBJ_Smart-Home)
-</div>
+[<div align="center"><img alt="CyBear Jinni image" height="400" src="https://user-images.githubusercontent.com/9304740/95004821-f8417600-05f8-11eb-95bb-60a7863364e0.png"></div>](https://github.com/CyBear-Jinni/CBJ_Smart-Home)
+
 
 # Welcome!
 
@@ -47,15 +47,15 @@ Smart Device part is using the snap store in order to have easy way to install a
 
 * The app is not in the play store so you will need to upload it to your phone with a little knowledge about [Flutter](https://flutter.dev).
 
+# Social Media Links
+
+If you have any questions feel free to ask in our Discord server
+
+[<img src="https://cdn.icon-icons.com/icons2/2108/PNG/512/discord_icon_130958.png" height="80">](https://discord.gg/mUXfwUY)
+
 ## Disclaimers
 
 **Use at Your Own Risk,**
 **we do not take responsibility on any outcome using anything in this repo.**
 
 The project is under heavy work and may contain bugs and incorrect instructions.
-
-# Social Media Links
-
-If you have any questions feel free to ask in our Discord server 
-
-[<img src="https://cdn.icon-icons.com/icons2/2108/PNG/512/discord_icon_130958.png" height="80">](https://discord.gg/mUXfwUY)
