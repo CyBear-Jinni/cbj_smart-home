@@ -1,10 +1,14 @@
-# CyBear Jinni Smart Home
+<h1 align="center">CyBear Jinni Smart Home</h1>
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/9304740/94843279-24a49900-0425-11eb-83f3-87e8ba40b1dc.png" height="300" alt="CyBear Jinni" />
-</p>
+<div align="center">
+  
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://en.wikipedia.org/wiki/Open_source)
+</div>
 
-Welcome
+[<div align="center"><img alt="CyBear Jinni image" height="400" src="https://user-images.githubusercontent.com/9304740/95004821-f8417600-05f8-11eb-95bb-60a7863364e0.png">](https://github.com/CyBear-Jinni/CBJ_Smart-Home)
+</div>
+
+# Welcome!
 
 This repository let you **create** your own smart home.
 
