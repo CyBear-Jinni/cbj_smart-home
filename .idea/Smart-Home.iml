@@ -3,6 +3,9 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/build" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/build" />
