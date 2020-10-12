@@ -39,13 +39,6 @@ Smart Device part is using the snap store in order to have easy way to install a
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/cybear-jinni)
  
-### Attention
-
-* For now only NanoPi Duo2 is supported as smart device.
-
-* You need to buy and solder the parts into the device yourself.
-
-* The app is not in the play store so you will need to upload it to your phone with a little knowledge about [Flutter](https://flutter.dev).
 
 # Social Media Links
 
