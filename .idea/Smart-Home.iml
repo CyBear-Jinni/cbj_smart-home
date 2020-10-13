@@ -9,6 +9,9 @@
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/build" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDeviceDart/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDeviceDart/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDeviceDart/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
