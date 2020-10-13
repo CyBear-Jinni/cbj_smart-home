@@ -2,7 +2,8 @@
 
 <div align="center">
   
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [<img src="https://badges.frapsoft.com/os/v1/open-source-200x33.png?v=103" alt="Open Source Love" height="20">](https://en.wikipedia.org/wiki/Open_source)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0) [<img src="https://badges.frapsoft.com/os/v1/open-source-200x33.png?v=103" alt="Open Source Love" height="20">](https://en.wikipedia.org/wiki/Open_source)
+
 </div>
 
 [<div align="center"><img alt="CyBear Jinni image" height="400" src="https://user-images.githubusercontent.com/9304740/95004821-f8417600-05f8-11eb-95bb-60a7863364e0.png"></div>](https://github.com/CyBear-Jinni/CBJ_Smart-Home)
@@ -39,13 +40,6 @@ Smart Device part is using the snap store in order to have easy way to install a
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/cybear-jinni)
  
-### Attention
-
-* For now only NanoPi Duo2 is supported as smart device.
-
-* You need to buy and solder the parts into the device yourself.
-
-* The app is not in the play store so you will need to upload it to your phone with a little knowledge about [Flutter](https://flutter.dev).
 
 # Social Media Links
 
