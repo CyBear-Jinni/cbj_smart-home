@@ -12,9 +12,16 @@
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDeviceDart/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDeviceDart/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDeviceDart/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Security-Bear/NetworkManagerDart/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Security-Bear/NetworkManagerDart/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Security-Bear/NetworkManagerDart/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Security-Bear/SecurityBearDart/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Security-Bear/SecurityBearDart/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Security-Bear/SecurityBearDart/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>
