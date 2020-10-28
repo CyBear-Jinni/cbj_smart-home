@@ -27,13 +27,13 @@ The project is made out of two main parts:
 
 ### CyBear Jinni App
 
-[CyBear Jinni App](https://github.com/CyBear-Jinni/CBJ_App.git) is the app to control your CyBear Jinni Smart Devices.
+[CyBear Jinni App](https://github.com/CyBear-Jinni/CBJ_App) is the app to control your CyBear Jinni Smart Devices.
 This is an Android, IOS, Web Browser app written in [Flutter](https://flutter.dev) that let you control all the devices using local Wi-Fi and remotely through Google [Cloud Firestore](https://firebase.google.com/docs/firestore).
 
 
 ### CyBear Jinni Smart Device
 
-[CyBear Jinni Smart Device](https://github.com/CyBear-Jinni/CBJ_Smart-Device.git) is the smart device software written in [dart](https://dart.dev) that can be installed on computers.
+[CyBear Jinni Smart Device](https://github.com/CyBear-Jinni/CBJ_Smart-Device) is the smart device software written in [dart](https://dart.dev) that can be installed on computers.
 It lets you control (but not limited to) lights and blinds using physical buttons and phone app.
 
 Smart Device part is using the snap store in order to have easy way to install and update all the devices software versions with new features and security updates.
