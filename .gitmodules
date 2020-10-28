@@ -4,3 +4,6 @@
 [submodule "CBJ_App"]
 	path = CBJ_App
 	url = https://github.com/CyBear-Jinni/CBJ_App.git
+[submodule "Security-Bear"]
+	path = Security-Bear
+	url = https://github.com/CyBear-Jinni/Security-Bear.git
