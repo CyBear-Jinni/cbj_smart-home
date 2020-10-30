@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package SecurityBearConnections;
+
+// The greeting service definition.
+service SecurityBear {
+  rpc SetWiFiInformation (SecurityBearSetup) returns (SBCommendStatus) {
+  }
+  rpc SetFirebaseAccountInformation (SBFirebaseAccountInformation) returns (SBCommendStatus) {
+  }
+}
+
+message SecurityBearSetup {
+  WiFiInformation wiFiFirstPriority = 3;
+  WiFiInformation wiFiSecondPriority = 4;
+}
+
+message WiFiInformation {
+  string wiFiName = 1;
+  string wiFiPassword = 2;
+}
+
+// Did the commend succeeded (true) or not (false)
+message SBCommendStatus {
+  bool success = 5;
+}
+
+
+message SBFirebaseAccountInformation  {
+  string fireBaseProjectId = 6;
+  string fireBaseApiKey = 7;
+  string userEmail = 8;
+  string userPassword = 9;
+}

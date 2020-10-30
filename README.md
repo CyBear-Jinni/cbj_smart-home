@@ -6,7 +6,7 @@
 
 </div>
 
-[<div align="center"><img alt="CyBear Jinni image" height="400" src="https://user-images.githubusercontent.com/9304740/95004821-f8417600-05f8-11eb-95bb-60a7863364e0.png"></div>](https://github.com/CyBear-Jinni/CBJ_Smart-Home)
+[<div align="center"><img alt="CyBear Jinni image" height="400" src="https://raw.githubusercontent.com/CyBear-Jinni/CBJ_Site/master/assets/fan_art/after_editing/logo_no_background.png"></div>](https://github.com/CyBear-Jinni/CBJ_Smart-Home)
 
 
 # Welcome!
@@ -27,13 +27,13 @@ The project is made out of two main parts:
 
 ### CyBear Jinni App
 
-[CyBear Jinni App](https://github.com/CyBear-Jinni/CBJ_App.git) is the app to control your CyBear Jinni Smart Devices.
-This is an Android and IOS app written in [Flutter](https://flutter.dev) that let you control all the devices using local Wi-Fi and remotely through Google [Cloud Firestore](https://firebase.google.com/docs/firestore).
+[CyBear Jinni App](https://github.com/CyBear-Jinni/CBJ_App) is the app to control your CyBear Jinni Smart Devices.
+This is an Android, IOS, Web Browser app written in [Flutter](https://flutter.dev) that let you control all the devices using local Wi-Fi and remotely through Google [Cloud Firestore](https://firebase.google.com/docs/firestore).
 
 
 ### CyBear Jinni Smart Device
 
-[CyBear Jinni Smart Device](https://github.com/CyBear-Jinni/CBJ_Smart-Device.git) is the smart device software installed on physical device.
+[CyBear Jinni Smart Device](https://github.com/CyBear-Jinni/CBJ_Smart-Device) is the smart device software written in [dart](https://dart.dev) that can be installed on computers.
 It lets you control (but not limited to) lights and blinds using physical buttons and phone app.
 
 Smart Device part is using the snap store in order to have easy way to install and update all the devices software versions with new features and security updates.
@@ -42,6 +42,8 @@ Smart Device part is using the snap store in order to have easy way to install a
  
 
 # Social Media Links
+
+[<img src = "https://cdn.icon-icons.com/icons2/1099/PNG/512/1485482199-linkedin_78667.png" height = "80" >](https://www.linkedin.com/company/cybear-jinni)
 
 If you have any questions feel free to ask in our Discord server
 
