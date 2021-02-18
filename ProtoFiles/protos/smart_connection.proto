@@ -27,9 +27,17 @@ service SmartServer {
 
 // The request message containing the user's name.
 message SmartDevice {
-    string uuid = 1;
-    string name = 2;
-    string deviceType = 3;
+    string id = 1;
+    string type = 2;
+    string state = 3;
+    string action = 13;
+    string defaultName = 14;
+    string roomId = 15;
+    string senderDeviceModel = 16;
+    string senderDeviceOs = 17;
+    string senderId = 18;
+    string serverTimeStamp = 19;
+    string stateMassage = 20;
 }
 
 // The response message containing the greetings
@@ -52,4 +60,5 @@ message FirebaseAccountInformation  {
     string fireBaseApiKey = 9;
     string userEmail = 10;
     string userPassword = 11;
+    string homeId = 12;
 }
