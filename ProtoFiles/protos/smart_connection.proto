@@ -38,6 +38,7 @@ message SmartDevice {
     string senderId = 18;
     string serverTimeStamp = 19;
     string stateMassage = 20;
+    string compMacAddress = 21;
 }
 
 // The response message containing the greetings
