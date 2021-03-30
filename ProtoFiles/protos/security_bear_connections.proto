@@ -6,7 +6,7 @@ package SecurityBearConnections;
 service SecurityBear {
   rpc SetWiFiInformation (SecurityBearSetup) returns (SBCommendStatus) {
   }
-  rpc SetFirebaseAccountInformation (SBFirebaseAccountInformation) returns (SBCommendStatus) {
+  rpc SetFirebaseAccountAndSecurityBearSetup (SBFirebaseAccountAndSecurityBearSetup) returns (SBCommendStatus) {
   }
 }
 
@@ -25,6 +25,11 @@ message SBCommendStatus {
   bool success = 5;
 }
 
+
+message SBFirebaseAccountAndSecurityBearSetup  {
+  SBFirebaseAccountInformation sBFirebaseAccountInformation = 10;
+  SecurityBearSetup securityBearSetup = 11;
+}
 
 message SBFirebaseAccountInformation  {
   string fireBaseProjectId = 6;

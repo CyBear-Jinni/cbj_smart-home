@@ -2,7 +2,9 @@
   <dictionary name="guy">
     <words>
       <w>jinni</w>
+      <w>microcontroller</w>
       <w>protoc</w>
+      <w>pubspec</w>
     </words>
   </dictionary>
 </component>
