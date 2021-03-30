@@ -2,35 +2,94 @@ syntax = "proto3";
 
 package SmartConnection;
 
-// The greeting service definition.
+/// The greeting service definition.
 service SmartServer {
-    // Sends a greeting
-    rpc GetAllDevices (SmartDeviceStatus) returns (stream SmartDevice) {
+    /// Sends a greeting
+    rpc FirstSetup (FirstSetupMessage) returns (CommendStatus) {
+    }
+    rpc GetCompInfo (CommendStatus) returns (CompInfo) {
+    }
+    rpc SetCompInfo (CompInfo) returns (CommendStatus) {
     }
     rpc SetFirebaseAccountInformation (FirebaseAccountInformation) returns (CommendStatus) {
     }
-    rpc GetStatus (SmartDevice) returns (SmartDeviceStatus) {
+    rpc GetStatus (SmartDeviceInfo) returns (SmartDeviceStatus) {
     }
     rpc UpdateDeviceName (SmartDeviceUpdateDetails) returns (CommendStatus){
     }
-    rpc SetOnDevice (SmartDevice) returns (CommendStatus) {
+    rpc SetOnDevice (SmartDeviceInfo) returns (CommendStatus) {
     }
-    rpc SetOffDevice (SmartDevice) returns (CommendStatus) {
+    rpc SetOffDevice (SmartDeviceInfo) returns (CommendStatus) {
     }
-    rpc setBlindsUp (SmartDevice) returns (CommendStatus) {
+    rpc setBlindsUp (SmartDeviceInfo) returns (CommendStatus) {
     }
-    rpc setBlindsDown (SmartDevice) returns (CommendStatus) {
+    rpc setBlindsDown (SmartDeviceInfo) returns (CommendStatus) {
     }
-    rpc setBlindsStop (SmartDevice) returns (CommendStatus) {
+    rpc setBlindsStop (SmartDeviceInfo) returns (CommendStatus) {
     }
 }
 
-// The request message containing the user's name.
-message SmartDevice {
+
+enum DeviceTypes {
+    TypeNotSupported = 0;
+    Light = 1;
+    Blinds = 2;
+    Thermostat = 3;
+}
+
+enum DeviceActions {
+    ActionNotSupported = 0;
+    On = 1;
+    Off = 2;
+    MoveUP = 3;
+    Stop = 4;
+    MoveDon = 5;
+}
+
+enum DeviceStateGRPC {
+    StateNotSupported = 0;
+    /// Cancel if not ack yet
+    cancelStateInProcess = 1;
+    /// Acknowledge that the state was updated
+    ack = 2;
+    /// New State was failed to execute
+    newStateFailed = 3;
+    /// Waiting for device to take action from firebase and ack
+    waitingInFirebase = 4;
+    /// Comp/Hub is trying to execute and waiting ack
+    waitingInComp = 5;
+}
+
+message FirstSetupMessage {
+    CompInfo compInfo = 38;
+    FirebaseAccountInformation firebaseAccountInformation = 39;
+}
+
+message CompInfo {
+    CompSpecs compSpecs = 21;
+    repeated SmartDeviceInfo smartDevicesInComp = 28;
+}
+
+
+message CompSpecs {
+    string compId = 22;
+    string compUuid = 23;
+    string compOs = 24;
+    string compModel = 25;
+    string compType = 26;
+    string pubspecYamlVersion = 27;
+}
+
+message MicrocontrollerSpecs {
+    string microcontrollerModel = 31;
+    string microcontrollerType = 32;
+    string softwareVersion = 33;
+}
+
+/// The request message containing the user's name.
+message SmartDeviceInfo {
     string id = 1;
-    string type = 2;
     string state = 3;
-    string action = 13;
     string defaultName = 14;
     string roomId = 15;
     string senderDeviceModel = 16;
@@ -38,28 +97,41 @@ message SmartDevice {
     string senderId = 18;
     string serverTimeStamp = 19;
     string stateMassage = 20;
-    string compMacAddress = 21;
+
+    bool isComputer = 29;
+
+    CompSpecs compSpecs = 30;
+
+    MicrocontrollerSpecs microcontrollerSpecsSpecs = 31;
+
+    DeviceTypesActions deviceTypesActions = 34;
 }
 
-// The response message containing the greetings
+/// The response message containing the greetings
 message SmartDeviceStatus {
     bool onOffState = 4;
 }
 
-// Did the commend succeeded (true) or not (false)
+/// Did the commend succeeded (true) or not (false)
 message CommendStatus {
     bool success = 5;
 }
 
-message SmartDeviceUpdateDetails  {
-    SmartDevice smartDevice = 6;
+message SmartDeviceUpdateDetails {
+    SmartDeviceInfo smartDevice = 6;
     string newName = 7;
 }
 
-message FirebaseAccountInformation  {
+message FirebaseAccountInformation {
     string fireBaseProjectId = 8;
     string fireBaseApiKey = 9;
     string userEmail = 10;
     string userPassword = 11;
     string homeId = 12;
+}
+
+message DeviceTypesActions {
+    DeviceTypes deviceType = 35;
+    DeviceActions deviceAction = 36;
+    DeviceStateGRPC deviceStateGRPC = 37;
 }
