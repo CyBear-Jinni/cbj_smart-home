@@ -31,23 +31,23 @@ service SmartServer {
 
 
 enum DeviceTypes {
-    TypeNotSupported = 0;
-    Light = 1;
-    Blinds = 2;
-    Thermostat = 3;
+    typeNotSupported = 0;
+    light = 1;
+    blinds = 2;
+    boiler = 3;
 }
 
 enum DeviceActions {
-    ActionNotSupported = 0;
-    On = 1;
-    Off = 2;
-    MoveUP = 3;
-    Stop = 4;
-    MoveDon = 5;
+    actionNotSupported = 0;
+    on = 1;
+    off = 2;
+    moveUP = 3;
+    stop = 4;
+    moveDown = 5;
 }
 
 enum DeviceStateGRPC {
-    StateNotSupported = 0;
+    stateNotSupported = 0;
     /// Cancel if not ack yet
     cancelStateInProcess = 1;
     /// Acknowledge that the state was updated
