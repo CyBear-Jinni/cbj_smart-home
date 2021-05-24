@@ -4,12 +4,12 @@ package CBJAppConnections;
 
 
 service CyBearJinniApp {
-  rpc CBJAppGetSmartDeviceInformation (SmartDeviceInfo) returns (CBJCommendStatus) {
+  rpc CBJAppGetSmartDeviceInformation (CompInfoSB) returns (CBJCommendStatus) {
   }
 }
 
-message SmartDeviceInfo {
-  string smartDeviceIP = 2;
+message CompInfoSB {
+  string compIP = 2;
 }
 
 // Did the commend arrived (true) or not (false)

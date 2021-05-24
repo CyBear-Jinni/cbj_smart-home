@@ -17,8 +17,6 @@ Here at CyBear Jinni we give the community the power of smart home by providing 
 
 The devices can be controlled using physical buttons and from a smartphone app.
 
-This is **not** project to create "Home automation system" like the project [Home Assistant](https://www.home-assistant.io).
-
 <img src="https://i.imgur.com/jqDYnBm.gif" height="300">
 
 ## Project structure
