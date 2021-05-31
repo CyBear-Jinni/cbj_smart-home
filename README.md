@@ -10,7 +10,6 @@
 
 # Welcome!
 
-
 This repository let you **create** your own smart home.
 
 Here at CyBear Jinni we give the community the power of smart home by providing the code and instructions to create a smart devices that will make ordinary devices like lamps and blinds smart and accessible.  
