@@ -30,6 +30,9 @@ The project is made out of two main parts:
 This is an Android, IOS, Web Browser app written in [Flutter](https://flutter.dev) that let you control all the devices using local Wi-Fi and remotely through Google [Cloud Firestore](https://firebase.google.com/docs/firestore).
 
 
+<a href="https://play.google.com/store/apps/details?id=com.cybear_jinni.smart_home">
+<img border="0" align="middle" alt="Android Badge" src="https://user-images.githubusercontent.com/9304740/117003444-8b58a080-aced-11eb-94bc-bfb2505f515d.png" width=200>
+
 ### CyBear Jinni Smart Device
 
 [CyBear Jinni Smart Device](https://github.com/CyBear-Jinni/CBJ_Smart-Device) is the smart device software written in [dart](https://dart.dev) that can be installed on computers.
