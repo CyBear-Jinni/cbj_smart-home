@@ -6,10 +6,10 @@
 
 </div>
 
-[<div align="center"><img alt="CyBear Jinni image" height="400" src="https://raw.githubusercontent.com/CyBear-Jinni/CBJ_Site/master/assets/fan_art/after_editing/logo_no_background.png"></div>](https://github.com/CyBear-Jinni/CBJ_Smart-Home)
-
+[<div align="center"><img alt="CyBear Jinni image" height="400" src="https://user-images.githubusercontent.com/9304740/120159847-5103f580-c1fe-11eb-86ca-dc948e887a95.png"></div>](https://github.com/CyBear-Jinni/CBJ_Smart-Home)
 
 # Welcome!
+
 
 This repository let you **create** your own smart home.
 
