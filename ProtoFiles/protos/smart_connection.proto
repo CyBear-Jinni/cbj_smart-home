@@ -35,15 +35,19 @@ enum DeviceTypes {
     light = 1;
     blinds = 2;
     boiler = 3;
+    button = 4;
 }
 
 enum DeviceActions {
     actionNotSupported = 0;
     on = 1;
     off = 2;
-    moveUP = 3;
+    moveUp = 3;
     stop = 4;
     moveDown = 5;
+    pressed = 6; // for buttons
+    longPress = 7; // for buttons
+    doubleTap = 8; // for buttons
 }
 
 enum DeviceStateGRPC {
