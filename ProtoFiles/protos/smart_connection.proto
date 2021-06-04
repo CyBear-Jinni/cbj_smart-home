@@ -36,6 +36,10 @@ enum DeviceTypes {
     blinds = 2;
     boiler = 3;
     button = 4;
+    hub = 7;
+    phoneApp = 8;
+    computerApp = 9;
+    browserApp = 10;
 }
 
 enum DeviceActions {
@@ -49,6 +53,23 @@ enum DeviceActions {
     longPress = 7; // for buttons
     doubleTap = 8; // for buttons
 }
+
+
+enum WhenToExecute {
+    undefined = 0;
+    onOddNumberPress = 1;
+    evenNumberPress = 2;
+    betweenSelectedTime = 3;
+    doNotBetweenSelectedTime = 4;
+    allTheTime = 5;
+    never = 6;
+    onceNow = 7;
+    onceInSelectedTime = 8;
+    onlyIfDeviceListIsAreInActionListState = 9;
+    atHome = 10;
+    outOfHome = 11;
+}
+
 
 enum DeviceStateGRPC {
     stateNotSupported = 0;
