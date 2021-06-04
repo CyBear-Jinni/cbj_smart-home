@@ -36,6 +36,7 @@ enum DeviceTypes {
     blinds = 2;
     boiler = 3;
     button = 4;
+    buttonWithLight = 5;
     hub = 7;
     phoneApp = 8;
     computerApp = 9;
