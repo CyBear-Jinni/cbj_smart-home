@@ -7,3 +7,6 @@
 [submodule "Security-Bear"]
 	path = Security-Bear
 	url = https://github.com/CyBear-Jinni/Security-Bear.git
+[submodule "CBJ_Remote-Pipes"]
+	path = CBJ_Remote-Pipes
+	url = https://github.com/CyBear-Jinni/CBJ_Remote-Pipes.git
