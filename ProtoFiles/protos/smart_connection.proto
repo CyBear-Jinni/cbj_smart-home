@@ -38,7 +38,7 @@ service SmartServer {
     /// like entrance light got turned on.
     /// Getting request like to turn on lights, and getting client updated status to process like
     /// client opened a move.
-    rpc RegisterHub (stream HubStatusAndRequests) returns (stream RequestsAndStatusFromClient) {
+    rpc RegisterHub (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests) {
     }
 
 }
@@ -110,13 +110,6 @@ message RequestsAndStatusFromHub {
     AllRemoteCommands allRemoteCommands = 42;
 }
 
-message HubStatusAndRequests {
-    AllRemoteCommands allRemoteCommands = 43;
-}
-
-message RequestsAndStatusFromClient {
-    AllRemoteCommands allRemoteCommands = 44;
-}
 
 message AllRemoteCommands {
     SmartDeviceInfo smartDeviceInfo = 40;
