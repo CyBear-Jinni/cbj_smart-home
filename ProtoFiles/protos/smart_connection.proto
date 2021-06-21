@@ -27,6 +27,20 @@ service SmartServer {
     }
     rpc setBlindsStop (SmartDeviceInfo) returns (CommendStatus) {
     }
+
+    /// Client side sending requests for the hub like turn entrance light on,
+    /// and updating about it status like client opened movie (for the hub to process).
+    /// Getting requests from the hub like play music on the phone, and status of devices that
+    /// have been changed like update layout to show entrance lights on.
+    rpc RegisterClient (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub) {
+    }
+    /// Hub side sending requests for the clients like turn on music, and updated status of devices
+    /// like entrance light got turned on.
+    /// Getting request like to turn on lights, and getting client updated status to process like
+    /// client opened a move.
+    rpc RegisterHub (stream HubStatusAndRequests) returns (stream RequestsAndStatusFromClient) {
+    }
+
 }
 
 
@@ -84,6 +98,28 @@ enum DeviceStateGRPC {
     waitingInFirebase = 4;
     /// Comp/Hub is trying to execute and waiting ack
     waitingInComp = 5;
+}
+
+
+message ClientStatusRequests {
+    AllRemoteCommands allRemoteCommands = 41;
+}
+
+
+message RequestsAndStatusFromHub {
+    AllRemoteCommands allRemoteCommands = 42;
+}
+
+message HubStatusAndRequests {
+    AllRemoteCommands allRemoteCommands = 43;
+}
+
+message RequestsAndStatusFromClient {
+    AllRemoteCommands allRemoteCommands = 44;
+}
+
+message AllRemoteCommands {
+    SmartDeviceInfo smartDeviceInfo = 40;
 }
 
 message FirstSetupMessage {

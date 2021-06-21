@@ -1,0 +1,12 @@
+Index: Security-Bear
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Security-Bear	(revision 65c25cfca08a1d209edc43684dd2ee17855117e9)
++++ Security-Bear	(date 1613690974539)
+@@ -1,1 +1,1 @@
+-e94a9af7cd32a01a02f37c623f568660328b6de2
+\ No newline at end of file
++ac3452a6a5354373f36a702b84f21919c0fec2e7
+\ No newline at end of file

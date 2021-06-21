@@ -6,6 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/CBJ_App/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_App/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_App/build" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_Remote-Pipes/cbj_remote-pipes/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_Remote-Pipes/cbj_remote-pipes/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_Remote-Pipes/cbj_remote-pipes/build" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/build" />

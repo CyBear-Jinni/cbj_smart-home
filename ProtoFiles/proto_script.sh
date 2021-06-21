@@ -22,6 +22,8 @@ cp -r -p protoc_as_dart/ ../CBJ_Smart-Device/SmartDeviceDart/lib/features/smart_
 rm -r ../CBJ_App/lib/infrastructure/core/gen/smart_device/client/protoc_as_dart
 cp -r protoc_as_dart/ ../CBJ_App/lib/infrastructure/core/gen/smart_device/client/	# Copy to Flutter protoc folder
 
+cp -r -p protoc_as_dart/ ../CBJ_Remote-Pipes/cbj_remote-pipes/lib/infrastructure/smart_device_server_and_client/	#   # copy to Remote-Pipes protoc folder
+
 rm -r protoc_as_dart
 
 
