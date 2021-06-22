@@ -10,3 +10,6 @@
 [submodule "CBJ_Remote-Pipes"]
 	path = CBJ_Remote-Pipes
 	url = https://github.com/CyBear-Jinni/CBJ_Remote-Pipes.git
+[submodule "CBJ_Hub"]
+	path = CBJ_Hub
+	url = https://github.com/CyBear-Jinni/CBJ_Hub.git
