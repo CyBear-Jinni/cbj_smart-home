@@ -9,6 +9,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CBJ_App" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CBJ_Hub" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CBJ_Remote-Pipes" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CBJ_Smart-Device" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Security-Bear" vcs="Git" />
