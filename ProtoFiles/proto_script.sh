@@ -28,6 +28,7 @@ cp -r -p protoc_as_dart/ ../CBJ_Remote-Pipes/cbj_remote-pipes/lib/infrastructure
 rm -r ../CBJ_Hub/cbj_hub/lib/infrastructure/smart_device_server_and_client/protoc_as_dart
 cp -r -p protoc_as_dart/ ../CBJ_Hub/cbj_hub/lib/infrastructure/smart_device_server_and_client/	#   # copy to Remote-Pipes protoc folder
 
+
 rm -r protoc_as_dart
 
 
@@ -63,6 +64,28 @@ cp -r protoc_as_dart/ ../CBJ_App/lib/infrastructure/core/gen/cbj_app_server	# Co
 
 rm -r ../Security-Bear/SecurityBearDart/lib/data_base/cbj_app/protoc_as_dart
 cp -r protoc_as_dart/ ../Security-Bear/SecurityBearDart/lib/data_base/cbj_app # Copy to Security Bear protoc folder
+
+
+rm -r protoc_as_dart
+
+
+# Connection between Hub to the App and Remote Pipes
+
+mkdir protoc_as_dart
+
+protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/cbj_hub_server.proto
+
+
+
+rm -r ../CBJ_Hub/cbj_hub/lib/infrastructure/cbj_hub_server/protoc_as_dart
+cp -r -p protoc_as_dart/ ../CBJ_Hub/cbj_hub/lib/infrastructure/cbj_hub_server/	#   # copy to Remote-Pipes protoc folder
+
+rm -r ../CBJ_App/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart
+cp -r protoc_as_dart/ ../CBJ_App/lib/infrastructure/core/gen/cbj_hub_server	# Copy to CBJ App protoc folder
+
+rm -r ../CBJ_Remote-Pipes/cbj_remote-pipes/lib/infrastructure/cbj_hub_server/protoc_as_dart
+cp -r -p protoc_as_dart/ ../CBJ_Remote-Pipes/cbj_remote-pipes/lib/infrastructure/cbj_hub_server/	#   # copy to Remote-Pipes protoc folder
+
 
 
 rm -r protoc_as_dart

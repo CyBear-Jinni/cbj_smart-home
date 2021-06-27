@@ -375,6 +375,13 @@
             </list>
           </value>
         </entry>
+        <entry key="event_bus">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/event_bus-2.0.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="expansion_tile_card">
           <value>
             <list>
@@ -851,6 +858,13 @@
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/mockito-5.0.10/lib" />
               <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mockito-5.0.10/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="mqtt_client">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/mqtt_client-9.3.1/lib" />
             </list>
           </value>
         </entry>
@@ -1417,6 +1431,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/enum_to_string-2.0.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/equatable-2.0.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/equatable-2.0.3/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/event_bus-2.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/file-6.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/file-6.1.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/firedart-0.9.0+1/lib" />
@@ -1450,6 +1465,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/meta-1.4.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/mime-1.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/mockito-5.0.10/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/mqtt_client-9.3.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/node_preamble-2.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/node_preamble-2.0.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/package_config-2.0.0/lib" />

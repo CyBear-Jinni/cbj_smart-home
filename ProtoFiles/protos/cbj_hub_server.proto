@@ -1,0 +1,174 @@
+syntax = "proto3";
+
+package HubServer;
+
+/// The greeting service definition.
+service CbjServer {
+    /// Client side sending requests for the hub like turn entrance light on,
+    /// and updating about it status like client opened movie (for the hub to process).
+    /// Getting requests from the hub like play music on the phone, and status of devices that
+    /// have been changed like update layout to show entrance lights on.
+    rpc RegisterClient (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub) {
+    }
+    /// Hub side sending requests for the clients like turn on music, and updated status of devices
+    /// like entrance light got turned on.
+    /// Getting request like to turn on lights, and getting client updated status to process like
+    /// client opened a move.
+    rpc RegisterHub (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests) {
+    }
+}
+
+
+enum DeviceTypes {
+    typeNotSupported = 0;
+    light = 1;
+    blinds = 2;
+    boiler = 3;
+    button = 4;
+    buttonWithLight = 5;
+    hub = 7;
+    phoneApp = 8;
+    computerApp = 9;
+    browserApp = 10;
+}
+
+enum DeviceActions {
+    actionNotSupported = 0;
+    on = 1;
+    off = 2;
+    moveUp = 3;
+    stop = 4;
+    moveDown = 5;
+    pressed = 6; // for buttons
+    longPress = 7; // for buttons
+    doubleTap = 8; // for buttons
+}
+
+
+enum WhenToExecute {
+    undefined = 0;
+    onOddNumberPress = 1;
+    evenNumberPress = 2;
+    betweenSelectedTime = 3;
+    doNotBetweenSelectedTime = 4;
+    allTheTime = 5;
+    never = 6;
+    onceNow = 7;
+    onceInSelectedTime = 8;
+    onlyIfDeviceListIsAreInActionListState = 9;
+    atHome = 10;
+    outOfHome = 11;
+}
+
+
+enum DeviceStateGRPC {
+    stateNotSupported = 0;
+    /// Cancel if not ack yet
+    cancelStateInProcess = 1;
+    /// Acknowledge that the state was updated
+    ack = 2;
+    /// New State was failed to execute
+    newStateFailed = 3;
+    /// Waiting for device to take action from firebase and ack
+    waitingInFirebase = 4;
+    /// Comp/Hub is trying to execute and waiting ack
+    waitingInComp = 5;
+}
+
+
+message ClientStatusRequests {
+    AllRemoteCommands allRemoteCommands = 41;
+}
+
+
+message RequestsAndStatusFromHub {
+    AllRemoteCommands allRemoteCommands = 42;
+}
+
+
+message AllRemoteCommands {
+    SmartDeviceInfo smartDeviceInfo = 40;
+}
+
+message FirstSetupMessage {
+    CompInfo compInfo = 38;
+    FirebaseAccountInformation firebaseAccountInformation = 39;
+}
+
+message CompInfo {
+    CompSpecs compSpecs = 21;
+    repeated SmartDeviceInfo smartDevicesInComp = 28;
+}
+
+
+message CompSpecs {
+    string compId = 22;
+    string compUuid = 23;
+    string compOs = 24;
+    string compModel = 25;
+    string compType = 26;
+    string pubspecYamlVersion = 27;
+}
+
+message MicrocontrollerSpecs {
+    string microcontrollerModel = 31;
+    string microcontrollerType = 32;
+    string softwareVersion = 33;
+}
+
+/// The request message containing the user's name.
+message SmartDeviceInfo {
+    string id = 1;
+    string state = 3;
+    string defaultName = 14;
+    string roomId = 15;
+    string senderDeviceModel = 16;
+    string senderDeviceOs = 17;
+    string senderId = 18;
+    string serverTimeStamp = 19;
+    string stateMassage = 20;
+    MqttMassage mqttMassage = 43;
+
+    bool isComputer = 29;
+
+    CompSpecs compSpecs = 30;
+
+    MicrocontrollerSpecs microcontrollerSpecsSpecs = 31;
+
+    DeviceTypesActions deviceTypesActions = 34;
+}
+
+/// The response message containing the greetings
+message SmartDeviceStatus {
+    bool onOffState = 4;
+}
+
+message  MqttMassage {
+    string mqttTopic = 44;
+    string mqttMassage = 45 ;
+
+}
+
+/// Did the commend succeeded (true) or not (false)
+message CommendStatus {
+    bool success = 5;
+}
+
+message SmartDeviceUpdateDetails {
+    SmartDeviceInfo smartDevice = 6;
+    string newName = 7;
+}
+
+message FirebaseAccountInformation {
+    string fireBaseProjectId = 8;
+    string fireBaseApiKey = 9;
+    string userEmail = 10;
+    string userPassword = 11;
+    string homeId = 12;
+}
+
+message DeviceTypesActions {
+    DeviceTypes deviceType = 35;
+    DeviceActions deviceAction = 36;
+    DeviceStateGRPC deviceStateGRPC = 37;
+}
