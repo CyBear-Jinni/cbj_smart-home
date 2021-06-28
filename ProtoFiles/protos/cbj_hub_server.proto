@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package HubServer;
+package CbjHub;
 
 /// The greeting service definition.
-service CbjServer {
+service CbjHub {
     /// Client side sending requests for the hub like turn entrance light on,
     /// and updating about it status like client opened movie (for the hub to process).
     /// Getting requests from the hub like play music on the phone, and status of devices that
