@@ -8,13 +8,13 @@ service CbjHub {
     /// and updating about it status like client opened movie (for the hub to process).
     /// Getting requests from the hub like play music on the phone, and status of devices that
     /// have been changed like update layout to show entrance lights on.
-    rpc RegisterClient (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub) {
+    rpc ClientTransferDevices (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub) {
     }
     /// Hub side sending requests for the clients like turn on music, and updated status of devices
     /// like entrance light got turned on.
     /// Getting request like to turn on lights, and getting client updated status to process like
     /// client opened a move.
-    rpc RegisterHub (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests) {
+    rpc HubTransferDevices (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests) {
     }
 }
 
@@ -77,12 +77,12 @@ enum DeviceStateGRPC {
 
 
 message ClientStatusRequests {
-    AllRemoteCommands allRemoteCommands = 41;
+    string allRemoteCommands = 41;
 }
 
 
 message RequestsAndStatusFromHub {
-    AllRemoteCommands allRemoteCommands = 42;
+    string allRemoteCommands = 42;
 }
 
 
