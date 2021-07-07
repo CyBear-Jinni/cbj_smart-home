@@ -19,12 +19,6 @@ protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/smart_connection.proto
 rm -r ../CBJ_Smart-Device/SmartDeviceDart/lib/features/smart_device/infrastructure/datasources/smart_server_d/protoc_as_dart
 cp -r -p protoc_as_dart/ ../CBJ_Smart-Device/SmartDeviceDart/lib/features/smart_device/infrastructure/datasources/smart_server_d/	#   # copy to smart device protoc folder
 
-rm -r ../CBJ_App/lib/infrastructure/core/gen/smart_device/client/protoc_as_dart
-cp -r protoc_as_dart/ ../CBJ_App/lib/infrastructure/core/gen/smart_device/client/	# Copy to Flutter protoc folder
-
-rm -r ../CBJ_Remote-Pipes/cbj_remote-pipes/lib/infrastructure/gen/smart_device_server_and_client/protoc_as_dart
-cp -r -p protoc_as_dart/ ../CBJ_Remote-Pipes/cbj_remote-pipes/lib/infrastructure/gen/smart_device_server_and_client/	#   # copy to Remote-Pipes protoc folder
-
 rm -r ../CBJ_Hub/cbj_hub/lib/infrastructure/gen/smart_device_server_and_client/protoc_as_dart
 cp -r -p protoc_as_dart/ ../CBJ_Hub/cbj_hub/lib/infrastructure/gen/smart_device_server_and_client/	#   # copy to Remote-Pipes protoc folder
 

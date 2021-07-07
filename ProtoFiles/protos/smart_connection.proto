@@ -94,10 +94,8 @@ enum DeviceStateGRPC {
     ack = 2;
     /// New State was failed to execute
     newStateFailed = 3;
-    /// Waiting for device to take action from firebase and ack
-    waitingInFirebase = 4;
     /// Comp/Hub is trying to execute and waiting ack
-    waitingInComp = 5;
+    waitingInComp = 4;
 }
 
 

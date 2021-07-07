@@ -75,14 +75,38 @@ enum DeviceStateGRPC {
     waitingInComp = 5;
 }
 
+/// Being added to send data for explain the type that was sent
+enum SendingType {
+    /// Not sure what we sent or got
+    undefinedType = 0;
+    /// String without any structure
+    stringType = 1;
+    /// Partial device data in the form of json
+    partialDeviceType = 2;
+    /// Device object in the form of json
+    deviceType = 3;
+    /// Sending mqtt massage
+    mqttMassageType = 4;
+    /// Scenes
+    sceneType = 5;
+    /// Schedule
+    scheduleType = 6;
+    /// Routine
+    routineType = 7;
+    /// Bindings
+    bindingsType = 8;
+}
+
 
 message ClientStatusRequests {
-    string allRemoteCommands = 41;
+    SendingType sendingType = 41;
+    string allRemoteCommands = 42;
 }
 
 
 message RequestsAndStatusFromHub {
-    string allRemoteCommands = 42;
+    SendingType sendingType = 43;
+    string allRemoteCommands = 44;
 }
 
 
