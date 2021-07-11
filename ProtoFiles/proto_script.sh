@@ -83,3 +83,21 @@ cp -r -p protoc_as_dart/ ../CBJ_Remote-Pipes/cbj_remote-pipes/lib/infrastructure
 
 
 rm -r protoc_as_dart
+
+
+# Connection between Hub and ESPHome
+
+mkdir protoc_as_dart
+
+
+protoc --dart_out=grpc:protoc_as_dart/ -Iprotos  protos/aioesphomeapi/api.proto protos/aioesphomeapi/api_options.proto
+
+
+
+rm -r ../CBJ_Hub/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart
+cp -r -p protoc_as_dart/ ../CBJ_Hub/cbj_hub/lib/infrastructure/gen/aioesphomeapi/	#   # copy to Remote-Pipes protoc folder
+
+
+rm -r protoc_as_dart
+
+
