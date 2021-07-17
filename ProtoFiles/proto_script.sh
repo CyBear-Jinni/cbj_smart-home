@@ -90,7 +90,7 @@ rm -r protoc_as_dart
 mkdir protoc_as_dart
 
 
-protoc --dart_out=grpc:protoc_as_dart/ -Iprotos  protos/aioesphomeapi/api.proto protos/aioesphomeapi/api_options.proto
+protoc --dart_out=protoc_as_dart/ -Iprotos  protos/aioesphomeapi/api.proto protos/aioesphomeapi/api_options.proto
 
 
 
