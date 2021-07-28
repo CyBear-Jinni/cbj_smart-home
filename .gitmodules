@@ -10,6 +10,3 @@
 [submodule "cbj_hub"]
 	path = cbj_hub
 	url = https://github.com/CyBear-Jinni/cbj_hub.git
-[submodule "cbj_app"]
-	path = cbj_app
-	url = https://github.com/CyBear-Jinni/cbj_app.git
