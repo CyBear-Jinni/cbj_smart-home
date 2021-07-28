@@ -10,6 +10,5 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CBJ_Smart-Device" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Security-Bear" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cbj_app/cbj_app" vcs="Git" />
   </component>
 </project>
