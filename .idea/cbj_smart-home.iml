@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDeviceDart/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDeviceDart/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Security-Bear/SecurityBearDart/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Security-Bear/SecurityBearDart/build" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_hub/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_hub/build" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_remote-pipes/cbj_remote-pipes/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_remote-pipes/cbj_remote-pipes/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
