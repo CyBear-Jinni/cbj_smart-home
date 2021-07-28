@@ -77,8 +77,8 @@ cp -r -p protoc_as_dart/ ../cbj_hub/lib/infrastructure/gen/cbj_hub_server/	#   #
 rm -r ../cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart
 cp -r protoc_as_dart/ ../cbj_app/lib/infrastructure/core/gen/cbj_hub_server	# Copy to CBJ App protoc folder
 
-rm -r ../cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart
-cp -r -p protoc_as_dart/ ../cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/	#   # copy to Remote-Pipes protoc folder
+rm -r ../cbj_remote-pipes/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart
+cp -r -p protoc_as_dart/ ../cbj_remote-pipes/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/	#   # copy to Remote-Pipes protoc folder
 
 
 
