@@ -3,9 +3,11 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_App/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/build" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/cbj_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/cbj_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/cbj_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/cbj_app/build" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Hub/cbj_hub/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Hub/cbj_hub/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Hub/cbj_hub/build" />

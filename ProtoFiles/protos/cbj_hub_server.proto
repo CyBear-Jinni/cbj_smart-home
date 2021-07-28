@@ -19,6 +19,12 @@ service CbjHub {
 }
 
 
+enum VendorsAndServices {
+    VendorsAndServicesNotSupported = 0;
+    tasmota = 1;
+}
+
+
 enum DeviceTypes {
     typeNotSupported = 0;
     light = 1;
@@ -192,6 +198,7 @@ message FirebaseAccountInformation {
 }
 
 message DeviceTypesActions {
+    VendorsAndServices vendorsAndServices = 46;
     DeviceTypes deviceType = 35;
     DeviceActions deviceAction = 36;
     DeviceStateGRPC deviceStateGRPC = 37;
