@@ -1,10 +1,10 @@
-Index: CBJ_App
+Index: cbj_app
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
---- CBJ_App	(revision 418d89260707393ddfb6ccaf826db5e496931826)
-+++ CBJ_App	(date 1621797135420)
+--- cbj_app	(revision 418d89260707393ddfb6ccaf826db5e496931826)
++++ cbj_app	(date 1621797135420)
 @@ -1,1 +1,1 @@
 -9587e6f559870716d00799e0127318588a131a20
 \ No newline at end of file

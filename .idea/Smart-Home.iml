@@ -3,17 +3,6 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/cbj_app/build" />
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/cbj_app/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/cbj_app/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_App/cbj_app/build" />
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_Hub/cbj_hub/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_Hub/cbj_hub/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_Hub/cbj_hub/build" />
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_Remote-Pipes/cbj_remote-pipes/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_Remote-Pipes/cbj_remote-pipes/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/CBJ_Remote-Pipes/cbj_remote-pipes/build" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/CBJ_Smart-Device/SmartDevice/SmartDeviceDart/build" />
@@ -26,6 +15,21 @@
       <excludeFolder url="file://$MODULE_DIR$/Security-Bear/SecurityBearDart/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/Security-Bear/SecurityBearDart/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/Security-Bear/SecurityBearDart/build" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_app/cbj_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_app/cbj_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_app/cbj_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_hub/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_hub/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_hub/build" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_remote-pipes/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_remote-pipes/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_remote-pipes/build" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_remote-pipes/cbj_remote-pipes/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_remote-pipes/cbj_remote-pipes/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_remote-pipes/cbj_remote-pipes/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
