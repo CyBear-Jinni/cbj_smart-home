@@ -20,9 +20,10 @@ service CbjHub {
 
 
 enum VendorsAndServices {
-    VendorsAndServicesNotSupported = 0;
+    vendorsAndServicesNotSupported = 0;
     tasmota = 1;
-    yeelight = 2;
+    espHome = 2;
+    yeelight = 3;
 }
 
 
@@ -37,6 +38,12 @@ enum DeviceTypes {
     phoneApp = 8;
     computerApp = 9;
     browserApp = 10;
+    switch = 11;
+    dimmableLight = 12;
+    cctLight = 13;
+    rgbLights = 14;
+    rgbwLights = 15;
+    rgbcctLights = 16;
 }
 
 enum DeviceActions {
