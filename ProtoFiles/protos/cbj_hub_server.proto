@@ -21,9 +21,10 @@ service CbjHub {
 
 enum VendorsAndServices {
     vendorsAndServicesNotSupported = 0;
-    tasmota = 1;
-    espHome = 2;
-    yeelight = 3;
+    espHome = 1;
+    switcher = 2;
+    tasmota = 3;
+    yeelight = 4;
 }
 
 
