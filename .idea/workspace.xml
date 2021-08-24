@@ -1,10 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_app" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/analysis_options.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/analysis_options.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/bin/cbj_remote_pipes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/bin/cbj_remote_pipes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/lib/domain/hube_server/smart_server_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/domain/hube_server/smart_server_u.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/lib/domain/piping_macanisem/combin_streams.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/domain/piping_macanisem/combin_streams.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pb.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pbenum.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pbgrpc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pbjson.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pb.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/lib/setup_pipes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/setup_pipes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/cbj_remote-pipes/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProjectId" id="1x94l8RKfw08uyPUobht7S0CpPq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ProtoFiles" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cbj_remote-pipes" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Add switcher to vendors and services in proto">
+      <created>1629738367772</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1629738367772</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="" />
+      <created>1629754120656</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1629754120656</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add switcher to vendors and services in proto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add switcher to vendors and services in proto" />
   </component>
 </project>
