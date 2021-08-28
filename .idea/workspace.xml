@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/cbj_smart-home.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cbj_smart-home.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/domain/hube_server/smart_server_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/domain/hube_server/smart_server_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/domain/piping_macanisem/combin_streams.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/domain/piping_macanisem/combin_streams.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pb.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pbenum.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pbgrpc.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/cbj_hub_server.pbjson.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pb.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/CyBear-Jinni_Remopte-Pipes" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/CyBear-Jinni_Remopte-Pipes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/bin/cbj_remote_pipes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/bin/cbj_remote_pipes.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +17,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/cbj_hub" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1x94l8RKfw08uyPUobht7S0CpPq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -73,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629831728962</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed all of remote pipes using old gen code">
+      <created>1629903662660</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1629903662660</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,6 +99,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add switcher to vendors and services in proto" />
     <MESSAGE value="Move remote pipes code one folder back" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move remote pipes code one folder back" />
+    <MESSAGE value="Fixed all of remote pipes using old gen code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed all of remote pipes using old gen code" />
   </component>
 </project>
