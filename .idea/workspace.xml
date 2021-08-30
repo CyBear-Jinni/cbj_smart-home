@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_hub" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_remote-pipes" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/CyBear-Jinni_Remopte-Pipes" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/CyBear-Jinni_Remopte-Pipes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/bin/cbj_remote_pipes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/bin/cbj_remote_pipes.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/cbj_hub" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -81,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629903662660</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Commented Smart device part from protoc script as it is no longer in focus">
+      <created>1630183596194</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1630183596194</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,6 +106,7 @@
     <MESSAGE value="Add switcher to vendors and services in proto" />
     <MESSAGE value="Move remote pipes code one folder back" />
     <MESSAGE value="Fixed all of remote pipes using old gen code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed all of remote pipes using old gen code" />
+    <MESSAGE value="Commented Smart device part from protoc script as it is no longer in focus" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commented Smart device part from protoc script as it is no longer in focus" />
   </component>
 </project>

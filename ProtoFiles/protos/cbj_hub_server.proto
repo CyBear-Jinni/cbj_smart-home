@@ -45,6 +45,7 @@ enum DeviceTypes {
     rgbLights = 14;
     rgbwLights = 15;
     rgbcctLights = 16;
+    smartTV = 17;
 }
 
 enum DeviceActions {
