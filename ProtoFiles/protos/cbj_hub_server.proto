@@ -25,6 +25,7 @@ enum VendorsAndServices {
     switcher = 2;
     tasmota = 3;
     yeelight = 4;
+    google = 5;
 }
 
 
