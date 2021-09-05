@@ -26,7 +26,7 @@ The project is made out of two main parts:
 
 ### CyBear Jinni App
 
-[CyBear Jinni App](https://github.com/CyBear-Jinni/CBJ_App) is the app to control your CyBear Jinni Smart Devices.
+[CyBear Jinni App](https://github.com/CyBear-Jinni/cbj_app) is the app to control your CyBear Jinni Smart Devices.
 This is an Android, IOS, Web Browser app written in [Flutter](https://flutter.dev) that let you control all the devices using local Wi-Fi and remotely through Google [Cloud Firestore](https://firebase.google.com/docs/firestore).
 
 

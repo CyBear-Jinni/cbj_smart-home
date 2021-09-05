@@ -1,46 +1,31 @@
 syntax = "proto3";
 
-package SmartConnection;
+package CbjHub;
 
 /// The greeting service definition.
-service SmartServer {
-    /// Sends a greeting
-    rpc FirstSetup (FirstSetupMessage) returns (CommendStatus) {
-    }
-    rpc GetCompInfo (CommendStatus) returns (CompInfo) {
-    }
-    rpc SetCompInfo (CompInfo) returns (CommendStatus) {
-    }
-    rpc SetFirebaseAccountInformation (FirebaseAccountInformation) returns (CommendStatus) {
-    }
-    rpc GetStatus (SmartDeviceInfo) returns (SmartDeviceStatus) {
-    }
-    rpc UpdateDeviceName (SmartDeviceUpdateDetails) returns (CommendStatus){
-    }
-    rpc SetOnDevice (SmartDeviceInfo) returns (CommendStatus) {
-    }
-    rpc SetOffDevice (SmartDeviceInfo) returns (CommendStatus) {
-    }
-    rpc setBlindsUp (SmartDeviceInfo) returns (CommendStatus) {
-    }
-    rpc setBlindsDown (SmartDeviceInfo) returns (CommendStatus) {
-    }
-    rpc setBlindsStop (SmartDeviceInfo) returns (CommendStatus) {
-    }
-
+service CbjHub {
     /// Client side sending requests for the hub like turn entrance light on,
     /// and updating about it status like client opened movie (for the hub to process).
     /// Getting requests from the hub like play music on the phone, and status of devices that
     /// have been changed like update layout to show entrance lights on.
-    rpc RegisterClient (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub) {
+    rpc ClientTransferDevices (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub) {
     }
     /// Hub side sending requests for the clients like turn on music, and updated status of devices
     /// like entrance light got turned on.
     /// Getting request like to turn on lights, and getting client updated status to process like
     /// client opened a move.
-    rpc RegisterHub (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests) {
+    rpc HubTransferDevices (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests) {
     }
+}
 
+
+enum VendorsAndServices {
+    vendorsAndServicesNotSupported = 0;
+    espHome = 1;
+    switcher = 2;
+    tasmota = 3;
+    yeelight = 4;
+    google = 5;
 }
 
 
@@ -55,6 +40,13 @@ enum DeviceTypes {
     phoneApp = 8;
     computerApp = 9;
     browserApp = 10;
+    switch = 11;
+    dimmableLight = 12;
+    cctLight = 13;
+    rgbLights = 14;
+    rgbwLights = 15;
+    rgbcctLights = 16;
+    smartTV = 17;
 }
 
 enum DeviceActions {
@@ -94,18 +86,44 @@ enum DeviceStateGRPC {
     ack = 2;
     /// New State was failed to execute
     newStateFailed = 3;
+    /// Waiting for device to take action from firebase and ack
+    waitingInFirebase = 4;
     /// Comp/Hub is trying to execute and waiting ack
-    waitingInComp = 4;
+    waitingInComp = 5;
+}
+
+/// Being added to send data for explain the type that was sent
+enum SendingType {
+    /// Not sure what we sent or got
+    undefinedType = 0;
+    /// String without any structure
+    stringType = 1;
+    /// Partial device data in the form of json
+    partialDeviceType = 2;
+    /// Device object in the form of json
+    deviceType = 3;
+    /// Sending mqtt massage
+    mqttMassageType = 4;
+    /// Scenes
+    sceneType = 5;
+    /// Schedule
+    scheduleType = 6;
+    /// Routine
+    routineType = 7;
+    /// Bindings
+    bindingsType = 8;
 }
 
 
 message ClientStatusRequests {
-    AllRemoteCommands allRemoteCommands = 41;
+    SendingType sendingType = 41;
+    string allRemoteCommands = 42;
 }
 
 
 message RequestsAndStatusFromHub {
-    AllRemoteCommands allRemoteCommands = 42;
+    SendingType sendingType = 43;
+    string allRemoteCommands = 44;
 }
 
 
@@ -150,6 +168,7 @@ message SmartDeviceInfo {
     string senderId = 18;
     string serverTimeStamp = 19;
     string stateMassage = 20;
+    MqttMassage mqttMassage = 43;
 
     bool isComputer = 29;
 
@@ -163,6 +182,12 @@ message SmartDeviceInfo {
 /// The response message containing the greetings
 message SmartDeviceStatus {
     bool onOffState = 4;
+}
+
+message  MqttMassage {
+    string mqttTopic = 44;
+    string mqttMassage = 45 ;
+
 }
 
 /// Did the commend succeeded (true) or not (false)
@@ -184,6 +209,7 @@ message FirebaseAccountInformation {
 }
 
 message DeviceTypesActions {
+    VendorsAndServices vendorsAndServices = 46;
     DeviceTypes deviceType = 35;
     DeviceActions deviceAction = 36;
     DeviceStateGRPC deviceStateGRPC = 37;
