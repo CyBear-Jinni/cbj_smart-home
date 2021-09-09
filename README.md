@@ -12,11 +12,10 @@
 
 # Welcome!
 
-This repository let you **create** your own smart home.
+This repository let you **control** your existing smart home.
 
-Here at CyBear Jinni we give the community the power of smart home by providing the code and instructions to create a smart devices that will make ordinary devices like lamps and blinds smart and accessible.  
+Here at CyBear Jinni we give the community the power of smart home by providing the code and instructions to set up a Hub that will let you control your smart devices and connect them even if they are from different form factors.  
 
-The devices can be controlled using physical buttons and from a smartphone app.
 
 <img src="https://i.imgur.com/jqDYnBm.gif" height="300">
 
@@ -26,21 +25,22 @@ The project is made out of two main parts:
 
 ### CyBear Jinni App
 
-[CyBear Jinni App](https://github.com/CyBear-Jinni/cbj_app) is the app to control your CyBear Jinni Smart Devices.
-This is an Android, IOS, Web Browser app written in [Flutter](https://flutter.dev) that let you control all the devices using local Wi-Fi and remotely through Google [Cloud Firestore](https://firebase.google.com/docs/firestore).
+[CyBear Jinni App](https://github.com/CyBear-Jinni/cbj_app) is the app to control your CyBear Jinni Hub.
 
+This is an Android, IOS, Web Browser app written in [Flutter](https://flutter.dev) that let you control the Hub using local Wi-Fi and remotely through [cbj remote pipes](https://github.com/CyBear-Jinni/cbj_remote-pipes) which transfer requests to the Hub without collecting any data.
 
 <a href="https://play.google.com/store/apps/details?id=com.cybear_jinni.smart_home">
 <img border="0" align="middle" alt="Android Badge" src="https://user-images.githubusercontent.com/9304740/117003444-8b58a080-aced-11eb-94bc-bfb2505f515d.png" width=200>
 
-### CyBear Jinni Smart Device
+### CyBear Jinni Hub
 
-[CyBear Jinni Smart Device](https://github.com/CyBear-Jinni/CBJ_Smart-Device) is the smart device software written in [dart](https://dart.dev) that can be installed on computers.
-It lets you control (but not limited to) lights and blinds using physical buttons and phone app.
 
-Smart Device part is using the snap store in order to have easy way to install and update all the devices software versions with new features and security updates.
+[CyBear Jinni Hub](https://github.com/CyBear-Jinni/cbj_hub) is software written in [dart](https://dart.dev) and runs in parallel with MQTT broker.
+  
+The Hub talks to all the supported smart devices from different form factors and gives the app an easy and uniform way to control them as if they are from the same company.
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/cybear-jinni)
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/cbj-hub)
  
 
 # Social Media Links
