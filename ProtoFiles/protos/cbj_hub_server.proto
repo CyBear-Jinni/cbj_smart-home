@@ -112,6 +112,8 @@ enum SendingType {
     routineType = 7;
     /// Bindings
     bindingsType = 8;
+    /// Type for login into other vendors
+    vendorLoginType = 9;
 }
 
 
