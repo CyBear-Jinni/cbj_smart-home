@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_app" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_hub" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +17,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$/CBJ_Smart-Device" value="4b3e1207a48bda95a0d47bd83a39ea68c6a478a1" />
+        <entry key="$PROJECT_DIR$/Security-Bear" value="16c92ea2e2ed91d264264bc73241e4ce16717219" />
+        <entry key="$PROJECT_DIR$/cbj_app" value="605a94c8c14a4a09e8397e9ec2c5598e879ccaa7" />
+        <entry key="$PROJECT_DIR$/cbj_hub" value="02c480f5a6b345f1703dd98746b62b085bffcf17" />
+        <entry key="$PROJECT_DIR$/cbj_remote-pipes" value="3aac9edcd7b8acde1f52d9aeffd2cee9e1e80cea" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -85,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630183596194</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add vendorLoginType in proto, fix pub not recognized in script">
+      <created>1633766165418</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1633766165418</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,6 +125,7 @@
     <MESSAGE value="Move remote pipes code one folder back" />
     <MESSAGE value="Fixed all of remote pipes using old gen code" />
     <MESSAGE value="Commented Smart device part from protoc script as it is no longer in focus" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commented Smart device part from protoc script as it is no longer in focus" />
+    <MESSAGE value="Add vendorLoginType in proto, fix pub not recognized in script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add vendorLoginType in proto, fix pub not recognized in script" />
   </component>
 </project>

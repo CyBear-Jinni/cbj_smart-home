@@ -3,7 +3,7 @@
 # You mast have pub and protoc inside the path 
 # Example PATH=$PATH:~/Programs/flutter/bin/cache/dart-sdk/bin
 
-pub global activate protoc_plugin
+dart pub global activate protoc_plugin
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
