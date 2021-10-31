@@ -19,6 +19,7 @@
         <entry key="$PROJECT_DIR$/cbj_app" value="605a94c8c14a4a09e8397e9ec2c5598e879ccaa7" />
         <entry key="$PROJECT_DIR$/cbj_hub" value="02c480f5a6b345f1703dd98746b62b085bffcf17" />
         <entry key="$PROJECT_DIR$/cbj_remote-pipes" value="3aac9edcd7b8acde1f52d9aeffd2cee9e1e80cea" />
+        <entry key="$PROJECT_DIR$/remote_pipes_routing" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -113,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635694505977</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Remote Pipes Information to protoc">
+      <created>1635694728032</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1635694728032</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +144,7 @@
     <MESSAGE value="Add vendorLoginType in proto, fix pub not recognized in script" />
     <MESSAGE value="Retrieving miHome lifx tuyaSmart vendors from proto after they got deleted" />
     <MESSAGE value="Add remote pipes routing as submodule and added it to the proto_script.sh to get the generated Hub server files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add remote pipes routing as submodule and added it to the proto_script.sh to get the generated Hub server files" />
+    <MESSAGE value="Added Remote Pipes Information to protoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Remote Pipes Information to protoc" />
   </component>
 </project>
