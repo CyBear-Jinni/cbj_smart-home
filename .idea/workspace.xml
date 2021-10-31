@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/remote_pipes_routing" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes" afterDir="false" />
-    </list>
+    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633766397895</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add remote pipes routing as submodule and added it to the proto_script.sh to get the generated Hub server files">
+      <created>1635694505977</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1635694505977</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +135,7 @@
     <MESSAGE value="Commented Smart device part from protoc script as it is no longer in focus" />
     <MESSAGE value="Add vendorLoginType in proto, fix pub not recognized in script" />
     <MESSAGE value="Retrieving miHome lifx tuyaSmart vendors from proto after they got deleted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Retrieving miHome lifx tuyaSmart vendors from proto after they got deleted" />
+    <MESSAGE value="Add remote pipes routing as submodule and added it to the proto_script.sh to get the generated Hub server files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add remote pipes routing as submodule and added it to the proto_script.sh to get the generated Hub server files" />
   </component>
 </project>
