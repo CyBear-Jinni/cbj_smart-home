@@ -13,3 +13,6 @@
 [submodule "cbj_app"]
 	path = cbj_app
 	url = https://github.com/CyBear-Jinni/cbj_app.git
+[submodule "remote_pipes_routing"]
+	path = remote_pipes_routing
+	url = https://github.com/CyBear-Jinni/remote_pipes_routing.git

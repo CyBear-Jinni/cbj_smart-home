@@ -120,6 +120,8 @@ enum SendingType {
     vendorLoginType = 9;
     /// First connection, for sending first connection info like all devices status and more
     firstConnection = 10;
+    /// Remote Pipes Domain information
+    remotePipesInformation = 11;
 }
 
 
