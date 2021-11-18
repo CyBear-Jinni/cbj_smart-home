@@ -3,7 +3,7 @@
 # You mast have pub and protoc inside the path 
 # Example PATH=$PATH:~/Programs/flutter/bin/cache/dart-sdk/bin
 
-pub global activate protoc_plugin
+dart pub global activate protoc_plugin
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
@@ -64,7 +64,7 @@ cp -r protoc_as_dart/ ../Security-Bear/SecurityBearDart/lib/data_base/cbj_app # 
 rm -r protoc_as_dart
 
 
-# Connection between Hub to the App and Remote Pipes
+# Connection between Hub to the App and Remote Pipes and Remote Pipes Routing
 
 mkdir protoc_as_dart
 
@@ -81,9 +81,15 @@ cp -r protoc_as_dart/ ../cbj_app/lib/infrastructure/core/gen/cbj_hub_server	# Co
 rm -r ../cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart
 cp -r -p protoc_as_dart/ ../cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/	#   # copy to Remote-Pipes protoc folder
 
+rm -r ../remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart
+cp -r -p protoc_as_dart/ ../remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/	#   # copy to Remote-Pipes Routing protoc folder
+
 
 
 rm -r protoc_as_dart
+
+
+
 
 
 # Connection between Hub and ESPHome

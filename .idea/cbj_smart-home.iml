@@ -20,10 +20,15 @@
       <excludeFolder url="file://$MODULE_DIR$/cbj_remote-pipes/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/cbj_remote-pipes/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/cbj_remote-pipes/build" />
+      <excludeFolder url="file://$MODULE_DIR$/remote_pipes_routing/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/remote_pipes_routing/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/remote_pipes_routing/build" />
+      <excludeFolder url="file://$MODULE_DIR$/security_bear/SecurityBearDart/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/security_bear/SecurityBearDart/build" />
+      <excludeFolder url="file://$MODULE_DIR$/security_bear/SecurityBearDart/.pub" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />
-    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>

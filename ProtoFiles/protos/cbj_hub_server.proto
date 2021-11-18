@@ -22,10 +22,14 @@ service CbjHub {
 enum VendorsAndServices {
     vendorsAndServicesNotSupported = 0;
     espHome = 1;
-    switcher = 2;
+    switcherSmartHome = 2;
     tasmota = 3;
     yeelight = 4;
     google = 5;
+    miHome = 6;
+    lifx = 7;
+    tuyaSmart = 8;
+
 }
 
 
@@ -90,6 +94,11 @@ enum DeviceStateGRPC {
     waitingInFirebase = 4;
     /// Comp/Hub is trying to execute and waiting ack
     waitingInComp = 5;
+    /// No devices to transfer
+    noDevicesToTransfer = 6;
+    /// Ping the other side
+    pingNow = 7;
+
 }
 
 /// Being added to send data for explain the type that was sent
@@ -112,6 +121,12 @@ enum SendingType {
     routineType = 7;
     /// Bindings
     bindingsType = 8;
+    /// Type for login into other vendors
+    vendorLoginType = 9;
+    /// First connection, for sending first connection info like all devices status and more
+    firstConnection = 10;
+    /// Remote Pipes Domain information
+    remotePipesInformation = 11;
 }
 
 
