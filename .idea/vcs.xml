@@ -3,10 +3,10 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CBJ_Smart-Device" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Security-Bear" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cbj_app" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cbj_hub" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cbj_remote-pipes" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/remote_pipes_routing" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/security_bear" vcs="Git" />
   </component>
 </project>
