@@ -32,11 +32,15 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 mkdir protoc_as_dart
 
+# TODO: Add check if protoc command is installed, if not that show to the user protoc
+#  installations methods
+#  The recommended one "sudo snap install protobuf"
+#  Didn't test and old version "sudo apt  install protobuf-compiler"
 protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/security_bear_connections.proto
 
 
-rm -r ../Security-Bear/SecurityBearDart/lib/features/security_bear/infrastructure/datasources/security_bear_server_d/protoc_as_dart
-cp -r protoc_as_dart/ ../Security-Bear/SecurityBearDart/lib/features/security_bear/infrastructure/datasources/security_bear_server_d # Copy to Security Bear protoc folder
+rm -r ../security_bear/lib/infrastructure/gen/security_bear_server_d/protoc_as_dart
+cp -r protoc_as_dart/ ../security_bear/lib/infrastructure/gen/security_bear_server_d # Copy to Security Bear protoc folder
 
 rm -r ../cbj_app/lib/infrastructure/core/gen/security_bear/client/protoc_as_dart
 cp -r protoc_as_dart/ ../cbj_app/lib/infrastructure/core/gen/security_bear/client	# Copy to CBJ App protoc folder
@@ -57,8 +61,8 @@ rm -r ../cbj_app/lib/infrastructure/core/gen/cbj_app_server/protoc_as_dart
 cp -r protoc_as_dart/ ../cbj_app/lib/infrastructure/core/gen/cbj_app_server	# Copy to CBJ App protoc folder
 
 
-rm -r ../Security-Bear/SecurityBearDart/lib/data_base/cbj_app/protoc_as_dart
-cp -r protoc_as_dart/ ../Security-Bear/SecurityBearDart/lib/data_base/cbj_app # Copy to Security Bear protoc folder
+rm -r ../security_bear/lib/infrastructure/gen/cbj_app/protoc_as_dart
+cp -r protoc_as_dart/ ../security_bear/lib/infrastructure/gen/cbj_app # Copy to Security Bear protoc folder
 
 
 rm -r protoc_as_dart
