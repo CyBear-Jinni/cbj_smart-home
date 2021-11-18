@@ -8,6 +8,9 @@ service SecurityBear {
   }
   rpc SetFirebaseAccountAndSecurityBearSetup (SBFirebaseAccountAndSecurityBearSetup) returns (SBCommendStatus) {
   }
+  /// Get computer yaml and protoc version and more info about the computer
+  rpc getCompInfo (CompInfo) returns (CompInfo) {
+  }
 }
 
 message SecurityBearSetup {
@@ -36,4 +39,23 @@ message SBFirebaseAccountInformation  {
   string fireBaseApiKey = 7;
   string userEmail = 8;
   string userPassword = 9;
+}
+
+message CompInfo {
+  CbjIno cbjInfo = 12;
+  CompSpecs compSpecs = 13;
+}
+
+message CbjIno {
+  string deviceName = 14;
+  string pubspecYamlVersion = 15;
+  string protoLastGenDate = 16;
+}
+
+message CompSpecs {
+  string compId = 17;
+  string compUuid = 18;
+  string compOs = 19;
+  string compModel = 20;
+  string compType = 21;
 }

@@ -16,6 +16,63 @@ service CbjHub {
     /// client opened a move.
     rpc HubTransferDevices (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests) {
     }
+
+    /// Get computer yaml and protoc version and more info about the computer
+    rpc getCompInfo (CompInfo) returns (CompInfo) {
+    }
+}
+
+
+/// Being added to send data for explain the type that was sent
+enum SendingType {
+    /// Not sure what we sent or got
+    undefinedType = 0;
+    /// String without any structure
+    stringType = 1;
+    /// Partial device data in the form of json
+    partialDeviceType = 2;
+    /// Device object in the form of json
+    deviceType = 3;
+    /// Sending mqtt massage
+    mqttMassageType = 4;
+    /// Scenes
+    sceneType = 5;
+    /// Schedule
+    scheduleType = 6;
+    /// Routine
+    routineType = 7;
+    /// Bindings
+    bindingsType = 8;
+    /// Type for login into other vendors
+    vendorLoginType = 9;
+    /// First connection, for sending first connection info like all devices status and more
+    firstConnection = 10;
+    /// Remote Pipes Domain information
+    remotePipesInformation = 11;
+    /// Request to get the device and software ifo like proto file version and more
+    getHubDeviceInfo = 12;
+    /// Response that contains device and software ifo like proto file version
+    responseHubDeviceInfo = 13;
+}
+
+
+enum DeviceStateGRPC {
+    stateNotSupported = 0;
+    /// Cancel if not ack yet
+    cancelStateInProcess = 1;
+    /// Acknowledge that the state was updated
+    ack = 2;
+    /// New State was failed to execute
+    newStateFailed = 3;
+    /// Waiting for device to take action from firebase and ack
+    waitingInFirebase = 4;
+    /// Comp/Hub is trying to execute and waiting ack
+    waitingInComp = 5;
+    /// No devices to transfer
+    noDevicesToTransfer = 6;
+    /// Ping the other side
+    pingNow = 7;
+
 }
 
 
@@ -82,65 +139,15 @@ enum WhenToExecute {
 }
 
 
-enum DeviceStateGRPC {
-    stateNotSupported = 0;
-    /// Cancel if not ack yet
-    cancelStateInProcess = 1;
-    /// Acknowledge that the state was updated
-    ack = 2;
-    /// New State was failed to execute
-    newStateFailed = 3;
-    /// Waiting for device to take action from firebase and ack
-    waitingInFirebase = 4;
-    /// Comp/Hub is trying to execute and waiting ack
-    waitingInComp = 5;
-    /// No devices to transfer
-    noDevicesToTransfer = 6;
-    /// Ping the other side
-    pingNow = 7;
-
-}
-
-/// Being added to send data for explain the type that was sent
-enum SendingType {
-    /// Not sure what we sent or got
-    undefinedType = 0;
-    /// String without any structure
-    stringType = 1;
-    /// Partial device data in the form of json
-    partialDeviceType = 2;
-    /// Device object in the form of json
-    deviceType = 3;
-    /// Sending mqtt massage
-    mqttMassageType = 4;
-    /// Scenes
-    sceneType = 5;
-    /// Schedule
-    scheduleType = 6;
-    /// Routine
-    routineType = 7;
-    /// Bindings
-    bindingsType = 8;
-    /// Type for login into other vendors
-    vendorLoginType = 9;
-    /// First connection, for sending first connection info like all devices status and more
-    firstConnection = 10;
-    /// Remote Pipes Domain information
-    remotePipesInformation = 11;
-}
-
-
 message ClientStatusRequests {
     SendingType sendingType = 41;
     string allRemoteCommands = 42;
 }
 
-
 message RequestsAndStatusFromHub {
     SendingType sendingType = 43;
     string allRemoteCommands = 44;
 }
-
 
 message AllRemoteCommands {
     SmartDeviceInfo smartDeviceInfo = 40;
@@ -152,10 +159,15 @@ message FirstSetupMessage {
 }
 
 message CompInfo {
+    CbjIno cbjInfo = 47;
     CompSpecs compSpecs = 21;
-    repeated SmartDeviceInfo smartDevicesInComp = 28;
 }
 
+message CbjIno {
+    string deviceName = 48;
+    string pubspecYamlVersion = 27;
+    string protoLastGenDate = 49;
+}
 
 message CompSpecs {
     string compId = 22;
@@ -163,7 +175,6 @@ message CompSpecs {
     string compOs = 24;
     string compModel = 25;
     string compType = 26;
-    string pubspecYamlVersion = 27;
 }
 
 message MicrocontrollerSpecs {
