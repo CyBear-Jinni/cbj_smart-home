@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/security_bear" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security-Bear" beforeDir="false" />
-    </list>
+    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,10 +16,11 @@
         <entry key="$PROJECT_DIR$" value="master" />
         <entry key="$PROJECT_DIR$/CBJ_Smart-Device" value="4b3e1207a48bda95a0d47bd83a39ea68c6a478a1" />
         <entry key="$PROJECT_DIR$/Security-Bear" value="16c92ea2e2ed91d264264bc73241e4ce16717219" />
-        <entry key="$PROJECT_DIR$/cbj_app" value="605a94c8c14a4a09e8397e9ec2c5598e879ccaa7" />
-        <entry key="$PROJECT_DIR$/cbj_hub" value="02c480f5a6b345f1703dd98746b62b085bffcf17" />
-        <entry key="$PROJECT_DIR$/cbj_remote-pipes" value="3aac9edcd7b8acde1f52d9aeffd2cee9e1e80cea" />
-        <entry key="$PROJECT_DIR$/remote_pipes_routing" value="main" />
+        <entry key="$PROJECT_DIR$/cbj_app" value="Changing_grpc" />
+        <entry key="$PROJECT_DIR$/cbj_hub" value="f130885031f7c037c0f35ec1cc1cac67fbdee38f" />
+        <entry key="$PROJECT_DIR$/cbj_remote-pipes" value="110d1babf58ba6e08be0243acbfad6c4ca3845e0" />
+        <entry key="$PROJECT_DIR$/remote_pipes_routing" value="7655d7bd29dc535ee9fb23d37316898184d817fd" />
+        <entry key="$PROJECT_DIR$/security_bear" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -126,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635694728032</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Re added security bear submodule after changing the repo name to lowercase">
+      <created>1637229097001</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1637229097001</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +156,7 @@
     <MESSAGE value="Retrieving miHome lifx tuyaSmart vendors from proto after they got deleted" />
     <MESSAGE value="Add remote pipes routing as submodule and added it to the proto_script.sh to get the generated Hub server files" />
     <MESSAGE value="Added Remote Pipes Information to protoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Remote Pipes Information to protoc" />
+    <MESSAGE value="Re added security bear submodule after changing the repo name to lowercase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re added security bear submodule after changing the repo name to lowercase" />
   </component>
 </project>
