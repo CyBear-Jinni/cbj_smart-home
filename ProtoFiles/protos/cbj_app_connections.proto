@@ -20,8 +20,6 @@ message CBJCommendStatus {
   bool success = 1;
 }
 
-
-
 message CompAppInfo {
   CbjAppIno cbjInfo = 3;
   CompAppSpecs compSpecs = 4;
