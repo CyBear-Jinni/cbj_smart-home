@@ -41,9 +41,11 @@ protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/security_bear_connections
 
 rm -r ../security_bear/lib/infrastructure/gen/security_bear_server_d/protoc_as_dart
 cp -r protoc_as_dart/ ../security_bear/lib/infrastructure/gen/security_bear_server_d # Copy to Security Bear protoc folder
+date +"%d/%m/%y">../security_bear/lib/infrastructure/gen/security_bear_server_d/last_proto_creation_date.txt
 
 rm -r ../cbj_app/lib/infrastructure/core/gen/security_bear/client/protoc_as_dart
 cp -r protoc_as_dart/ ../cbj_app/lib/infrastructure/core/gen/security_bear/client	# Copy to CBJ App protoc folder
+date +"%d/%m/%y">../cbj_app/lib/infrastructure/core/gen/security_bear/last_proto_creation_date.txt
 
 rm -r protoc_as_dart
 
@@ -59,10 +61,11 @@ protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/cbj_app_connections.proto
 
 rm -r ../cbj_app/lib/infrastructure/core/gen/cbj_app_server/protoc_as_dart
 cp -r protoc_as_dart/ ../cbj_app/lib/infrastructure/core/gen/cbj_app_server	# Copy to CBJ App protoc folder
-
+date +"%d/%m/%y">../cbj_app/lib/infrastructure/core/gen/cbj_app_server/last_proto_creation_date.txt
 
 rm -r ../security_bear/lib/infrastructure/gen/cbj_app/protoc_as_dart
 cp -r protoc_as_dart/ ../security_bear/lib/infrastructure/gen/cbj_app # Copy to Security Bear protoc folder
+date +"%d/%m/%y">../security_bear/lib/infrastructure/gen/cbj_app/last_proto_creation_date.txt
 
 
 rm -r protoc_as_dart
@@ -78,15 +81,19 @@ protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/cbj_hub_server.proto
 
 rm -r ../cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart
 cp -r -p protoc_as_dart/ ../cbj_hub/lib/infrastructure/gen/cbj_hub_server/	#   # copy to Remote-Pipes protoc folder
+date +"%d/%m/%y">../cbj_hub/lib/infrastructure/gen/cbj_hub_server/last_proto_creation_date.txt
 
 rm -r ../cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart
 cp -r protoc_as_dart/ ../cbj_app/lib/infrastructure/core/gen/cbj_hub_server	# Copy to CBJ App protoc folder
+date +"%d/%m/%y">../cbj_app/lib/infrastructure/core/gen/cbj_hub_server/last_proto_creation_date.txt
 
 rm -r ../cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart
 cp -r -p protoc_as_dart/ ../cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/	#   # copy to Remote-Pipes protoc folder
+date +"%d/%m/%y">../cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/last_proto_creation_date.txt
 
 rm -r ../remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart
 cp -r -p protoc_as_dart/ ../remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/	#   # copy to Remote-Pipes Routing protoc folder
+date +"%d/%m/%y">../remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/last_proto_creation_date.txt
 
 
 
@@ -107,6 +114,7 @@ protoc --dart_out=protoc_as_dart/ -Iprotos  protos/aioesphomeapi/api.proto proto
 
 rm -r ../cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart
 cp -r -p protoc_as_dart/ ../cbj_hub/lib/infrastructure/gen/aioesphomeapi/	#   # copy to Remote-Pipes protoc folder
+date +"%d/%m/%y">../cbj_hub/lib/infrastructure/gen/aioesphomeapi/last_proto_creation_date.txt
 
 
 rm -r protoc_as_dart
