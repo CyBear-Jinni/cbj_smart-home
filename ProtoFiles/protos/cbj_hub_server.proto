@@ -175,6 +175,7 @@ message CompHubSpecs {
     string compOs = 24;
     string compModel = 25;
     string compType = 26;
+    string compIp = 50;
 }
 
 message MicrocontrollerSpecs {

@@ -37,4 +37,5 @@ message CompAppSpecs {
   string compOs = 10;
   string compModel = 11;
   string compType = 12;
+  string compIp = 13;
 }

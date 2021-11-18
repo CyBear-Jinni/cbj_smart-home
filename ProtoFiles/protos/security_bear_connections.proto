@@ -58,4 +58,6 @@ message CompSecurityBearSpecs {
   string compOs = 19;
   string compModel = 20;
   string compType = 21;
+  string compIp = 22;
+
 }
