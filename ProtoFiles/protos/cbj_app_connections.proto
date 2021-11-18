@@ -6,6 +6,9 @@ package CBJAppConnections;
 service CyBearJinniApp {
   rpc CBJAppGetSmartDeviceInformation (CompInfoSB) returns (CBJCommendStatus) {
   }
+  /// Get computer yaml and protoc version and more info about the computer
+  rpc getCompInfo (CompInfo) returns (CompInfo) {
+  }
 }
 
 message CompInfoSB {
@@ -15,4 +18,25 @@ message CompInfoSB {
 // Did the commend arrived (true) or not (false)
 message CBJCommendStatus {
   bool success = 1;
+}
+
+
+
+message CompInfo {
+  CbjIno cbjInfo = 3;
+  CompSpecs compSpecs = 4;
+}
+
+message CbjIno {
+  string deviceName = 5;
+  string pubspecYamlVersion = 6;
+  string protoLastGenDate = 7;
+}
+
+message CompSpecs {
+  string compId = 8;
+  string compUuid = 9;
+  string compOs = 10;
+  string compModel = 11;
+  string compType = 12;
 }

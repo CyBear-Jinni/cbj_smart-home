@@ -16,6 +16,10 @@ service CbjHub {
     /// client opened a move.
     rpc HubTransferDevices (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests) {
     }
+
+    /// Get computer yaml and protoc version and more info about the computer
+    rpc getCompInfo (CompInfo) returns (CompInfo) {
+    }
 }
 
 
@@ -140,12 +144,10 @@ message ClientStatusRequests {
     string allRemoteCommands = 42;
 }
 
-
 message RequestsAndStatusFromHub {
     SendingType sendingType = 43;
     string allRemoteCommands = 44;
 }
-
 
 message AllRemoteCommands {
     SmartDeviceInfo smartDeviceInfo = 40;
@@ -157,10 +159,15 @@ message FirstSetupMessage {
 }
 
 message CompInfo {
+    CbjIno cbjInfo = 47;
     CompSpecs compSpecs = 21;
-    repeated SmartDeviceInfo smartDevicesInComp = 28;
 }
 
+message CbjIno {
+    string deviceName = 48;
+    string pubspecYamlVersion = 27;
+    string protoLastGenDate = 49;
+}
 
 message CompSpecs {
     string compId = 22;
@@ -168,7 +175,6 @@ message CompSpecs {
     string compOs = 24;
     string compModel = 25;
     string compType = 26;
-    string pubspecYamlVersion = 27;
 }
 
 message MicrocontrollerSpecs {
