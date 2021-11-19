@@ -49,6 +49,7 @@ message CompSecurityBearInfo {
 message CbjSecurityBearIno {
   string deviceName = 14;
   string pubspecYamlVersion = 15;
+  string pubspecYamlBuildNumber = 23;
   string protoLastGenDate = 16;
 }
 

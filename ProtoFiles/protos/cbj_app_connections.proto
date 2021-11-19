@@ -28,6 +28,7 @@ message CompAppInfo {
 message CbjAppIno {
   string deviceName = 5;
   string pubspecYamlVersion = 6;
+  string pubspecYamlBuildNumber = 14;
   string protoLastGenDate = 7;
 }
 

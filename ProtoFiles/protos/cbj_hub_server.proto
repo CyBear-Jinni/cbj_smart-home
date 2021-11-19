@@ -166,6 +166,7 @@ message CompHubInfo {
 message CbjHubIno {
     string deviceName = 48;
     string pubspecYamlVersion = 27;
+    string pubspecYamlBuildNumber = 51;
     string protoLastGenDate = 49;
 }
 
