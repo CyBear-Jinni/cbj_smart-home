@@ -168,6 +168,7 @@ message CbjHubIno {
     string pubspecYamlVersion = 27;
     string pubspecYamlBuildNumber = 51;
     string protoLastGenDate = 49;
+    string dartSdkVersion = 52;
 }
 
 message CompHubSpecs {

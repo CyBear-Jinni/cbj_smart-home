@@ -51,6 +51,7 @@ message CbjSecurityBearIno {
   string pubspecYamlVersion = 15;
   string pubspecYamlBuildNumber = 23;
   string protoLastGenDate = 16;
+  string dartSdkVersion = 24;
 }
 
 message CompSecurityBearSpecs {

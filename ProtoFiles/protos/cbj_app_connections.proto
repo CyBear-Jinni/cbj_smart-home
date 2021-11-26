@@ -30,6 +30,7 @@ message CbjAppIno {
   string pubspecYamlVersion = 6;
   string pubspecYamlBuildNumber = 14;
   string protoLastGenDate = 7;
+  string dartSdkVersion = 15;
 }
 
 message CompAppSpecs {
