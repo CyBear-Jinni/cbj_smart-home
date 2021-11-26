@@ -18,7 +18,7 @@ service CbjHub {
     }
 
     /// Get computer yaml and protoc version and more info about the computer
-    rpc getCompInfo (CompInfo) returns (CompInfo) {
+    rpc getCompHubInfo (CompHubInfo) returns (CompHubInfo) {
     }
 }
 
@@ -154,27 +154,30 @@ message AllRemoteCommands {
 }
 
 message FirstSetupMessage {
-    CompInfo compInfo = 38;
+    CompHubInfo compInfo = 38;
     FirebaseAccountInformation firebaseAccountInformation = 39;
 }
 
-message CompInfo {
-    CbjIno cbjInfo = 47;
-    CompSpecs compSpecs = 21;
+message CompHubInfo {
+    CbjHubIno cbjInfo = 47;
+    CompHubSpecs compSpecs = 21;
 }
 
-message CbjIno {
+message CbjHubIno {
     string deviceName = 48;
     string pubspecYamlVersion = 27;
+    string pubspecYamlBuildNumber = 51;
     string protoLastGenDate = 49;
+    string dartSdkVersion = 52;
 }
 
-message CompSpecs {
+message CompHubSpecs {
     string compId = 22;
     string compUuid = 23;
     string compOs = 24;
     string compModel = 25;
     string compType = 26;
+    string compIp = 50;
 }
 
 message MicrocontrollerSpecs {
@@ -198,7 +201,7 @@ message SmartDeviceInfo {
 
     bool isComputer = 29;
 
-    CompSpecs compSpecs = 30;
+    CompHubSpecs compSpecs = 30;
 
     MicrocontrollerSpecs microcontrollerSpecsSpecs = 31;
 
