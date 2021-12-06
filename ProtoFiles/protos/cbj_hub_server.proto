@@ -53,6 +53,8 @@ enum SendingType {
     getHubDeviceInfo = 12;
     /// Response that contains device and software ifo like proto file version
     responseHubDeviceInfo = 13;
+    /// Response that contains room object
+    roomType = 14;
 }
 
 
