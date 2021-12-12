@@ -115,6 +115,31 @@ enum DeviceTypes {
     rgbwLights = 15;
     rgbcctLights = 16;
     smartTV = 17;
+    smartSpeakers = 18;
+    coffeeMachine = 19;
+    kettle = 20;
+    teapot = 21;
+    washingMachine = 22;
+    dishwasher = 23;
+    toaster = 24;
+    vacuumCleaner = 25;
+    refrigerator = 26;
+    bed = 27;
+    oven = 28;
+    AirConditioner = 29;
+    smartWatch = 30;
+    smartWaterBottle = 31;
+    microphone = 32;
+    securityCamera = 33;
+    babyMonitor = 34;
+    motionSensor = 35;
+    temperatureSensor = 36;
+    humiditySensor = 37;
+    lightSensor = 38;
+    soundSensor = 39;
+    smokeSensor = 40;
+    smokeDetector = 41;
+    oxygenSensor = 42;
 }
 
 
