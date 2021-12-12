@@ -74,7 +74,6 @@ enum DeviceStateGRPC {
     noDevicesToTransfer = 6;
     /// Ping the other side
     pingNow = 7;
-
 }
 
 
@@ -88,7 +87,13 @@ enum VendorsAndServices {
     miHome = 6;
     lifx = 7;
     tuyaSmart = 8;
-
+    smartLife = 9;
+    jinvooSmart = 10;
+    shelly = 11;
+    wink = 12;
+    ikea = 13;
+    sonoff = 14;
+    philipsHue = 15;
 }
 
 
@@ -111,6 +116,7 @@ enum DeviceTypes {
     rgbcctLights = 16;
     smartTV = 17;
 }
+
 
 enum DeviceActions {
     actionNotSupported = 0;
@@ -138,6 +144,37 @@ enum WhenToExecute {
     onlyIfDeviceListIsAreInActionListState = 9;
     atHome = 10;
     outOfHome = 11;
+}
+
+/// List of purposes that each area in the home can have
+enum AreaPurposesTypes {
+    bedroom = 0;
+    studyRoom = 1;
+    workRoom = 2;
+    tvRoom = 3;
+    videoGames = 4;
+    livingRoom = 5;
+    diningRoom = 6;
+    kitchen = 7;
+    outside = 8;
+    outsidePrimary = 9;
+    outsideNotPrimary = 10;
+    toiletRoom = 11;
+    shower = 12;
+    trainingRoom = 13;
+    meditation = 14;
+    romantic = 15;
+    stairsInside = 16;
+    stairsOutside = 17;
+    childrensRoom = 18;
+    cinemaRoom = 19;
+    boardGames = 20;
+    bathtub = 21;
+    laundryRoom = 22;
+    protectedSpace = 23;
+    safeRoom = 24;
+    attic = 25;
+    holidayCabin = 26;
 }
 
 
