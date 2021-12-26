@@ -140,6 +140,7 @@ enum DeviceTypes {
     smokeSensor = 40;
     smokeDetector = 41;
     oxygenSensor = 42;
+    smartPlug = 43;
 }
 
 
