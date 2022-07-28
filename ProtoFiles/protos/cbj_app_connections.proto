@@ -4,11 +4,10 @@ package CBJAppConnections;
 
 
 service CyBearJinniApp {
-  rpc CBJAppGetSmartDeviceInformation (CompInfoSB) returns (CBJCommendStatus) {
-  }
+  rpc CBJAppGetSmartDeviceInformation (CompInfoSB) returns (CBJCommendStatus);
+
   /// Get computer yaml and protoc version and more info about the computer
-  rpc getCompAppInfo (CompAppInfo) returns (CompAppInfo) {
-  }
+  rpc getCompAppInfo (CompAppInfo) returns (CompAppInfo);
 }
 
 message CompInfoSB {

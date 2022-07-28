@@ -4,13 +4,12 @@ package SecurityBearConnections;
 
 // The greeting service definition.
 service SecurityBear {
-  rpc SetWiFiInformation (SecurityBearSetup) returns (SBCommendStatus) {
-  }
-  rpc SetFirebaseAccountAndSecurityBearSetup (SBFirebaseAccountAndSecurityBearSetup) returns (SBCommendStatus) {
-  }
+  rpc SetWiFiInformation (SecurityBearSetup) returns (SBCommendStatus);
+
+  rpc SetFirebaseAccountAndSecurityBearSetup (SBFirebaseAccountAndSecurityBearSetup) returns (SBCommendStatus);
+
   /// Get computer yaml and protoc version and more info about the computer
-  rpc getCompSecurityBearInfo (CompSecurityBearInfo) returns (CompSecurityBearInfo) {
-  }
+  rpc getCompSecurityBearInfo (CompSecurityBearInfo) returns (CompSecurityBearInfo);
 }
 
 message SecurityBearSetup {

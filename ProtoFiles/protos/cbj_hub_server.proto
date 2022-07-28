@@ -8,18 +8,16 @@ service CbjHub {
     /// and updating about it status like client opened movie (for the hub to process).
     /// Getting requests from the hub like play music on the phone, and status of devices that
     /// have been changed like update layout to show entrance lights on.
-    rpc ClientTransferDevices (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub) {
-    }
+    rpc ClientTransferDevices (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub);
+
     /// Hub side sending requests for the clients like turn on music, and updated status of devices
     /// like entrance light got turned on.
     /// Getting request like to turn on lights, and getting client updated status to process like
     /// client opened a move.
-    rpc HubTransferDevices (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests) {
-    }
+    rpc HubTransferDevices (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests);
 
     /// Get computer yaml and protoc version and more info about the computer
-    rpc getCompHubInfo (CompHubInfo) returns (CompHubInfo) {
-    }
+    rpc getCompHubInfo (CompHubInfo) returns (CompHubInfo);
 }
 
 
@@ -74,6 +72,14 @@ enum DeviceStateGRPC {
     noDevicesToTransfer = 6;
     /// Ping the other side
     pingNow = 7;
+    /// Adding new scene
+    addingNewScene = 8;
+    /// Adding new routine
+    addingNewRoutine = 9;
+    /// Adding new binding
+    addingNewBinding = 10;
+    /// Update hub device object properties from the real device
+    updateHubDevicePropertiesFromRealDevice = 11;
 }
 
 
@@ -94,6 +100,12 @@ enum VendorsAndServices {
     ikea = 13;
     sonoff = 14;
     philipsHue = 15;
+    lg = 16;
+    spotify = 17;
+    homeAssistant = 18;
+    hp = 19;
+    yeelink = 20;
+    xiaomi = 21;
 }
 
 
@@ -141,6 +153,9 @@ enum DeviceTypes {
     smokeDetector = 41;
     oxygenSensor = 42;
     smartPlug = 43;
+    printer = 44;
+    scanner = 45;
+    printerWithScanner = 46;
 }
 
 
@@ -154,6 +169,7 @@ enum DeviceActions {
     pressed = 6; // for buttons
     longPress = 7; // for buttons
     doubleTap = 8; // for buttons
+    position = 9; // Example: for blinds height
 }
 
 
@@ -170,6 +186,7 @@ enum WhenToExecute {
     onlyIfDeviceListIsAreInActionListState = 9;
     atHome = 10;
     outOfHome = 11;
+    atASpecificTime = 12; // Example: Only on Sunday and Tuesday at 5:35
 }
 
 /// List of purposes that each area in the home can have

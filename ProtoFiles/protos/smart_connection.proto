@@ -5,41 +5,29 @@ package SmartConnection;
 /// The greeting service definition.
 service SmartServer {
     /// Sends a greeting
-    rpc FirstSetup (FirstSetupMessage) returns (CommendStatus) {
-    }
-    rpc GetCompInfo (CommendStatus) returns (CompSmartDeviceInfo) {
-    }
-    rpc SetCompInfo (CompSmartDeviceInfo) returns (CommendStatus) {
-    }
-    rpc SetFirebaseAccountInformation (FirebaseAccountInformation) returns (CommendStatus) {
-    }
-    rpc GetStatus (SmartDeviceInfo) returns (SmartDeviceStatus) {
-    }
-    rpc UpdateDeviceName (SmartDeviceUpdateDetails) returns (CommendStatus){
-    }
-    rpc SetOnDevice (SmartDeviceInfo) returns (CommendStatus) {
-    }
-    rpc SetOffDevice (SmartDeviceInfo) returns (CommendStatus) {
-    }
-    rpc setBlindsUp (SmartDeviceInfo) returns (CommendStatus) {
-    }
-    rpc setBlindsDown (SmartDeviceInfo) returns (CommendStatus) {
-    }
-    rpc setBlindsStop (SmartDeviceInfo) returns (CommendStatus) {
-    }
+    rpc FirstSetup (FirstSetupMessage) returns (CommendStatus);
+    rpc GetCompInfo (CommendStatus) returns (CompSmartDeviceInfo);
+    rpc SetCompInfo (CompSmartDeviceInfo) returns (CommendStatus);
+    rpc SetFirebaseAccountInformation (FirebaseAccountInformation) returns (CommendStatus);
+    rpc GetStatus (SmartDeviceInfo) returns (SmartDeviceStatus);
+    rpc UpdateDeviceName (SmartDeviceUpdateDetails) returns (CommendStatus);
+    rpc SetOnDevice (SmartDeviceInfo) returns (CommendStatus);
+    rpc SetOffDevice (SmartDeviceInfo) returns (CommendStatus);
+    rpc setBlindsUp (SmartDeviceInfo) returns (CommendStatus);
+    rpc setBlindsDown (SmartDeviceInfo) returns (CommendStatus);
+    rpc setBlindsStop (SmartDeviceInfo) returns (CommendStatus);
 
     /// Client side sending requests for the hub like turn entrance light on,
     /// and updating about it status like client opened movie (for the hub to process).
     /// Getting requests from the hub like play music on the phone, and status of devices that
     /// have been changed like update layout to show entrance lights on.
-    rpc RegisterClient (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub) {
-    }
+    rpc RegisterClient (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub);
+
     /// Hub side sending requests for the clients like turn on music, and updated status of devices
     /// like entrance light got turned on.
     /// Getting request like to turn on lights, and getting client updated status to process like
     /// client opened a move.
-    rpc RegisterHub (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests) {
-    }
+    rpc RegisterHub (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests);
 
 }
 
