@@ -26,6 +26,9 @@
       <excludeFolder url="file://$MODULE_DIR$/security_bear/SecurityBearDart/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/security_bear/SecurityBearDart/build" />
       <excludeFolder url="file://$MODULE_DIR$/security_bear/SecurityBearDart/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/security_bear/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/security_bear/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/security_bear/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
