@@ -13,3 +13,6 @@
 [submodule "security_bear"]
 	path = security_bear
 	url = https://github.com/CyBear-Jinni/security_bear.git
+[submodule "cbj_smart-device"]
+	path = cbj_smart-device
+	url = https://github.com/CyBear-Jinni/cbj_smart-device.git
