@@ -29,6 +29,9 @@
       <excludeFolder url="file://$MODULE_DIR$/security_bear/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/security_bear/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/security_bear/build" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_smart-device/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_smart-device/build" />
+      <excludeFolder url="file://$MODULE_DIR$/cbj_smart-device/.pub" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
