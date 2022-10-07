@@ -53,6 +53,8 @@ enum SendingType {
     responseHubDeviceInfo = 13;
     /// Response that contains room object
     roomType = 14;
+    /// Sending location of device
+    location = 15;
 }
 
 
@@ -98,7 +100,7 @@ enum VendorsAndServices {
     shelly = 11;
     wink = 12;
     ikea = 13;
-    sonoff = 14;
+    sonoffDiy = 14;
     philipsHue = 15;
     lg = 16;
     spotify = 17;
@@ -106,6 +108,8 @@ enum VendorsAndServices {
     hp = 19;
     yeelink = 20;
     xiaomi = 21;
+    sonoffEweLink = 22;
+
 }
 
 

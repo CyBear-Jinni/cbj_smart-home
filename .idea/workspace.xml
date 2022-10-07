@@ -4,66 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Added smartPlug to DeviceTypes in hub server proto">
+    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Added new to hub server proto new types for DeviceActions, WhenToExecute, DeviceTypes, VendorsAndServices, DeviceStateGRPC.">
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/cbj_app_connections.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/cbj_app_connections.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CBJ_Smart-Device" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/security_bear_connections.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/security_bear_connections.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/smart_connection.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/smart_connection.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/protoc_as_dart/cbj_app_connections.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/protoc_as_dart/cbj_app_connections.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/protoc_as_dart/cbj_app_connections.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/protoc_as_dart/cbj_app_connections.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/protoc_as_dart/cbj_app_connections.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/protoc_as_dart/cbj_app_connections.pbgrpc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/protoc_as_dart/cbj_app_connections.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/protoc_as_dart/cbj_app_connections.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/client/protoc_as_dart/security_bear_connections.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/client/protoc_as_dart/security_bear_connections.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/client/protoc_as_dart/security_bear_connections.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/client/protoc_as_dart/security_bear_connections.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/client/protoc_as_dart/security_bear_connections.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/client/protoc_as_dart/security_bear_connections.pbgrpc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/client/protoc_as_dart/security_bear_connections.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/client/protoc_as_dart/security_bear_connections.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api.pbserver.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api.pbserver.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api_options.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api_options.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api_options.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api_options.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api_options.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api_options.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api_options.pbserver.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/protoc_as_dart/aioesphomeapi/api_options.pbserver.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote_pipes_routing" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/protoc_as_dart/cbj_app_connections.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/protoc_as_dart/cbj_app_connections.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/protoc_as_dart/cbj_app_connections.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/protoc_as_dart/cbj_app_connections.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/protoc_as_dart/cbj_app_connections.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/protoc_as_dart/cbj_app_connections.pbgrpc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/protoc_as_dart/cbj_app_connections.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/protoc_as_dart/cbj_app_connections.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/protoc_as_dart/security_bear_connections.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/protoc_as_dart/security_bear_connections.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/protoc_as_dart/security_bear_connections.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/protoc_as_dart/security_bear_connections.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/protoc_as_dart/security_bear_connections.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/protoc_as_dart/security_bear_connections.pbgrpc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/protoc_as_dart/security_bear_connections.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/protoc_as_dart/security_bear_connections.pbjson.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +29,7 @@
         <entry key="$PROJECT_DIR$/security_bear" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/security_bear" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -93,6 +39,28 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+        <option value="master" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ProtoFiles/proto_script.sh" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/security_bear_connections.proto" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/smart_connection.proto" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/security_bear/README.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/aioesphomeapi/api_options.proto" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/aioesphomeapi/api.proto" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/cbj_app_connections.proto" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1x94l8RKfw08uyPUobht7S0CpPq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -106,7 +74,7 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ProtoFiles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cbj_remote-pipes" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -275,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639317644359</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added new to hub server proto new types for DeviceActions, WhenToExecute, DeviceTypes, VendorsAndServices, DeviceStateGRPC.">
+      <created>1659015671555</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1659015671555</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,7 +275,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -327,6 +301,7 @@
     <MESSAGE value="Added room type to Hub protoc SendingType" />
     <MESSAGE value="Added couple of new vendors to vendor list. Added AreaPurposesTypes enum" />
     <MESSAGE value="Added more device types" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more device types" />
+    <MESSAGE value="Added new to hub server proto new types for DeviceActions, WhenToExecute, DeviceTypes, VendorsAndServices, DeviceStateGRPC." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new to hub server proto new types for DeviceActions, WhenToExecute, DeviceTypes, VendorsAndServices, DeviceStateGRPC." />
   </component>
 </project>

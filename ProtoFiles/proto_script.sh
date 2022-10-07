@@ -17,8 +17,8 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 #protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/smart_connection.proto
 #
 #
-#rm -r ../CBJ_Smart-Device/SmartDeviceDart/lib/features/smart_device/infrastructure/datasources/smart_server_d/protoc_as_dart
-#cp -r -p protoc_as_dart/ ../CBJ_Smart-Device/SmartDeviceDart/lib/features/smart_device/infrastructure/datasources/smart_server_d/	#   # copy to smart device protoc folder
+#rm -r ../cbj_smart-device/SmartDeviceDart/lib/features/smart_device/infrastructure/datasources/smart_server_d/protoc_as_dart
+#cp -r -p protoc_as_dart/ ../cbj_smart-device/SmartDeviceDart/lib/features/smart_device/infrastructure/datasources/smart_server_d/	#   # copy to smart device protoc folder
 #
 #rm -r ../cbj_hub/lib/infrastructure/gen/smart_device_server_and_client/protoc_as_dart
 #cp -r -p protoc_as_dart/ ../cbj_hub/lib/infrastructure/gen/smart_device_server_and_client/	#   # copy to Remote-Pipes protoc folder
