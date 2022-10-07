@@ -8,26 +8,6 @@ dart pub global activate protoc_plugin
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 
-
-# Connection between App to Smart Device
-
-## Currently commented as there is no focus on Smart device part
-#mkdir protoc_as_dart
-#
-#protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/smart_connection.proto
-#
-#
-#rm -r ../CBJ_Smart-Device/SmartDeviceDart/lib/features/smart_device/infrastructure/datasources/smart_server_d/protoc_as_dart
-#cp -r -p protoc_as_dart/ ../CBJ_Smart-Device/SmartDeviceDart/lib/features/smart_device/infrastructure/datasources/smart_server_d/	#   # copy to smart device protoc folder
-#
-#rm -r ../cbj_hub/lib/infrastructure/gen/smart_device_server_and_client/protoc_as_dart
-#cp -r -p protoc_as_dart/ ../cbj_hub/lib/infrastructure/gen/smart_device_server_and_client/	#   # copy to Remote-Pipes protoc folder
-#
-#
-#rm -r protoc_as_dart
-
-
-
 # Connection between App to Security Bear
 
 mkdir protoc_as_dart
@@ -120,3 +100,21 @@ date +"const hubAioEspHomeApiClientProtocGenDate = '%d/%m/%y';">../cbj_hub/lib/i
 rm -r protoc_as_dart
 
 
+
+
+
+# Connection between Hub to Smart Device
+
+mkdir protoc_as_dart
+
+protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/cbj_smart_device_server.proto
+
+
+rm -r ../cbj_smart-device/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart
+cp -r -p protoc_as_dart/ ../cbj_smart-device/lib/infrastructure/gen/cbj_smart_device_server/	#   # copy to smart device protoc folder
+
+rm -r ../cbj_hub/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart
+cp -r -p protoc_as_dart/ ../cbj_hub/lib/infrastructure/gen/cbj_smart_device_server/	#   # copy to Hub protoc folder
+
+
+rm -r protoc_as_dart

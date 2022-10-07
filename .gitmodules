@@ -1,6 +1,3 @@
-[submodule "CBJ_Smart-Device"]
-	path = CBJ_Smart-Device
-	url = https://github.com/CyBear-Jinni/CBJ_Smart-Device.git
 [submodule "cbj_remote-pipes"]
 	path = cbj_remote-pipes
 	url = https://github.com/CyBear-Jinni/cbj_remote-pipes.git
@@ -16,3 +13,6 @@
 [submodule "security_bear"]
 	path = security_bear
 	url = https://github.com/CyBear-Jinni/security_bear.git
+[submodule "cbj_smart-device"]
+	path = cbj_smart-device
+	url = https://github.com/CyBear-Jinni/cbj_smart-device.git
