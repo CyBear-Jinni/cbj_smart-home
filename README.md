@@ -55,7 +55,6 @@ The Hub talks to all the supported smart devices from different form factors and
 <img align="left" alt="Discord" width="45px" src="https://cdn.icon-icons.com/icons2/2108/PNG/512/discord_icon_130958.png" /></a>
 <a href="https://github.com/CyBear-Jinni">
 <img align="left" alt="Github" width="45px" src="https://seeklogo.com/images/G/github-colored-logo-FDDF6EB1F0-seeklogo.com.png" /></a>
-[<img src = "https://cdn.icon-icons.com/icons2/1099/PNG/512/1485482199-linkedin_78667.png" height = "80" >](https://www.linkedin.com/company/cybear-jinni)
 
 If you have any questions feel free to ask in our Discord server
 
