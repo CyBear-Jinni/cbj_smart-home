@@ -1,44 +1,44 @@
 syntax = "proto3";
 
-package SmartConnection;
+package CbjSmartDeviceConnections;
 
 /// The greeting service definition.
-service SmartServer {
+service CbjSmartDeviceConnections {
     /// Sends a greeting
-    rpc FirstSetup (FirstSetupMessage) returns (CommendStatus);
-    rpc GetCompInfo (CommendStatus) returns (CompSmartDeviceInfo);
-    rpc SetCompInfo (CompSmartDeviceInfo) returns (CommendStatus);
-    rpc SetFirebaseAccountInformation (FirebaseAccountInformation) returns (CommendStatus);
-    rpc GetStatus (SmartDeviceInfo) returns (SmartDeviceStatus);
-    rpc UpdateDeviceName (SmartDeviceUpdateDetails) returns (CommendStatus);
-    rpc SetOnDevice (SmartDeviceInfo) returns (CommendStatus);
-    rpc SetOffDevice (SmartDeviceInfo) returns (CommendStatus);
-    rpc setBlindsUp (SmartDeviceInfo) returns (CommendStatus);
-    rpc setBlindsDown (SmartDeviceInfo) returns (CommendStatus);
-    rpc setBlindsStop (SmartDeviceInfo) returns (CommendStatus);
+    rpc FirstSetup (CbjFirstSetupMessage) returns (CbjCommendStatus);
+    rpc GetCompInfo (CbjCommendStatus) returns (CbjCompSmartDeviceInfo);
+    rpc SetCompInfo (CbjCompSmartDeviceInfo) returns (CbjCommendStatus);
+    rpc SetFirebaseAccountInformation (CbjFirebaseAccountInformation) returns (CbjCommendStatus);
+    rpc GetStatus (CbjSmartDeviceInfo) returns (CbjSmartDeviceStatus);
+    rpc UpdateDeviceName (CbjSmartDeviceUpdateDetails) returns (CbjCommendStatus);
+    rpc SetOnDevice (CbjSmartDeviceInfo) returns (CbjCommendStatus);
+    rpc SetOffDevice (CbjSmartDeviceInfo) returns (CbjCommendStatus);
+    rpc setBlindsUp (CbjSmartDeviceInfo) returns (CbjCommendStatus);
+    rpc setBlindsDown (CbjSmartDeviceInfo) returns (CbjCommendStatus);
+    rpc setBlindsStop (CbjSmartDeviceInfo) returns (CbjCommendStatus);
 
     /// Client side sending requests for the hub like turn entrance light on,
     /// and updating about it status like client opened movie (for the hub to process).
     /// Getting requests from the hub like play music on the phone, and status of devices that
     /// have been changed like update layout to show entrance lights on.
-    rpc RegisterClient (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub);
+    rpc RegisterClient (stream CbjClientStatusRequests) returns (stream CbjRequestsAndStatusFromHub);
 
     /// Hub side sending requests for the clients like turn on music, and updated status of devices
     /// like entrance light got turned on.
     /// Getting request like to turn on lights, and getting client updated status to process like
     /// client opened a move.
-    rpc RegisterHub (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests);
+    rpc RegisterHub (stream CbjRequestsAndStatusFromHub) returns (stream CbjClientStatusRequests);
 
     /// Suspending the computer
-    rpc suspendComputer (SmartDeviceInfo) returns (CommendStatus);
+    rpc suspendComputer (CbjSmartDeviceInfo) returns (CbjCommendStatus);
 
     /// Shutdown the computer
-    rpc shutdownComputer (SmartDeviceInfo) returns (CommendStatus);
+    rpc shutdownComputer (CbjSmartDeviceInfo) returns (CbjCommendStatus);
 
 }
 
 
-enum DeviceTypes {
+enum CbjDeviceTypes {
     typeNotSupported = 0;
     light = 1;
     blinds = 2;
@@ -52,7 +52,7 @@ enum DeviceTypes {
     smartComputer = 11;
 }
 
-enum DeviceActions {
+enum CbjDeviceActions {
     actionNotSupported = 0;
     on = 1;
     off = 2;
@@ -70,7 +70,7 @@ enum DeviceActions {
 }
 
 
-enum WhenToExecute {
+enum CbjWhenToExecute {
     undefined = 0;
     onOddNumberPress = 1;
     evenNumberPress = 2;
@@ -86,7 +86,7 @@ enum WhenToExecute {
 }
 
 
-enum DeviceStateGRPC {
+enum CbjDeviceStateGRPC {
     stateNotSupported = 0;
     /// Cancel if not ack yet
     cancelStateInProcess = 1;
@@ -99,32 +99,32 @@ enum DeviceStateGRPC {
 }
 
 
-message ClientStatusRequests {
-    AllRemoteCommands allRemoteCommands = 41;
+message CbjClientStatusRequests {
+    CbjAllRemoteCommands allRemoteCommands = 41;
 }
 
 
-message RequestsAndStatusFromHub {
-    AllRemoteCommands allRemoteCommands = 42;
+message CbjRequestsAndStatusFromHub {
+    CbjAllRemoteCommands allRemoteCommands = 42;
 }
 
 
-message AllRemoteCommands {
-    SmartDeviceInfo smartDeviceInfo = 40;
+message CbjAllRemoteCommands {
+    CbjSmartDeviceInfo smartDeviceInfo = 40;
 }
 
-message FirstSetupMessage {
-    CompSmartDeviceInfo compInfo = 38;
-    FirebaseAccountInformation firebaseAccountInformation = 39;
+message CbjFirstSetupMessage {
+    CbjCompSmartDeviceInfo compInfo = 38;
+    CbjFirebaseAccountInformation firebaseAccountInformation = 39;
 }
 
-message CompSmartDeviceInfo {
-    CompSpecs compSpecs = 21;
-    repeated SmartDeviceInfo smartDevicesInComp = 28;
+message CbjCompSmartDeviceInfo {
+    CbjCompSpecs compSpecs = 21;
+    repeated CbjSmartDeviceInfo smartDevicesInComp = 28;
 }
 
 
-message CompSpecs {
+message CbjCompSpecs {
     string compId = 22;
     string compUuid = 23;
     string compOs = 24;
@@ -133,14 +133,14 @@ message CompSpecs {
     string pubspecYamlVersion = 27;
 }
 
-message MicrocontrollerSpecs {
+message CbjMicrocontrollerSpecs {
     string microcontrollerModel = 31;
     string microcontrollerType = 32;
     string softwareVersion = 33;
 }
 
 /// The request message containing the user's name.
-message SmartDeviceInfo {
+message CbjSmartDeviceInfo {
     string id = 1;
     string state = 3;
     string defaultName = 14;
@@ -153,29 +153,29 @@ message SmartDeviceInfo {
 
     bool isComputer = 29;
 
-    CompSpecs compSpecs = 30;
+    CbjCompSpecs compSpecs = 30;
 
-    MicrocontrollerSpecs microcontrollerSpecsSpecs = 31;
+    CbjMicrocontrollerSpecs microcontrollerSpecsSpecs = 31;
 
-    DeviceTypesActions deviceTypesActions = 34;
+    CbjDeviceTypesActions deviceTypesActions = 34;
 }
 
 /// The response message containing the greetings
-message SmartDeviceStatus {
+message CbjSmartDeviceStatus {
     bool onOffState = 4;
 }
 
 /// Did the commend succeeded (true) or not (false)
-message CommendStatus {
+message CbjCommendStatus {
     bool success = 5;
 }
 
-message SmartDeviceUpdateDetails {
-    SmartDeviceInfo smartDevice = 6;
+message CbjSmartDeviceUpdateDetails {
+    CbjSmartDeviceInfo smartDevice = 6;
     string newName = 7;
 }
 
-message FirebaseAccountInformation {
+message CbjFirebaseAccountInformation {
     string fireBaseProjectId = 8;
     string fireBaseApiKey = 9;
     string userEmail = 10;
@@ -183,8 +183,8 @@ message FirebaseAccountInformation {
     string homeId = 12;
 }
 
-message DeviceTypesActions {
-    DeviceTypes deviceType = 35;
-    DeviceActions deviceAction = 36;
-    DeviceStateGRPC deviceStateGRPC = 37;
+message CbjDeviceTypesActions {
+    CbjDeviceTypes deviceType = 35;
+    CbjDeviceActions deviceAction = 36;
+    CbjDeviceStateGRPC deviceStateGRPC = 37;
 }
