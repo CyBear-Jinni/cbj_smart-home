@@ -4,81 +4,35 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Added back cbj_smart-device server protoc file and generated grpc from it">
-      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_connector_conjector.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_device_validators.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_device_value_objects.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_helpers.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_smart_device/cbj_smart_device_entity.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_smart_device_api/cbj_smart_device_api_object.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_smart_device_api/cbj_smart_device_discover.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_smart_device_api/cbj_smart_device_packets.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/simple_devices/smart_computer_object.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/wish_classes_u/smart_computer_wish_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cbj_smart-home.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cbj_smart-home.iml" afterDir="false" />
+    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Added smart computer type to cbj smart device">
+      <change afterPath="$PROJECT_DIR$/cbj_app/lib/domain/devices/generic_smart_computer_device/generic_smart_computer_entity.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cbj_app/lib/domain/devices/generic_smart_computer_device/generic_smart_computer_validators.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cbj_app/lib/domain/devices/generic_smart_computer_device/generic_smart_computer_value_objects.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/generic_devices/generic_smart_computer_device/generic_smart_computer_device_dtos.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/domain/generic_devices/generic_smart_computer_device/generic_smart_computer_entity.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/domain/generic_devices/generic_smart_computer_device/generic_smart_computer_validators.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/domain/generic_devices/generic_smart_computer_device/generic_smart_computer_value_objects.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/generic_devices/generic_smart_computer_device/generic_smart_computer_device_dtos.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/cbj_smart_device_server.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/cbj_smart_device_server.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/cbj_app_server/cbj_app_server_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/cbj_app_server/cbj_app_server_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/cbj_comp/cbj_comp_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/cbj_comp/cbj_comp_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/vendors/vendors_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/vendors/vendors_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/companies_connector_conjector.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/companies_connector_conjector.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/sonoff_diy/sonoff__diy_wall_switch/sonoff_diy_mod_wall_switch_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/sonoff_diy/sonoff__diy_wall_switch/sonoff_diy_mod_wall_switch_entity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbgrpc.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/injection.config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/injection.config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/bin/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/bin/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/button_object_u/button_object_local_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/button_object_u/button_object_local_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/button_object_u/button_with_light_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/button_object_u/button_with_light_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/button_object_u/simple_button_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/button_object_u/simple_button_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/core_u/actions_to_preform_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/core_u/actions_to_preform_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_client/smart_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_client/smart_client.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_dynamic_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_dynamic_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_simple_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_simple_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_static_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_static_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/simple_devices/boiler_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/simple_devices/boiler_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/simple_devices/light_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/simple_devices/light_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/static_devices/blinds_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/static_devices/blinds_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_server_u/smart_server_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_server_u/smart_server_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/wish_classes_u/on_wish_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/wish_classes_u/on_wish_u.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/domain/entities/core_e/enums_e.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/domain/entities/core_e/enums_e.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/domain/entities/set_devices_e/set_devices_e.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/domain/entities/set_devices_e/set_devices_e.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/core_d/manage_physical_components/device_pin_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/core_d/manage_physical_components/device_pin_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/local_db_d/local_db_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/local_db_d/local_db_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pb.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pbenum.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pbgrpc.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pbjson.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/smart_server_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/smart_server_helper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/system_commands_d/bash_commands_d/common_bash_commands_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/system_commands_d/bash_commands_d/common_bash_commands_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/system_commands_d/batch_commands_d/common_batch_commands_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/system_commands_d/batch_commands_d/common_batch_commands_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/system_commands_d/system_commands_base_class_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/system_commands_d/system_commands_base_class_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/system_commands_d/system_commands_manager_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/system_commands_d/system_commands_manager_d.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_smart-device" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbgrpc.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart/cbj_smart_device_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/repositories/core_r/my_singleton_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/repositories/core_r/my_singleton_helper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/repositories/local_db_r/local_db_r.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/repositories/local_db_r/local_db_r.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/repositories/wish_classes_r/turn_pin_on_off_local.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/repositories/wish_classes_r/turn_pin_on_off_local.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remote_pipes_routing" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/proto_gen_date.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security_bear" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +53,7 @@
         <entry key="$PROJECT_DIR$/security_bear" value="2699aa77f7e11ff3f4684ac5e22eb36634cab306" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/cbj_hub" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/cbj_app" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -144,17 +98,17 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/wish_classes_u" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cbj_app/lib/infrastructure/generic_devices" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cbj_app/lib/infrastructure/generic_devices" />
+      <recent name="$PROJECT_DIR$/cbj_app/lib/domain/devices" />
+      <recent name="$PROJECT_DIR$/cbj_hub/lib/domain/generic_devices" />
+      <recent name="$PROJECT_DIR$/cbj_hub/lib/infrastructure/generic_devices" />
       <recent name="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/wish_classes_u" />
-      <recent name="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/simple_devices" />
-      <recent name="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices" />
-      <recent name="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cybear_jinni" />
-      <recent name="$PROJECT_DIR$/cbj_remote-pipes/lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/basic_devices" />
@@ -375,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665174618999</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added smart computer type to cbj smart device">
+      <created>1665315950885</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1665315950885</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -406,7 +367,6 @@
       <path value="$PROJECT_DIR$/Security-Bear" />
       <path value="$PROJECT_DIR$/CBJ_Smart-Device" />
     </ignored-roots>
-    <MESSAGE value="Add switcher to vendors and services in proto" />
     <MESSAGE value="Move remote pipes code one folder back" />
     <MESSAGE value="Fixed all of remote pipes using old gen code" />
     <MESSAGE value="Commented Smart device part from protoc script as it is no longer in focus" />
@@ -431,6 +391,7 @@
     <MESSAGE value="Re added cbj_smart-device with the new repo name" />
     <MESSAGE value="Changed cbj_smart-device grpc_changes branch" />
     <MESSAGE value="Added back cbj_smart-device server protoc file and generated grpc from it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added back cbj_smart-device server protoc file and generated grpc from it" />
+    <MESSAGE value="Added smart computer type to cbj smart device" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added smart computer type to cbj smart device" />
   </component>
 </project>

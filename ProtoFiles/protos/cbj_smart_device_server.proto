@@ -65,6 +65,8 @@ enum DeviceActions {
     position = 9; // Example: for blinds height
     suspend = 10; // Suspend the computer
     shutdown =11;  // Shut down the computer
+    itIsFalse = 12;
+    itIsTrue = 13;
 }
 
 
