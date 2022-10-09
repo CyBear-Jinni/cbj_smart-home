@@ -29,6 +29,12 @@ service SmartServer {
     /// client opened a move.
     rpc RegisterHub (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests);
 
+    /// Suspending the computer
+    rpc suspendComputer (SmartDeviceInfo) returns (CommendStatus);
+
+    /// Shutdown the computer
+    rpc shutdownComputer (SmartDeviceInfo) returns (CommendStatus);
+
 }
 
 
@@ -43,6 +49,7 @@ enum DeviceTypes {
     phoneApp = 8;
     computerApp = 9;
     browserApp = 10;
+    smartComputer = 11;
 }
 
 enum DeviceActions {
@@ -55,6 +62,9 @@ enum DeviceActions {
     pressed = 6; // for buttons
     longPress = 7; // for buttons
     doubleTap = 8; // for buttons
+    position = 9; // Example: for blinds height
+    suspend = 10; // Suspend the computer
+    shutdown =11;  // Shut down the computer
 }
 
 
