@@ -8,98 +8,18 @@ service CbjHub {
     /// and updating about it status like client opened movie (for the hub to process).
     /// Getting requests from the hub like play music on the phone, and status of devices that
     /// have been changed like update layout to show entrance lights on.
-    rpc ClientTransferDevices (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub) {
-    }
+    rpc ClientTransferDevices (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub);
+
     /// Hub side sending requests for the clients like turn on music, and updated status of devices
     /// like entrance light got turned on.
     /// Getting request like to turn on lights, and getting client updated status to process like
     /// client opened a move.
-    rpc HubTransferDevices (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests) {
-    }
+    rpc HubTransferDevices (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests);
+
+    /// Get computer yaml and protoc version and more info about the computer
+    rpc getCompHubInfo (CompHubInfo) returns (CompHubInfo);
 }
 
-
-enum VendorsAndServices {
-    vendorsAndServicesNotSupported = 0;
-    espHome = 1;
-    switcherSmartHome = 2;
-    tasmota = 3;
-    yeelight = 4;
-    google = 5;
-    miHome = 6;
-    lifx = 7;
-    tuyaSmart = 8;
-
-}
-
-
-enum DeviceTypes {
-    typeNotSupported = 0;
-    light = 1;
-    blinds = 2;
-    boiler = 3;
-    button = 4;
-    buttonWithLight = 5;
-    hub = 7;
-    phoneApp = 8;
-    computerApp = 9;
-    browserApp = 10;
-    switch = 11;
-    dimmableLight = 12;
-    cctLight = 13;
-    rgbLights = 14;
-    rgbwLights = 15;
-    rgbcctLights = 16;
-    smartTV = 17;
-}
-
-enum DeviceActions {
-    actionNotSupported = 0;
-    on = 1;
-    off = 2;
-    moveUp = 3;
-    stop = 4;
-    moveDown = 5;
-    pressed = 6; // for buttons
-    longPress = 7; // for buttons
-    doubleTap = 8; // for buttons
-}
-
-
-enum WhenToExecute {
-    undefined = 0;
-    onOddNumberPress = 1;
-    evenNumberPress = 2;
-    betweenSelectedTime = 3;
-    doNotBetweenSelectedTime = 4;
-    allTheTime = 5;
-    never = 6;
-    onceNow = 7;
-    onceInSelectedTime = 8;
-    onlyIfDeviceListIsAreInActionListState = 9;
-    atHome = 10;
-    outOfHome = 11;
-}
-
-
-enum DeviceStateGRPC {
-    stateNotSupported = 0;
-    /// Cancel if not ack yet
-    cancelStateInProcess = 1;
-    /// Acknowledge that the state was updated
-    ack = 2;
-    /// New State was failed to execute
-    newStateFailed = 3;
-    /// Waiting for device to take action from firebase and ack
-    waitingInFirebase = 4;
-    /// Comp/Hub is trying to execute and waiting ack
-    waitingInComp = 5;
-    /// No devices to transfer
-    noDevicesToTransfer = 6;
-    /// Ping the other side
-    pingNow = 7;
-
-}
 
 /// Being added to send data for explain the type that was sent
 enum SendingType {
@@ -127,6 +47,191 @@ enum SendingType {
     firstConnection = 10;
     /// Remote Pipes Domain information
     remotePipesInformation = 11;
+    /// Request to get the device and software ifo like proto file version and more
+    getHubDeviceInfo = 12;
+    /// Response that contains device and software ifo like proto file version
+    responseHubDeviceInfo = 13;
+    /// Response that contains room object
+    roomType = 14;
+    /// Sending location of device
+    location = 15;
+}
+
+
+enum DeviceStateGRPC {
+    stateNotSupported = 0;
+    /// Cancel if not ack yet
+    cancelStateInProcess = 1;
+    /// Acknowledge that the state was updated
+    ack = 2;
+    /// New State was failed to execute
+    newStateFailed = 3;
+    /// Waiting for device to take action from firebase and ack
+    waitingInFirebase = 4;
+    /// Comp/Hub is trying to execute and waiting ack
+    waitingInComp = 5;
+    /// No devices to transfer
+    noDevicesToTransfer = 6;
+    /// Ping the other side
+    pingNow = 7;
+    /// Adding new scene
+    addingNewScene = 8;
+    /// Adding new routine
+    addingNewRoutine = 9;
+    /// Adding new binding
+    addingNewBinding = 10;
+    /// Update hub device object properties from the real device
+    updateHubDevicePropertiesFromRealDevice = 11;
+}
+
+
+enum VendorsAndServices {
+    vendorsAndServicesNotSupported = 0;
+    espHome = 1;
+    switcherSmartHome = 2;
+    tasmota = 3;
+    yeelight = 4;
+    google = 5;
+    miHome = 6;
+    lifx = 7;
+    tuyaSmart = 8;
+    smartLife = 9;
+    jinvooSmart = 10;
+    shelly = 11;
+    wink = 12;
+    ikea = 13;
+    sonoffDiy = 14;
+    philipsHue = 15;
+    lg = 16;
+    spotify = 17;
+    homeAssistant = 18;
+    hp = 19;
+    yeelink = 20;
+    xiaomi = 21;
+    sonoffEweLink = 22;
+    cbjDevices = 23;
+}
+
+
+enum DeviceTypes {
+    typeNotSupported = 0;
+    light = 1;
+    blinds = 2;
+    boiler = 3;
+    button = 4;
+    buttonWithLight = 5;
+    hub = 7;
+    /// The app running on a phone.
+    phoneApp = 8;
+    /// The app running on a computer.
+    computerApp = 9;
+    /// The app running on a browser.
+    browserApp = 10;
+    switch = 11;
+    dimmableLight = 12;
+    cctLight = 13;
+    rgbLights = 14;
+    rgbwLights = 15;
+    rgbcctLights = 16;
+    smartTV = 17;
+    smartSpeakers = 18;
+    coffeeMachine = 19;
+    kettle = 20;
+    teapot = 21;
+    washingMachine = 22;
+    dishwasher = 23;
+    toaster = 24;
+    vacuumCleaner = 25;
+    refrigerator = 26;
+    bed = 27;
+    oven = 28;
+    AirConditioner = 29;
+    smartWatch = 30;
+    smartWaterBottle = 31;
+    microphone = 32;
+    securityCamera = 33;
+    babyMonitor = 34;
+    motionSensor = 35;
+    temperatureSensor = 36;
+    humiditySensor = 37;
+    lightSensor = 38;
+    soundSensor = 39;
+    smokeSensor = 40;
+    smokeDetector = 41;
+    oxygenSensor = 42;
+    smartPlug = 43;
+    printer = 44;
+    scanner = 45;
+    printerWithScanner = 46;
+    /// Device with full computer excess like executing commands and checking process status.
+    smartComputer = 47;
+
+}
+
+
+enum DeviceActions {
+    actionNotSupported = 0;
+    on = 1;
+    off = 2;
+    moveUp = 3;
+    stop = 4;
+    moveDown = 5;
+    pressed = 6; // for buttons
+    longPress = 7; // for buttons
+    doubleTap = 8; // for buttons
+    position = 9; // Example: for blinds height
+    suspend = 10; // Suspend the computer
+    shutdown =11;  // Shut down the computer
+    itIsFalse = 12;
+    itIsTrue = 13;
+}
+
+
+enum WhenToExecute {
+    undefined = 0;
+    onOddNumberPress = 1;
+    evenNumberPress = 2;
+    betweenSelectedTime = 3;
+    doNotBetweenSelectedTime = 4;
+    allTheTime = 5;
+    never = 6;
+    onceNow = 7;
+    onceInSelectedTime = 8;
+    onlyIfDeviceListIsAreInActionListState = 9;
+    atHome = 10;
+    outOfHome = 11;
+    atASpecificTime = 12; // Example: Only on Sunday and Tuesday at 5:35
+}
+
+/// List of purposes that each area in the home can have
+enum AreaPurposesTypes {
+    bedroom = 0;
+    studyRoom = 1;
+    workRoom = 2;
+    tvRoom = 3;
+    videoGames = 4;
+    livingRoom = 5;
+    diningRoom = 6;
+    kitchen = 7;
+    outside = 8;
+    outsidePrimary = 9;
+    outsideNotPrimary = 10;
+    toiletRoom = 11;
+    shower = 12;
+    trainingRoom = 13;
+    meditation = 14;
+    romantic = 15;
+    stairsInside = 16;
+    stairsOutside = 17;
+    childrensRoom = 18;
+    cinemaRoom = 19;
+    boardGames = 20;
+    bathtub = 21;
+    laundryRoom = 22;
+    protectedSpace = 23;
+    safeRoom = 24;
+    attic = 25;
+    holidayCabin = 26;
 }
 
 
@@ -135,35 +240,40 @@ message ClientStatusRequests {
     string allRemoteCommands = 42;
 }
 
-
 message RequestsAndStatusFromHub {
     SendingType sendingType = 43;
     string allRemoteCommands = 44;
 }
-
 
 message AllRemoteCommands {
     SmartDeviceInfo smartDeviceInfo = 40;
 }
 
 message FirstSetupMessage {
-    CompInfo compInfo = 38;
+    CompHubInfo compInfo = 38;
     FirebaseAccountInformation firebaseAccountInformation = 39;
 }
 
-message CompInfo {
-    CompSpecs compSpecs = 21;
-    repeated SmartDeviceInfo smartDevicesInComp = 28;
+message CompHubInfo {
+    CbjHubIno cbjInfo = 47;
+    CompHubSpecs compSpecs = 21;
 }
 
+message CbjHubIno {
+    string deviceName = 48;
+    string pubspecYamlVersion = 27;
+    string pubspecYamlBuildNumber = 51;
+    string protoLastGenDate = 49;
+    string dartSdkVersion = 52;
+}
 
-message CompSpecs {
+message CompHubSpecs {
     string compId = 22;
     string compUuid = 23;
     string compOs = 24;
     string compModel = 25;
     string compType = 26;
-    string pubspecYamlVersion = 27;
+    string compIp = 50;
 }
 
 message MicrocontrollerSpecs {
@@ -187,7 +297,7 @@ message SmartDeviceInfo {
 
     bool isComputer = 29;
 
-    CompSpecs compSpecs = 30;
+    CompHubSpecs compSpecs = 30;
 
     MicrocontrollerSpecs microcontrollerSpecsSpecs = 31;
 
