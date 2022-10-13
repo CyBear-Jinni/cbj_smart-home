@@ -4,48 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Fixing hub crash from bad cbj smart device request">
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/application/smart_computers/smart_computers_actor/smart_computers_actor_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/application/smart_computers/smart_computers_actor/smart_computers_actor_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/application/smart_computers/smart_computers_actor/smart_computers_actor_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/application/smart_computers/smart_computers_watcher/smart_computer_watcher_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/application/smart_computers/smart_computers_watcher/smart_computer_watcher_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/application/smart_computers/smart_computers_watcher/smart_computer_watcher_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/rooms_smart_computers_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/settings_page_of_smart_computers.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/smart_computer_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/smart_computers_in_the_room/smart_computers_in_the_room_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/smart_computers_in_the_room/smart_computers_in_the_room_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/smart_computers_widgets.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/widgets/critical_smart_computers_failure_display_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/widgets/error_smart_computers_device_card_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/widgets/room_smart_computers.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/widgets/room_smart_computers_toggles_block.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/widgets/rooms_smart_computers_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/widgets/smart_computer_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/home_page/tabs/smart_devices_tab/devices_in_the_room_blocks/smart_computers_in_the_room_block.dart" afterDir="false" />
+    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Fixed bug @singleton classes called get constructed more than once #187">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/domain/devices/device/i_device_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/domain/devices/device/i_device_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/domain/room/smart_room_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/domain/room/smart_room_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/devices/device/device_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/devices/device/device_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/generic_devices/generic_empty_device/generic_empty_device_dtos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/generic_devices/generic_empty_device/generic_empty_device_dtos.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/hub_client/hub_requests_routing.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/hub_client/hub_requests_routing.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_plugs/rooms_smart_plugs_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_plugs/rooms_smart_plugs_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_plugs/settings_page_of_switches.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_plugs/settings_page_of_smart_plug.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/presentation/home_page/tabs/smart_devices_tab/rooms_widgets/rom_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/home_page/tabs/smart_devices_tab/rooms_widgets/rom_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/presentation/routes/app_router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/presentation/routes/app_router.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_app" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_hub" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/bin/cbj_hub.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/bin/cbj_hub.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/domain/generic_devices/generic_smart_computer_device/generic_smart_computer_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/domain/generic_devices/generic_smart_computer_device/generic_smart_computer_entity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/cbj_smart_device_client/cbj_smart_device_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/cbj_smart_device_client/cbj_smart_device_client.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_connector_conjector.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_connector_conjector.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_helpers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_helpers.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_smart_device/cbj_smart_device_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_smart_device/cbj_smart_device_entity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/companies_connector_conjector.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/companies_connector_conjector.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/generic_devices/abstract_device/device_entity_dto_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/generic_devices/abstract_device/device_entity_dto_abstract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/mqtt_server/mqtt_server_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/mqtt_server/mqtt_server_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_server_u/smart_server_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_server_u/smart_server_u.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_smart-device" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,7 +340,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665644409270</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Completed (suspend) request from the App to Hub to Cbj Smart Computer">
+      <created>1665688357858</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1665688357858</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Fixed bug @singleton classes called get constructed more than once #187">
+      <created>1665688940158</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1665688940158</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -408,8 +385,6 @@
       <path value="$PROJECT_DIR$/Security-Bear" />
       <path value="$PROJECT_DIR$/CBJ_Smart-Device" />
     </ignored-roots>
-    <MESSAGE value="Commented Smart device part from protoc script as it is no longer in focus" />
-    <MESSAGE value="Add vendorLoginType in proto, fix pub not recognized in script" />
     <MESSAGE value="Retrieving miHome lifx tuyaSmart vendors from proto after they got deleted" />
     <MESSAGE value="Add remote pipes routing as submodule and added it to the proto_script.sh to get the generated Hub server files" />
     <MESSAGE value="Added Remote Pipes Information to protoc" />
@@ -433,25 +408,22 @@
     <MESSAGE value="Added smart computer type to cbj smart device" />
     <MESSAGE value="Add support for smart computer generic device type" />
     <MESSAGE value="Fixing hub crash from bad cbj smart device request" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing hub crash from bad cbj smart device request" />
+    <MESSAGE value="Completed (suspend) request from the App to Hub to Cbj Smart Computer" />
+    <MESSAGE value="Fixed bug @singleton classes called get constructed more than once #187" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug @singleton classes called get constructed more than once #187" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_connector_conjector.dart</url>
-          <line>54</line>
+          <line>50</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_helpers.dart</url>
           <line>37</line>
           <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_server_u/smart_server_u.dart</url>
-          <line>145</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/cbj_app/lib/infrastructure/hub_client/hub_requests_routing.dart</url>
