@@ -109,7 +109,7 @@ enum VendorsAndServices {
     yeelink = 20;
     xiaomi = 21;
     sonoffEweLink = 22;
-
+    cbjDevices = 23;
 }
 
 
@@ -121,8 +121,11 @@ enum DeviceTypes {
     button = 4;
     buttonWithLight = 5;
     hub = 7;
+    /// The app running on a phone.
     phoneApp = 8;
+    /// The app running on a computer.
     computerApp = 9;
+    /// The app running on a browser.
     browserApp = 10;
     switch = 11;
     dimmableLight = 12;
@@ -160,6 +163,9 @@ enum DeviceTypes {
     printer = 44;
     scanner = 45;
     printerWithScanner = 46;
+    /// Device with full computer excess like executing commands and checking process status.
+    smartComputer = 47;
+
 }
 
 
@@ -174,6 +180,10 @@ enum DeviceActions {
     longPress = 7; // for buttons
     doubleTap = 8; // for buttons
     position = 9; // Example: for blinds height
+    suspend = 10; // Suspend the computer
+    shutdown =11;  // Shut down the computer
+    itIsFalse = 12;
+    itIsTrue = 13;
 }
 
 

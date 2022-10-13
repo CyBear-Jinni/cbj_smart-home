@@ -4,38 +4,23 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Changed cbj_smart-device grpc_changes branch">
-      <change beforePath="$PROJECT_DIR$/.idea/cbj_smart-home.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cbj_smart-home.iml" afterDir="false" />
+    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Fixed bug @singleton classes called get constructed more than once #187">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/smart_connection.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/cbj_smart_device_server.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_app" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_hub" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_smart-device" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pb.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pbgrpc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pbgrpc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device/lib/infrastructure/datasources/smart_server_d/protoc_as_dart/smart_connection.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/proto_gen_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/proto_gen_date.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -51,7 +36,7 @@
         <entry key="$PROJECT_DIR$/security_bear" value="2699aa77f7e11ff3f4684ac5e22eb36634cab306" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/cbj_hub" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -71,15 +56,15 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/security_bear/README.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ProtoFiles/proto_script.sh" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/cbj_smart_device_server.proto" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/security_bear_connections.proto" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/cbj_app_connections.proto" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/aioesphomeapi/api_options.proto" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/aioesphomeapi/api.proto" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/security_bear/README.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProtoFiles/proto_script.sh" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/cbj_smart_device_server.proto" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProtoFiles/protos/security_bear_connections.proto" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -96,18 +81,52 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cbj_remote-pipes" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cbj_remote-pipes/lib" />
-      <recent name="$PROJECT_DIR$/cbj_remote-pipes/bin" />
+      <recent name="$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page" />
+      <recent name="$PROJECT_DIR$/cbj_app/lib/application" />
+      <recent name="$PROJECT_DIR$/cbj_app/lib/presentation/home_page/tabs/smart_devices_tab/devices_in_the_room_blocks" />
+      <recent name="$PROJECT_DIR$/cbj_app/lib/infrastructure/generic_devices" />
+      <recent name="$PROJECT_DIR$/cbj_app/lib/domain/devices" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u/basic_devices" />
+      <recent name="$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_device_objects_u" />
       <recent name="$PROJECT_DIR$/cbj_remote-pipes" />
     </key>
+  </component>
+  <component name="RunManager" selected="Dart Command Line App.cbj_hub.dart">
+    <configuration name="cbj_hub.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/cbj_hub/bin/cbj_hub.dart" />
+      <option name="workingDirectory" value="$PROJECT_DIR$/cbj_hub" />
+      <method v="2" />
+    </configuration>
+    <configuration name="smart device" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true">
+      <option name="filePath" value="$PROJECT_DIR$/cbj_smart-device/bin/main.dart" />
+      <option name="workingDirectory" value="$PROJECT_DIR$/cbj_smart-device" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/cbj_app/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Dart Command Line App.smart device" />
+      <item itemvalue="Dart Command Line App.cbj_hub.dart" />
+      <item itemvalue="Flutter.main.dart" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Dart Command Line App.cbj_hub.dart" />
+        <item itemvalue="Flutter.main.dart" />
+        <item itemvalue="Dart Command Line App.smart device" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -286,7 +305,56 @@
       <option name="project" value="LOCAL" />
       <updated>1665167962448</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added back cbj_smart-device server protoc file and generated grpc from it">
+      <created>1665174608848</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1665174608848</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Added back cbj_smart-device server protoc file and generated grpc from it">
+      <created>1665174618999</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1665174618999</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Added smart computer type to cbj smart device">
+      <created>1665315950885</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1665315950885</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add support for smart computer generic device type">
+      <created>1665317630554</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1665317630554</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Fixing hub crash from bad cbj smart device request">
+      <created>1665644409270</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1665644409270</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Completed (suspend) request from the App to Hub to Cbj Smart Computer">
+      <created>1665688357858</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1665688357858</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Fixed bug @singleton classes called get constructed more than once #187">
+      <created>1665688940158</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1665688940158</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,11 +385,6 @@
       <path value="$PROJECT_DIR$/Security-Bear" />
       <path value="$PROJECT_DIR$/CBJ_Smart-Device" />
     </ignored-roots>
-    <MESSAGE value="Add switcher to vendors and services in proto" />
-    <MESSAGE value="Move remote pipes code one folder back" />
-    <MESSAGE value="Fixed all of remote pipes using old gen code" />
-    <MESSAGE value="Commented Smart device part from protoc script as it is no longer in focus" />
-    <MESSAGE value="Add vendorLoginType in proto, fix pub not recognized in script" />
     <MESSAGE value="Retrieving miHome lifx tuyaSmart vendors from proto after they got deleted" />
     <MESSAGE value="Add remote pipes routing as submodule and added it to the proto_script.sh to get the generated Hub server files" />
     <MESSAGE value="Added Remote Pipes Information to protoc" />
@@ -341,6 +404,63 @@
     <MESSAGE value="Added new to hub server proto new types for DeviceActions, WhenToExecute, DeviceTypes, VendorsAndServices, DeviceStateGRPC." />
     <MESSAGE value="Re added cbj_smart-device with the new repo name" />
     <MESSAGE value="Changed cbj_smart-device grpc_changes branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed cbj_smart-device grpc_changes branch" />
+    <MESSAGE value="Added back cbj_smart-device server protoc file and generated grpc from it" />
+    <MESSAGE value="Added smart computer type to cbj smart device" />
+    <MESSAGE value="Add support for smart computer generic device type" />
+    <MESSAGE value="Fixing hub crash from bad cbj smart device request" />
+    <MESSAGE value="Completed (suspend) request from the App to Hub to Cbj Smart Computer" />
+    <MESSAGE value="Fixed bug @singleton classes called get constructed more than once #187" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug @singleton classes called get constructed more than once #187" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_connector_conjector.dart</url>
+          <line>50</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_devices_helpers.dart</url>
+          <line>37</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/cbj_app/lib/infrastructure/hub_client/hub_requests_routing.dart</url>
+          <line>207</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/widgets/room_smart_computers.dart</url>
+          <line>37</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/widgets/room_smart_computers.dart</url>
+          <line>107</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/cbj_app/lib/presentation/device_full_screen_page/smart_computers/widgets/room_smart_computers.dart</url>
+          <line>167</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_smart_device/cbj_smart_device_entity.dart</url>
+          <line>78</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/cbj_hub/lib/infrastructure/devices/cbj_devices/cbj_smart_device/cbj_smart_device_entity.dart</url>
+          <line>43</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/cbj_smart-device/lib/application/usecases/smart_server_u/smart_server_u.dart</url>
+          <line>459</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
