@@ -184,6 +184,10 @@ enum DeviceActions {
     shutdown =11;  // Shut down the computer
     itIsFalse = 12;
     itIsTrue = 13;
+    pausePlay = 14;
+    changeVolume = 15;
+    jump = 16;
+    skip = 17;
 }
 
 
