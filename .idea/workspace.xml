@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Added more proto device actions">
-      <change beforePath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/proto_script.sh" afterDir="false" />
+    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Added server proto gen data file for smart device, fixed gen proto file to be the same name for server and client">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_app" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cbj_hub" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_smart-device" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_smart-device" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security_bear" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666691250367</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Added server proto gen data file for smart device, fixed gen proto file to be the same name for server and client">
+      <created>1666691536957</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1666691536957</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -404,7 +415,6 @@
       <path value="$PROJECT_DIR$/Security-Bear" />
       <path value="$PROJECT_DIR$/CBJ_Smart-Device" />
     </ignored-roots>
-    <MESSAGE value="Re added security bear submodule after changing the repo name to lowercase" />
     <MESSAGE value="Changed all sub models to grpc changes branch" />
     <MESSAGE value="Moved security bear gen files to one folder and changed old security bear repo name reference to the new one" />
     <MESSAGE value="Have added getHubDeviceInfo responseHubDeviceInfo SendingType in proto, changed the order of elements in proto, script will now create files with the date the proto got compiled within each gen folders -&gt; client/Server folder" />
@@ -429,7 +439,8 @@
     <MESSAGE value="Pushing sub repo new version" />
     <MESSAGE value="Added some new deviceActions to hub proto (for smart tv's)" />
     <MESSAGE value="Added more proto device actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more proto device actions" />
+    <MESSAGE value="Added server proto gen data file for smart device, fixed gen proto file to be the same name for server and client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added server proto gen data file for smart device, fixed gen proto file to be the same name for server and client" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -196,6 +196,8 @@ enum DeviceActions {
     skipBackward = 23;
     skipNextVid = 24;
     skipPreviousVid = 25;
+    open = 26;
+    close = 27;
 }
 
 
