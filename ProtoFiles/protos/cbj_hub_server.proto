@@ -188,6 +188,14 @@ enum DeviceActions {
     changeVolume = 15;
     jump = 16;
     skip = 17;
+    pause = 18;
+    play = 19;
+    volumeUp = 20;
+    volumeDown = 21;
+    skipForeword = 22;
+    skipBackward = 23;
+    skipNextVid = 24;
+    skipPreviousVid = 25;
 }
 
 

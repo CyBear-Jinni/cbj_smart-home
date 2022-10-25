@@ -4,10 +4,30 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Pushing sub repo new version">
+    <list default="true" id="dda0a42f-ac78-4d03-8b58-4d5dc9aa01fb" name="Default Changelist" comment="Added some new deviceActions to hub proto (for smart tv's)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ProtoFiles/protos/cbj_hub_server.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbj_hub" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_app" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_app_server/proto_gen_date.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_app/lib/infrastructure/core/gen/security_bear/proto_gen_date.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/aioesphomeapi/proto_gen_date.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_hub/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remote_pipes_routing" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/proto_gen_date.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbenum.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pipes_routing/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbjson.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security_bear" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/cbj_app/proto_gen_date.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/proto_gen_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/security_bear/lib/infrastructure/gen/security_bear_server_d/proto_gen_date.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -360,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665689034168</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Added some new deviceActions to hub proto (for smart tv's)">
+      <created>1666287482271</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1666287482271</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -391,7 +418,6 @@
       <path value="$PROJECT_DIR$/Security-Bear" />
       <path value="$PROJECT_DIR$/CBJ_Smart-Device" />
     </ignored-roots>
-    <MESSAGE value="Add remote pipes routing as submodule and added it to the proto_script.sh to get the generated Hub server files" />
     <MESSAGE value="Added Remote Pipes Information to protoc" />
     <MESSAGE value="Re added security bear submodule after changing the repo name to lowercase" />
     <MESSAGE value="Changed all sub models to grpc changes branch" />
@@ -416,7 +442,8 @@
     <MESSAGE value="Completed (suspend) request from the App to Hub to Cbj Smart Computer" />
     <MESSAGE value="Fixed bug @singleton classes called get constructed more than once #187" />
     <MESSAGE value="Pushing sub repo new version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pushing sub repo new version" />
+    <MESSAGE value="Added some new deviceActions to hub proto (for smart tv's)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some new deviceActions to hub proto (for smart tv's)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
