@@ -110,6 +110,9 @@ enum VendorsAndServices {
     xiaomi = 21;
     sonoffEweLink = 22;
     cbjDevices = 23;
+    wiz = 24;
+    switchBot = 25;
+    somfy = 26;
 }
 
 
