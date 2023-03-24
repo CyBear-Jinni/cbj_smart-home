@@ -14,7 +14,7 @@ mkdir protoc_as_dart
 
 # TODO: Add check if protoc command is installed, if not that show to the user protoc
 #  installations methods
-#  The recommended one "sudo snap install protobuf"
+#  The recommended one "sudo snap install protobuf --classic"
 #  Didn't test and old version "sudo apt  install protobuf-compiler"
 protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/security_bear_connections.proto
 
