@@ -6,15 +6,15 @@ package CbjHub;
 service CbjHub {
     /// Client side sending requests for the hub like turn entrance light on,
     /// and updating about it status like client opened movie (for the hub to process).
-    /// Getting requests from the hub like play music on the phone, and status of devices that
+    /// Getting requests from the hub like play music on the phone, and status of entities that
     /// have been changed like update layout to show entrance lights on.
-    rpc ClientTransferDevices (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub);
+    rpc ClientTransferEntities (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub);
 
-    /// Hub side sending requests for the clients like turn on music, and updated status of devices
+    /// Hub side sending requests for the clients like turn on music, and updated status of entities
     /// like entrance light got turned on.
     /// Getting request like to turn on lights, and getting client updated status to process like
     /// client opened a move.
-    rpc HubTransferDevices (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests);
+    rpc HubTransferEntities (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests);
 
     /// Get computer yaml and protoc version and more info about the computer
     rpc getCompHubInfo (CompHubInfo) returns (CompHubInfo);
@@ -27,10 +27,10 @@ enum SendingType {
     undefinedType = 0;
     /// String without any structure
     stringType = 1;
-    /// Partial device data in the form of json
-    partialDeviceType = 2;
-    /// Device object in the form of json
-    deviceType = 3;
+    /// Partial entity data in the form of json
+    partialEntityType = 2;
+    /// Entity object in the form of json
+    entityType = 3;
     /// Sending mqtt massage
     mqttMassageType = 4;
     /// Scenes
@@ -43,22 +43,22 @@ enum SendingType {
     bindingsType = 8;
     /// Type for login into other vendors
     vendorLoginType = 9;
-    /// First connection, for sending first connection info like all devices status and more
+    /// First connection, for sending first connection info like all entities status and more
     firstConnection = 10;
     /// Remote Pipes Domain information
     remotePipesInformation = 11;
-    /// Request to get the device and software ifo like proto file version and more
-    getHubDeviceInfo = 12;
-    /// Response that contains device and software ifo like proto file version
-    responseHubDeviceInfo = 13;
+    /// Request to get the entity and software info like proto file version and more
+    getHubEntityInfo = 12;
+    /// Response that contains entity and software info like proto file version
+    responseHubEntityInfo = 13;
     /// Response that contains room object
     roomType = 14;
-    /// Sending location of device
+    /// Sending location of entity
     location = 15;
 }
 
 
-enum DeviceStateGRPC {
+enum EntityStateGRPC {
     stateNotSupported = 0;
     /// Cancel if not ack yet
     cancelStateInProcess = 1;
@@ -66,12 +66,12 @@ enum DeviceStateGRPC {
     ack = 2;
     /// New State was failed to execute
     newStateFailed = 3;
-    /// Waiting for device to take action from firebase and ack
-    waitingInFirebase = 4;
+    /// Waiting for entity to take action from cloud and ack
+    waitingInCloud = 4;
     /// Comp/Hub is trying to execute and waiting ack
     waitingInComp = 5;
-    /// No devices to transfer
-    noDevicesToTransfer = 6;
+    /// No entities to transfer
+    noEntitiesToTransfer = 6;
     /// Ping the other side
     pingNow = 7;
     /// Adding new scene
@@ -80,8 +80,8 @@ enum DeviceStateGRPC {
     addingNewRoutine = 9;
     /// Adding new binding
     addingNewBinding = 10;
-    /// Update hub device object properties from the real device
-    updateHubDevicePropertiesFromRealDevice = 11;
+    /// Update hub entity object properties from the real entity
+    updateHubEntityPropertiesFromRealEntity = 11;
 }
 
 
@@ -109,12 +109,42 @@ enum VendorsAndServices {
     yeelink = 20;
     xiaomi = 21;
     sonoffEweLink = 22;
-    cbjDevices = 23;
+    cbjDeviceSmartEntity = 23;
+    wiz = 24;
+    switchBot = 25;
+    somfy = 26;
+    sensibo = 27;
+    aqara = 28;
+    matter = 29;
+    nest = 30;
+    uniFi = 31;
+    ring = 32;
+    myQ = 33;
+    wemo = 34;
+    tpLink = 35;
+    nuki = 36;
+    homebridge = 37;
+    homeKit = 38;
+    twinkly = 39;
+    samsung = 40;
+    tizen = 41;
+    zigbee = 42;
+    zWave = 43;
+    ffmpeg = 44;
+    lightwaveRf = 45;
+    cololight = 46;
+    broadlink = 47;
+    switchBee = 48;
+    mycroft = 49;
+    xiaomiMi = 50;
+    cyBearJinniAppSmartEntity = 51;
+    securityBear = 52;
+    jinniAssistant = 53;
 }
 
 
-enum DeviceTypes {
-    typeNotSupported = 0;
+enum EntityTypes {
+    smartTypeNotSupported = 0;
     light = 1;
     blinds = 2;
     boiler = 3;
@@ -163,13 +193,18 @@ enum DeviceTypes {
     printer = 44;
     scanner = 45;
     printerWithScanner = 46;
-    /// Device with full computer excess like executing commands and checking process status.
+    /// Entity with full computer excess like executing commands and checking process status.
     smartComputer = 47;
-
+    emptyEntity = 48;
+    pingEntity = 49;
+    routerEntity = 50;
+    /// Music player
+    playerEntity = 51;
+    voiceAssistant = 52;
 }
 
 
-enum DeviceActions {
+enum EntityActions {
     actionNotSupported = 0;
     on = 1;
     off = 2;
@@ -184,6 +219,23 @@ enum DeviceActions {
     shutdown =11;  // Shut down the computer
     itIsFalse = 12;
     itIsTrue = 13;
+    pausePlay = 14;
+    changeVolume = 15;
+    jump = 16;
+    skip = 17;
+    pause = 18;
+    play = 19;
+    volumeUp = 20;
+    volumeDown = 21;
+    skipForeword = 22;
+    skipBackward = 23;
+    skipNextVid = 24;
+    skipPreviousVid = 25;
+    open = 26;
+    close = 27;
+    changeTemperature = 28;
+    changeFanSpeed = 29;
+    changeMod = 30;
 }
 
 
@@ -197,7 +249,7 @@ enum WhenToExecute {
     never = 6;
     onceNow = 7;
     onceInSelectedTime = 8;
-    onlyIfDeviceListIsAreInActionListState = 9;
+    onlyIfEntityListAreInActionListState = 9;
     atHome = 10;
     outOfHome = 11;
     atASpecificTime = 12; // Example: Only on Sunday and Tuesday at 5:35
@@ -223,7 +275,7 @@ enum AreaPurposesTypes {
     romantic = 15;
     stairsInside = 16;
     stairsOutside = 17;
-    childrensRoom = 18;
+    childrenRoom = 18;
     cinemaRoom = 19;
     boardGames = 20;
     bathtub = 21;
@@ -246,12 +298,12 @@ message RequestsAndStatusFromHub {
 }
 
 message AllRemoteCommands {
-    SmartDeviceInfo smartDeviceInfo = 40;
+    SmartEntityInfo smartEntityInfo = 40;
 }
 
 message FirstSetupMessage {
     CompHubInfo compInfo = 38;
-    FirebaseAccountInformation firebaseAccountInformation = 39;
+    CloudAccountInformation cloudAccountInformation = 39;
 }
 
 message CompHubInfo {
@@ -260,7 +312,7 @@ message CompHubInfo {
 }
 
 message CbjHubIno {
-    string deviceName = 48;
+    string entityName = 48;
     string pubspecYamlVersion = 27;
     string pubspecYamlBuildNumber = 51;
     string protoLastGenDate = 49;
@@ -283,7 +335,7 @@ message MicrocontrollerSpecs {
 }
 
 /// The request message containing the user's name.
-message SmartDeviceInfo {
+message SmartEntityInfo {
     string id = 1;
     string state = 3;
     string defaultName = 14;
@@ -301,11 +353,11 @@ message SmartDeviceInfo {
 
     MicrocontrollerSpecs microcontrollerSpecsSpecs = 31;
 
-    DeviceTypesActions deviceTypesActions = 34;
+    EntityTypesActions entityTypesActions = 34;
 }
 
 /// The response message containing the greetings
-message SmartDeviceStatus {
+message SmartEntityStatus {
     bool onOffState = 4;
 }
 
@@ -320,22 +372,22 @@ message CommendStatus {
     bool success = 5;
 }
 
-message SmartDeviceUpdateDetails {
-    SmartDeviceInfo smartDevice = 6;
+message SmartEntitiesUpdateDetails {
+    SmartEntityInfo smartEntity = 6;
     string newName = 7;
 }
 
-message FirebaseAccountInformation {
-    string fireBaseProjectId = 8;
-    string fireBaseApiKey = 9;
+message CloudAccountInformation {
+    string cloudProjectId = 8;
+    string cloudApiKey = 9;
     string userEmail = 10;
     string userPassword = 11;
     string homeId = 12;
 }
 
-message DeviceTypesActions {
+message EntityTypesActions {
     VendorsAndServices vendorsAndServices = 46;
-    DeviceTypes deviceType = 35;
-    DeviceActions deviceAction = 36;
-    DeviceStateGRPC deviceStateGRPC = 37;
+    EntityTypes entityType = 35;
+    EntityActions entityAction = 36;
+    EntityStateGRPC entityStateGRPC = 37;
 }

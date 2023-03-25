@@ -14,7 +14,7 @@ mkdir protoc_as_dart
 
 # TODO: Add check if protoc command is installed, if not that show to the user protoc
 #  installations methods
-#  The recommended one "sudo snap install protobuf"
+#  The recommended one "sudo snap install protobuf --classic"
 #  Didn't test and old version "sudo apt  install protobuf-compiler"
 protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/security_bear_connections.proto
 
@@ -25,7 +25,7 @@ date +"const securityBearServerProtocGenDate = '%d/%m/%y';">../security_bear/lib
 
 rm -r ../cbj_app/lib/infrastructure/core/gen/security_bear/client/protoc_as_dart
 cp -r protoc_as_dart/ ../cbj_app/lib/infrastructure/core/gen/security_bear/client	# Copy to CBJ App protoc folder
-date +"const securityBearClientProtocGenDate = '%d/%m/%y';">../cbj_app/lib/infrastructure/core/gen/security_bear/proto_gen_date.dart
+date +"const securityBearServerProtocGenDate = '%d/%m/%y';">../cbj_app/lib/infrastructure/core/gen/security_bear/proto_gen_date.dart
 
 rm -r protoc_as_dart
 
@@ -45,7 +45,7 @@ date +"const appServerProtocGenDate = '%d/%m/%y';">../cbj_app/lib/infrastructure
 
 rm -r ../security_bear/lib/infrastructure/gen/cbj_app/protoc_as_dart
 cp -r protoc_as_dart/ ../security_bear/lib/infrastructure/gen/cbj_app # Copy to Security Bear protoc folder
-date +"const appClientProtocGenDate = '%d/%m/%y';">../security_bear/lib/infrastructure/gen/cbj_app/proto_gen_date.dart
+date +"const appServerProtocGenDate = '%d/%m/%y';">../security_bear/lib/infrastructure/gen/cbj_app/proto_gen_date.dart
 
 
 rm -r protoc_as_dart
@@ -65,7 +65,7 @@ date +"const hubServerProtocGenDate = '%d/%m/%y';">../cbj_hub/lib/infrastructure
 
 rm -r ../cbj_app/lib/infrastructure/core/gen/cbj_hub_server/protoc_as_dart
 cp -r protoc_as_dart/ ../cbj_app/lib/infrastructure/core/gen/cbj_hub_server	# Copy to CBJ App protoc folder
-date +"const hubClientProtocGenDate = '%d/%m/%y';">../cbj_app/lib/infrastructure/core/gen/cbj_hub_server/proto_gen_date.dart
+date +"const hubServerProtocGenDate = '%d/%m/%y';">../cbj_app/lib/infrastructure/core/gen/cbj_hub_server/proto_gen_date.dart
 
 rm -r ../cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/protoc_as_dart
 cp -r -p protoc_as_dart/ ../cbj_remote-pipes/lib/infrastructure/gen/cbj_hub_server/	#   # copy to Remote-Pipes protoc folder
@@ -112,9 +112,11 @@ protoc --dart_out=grpc:protoc_as_dart/ -Iprotos protos/cbj_smart_device_server.p
 
 rm -r ../cbj_smart-device/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart
 cp -r -p protoc_as_dart/ ../cbj_smart-device/lib/infrastructure/gen/cbj_smart_device_server/	#   # copy to smart device protoc folder
+date +"const cbjSmartDeviceServerProtocGenDate = '%d/%m/%y';">../cbj_smart-device/lib/infrastructure/gen/cbj_smart_device_server/proto_gen_date.dart
 
 rm -r ../cbj_hub/lib/infrastructure/gen/cbj_smart_device_server/protoc_as_dart
 cp -r -p protoc_as_dart/ ../cbj_hub/lib/infrastructure/gen/cbj_smart_device_server/	#   # copy to Hub protoc folder
+date +"const cbjSmartDeviceServerProtocGenDate = '%d/%m/%y';">../cbj_hub/lib/infrastructure/gen/cbj_smart_device_server/proto_gen_date.dart
 
 
 rm -r protoc_as_dart
