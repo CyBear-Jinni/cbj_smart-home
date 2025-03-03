@@ -4,390 +4,120 @@ package CbjHub;
 
 /// The greeting service definition.
 service CbjHub {
-    /// Client side sending requests for the hub like turn entrance light on,
-    /// and updating about it status like client opened movie (for the hub to process).
-    /// Getting requests from the hub like play music on the phone, and status of entities that
-    /// have been changed like update layout to show entrance lights on.
-    rpc ClientTransferEntities (stream ClientStatusRequests) returns (stream RequestsAndStatusFromHub);
+  /// Client side sending requests for the hub like turn entrance light on,
+  /// and updating about it status like client opened movie (for the hub to
+  /// process). Getting requests from the hub like play music on the phone, and
+  /// status of entities that have been changed like update layout to show
+  /// entrance lights on.
+  rpc ClientTransferEntities(stream ClientStatusRequests)
+      returns (stream RequestsAndStatusFromHub);
 
-    /// Hub side sending requests for the clients like turn on music, and updated status of entities
-    /// like entrance light got turned on.
-    /// Getting request like to turn on lights, and getting client updated status to process like
-    /// client opened a move.
-    rpc HubTransferEntities (stream RequestsAndStatusFromHub) returns (stream ClientStatusRequests);
+  /// Hub side sending requests for the clients like turn on music, and updated
+  /// status of entities like entrance light got turned on. Getting request like
+  /// to turn on lights, and getting client updated status to process like
+  /// client opened a move.
+  rpc HubTransferEntities(stream RequestsAndStatusFromHub)
+      returns (stream ClientStatusRequests);
 
-    /// Get computer yaml and protoc version and more info about the computer
-    rpc getCompHubInfo (CompHubInfo) returns (CompHubInfo);
-}
-
-
-/// Being added to send data for explain the type that was sent
-enum SendingType {
-    /// Not sure what we sent or got
-    undefinedType = 0;
-    /// String without any structure
-    stringType = 1;
-    /// Partial entity data in the form of json
-    partialEntityType = 2;
-    /// Entity object in the form of json
-    entityType = 3;
-    /// Sending mqtt massage
-    mqttMassageType = 4;
-    /// Scenes
-    sceneType = 5;
-    /// Schedule
-    scheduleType = 6;
-    /// Routine
-    routineType = 7;
-    /// Bindings
-    bindingsType = 8;
-    /// Type for login into other vendors
-    vendorLoginType = 9;
-    /// First connection, for sending first connection info like all entities status and more
-    firstConnection = 10;
-    /// Remote Pipes Domain information
-    remotePipesInformation = 11;
-    /// Request to get the entity and software info like proto file version and more
-    getHubEntityInfo = 12;
-    /// Response that contains entity and software info like proto file version
-    responseHubEntityInfo = 13;
-    /// Response that contains room object
-    roomType = 14;
-    /// Sending location of entity
-    location = 15;
-}
-
-
-enum EntityStateGRPC {
-    stateNotSupported = 0;
-    /// Cancel if not ack yet
-    cancelStateInProcess = 1;
-    /// Acknowledge that the state was updated
-    ack = 2;
-    /// New State was failed to execute
-    newStateFailed = 3;
-    /// Waiting for entity to take action from cloud and ack
-    waitingInCloud = 4;
-    /// Comp/Hub is trying to execute and waiting ack
-    waitingInComp = 5;
-    /// No entities to transfer
-    noEntitiesToTransfer = 6;
-    /// Ping the other side
-    pingNow = 7;
-    /// Adding new scene
-    addingNewScene = 8;
-    /// Adding new routine
-    addingNewRoutine = 9;
-    /// Adding new binding
-    addingNewBinding = 10;
-    /// Update hub entity object properties from the real entity
-    updateHubEntityPropertiesFromRealEntity = 11;
-}
-
-
-enum VendorsAndServices {
-    vendorsAndServicesNotSupported = 0;
-    espHome = 1;
-    switcherSmartHome = 2;
-    tasmota = 3;
-    yeelight = 4;
-    google = 5;
-    miHome = 6;
-    lifx = 7;
-    tuyaSmart = 8;
-    smartLife = 9;
-    jinvooSmart = 10;
-    shelly = 11;
-    wink = 12;
-    ikea = 13;
-    sonoffDiy = 14;
-    philipsHue = 15;
-    lg = 16;
-    spotify = 17;
-    homeAssistant = 18;
-    hp = 19;
-    yeelink = 20;
-    xiaomi = 21;
-    sonoffEweLink = 22;
-    cbjDeviceSmartEntity = 23;
-    wiz = 24;
-    switchBot = 25;
-    somfy = 26;
-    sensibo = 27;
-    aqara = 28;
-    matter = 29;
-    nest = 30;
-    uniFi = 31;
-    ring = 32;
-    myQ = 33;
-    wemo = 34;
-    tpLink = 35;
-    nuki = 36;
-    homebridge = 37;
-    homeKit = 38;
-    twinkly = 39;
-    samsung = 40;
-    tizen = 41;
-    zigbee = 42;
-    zWave = 43;
-    ffmpeg = 44;
-    lightwaveRf = 45;
-    cololight = 46;
-    broadlink = 47;
-    switchBee = 48;
-    mycroft = 49;
-    xiaomiMi = 50;
-    cyBearJinniAppSmartEntity = 51;
-    securityBear = 52;
-    jinniAssistant = 53;
-}
-
-
-enum EntityTypes {
-    smartTypeNotSupported = 0;
-    light = 1;
-    blinds = 2;
-    boiler = 3;
-    button = 4;
-    buttonWithLight = 5;
-    hub = 7;
-    /// The app running on a phone.
-    phoneApp = 8;
-    /// The app running on a computer.
-    computerApp = 9;
-    /// The app running on a browser.
-    browserApp = 10;
-    switch = 11;
-    dimmableLight = 12;
-    cctLight = 13;
-    rgbLights = 14;
-    rgbwLights = 15;
-    rgbcctLights = 16;
-    smartTV = 17;
-    smartSpeakers = 18;
-    coffeeMachine = 19;
-    kettle = 20;
-    teapot = 21;
-    washingMachine = 22;
-    dishwasher = 23;
-    toaster = 24;
-    vacuumCleaner = 25;
-    refrigerator = 26;
-    bed = 27;
-    oven = 28;
-    AirConditioner = 29;
-    smartWatch = 30;
-    smartWaterBottle = 31;
-    microphone = 32;
-    securityCamera = 33;
-    babyMonitor = 34;
-    motionSensor = 35;
-    temperatureSensor = 36;
-    humiditySensor = 37;
-    lightSensor = 38;
-    soundSensor = 39;
-    smokeSensor = 40;
-    smokeDetector = 41;
-    oxygenSensor = 42;
-    smartPlug = 43;
-    printer = 44;
-    scanner = 45;
-    printerWithScanner = 46;
-    /// Entity with full computer excess like executing commands and checking process status.
-    smartComputer = 47;
-    emptyEntity = 48;
-    pingEntity = 49;
-    routerEntity = 50;
-    /// Music player
-    playerEntity = 51;
-    voiceAssistant = 52;
-}
-
-
-enum EntityActions {
-    actionNotSupported = 0;
-    on = 1;
-    off = 2;
-    moveUp = 3;
-    stop = 4;
-    moveDown = 5;
-    pressed = 6; // for buttons
-    longPress = 7; // for buttons
-    doubleTap = 8; // for buttons
-    position = 9; // Example: for blinds height
-    suspend = 10; // Suspend the computer
-    shutdown =11;  // Shut down the computer
-    itIsFalse = 12;
-    itIsTrue = 13;
-    pausePlay = 14;
-    changeVolume = 15;
-    jump = 16;
-    skip = 17;
-    pause = 18;
-    play = 19;
-    volumeUp = 20;
-    volumeDown = 21;
-    skipForeword = 22;
-    skipBackward = 23;
-    skipNextVid = 24;
-    skipPreviousVid = 25;
-    open = 26;
-    close = 27;
-    changeTemperature = 28;
-    changeFanSpeed = 29;
-    changeMod = 30;
-}
-
-
-enum WhenToExecute {
-    undefined = 0;
-    onOddNumberPress = 1;
-    evenNumberPress = 2;
-    betweenSelectedTime = 3;
-    doNotBetweenSelectedTime = 4;
-    allTheTime = 5;
-    never = 6;
-    onceNow = 7;
-    onceInSelectedTime = 8;
-    onlyIfEntityListAreInActionListState = 9;
-    atHome = 10;
-    outOfHome = 11;
-    atASpecificTime = 12; // Example: Only on Sunday and Tuesday at 5:35
-}
-
-/// List of purposes that each area in the home can have
-enum AreaPurposesTypes {
-    bedroom = 0;
-    studyRoom = 1;
-    workRoom = 2;
-    tvRoom = 3;
-    videoGames = 4;
-    livingRoom = 5;
-    diningRoom = 6;
-    kitchen = 7;
-    outside = 8;
-    outsidePrimary = 9;
-    outsideNotPrimary = 10;
-    toiletRoom = 11;
-    shower = 12;
-    trainingRoom = 13;
-    meditation = 14;
-    romantic = 15;
-    stairsInside = 16;
-    stairsOutside = 17;
-    childrenRoom = 18;
-    cinemaRoom = 19;
-    boardGames = 20;
-    bathtub = 21;
-    laundryRoom = 22;
-    protectedSpace = 23;
-    safeRoom = 24;
-    attic = 25;
-    holidayCabin = 26;
+  /// Get computer yaml and protoc version and more info about the computer
+  rpc getCompHubInfo(CompHubInfo) returns (CompHubInfo);
 }
 
 
 message ClientStatusRequests {
-    SendingType sendingType = 41;
-    string allRemoteCommands = 42;
+  string sendingType = 41;
+  string allRemoteCommands = 42;
 }
 
 message RequestsAndStatusFromHub {
-    SendingType sendingType = 43;
-    string allRemoteCommands = 44;
+  string sendingType = 43;
+  string allRemoteCommands = 44;
 }
 
-message AllRemoteCommands {
-    SmartEntityInfo smartEntityInfo = 40;
-}
+message AllRemoteCommands { SmartEntityInfo smartEntityInfo = 40; }
 
 message FirstSetupMessage {
-    CompHubInfo compInfo = 38;
-    CloudAccountInformation cloudAccountInformation = 39;
+  CompHubInfo compInfo = 38;
+  CloudAccountInformation cloudAccountInformation = 39;
 }
 
 message CompHubInfo {
-    CbjHubIno cbjInfo = 47;
-    CompHubSpecs compSpecs = 21;
+  CbjHubIno cbjInfo = 47;
+  CompHubSpecs compSpecs = 21;
 }
 
 message CbjHubIno {
-    string entityName = 48;
-    string pubspecYamlVersion = 27;
-    string pubspecYamlBuildNumber = 51;
-    string protoLastGenDate = 49;
-    string dartSdkVersion = 52;
+  string entityName = 48;
+  string pubspecYamlVersion = 27;
+  string pubspecYamlBuildNumber = 51;
+  string protoLastGenDate = 49;
+  string dartSdkVersion = 52;
 }
 
 message CompHubSpecs {
-    string compId = 22;
-    string compUuid = 23;
-    string compOs = 24;
-    string compModel = 25;
-    string compType = 26;
-    string compIp = 50;
+  string compId = 22;
+  string compUuid = 23;
+  string compOs = 24;
+  string compModel = 25;
+  string compType = 26;
+  string compIp = 50;
 }
 
 message MicrocontrollerSpecs {
-    string microcontrollerModel = 31;
-    string microcontrollerType = 32;
-    string softwareVersion = 33;
+  string microcontrollerModel = 31;
+  string microcontrollerType = 32;
+  string softwareVersion = 33;
 }
 
 /// The request message containing the user's name.
 message SmartEntityInfo {
-    string id = 1;
-    string state = 3;
-    string defaultName = 14;
-    string roomId = 15;
-    string senderDeviceModel = 16;
-    string senderDeviceOs = 17;
-    string senderId = 18;
-    string serverTimeStamp = 19;
-    string stateMassage = 20;
-    MqttMassage mqttMassage = 43;
+  string id = 1;
+  string state = 3;
+  string defaultName = 14;
+  string areaId = 15;
+  string senderDeviceModel = 16;
+  string senderDeviceOs = 17;
+  string senderId = 18;
+  string serverTimeStamp = 19;
+  string stateMassage = 20;
+  MqttMassage mqttMassage = 43;
 
-    bool isComputer = 29;
+  bool isComputer = 29;
 
-    CompHubSpecs compSpecs = 30;
+  CompHubSpecs compSpecs = 30;
 
-    MicrocontrollerSpecs microcontrollerSpecsSpecs = 31;
+  MicrocontrollerSpecs microcontrollerSpecsSpecs = 31;
 
-    EntityTypesActions entityTypesActions = 34;
+  EntityTypesActions entityTypesActions = 34;
 }
 
 /// The response message containing the greetings
-message SmartEntityStatus {
-    bool onOffState = 4;
-}
+message SmartEntityStatus { bool onOffState = 4; }
 
-message  MqttMassage {
-    string mqttTopic = 44;
-    string mqttMassage = 45 ;
-
+message MqttMassage {
+  string mqttTopic = 44;
+  string mqttMassage = 45;
 }
 
 /// Did the commend succeeded (true) or not (false)
-message CommendStatus {
-    bool success = 5;
-}
+message CommendStatus { bool success = 5; }
 
 message SmartEntitiesUpdateDetails {
-    SmartEntityInfo smartEntity = 6;
-    string newName = 7;
+  SmartEntityInfo smartEntity = 6;
+  string newName = 7;
 }
 
 message CloudAccountInformation {
-    string cloudProjectId = 8;
-    string cloudApiKey = 9;
-    string userEmail = 10;
-    string userPassword = 11;
-    string homeId = 12;
+  string cloudProjectId = 8;
+  string cloudApiKey = 9;
+  string userEmail = 10;
+  string userPassword = 11;
+  string homeId = 12;
 }
 
 message EntityTypesActions {
-    VendorsAndServices vendorsAndServices = 46;
-    EntityTypes entityType = 35;
-    EntityActions entityAction = 36;
-    EntityStateGRPC entityStateGRPC = 37;
+  string vendorsAndServices = 46;
+  string entityType = 35;
+  string entityAction = 36;
+  string entityStateGRPC = 37;
 }

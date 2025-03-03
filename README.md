@@ -29,7 +29,7 @@ The project is made out of two main parts:
 
 This is an Android, IOS, Web Browser app written in [Flutter](https://flutter.dev) that let you control the Hub using local Wi-Fi and remotely through [cbj remote pipes](https://github.com/CyBear-Jinni/cbj_remote-pipes) which transfer requests to the Hub without collecting any data.
 
-<a href="https://play.google.com/store/apps/details?id=com.cybear_jinni.smart_home">
+<a href="https://play.google.com/store/apps/details?id=com.cybearjinni.app">
 <img border="0" align="middle" alt="Android Badge" src="https://user-images.githubusercontent.com/9304740/117003444-8b58a080-aced-11eb-94bc-bfb2505f515d.png" width=200>
 
 ### CyBear Jinni Hub

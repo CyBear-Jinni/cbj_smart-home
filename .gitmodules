@@ -16,3 +16,9 @@
 [submodule "cbj_smart-device"]
 	path = cbj_smart-device
 	url = https://github.com/CyBear-Jinni/cbj_smart-device.git
+[submodule "cbj_integrations_controller"]
+	path = cbj_integrations_controller
+	url = https://github.com/CyBear-Jinni/cbj_integrations_controller.git
+[submodule "cbj_smart_device_flutter"]
+	path = cbj_smart_device_flutter
+	url = https://github.com/CyBear-Jinni/cbj_smart_device_flutter.git
